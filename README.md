@@ -20,3 +20,15 @@ Once that extension is installed, you should be able to follow the same instruct
 ## Making Local Commits
 
 Anytime you have changed files in the solution, have tested the changes, and are satisfied everything is working, you should make it a habit to `commit` your changes to your local git repository.
+
+![source control commit menu][git_screens/01_commitmenuitem.png]
+
+When committing to source control, always provide a helpful message briefly stating what you changed.
+
+![git commit message][git_screens/02_commit_message.png]
+
+## Intended Workflow
+
+The class is divided into five teams, each with a technical lead. Each technical lead should be responsible for getting the code from his or her teammates. The technical leads will submit `pull` requests when their code is ready to be incorporated into the larger project. More documentation on `pull` requests will be added at a later date.
+
+It is up to each team whether to have each team member use git locally before having the technical leads pull and merge the changes from all the team members. It is recommended as a best practice; however, it may not be easy for people unfamiliar with source control to learn the workflows quickly enough.
