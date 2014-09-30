@@ -21,11 +21,11 @@ Once that extension is installed, you should be able to follow the same instruct
 
 Anytime you have changed files in the solution, have tested the changes, and are satisfied everything is working, you should make it a habit to `commit` your changes to your local git repository.
 
-![source control commit menu][git_screens/01_commitmenuitem.png]
+![source control commit menu](git_screens/01_commitmenuitem.png)
 
 When committing to source control, always provide a helpful message briefly stating what you changed.
 
-![git commit message][git_screens/02_commit_message.png]
+![git commit message](git_screens/02_commit_message.png)
 
 ## Intended Workflow
 
