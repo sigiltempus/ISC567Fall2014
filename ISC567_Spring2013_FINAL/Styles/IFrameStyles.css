@@ -1,0 +1,581 @@
+.PageCustomHeader
+{
+    margin-top:2px;
+    margin-bottom:2px;
+    font-size: 14pt;
+    font-weight: bold;
+    height: 80px;
+    color: White;
+    background-color: #ba1c1c;
+    font-family: Verdana;
+
+}
+body
+{
+    background-color: #FEFEFE;
+    font-family: Verdana;
+    font-size: 10pt;
+}
+
+.mainMenuTab
+{
+    background-image: url('/images/menutab.png');
+    background-repeat:no-repeat;
+	color:White;
+	height:30px;
+}
+.mainMenuText
+{
+	position:absolute;
+	top:15px;
+	font-size:16px;
+	color:white;
+	font-weight:bold;
+}
+
+.ListIFrame
+{
+    vertical-align: top;
+    top: 0px;
+    left: 0px;
+    width: inherit;
+    height: inherit;
+    border: 2px #ba931c solid;
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    background-color: #EEEEEE;
+}
+
+.ListIFrame1
+{
+    vertical-align: top;
+    top: 0px;
+    left: 0px;
+    width: inherit;
+    height: 430px;
+    border: 2px #ba931c solid;
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    background-color: #EEEEEE;
+}
+
+.ListIFrame2
+{
+    vertical-align: top;
+    top: 0px;
+    left: 0px;
+    width: 895px;
+    height: 445px;
+    border: 2px #ba931c solid;
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    background-color: #EEEEEE;
+}
+
+.CheckBoxIFrame
+{
+    vertical-align: top;
+    top: 0px;
+    left: 0px;
+    width: inherit;
+    height: inherit;
+    border: 2px #ba931c solid;
+    position: absolute;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+    background-color: #EEEEEE;
+}
+
+.AddEditIFrame
+{
+    vertical-align: top;
+    top: 0px;
+    left: 0px;
+    width: inherit;
+    height: inherit;
+    border: 2px #ba931c solid;
+    position: absolute;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+    background-color: #EFEFEF;
+    color: #8D6D00;
+}
+
+.PanelStyle
+{
+    border: 2px solid #ba931c;
+}
+
+.AddEditTable
+{
+    border: 0px solid black;
+    padding: 5px 5px 0px 5px;
+    width: 100%;
+}
+
+.paddedCell
+{
+    padding-left: 5px; 
+    padding-top: 5px;
+}
+
+.MainPage
+{
+    background-color: White;
+}
+
+.handleImage
+{
+    width: 15px;
+    height: 16px;
+    background-image: url(images/HandleHand.png);
+    overflow: hidden;
+    cursor: se-resize;
+}
+.BulletedList
+{
+    font-family: Verdana;
+    font-size: 7.5pt;
+    color: gray;
+}
+.Button
+{
+    background-color: #FFFAC2;
+    color: black;
+    z-index: 1;
+    left: 266px;
+    top: 170px;
+    margin-left: 0px;
+    font-size: 9pt;
+    font-weight: bold;
+    border: 1px solid #ba931c;
+}
+
+.ButtonGreyed
+{
+    height: 25px;
+    background-color: #DDDDDD;
+    color: black;
+    z-index: 1;
+    left: 266px;
+    top: 170px;
+    margin-left: 0px;
+    font-size: 9pt;
+    font-weight: bold;
+    border: 1px solid #ba931c;
+}
+
+.LongerButton
+{
+    height: 25px;
+    width: 100px;
+    background-color: #ba931c;
+    color: white;
+    font-family: Verdana;
+    margin-left: 0px;
+    font-size: 9pt;
+}
+.LongerButton a: hover
+{
+    text-decoration: blink;
+    cursor: default;
+    color: Black;
+}
+
+.EvenLongerButton
+{
+    height: 25px;
+    width: 120px;
+    background-color: #ba931c;
+    color: white;
+    font-size: 9pt;
+}
+.LongestButton
+{
+    height: 25px;
+    width: 148px;
+    background-color: #FF802B;
+    color: white;
+    font-size: 7.5pt;
+}
+.TextBox
+{
+    font-size: 7.5pt;
+    font-family: Verdana;
+}
+.MultilineTextBox
+{
+    height: 57px;
+    width: 368px;
+}
+.LinkButton
+{
+    height: 25px;
+    width: 75px;
+    color: White;
+    background-color: ActiveCaption;
+}
+
+.MenuOption
+{
+    height: 25px;
+    width: 120px;
+}
+.ListBox
+{
+    font-family: Verdana;
+    font-size: 7.5pt;
+}
+.DropDownList
+{
+    font-family: Arial;
+    font-size: 8pt;
+    background-color: #fcfcfc;
+}
+.accordionHeader
+{
+    border: 1px solid #2F4F4F;
+    color: white;
+    background-color: #2E4d7B;
+    font-family: Arial, Sans-Serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.accordionLink
+{
+    background-color: #D3DEEF;
+    color: white;
+}
+
+.accordionContent
+{
+    background-color: #D3DEEF;
+    border: 1px dashed #2F4F4F;
+    border-top: none;
+    padding: 5px;
+    padding-top: 10px;
+}
+
+.IFrameHeader
+{
+    font-size: 14pt;
+    font-weight: bold;
+    color: White;
+    background-color: #ba1c1c;
+    font-family: Verdana;
+    padding: 5px 5px 5px 5px;
+}
+
+.IFrameHeaderClose
+{
+    height: 25px;
+    font-size: 14pt;
+    font-weight: bold;
+    color: White;
+    background-color: #ba1c1c;
+    font-family: Verdana;
+    padding: 5px 5px 5px 5px;
+}
+
+.IFrameHeaderClose a, .IFrameHeaderClose a:visited
+{
+    text-decoration: none;
+    color: White;
+}
+
+.IFrameHeaderClose a:hover, .IFrameHeaderClose a:active
+{
+    color: White;
+    text-decoration: underline;
+}
+
+.gridViewHeader
+{
+    background-color: #ba1c1c;
+    font-weight: bold;
+    font-family: Verdana;
+    color: #FFFFFF;
+}
+
+.mGrid
+{
+    width: 100%;
+    background-color: #fff;
+    margin: 5px 0 10px 0;
+    border: solid 1px #525252;
+    border-collapse: collapse;
+    font-size: 7.5pt;
+    font-family: Verdana;
+}
+.mGrid td
+{
+    padding: 2px;
+    border: solid 1px #c1c1c1;
+    color: Black;
+}
+.mGrid th
+{
+    padding: 4px 2px;
+    color: black;
+    background-color: ActiveCaption;
+    border-left: solid 1px #525252;
+    font-size: 7pt;
+}
+.mGrid .alt
+{
+    background: #fcfcfc url(grd_alt.png) repeat-x top;
+}
+.mGrid .pgr
+{
+    background: #424242 url(grd_pgr.png) repeat-x top;
+}
+.mGrid .pgr table
+{
+    margin: 5px 0;
+}
+.mGrid .pgr td
+{
+    border-width: 0;
+    padding: 0 6px;
+    border-left: solid 1px #666;
+    font-weight: bold;
+    color: #fff;
+    line-height: 12px;
+}
+.mGrid .pgr a
+{
+    color: #666;
+    text-decoration: none;
+}
+
+.mGrid .pgr a:hover
+{
+    color: #000;
+    text-decoration: none;
+}
+
+.Panel
+{
+    border-style: solid;
+    border-width: 2px;
+    border-color: ActiveBorder;
+}
+
+a.info span
+{
+    display: none;
+}
+
+a.info:hover
+{
+    position: relative;
+}
+
+a.info:hover span
+{
+    display: block;
+    color: InfoText;
+    font-style: italic;
+    font-size: 7pt;
+    font-family: Verdana;
+    position: Absolute;
+    border: thin solid black;
+    background-color: InfoBackground;
+}
+
+
+.Label
+{
+    color: Gray;
+    font-weight: bold;
+    font-family: Verdana;
+    font-size: 10pt;
+}
+
+.tab
+{
+    border-color: black;
+}
+.tab a: hover
+{
+    font-weight: bolder;
+}
+
+
+.buttonBar
+{
+    width: 100%;
+    border: 0px solid black;
+    position: absolute;
+    bottom: 0px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.filterRow
+{
+    width: 175px;
+    border: 1px solid black;
+}
+
+
+/**** SIMPLE MENU ****/
+
+/*.menuWrapper
+{
+	border: 2px solid Black;
+	padding: 0px 2px 2px 2px;
+	/*background-color: white; White Background
+	background-color:#F09F9F;
+	display: inline-block;
+}*/
+
+/***********************************************************New Navigation Bar or Menu Styling******************************************** */
+.menuWrapper
+{
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	display: inline; /*width: 810px;*/
+}
+.menuWrapper ul
+{
+	margin: 0;
+	padding: 5px;
+	list-style-type: none; /*	text-align: center;*/ /*background-color: #ba1c1c;*/
+	background-color: #a61212;
+}
+
+.menuWrapper ul li
+{
+	display: inline;
+}
+
+.menuWrapper ul li a
+{
+	text-decoration: none;
+	padding: 5px 5px 5px 5px;
+	margin-left: -4px;
+	margin-right: 2px; /*	padding: .2em 1em;*/
+	color: white;
+	font-weight: bold;
+	background-color: #a61212;
+}
+
+.menuWrapper ul li a:hover, .loginLinkButton:hover
+{
+	/*To change the entire block around the menu item 	insert a backbground color here*/
+	color: #ff8a00;
+	text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+/******************************************************* END New Navigation Bar or Menu ***************************************************** */
+
+
+.horizontalList
+{
+	/*border: 5px solid blue;*/
+	/*background-color: #FFFFFF; White Background */
+	background-color: #F09F9F;
+	padding: 2px 0px 0px 2px;
+	margin: 0px 0px 0px 0px;
+	display: inline-block;
+}
+
+.horizontalListElement
+{
+	list-style-type: none;
+	display: inline-block;
+	border: 1px solid black;
+	background-color: #ba1c1c;
+	width: 100px;
+	text-align:center;
+	/*top right bottom left*/
+	padding: 0px 10px 0px 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.horizontalListElement a, .horizontalListElement a:visited
+{
+	text-decoration: none;
+	font-family: verdana;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+}
+
+.horizontalListElement a:hover
+{
+	text-decoration: underline;
+	color: black;
+}
+
+/*Added Styles using cast integrated*/
+.entireSiteWrapper
+{
+	/*margin: 0 auto;*/
+	float:left;
+	width: 100%;
+	height: 100%;
+}
+.bannerarea
+{
+	width: 810px;
+	height: 70px;
+	background-image: url('../images/smallbanner1.png');
+	color: #ffffff;
+	border-radius: 0px 10px 0px 0px;
+}
+
+.contentWrapper
+{
+	min-height: 410px;
+	border: 2px solid #000000;
+	padding: 5px;
+}
+
+/* ********************************************************************Footer Styling************************************************** */
+.footerwrapper
+{
+	font-weight: bold;
+	font-size: 11px;
+	text-align: center;
+	padding: 2px 2px;
+	background-color: #a61212;
+	background-repeat: no-repeat;
+	color: #000000; /* Will only work in newer browsers. ROUNDED BORDERS!!!*/
+	border-radius: 0px 0px 10px 10px;
+}
+.footerwrapper a
+{
+	text-decoration: none;
+	color: #ffffff;
+}
+.footerwrapper a:hover
+{
+	color: #ff8a00; /*color: #ff2419; Dark red hover link */
+}
+
+/*copyright text*/
+.copyright
+{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 10px;
+	color: #ffffff;
+}
+
+
+/**** END SIMPLE MENU ****/

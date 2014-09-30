@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{FD9FC963-2153-45C6-9FF2-17766F4D76EE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ISC567_Spring2013</RootNamespace>
+    <AssemblyName>ISC567_Spring2013</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ISC567_Spring2013.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ISC567_Spring2013.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JSIM">
+      <HintPath>..\..\Assignment_3\Assignment_3\DLL\JSIM.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddEditExamSchedule.aspx" />
+    <Content Include="AddEditPerson.aspx" />
+    <Content Include="AddEditTaker.aspx" />
+    <Content Include="AddProvider.aspx" />
+    <Content Include="bin\JSIM.dll" />
+    <Content Include="blank.htm" />
+    <Content Include="ConfirmationPage.aspx" />
+    <Content Include="Exam.aspx" />
+    <Content Include="ExamProvider_11.aspx" />
+    <Content Include="ExamProvider_12.aspx" />
+    <Content Include="ExamProvider_13.aspx" />
+    <Content Include="ExamProvider_1A.aspx" />
+    <Content Include="ExamProvider_2ver1.aspx" />
+    <Content Include="ExamProvider_3.aspx" />
+    <Content Include="ExamProvider_77.aspx" />
+    <Content Include="ListInstitutionPeople.aspx" />
+    <Content Include="ListPerson.aspx" />
+    <Content Include="ListScheduledExam.aspx" />
+    <Content Include="MainMenu.aspx" />
+    <Content Include="ProctorExam.aspx" />
+    <Content Include="Roster.aspx" />
+    <Content Include="ScheduleExam.aspx" />
+    <Content Include="Scripts\jQuery\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\jQuery\jquery-1.9.1.js" />
+    <Content Include="Scripts\jQuery\jquery-ui.js" />
+    <Content Include="Scripts\jQuery\jquery.easy-confirm-dialog.js" />
+    <Content Include="Scripts\jQuery\jquery.min.js" />
+    <Content Include="Styles\jQuery\jquery-ui.css" />
+    <Content Include="TakerFunctions.aspx" />
+    <Content Include="WaitForExamTime.aspx" />
+    <Content Include="WorkOnStaff.aspx" />
+    <Content Include="ExamProvider_5.aspx" />
+    <Content Include="ExamProvider_5A.aspx" />
+    <Content Include="ExamProvider_6.aspx" />
+    <Content Include="ExamProvider_7.aspx" />
+    <Content Include="ExamProvider_8.aspx" />
+    <Content Include="ExamProvider_9.aspx" />
+    <Content Include="ExitApplication.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Styles\IFrameStyles.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="AddStaff.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddEditExamSchedule.aspx.designer.vb">
+      <DependentUpon>AddEditExamSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditExamSchedule.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>AddEditExamSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditPerson.aspx.designer.vb">
+      <DependentUpon>AddEditPerson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditPerson.aspx.vb">
+      <DependentUpon>AddEditPerson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditTaker.aspx.designer.vb">
+      <DependentUpon>AddEditTaker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditTaker.aspx.vb">
+      <DependentUpon>AddEditTaker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProvider.aspx.designer.vb">
+      <DependentUpon>AddProvider.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProvider.aspx.designer.vb.designer.vb">
+      <DependentUpon>AddProvider.aspx.designer.vb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddProvider.aspx.designer.vb.vb">
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AddProvider.aspx.vb">
+      <DependentUpon>AddProvider.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmationPage.aspx.designer.vb">
+      <DependentUpon>ConfirmationPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmationPage.aspx.vb">
+      <DependentUpon>ConfirmationPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Exam.aspx.designer.vb">
+      <DependentUpon>Exam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Exam.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Exam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamProvider_11.aspx.designer.vb">
+      <DependentUpon>ExamProvider_11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamProvider_11.aspx.vb">
+      <DependentUpon>ExamProvider_11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExamProvider_12.aspx.designer.vb">
+      <DependentUpon>ExamProvider_12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamProvider_12.aspx.vb">
+      <DependentUpon>ExamProvider_12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExamProvider_13.aspx.designer.vb">
+      <DependentUpon>ExamProvider_13.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamProvider_13.aspx.vb">
+      <DependentUpon>ExamProvider_13.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ExamProvider_1A.aspx.designer.vb">
+      <DependentUpon>ExamProvider_1A.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamProvider_1A.aspx.vb">
+      <DependentUpon>ExamProvider_1A.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExamProvider_2ver1.aspx.designer.vb">
+      <DependentUpon>ExamProvider_2ver1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamProvider_2ver1.aspx.vb">
+      <DependentUpon>ExamProvider_2ver1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExamProvider_3.aspx.designer.vb">
+      <DependentUpon>ExamProvider_3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamProvider_3.aspx.vb">
+      <DependentUpon>ExamProvider_3.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ExamProvider_77.aspx.designer.vb">
+      <DependentUpon>ExamProvider_77.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamProvider_77.aspx.vb">
+      <DependentUpon>ExamProvider_77.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ListInstitutionPeople.aspx.designer.vb">
+      <DependentUpon>ListInstitutionPeople.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListInstitutionPeople.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ListInstitutionPeople.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListPerson.aspx.designer.vb">
+      <DependentUpon>ListPerson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListPerson.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ListPerson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListScheduledExam.aspx.designer.vb">
+      <DependentUpon>ListScheduledExam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListScheduledExam.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ListScheduledExam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.aspx.designer.vb">
+      <DependentUpon>MainMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>MainMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProctorExam.aspx.designer.vb">
+      <DependentUpon>ProctorExam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProctorExam.aspx.vb">
+      <DependentUpon>ProctorExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roster.aspx.designer.vb">
+      <DependentUpon>Roster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Roster.aspx.vb">
+      <DependentUpon>Roster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScheduleExam.aspx.designer.vb">
+      <DependentUpon>ScheduleExam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleExam.aspx.vb">
+      <DependentUpon>ScheduleExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TakerFunctions.aspx.designer.vb">
+      <DependentUpon>TakerFunctions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TakerFunctions.aspx.vb">
+      <DependentUpon>TakerFunctions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WaitForExamTime.aspx.designer.vb">
+      <DependentUpon>WaitForExamTime.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForExamTime.aspx.vb">
+      <DependentUpon>WaitForExamTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkOnStaff.aspx.designer.vb">
+      <DependentUpon>WorkOnStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkOnStaff.aspx.vb">
+      <DependentUpon>WorkOnStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExamProvider_5.aspx.designer.vb">
+      <DependentUpon>ExamProvider_5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamProvider_5.aspx.vb">
+      <DependentUpon>ExamProvider_5.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ExamProvider_5A.aspx.designer.vb">
+      <DependentUpon>ExamProvider_5A.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamProvider_5A.aspx.vb">
+      <DependentUpon>ExamProvider_5A.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ExamProvider_6.aspx.designer.vb">
+      <DependentUpon>ExamProvider_6.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamProvider_6.aspx.vb">
+      <DependentUpon>ExamProvider_6.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ExamProvider_7.aspx.designer.vb">
+      <DependentUpon>ExamProvider_7.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamProvider_7.aspx.vb">
+      <DependentUpon>ExamProvider_7.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExamProvider_8.aspx.designer.vb">
+      <DependentUpon>ExamProvider_8.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamProvider_8.aspx.vb">
+      <DependentUpon>ExamProvider_8.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ExamProvider_9.aspx.designer.vb">
+      <DependentUpon>ExamProvider_9.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamProvider_9.aspx.vb">
+      <DependentUpon>ExamProvider_9.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ExitApplication.aspx.designer.vb">
+      <DependentUpon>ExitApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExitApplication.aspx.vb">
+      <DependentUpon>ExitApplication.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="AddStaff.aspx.designer.vb">
+      <DependentUpon>AddStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddStaff.aspx.vb">
+      <DependentUpon>AddStaff.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessTier\DataAccessTier.csproj">
+      <Project>{8b6188e2-998e-4be0-8c23-b184453e86d4}</Project>
+      <Name>DataAccessTier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalVariables\GlobalVariables.vbproj">
+      <Project>{faf35499-b6d5-4ac7-b95d-59d77825dc2a}</Project>
+      <Name>GlobalVariables</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2958</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3028/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
