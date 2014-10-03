@@ -25,6 +25,6 @@ When committing to source control, always provide a helpful message briefly stat
 
 ## Intended Workflow
 
-The class is divided into five teams, each with a technical lead. Each technical lead should create a GitHub account and message me via Sakai's email system so I can add him or her as a contributor. Each team's technical lead will be responsible for getting the code from the team members, then merging it into this GitHub repository.
+The class is divided into five teams, each with a technical lead. Each technical lead should create a GitHub account and `fork` this repository. `fork` will create a complete working copy of the repository. Each team can then work within the forked version of the repository until the week's changes are complete. At that time, the technical lead will send me a `pull` request, and I will `pull` the changes from the team's repository into the master. This will simplify our weekly integrations.
 
 It is up to each team whether to have each team member use git locally before having the technical leads pull and merge the changes from all the team members. It is recommended as a best practice; however, it may not be easy for people unfamiliar with source control to learn the workflows quickly enough.
