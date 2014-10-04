@@ -23,6 +23,10 @@ Anytime you have changed files in the solution, have tested the changes, and are
 
 When committing to source control, always provide a helpful message briefly stating what you changed.
 
+## git Tutorial
+
+A simple tutorial to teach you git workflows [is available from GitHub](https://try.github.io/levels/1/challenges/1). All technical leads should complete this tutorial. Optionally, the other members of the group should try it as well.
+
 ## Intended Workflow
 
 The class is divided into five teams, each with a technical lead. Each technical lead should create a GitHub account and `fork` this repository. `fork` will create a complete working copy of the repository. Each team can then work within the forked version of the repository until the week's changes are complete. At that time, the technical lead will send me a `pull` request, and I will `pull` the changes from the team's repository into the master. This will simplify our weekly integrations.
