@@ -23,9 +23,9 @@ Anytime you have changed files in the solution, have tested the changes, and are
 
 When committing to source control, always provide a helpful message briefly stating what you changed.
 
-## git Tutorial
+## Use Visual Studio with git
 
-A simple tutorial to teach you git workflows [is available from GitHub](https://try.github.io/levels/1/challenges/1). All technical leads should complete this tutorial. Optionally, the other members of the group should try it as well.
+An overview of git workflows with Visual Studio is available [here](http://msdn.microsoft.com/en-us/library/hh850437.aspx). Technical leads should read this over. We will be using GitHub repositories for our workflow (rather than our own git server), but the principles are the same.
 
 ## Intended Workflow
 
