@@ -38,16 +38,18 @@ Public Class MainMenu
         'Inserts first and last names into label on Menu
         lblSVLineName.Text = firstname + " " + lastname
         
-        'Enables all funtionality for the System Administrator
+        'Enables all functionality for the System Administrator
         If isSA = True Then
             lbtnListPersons.Visible = True ' List Person
             lbtnInstitutionFunctions.Visible = True ' Institution Function
             lbtnExamProviderFunctions.Visible = True ' Exam Provider Function
             lbtnTakerFunctions.Visible = True ' Exam Taker Function
+            lbtnProgramFunctions.Visible = True ' List Program
         End If
         'Enables Institution functionality
         If isInstitution = True Then
             lbtnInstitutionFunctions.Visible = True ' Institution Function
+            lbtnProgramFunctions.Visible = True ' List Program
         End If
         'Enables Exam Provider functionality
         If isProvider = True Then

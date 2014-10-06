@@ -84,13 +84,31 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddEditBKLevel1.aspx" />
+    <Content Include="AddEditBKLevel2.aspx" />
+    <Content Include="AddEditBKLevel3.aspx" />
+    <Content Include="AddEditBKLevel4.aspx" />
+    <Content Include="AddEditCourse.aspx" />
+    <Content Include="AddEditCourseOutcome.aspx" />
     <Content Include="AddEditExamSchedule.aspx" />
     <Content Include="AddEditPerson.aspx" />
+    <Content Include="AddEditProgram.aspx" />
+    <Content Include="AddEditProgramOutcome.aspx" />
+    <Content Include="AddEditSkillClass.aspx" />
+    <Content Include="AddEditSkills.aspx" />
+    <Content Include="AddEditSubSkill.aspx" />
     <Content Include="AddEditTaker.aspx" />
     <Content Include="AddProvider.aspx" />
     <Content Include="bin\JSIM.dll" />
     <Content Include="blank.htm" />
     <Content Include="ConfirmationPage.aspx" />
+    <Content Include="ListCourse.aspx" />
+    <Content Include="ListCourseOutcome.aspx" />
+    <Content Include="ListProgramBK.aspx" />
+    <Content Include="ListProgramBK2.aspx" />
+    <Content Include="ListProgramBK3.aspx" />
+    <Content Include="ListProgramBK4.aspx" />
+    <Content Include="ListProgramCourse.aspx" />
     <Content Include="Exam.aspx" />
     <Content Include="ExamProvider_11.aspx" />
     <Content Include="ExamProvider_12.aspx" />
@@ -101,9 +119,12 @@
     <Content Include="ExamProvider_77.aspx" />
     <Content Include="ListInstitutionPeople.aspx" />
     <Content Include="ListPerson.aspx" />
+    <Content Include="ListProgram.aspx" />
+    <Content Include="ListProgramOutCome.aspx" />
     <Content Include="ListScheduledExam.aspx" />
     <Content Include="MainMenu.aspx" />
     <Content Include="ProctorExam.aspx" />
+    <Content Include="ProgramOutcomeSubSkill.aspx" />
     <Content Include="Roster.aspx" />
     <Content Include="ScheduleExam.aspx" />
     <Content Include="Scripts\jQuery\jquery-1.7.2.min.js" />
@@ -111,7 +132,10 @@
     <Content Include="Scripts\jQuery\jquery-ui.js" />
     <Content Include="Scripts\jQuery\jquery.easy-confirm-dialog.js" />
     <Content Include="Scripts\jQuery\jquery.min.js" />
+    <Content Include="SkillClass.aspx" />
+    <Content Include="Skills.aspx" />
     <Content Include="Styles\jQuery\jquery-ui.css" />
+    <Content Include="SubSkill.aspx" />
     <Content Include="TakerFunctions.aspx" />
     <Content Include="WaitForExamTime.aspx" />
     <Content Include="WorkOnStaff.aspx" />
@@ -130,6 +154,48 @@
     <Content Include="AddStaff.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEditBKLevel1.aspx.designer.vb">
+      <DependentUpon>AddEditBKLevel1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditBKLevel1.aspx.vb">
+      <DependentUpon>AddEditBKLevel1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditBKLevel2.aspx.designer.vb">
+      <DependentUpon>AddEditBKLevel2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditBKLevel2.aspx.vb">
+      <DependentUpon>AddEditBKLevel2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditBKLevel3.aspx.designer.vb">
+      <DependentUpon>AddEditBKLevel3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditBKLevel3.aspx.vb">
+      <DependentUpon>AddEditBKLevel3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditBKLevel4.aspx.designer.vb">
+      <DependentUpon>AddEditBKLevel4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditBKLevel4.aspx.vb">
+      <DependentUpon>AddEditBKLevel4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditCourse.aspx.designer.vb">
+      <DependentUpon>AddEditCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditCourse.aspx.vb">
+      <DependentUpon>AddEditCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditCourseOutcome.aspx.designer.vb">
+      <DependentUpon>AddEditCourseOutcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditCourseOutcome.aspx.vb">
+      <DependentUpon>AddEditCourseOutcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="AddEditExamSchedule.aspx.designer.vb">
       <DependentUpon>AddEditExamSchedule.aspx</DependentUpon>
     </Compile>
@@ -142,6 +208,41 @@
     </Compile>
     <Compile Include="AddEditPerson.aspx.vb">
       <DependentUpon>AddEditPerson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditProgram.aspx.designer.vb">
+      <DependentUpon>AddEditProgram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditProgram.aspx.vb">
+      <DependentUpon>AddEditProgram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditProgramOutcome.aspx.designer.vb">
+      <DependentUpon>AddEditProgramOutcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditProgramOutcome.aspx.vb">
+      <DependentUpon>AddEditProgramOutcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditSkillClass.aspx.designer.vb">
+      <DependentUpon>AddEditSkillClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditSkillClass.aspx.vb">
+      <DependentUpon>AddEditSkillClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditSkills.aspx.designer.vb">
+      <DependentUpon>AddEditSkills.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditSkills.aspx.vb">
+      <DependentUpon>AddEditSkills.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditSubSkill.aspx.designer.vb">
+      <DependentUpon>AddEditSubSkill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditSubSkill.aspx.vb">
+      <DependentUpon>AddEditSubSkill.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddEditTaker.aspx.designer.vb">
@@ -170,6 +271,55 @@
     <Compile Include="ConfirmationPage.aspx.vb">
       <DependentUpon>ConfirmationPage.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ListCourse.aspx.designer.vb">
+      <DependentUpon>ListCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListCourse.aspx.vb">
+      <DependentUpon>ListCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListCourseOutcome.aspx.designer.vb">
+      <DependentUpon>ListCourseOutcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListCourseOutcome.aspx.vb">
+      <DependentUpon>ListCourseOutcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListProgramBK.aspx.designer.vb">
+      <DependentUpon>ListProgramBK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListProgramBK.aspx.vb">
+      <DependentUpon>ListProgramBK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListProgramBK2.aspx.designer.vb">
+      <DependentUpon>ListProgramBK2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListProgramBK2.aspx.vb">
+      <DependentUpon>ListProgramBK2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListProgramBK3.aspx.designer.vb">
+      <DependentUpon>ListProgramBK3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListProgramBK3.aspx.vb">
+      <DependentUpon>ListProgramBK3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListProgramBK4.aspx.designer.vb">
+      <DependentUpon>ListProgramBK4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListProgramBK4.aspx.vb">
+      <DependentUpon>ListProgramBK4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListProgramCourse.aspx.designer.vb">
+      <DependentUpon>ListProgramCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListProgramCourse.aspx.vb">
+      <DependentUpon>ListProgramCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Exam.aspx.designer.vb">
       <DependentUpon>Exam.aspx</DependentUpon>
@@ -241,6 +391,20 @@
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ListPerson.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ListProgram.aspx.designer.vb">
+      <DependentUpon>ListProgram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListProgram.aspx.vb">
+      <DependentUpon>ListProgram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListProgramOutCome.aspx.designer.vb">
+      <DependentUpon>ListProgramOutCome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListProgramOutCome.aspx.vb">
+      <DependentUpon>ListProgramOutCome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="ListScheduledExam.aspx.designer.vb">
       <DependentUpon>ListScheduledExam.aspx</DependentUpon>
     </Compile>
@@ -262,6 +426,13 @@
       <DependentUpon>ProctorExam.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="ProgramOutcomeSubSkill.aspx.designer.vb">
+      <DependentUpon>ProgramOutcomeSubSkill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramOutcomeSubSkill.aspx.vb">
+      <DependentUpon>ProgramOutcomeSubSkill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Roster.aspx.designer.vb">
       <DependentUpon>Roster.aspx</DependentUpon>
     </Compile>
@@ -274,6 +445,27 @@
     </Compile>
     <Compile Include="ScheduleExam.aspx.vb">
       <DependentUpon>ScheduleExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SkillClass.aspx.designer.vb">
+      <DependentUpon>SkillClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SkillClass.aspx.vb">
+      <DependentUpon>SkillClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Skills.aspx.designer.vb">
+      <DependentUpon>Skills.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Skills.aspx.vb">
+      <DependentUpon>Skills.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubSkill.aspx.designer.vb">
+      <DependentUpon>SubSkill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubSkill.aspx.vb">
+      <DependentUpon>SubSkill.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TakerFunctions.aspx.designer.vb">

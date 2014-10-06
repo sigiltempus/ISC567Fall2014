@@ -184,6 +184,7 @@ Public Class Exam
     Protected Sub rbAnswerOptions_SelectedIndexChanged(sender As Object, e As EventArgs) Handles rbAnswerOptions.SelectedIndexChanged
         Dim questionCount As Integer = CType(Session("questionCount"), Integer)
         Dim currentQuestion As Integer = CType(Session("currentQuestion"), Integer)
+        saveAnswers()
         EnableButtons(currentQuestion, questionCount)
     End Sub
 

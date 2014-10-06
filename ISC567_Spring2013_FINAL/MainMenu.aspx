@@ -57,7 +57,7 @@
                 <ul id="menuList" runat="server">
                     <li>
                         <a href="#">
-                            <ccJSIM:OpenIFrameLinkButton ID="lbtnListPersons" runat="server" FrameSrc="ListPerson.aspx"
+                            <ccJSIM:OpenIFrameLinkButton ID="lbtnListPersons" runat="server" FrameSrc="ListPerson.aspx" Text="Administration"
                                 IFrameName="ifPersonList" LeftPosition="15" TopPosition="120" WidthPosition="954" HeightPosition="404"
                                 ZIndex="100" Visible="false" CssClass="LinkButton">List Person</ccJSIM:OpenIFrameLinkButton>
                         </a>
@@ -76,6 +76,11 @@
                                 IFrameName="ifExamProviderFunctions" LeftPosition="12" TopPosition="120" WidthPosition="575"
                                 ZIndex="170" Visible="false" CssClass="LinkButton">Exam Provider Functions(SA)</ccJSIM:OpenIFrameLinkButton>
                         </a>
+                    </li>
+                    <li>
+                        <ccJSIM:OpenIFrameLinkButton ID="lbtnProgramFunctions" runat="server" FrameSrc="ListProgram.aspx"
+                            IFrameName="ifProgramList" LeftPosition="15" TopPosition="120" WidthPosition="954" HeightPosition="404"
+                            ZIndex="180" Visible="false" CssClass="LinkButton">Program</ccJSIM:OpenIFrameLinkButton>
                     </li>
                     <li>
                         <ccJSIM:OpenIFrameLinkButton ID="lbtnTakerFunctions" runat="server" FrameSrc="TakerFunctions.aspx" HeightPosition="254"

@@ -40,7 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="daBodyOfKnowledge.cs" />
+    <Compile Include="daCourse.cs" />
     <Compile Include="daInstitution.cs" />
+    <Compile Include="daProgram.cs" />
     <Compile Include="daProvider.cs" />
     <Compile Include="daUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -50,10 +53,6 @@
       <Project>{c36aeb66-8864-42b8-ac90-2d988f231073}</Project>
       <Name>ApplicationBlocks</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SQL\sp_Reports.sql" />
-    <Content Include="SQL\TESTDB_Final.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

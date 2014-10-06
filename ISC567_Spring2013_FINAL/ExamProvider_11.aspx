@@ -39,9 +39,9 @@
                             <asp:TextBox ID="txtExam" runat="server" ReadOnly="true" Position="absolute" style="z-index: 1; left: 209px; top: 44px; position: absolute; width: 270px;"></asp:TextBox>
                             <asp:Label ID="Label2" runat="server" Text="Exam Status" Position="absolute" style="z-index: 1; left: 516px; top: 44px; position: absolute"></asp:Label>
                             <asp:TextBox ID="txtStatus" ReadOnly="true" runat="server" Position="absolute" style="z-index: 1; left: 612px; top: 44px; position: absolute; width: 293px"></asp:TextBox>
-                            <asp:Label ID="lblType" runat="server" Text="Exam Type" Position="absolute" style="z-index: 1; left: 128px; top: 75px; position: absolute"></asp:Label>
+                            <asp:Label ID="lblType" runat="server" Text="Exam Type" Position="absolute" style="z-index: 1; left: 128px; top: 72px; position: absolute"></asp:Label>
                             <br />
-                            <asp:TextBox ID="txtType" runat="server" ReadOnly="true" Position="absolute" style="z-index: 1; left: 207px; top: 75px; position: absolute; width: 540px"></asp:TextBox>                                              
+                            <asp:TextBox ID="txtType" runat="server" ReadOnly="true" Position="absolute" style="z-index: 1; left: 207px; top: 72px; position: absolute; width: 540px"></asp:TextBox>                                              
                             <br />
                             <br />
                     </td>
