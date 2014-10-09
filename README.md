@@ -13,7 +13,7 @@ When prompted for the URL to the third-party service, use https://github.com/eas
 
 ### Visual Studio 2012
 
-For Visual Studio 2012, you must install [Visual Studio Tools for Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c).
+For Visual Studio 2012, you must install [Visual Studio Tools for Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c). As a dependency, this requires Visual Studio 2012 Update 2 or later. [Visual Studio 2012 Update 4](http://www.microsoft.com/en-us/download/details.aspx?id=39305)
 
 Once that extension is installed, you should be able to follow the same instructions for Visual Studio 2013.
 
