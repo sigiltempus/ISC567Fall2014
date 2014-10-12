@@ -82,7 +82,7 @@
                             IFrameName="ifExamProvider_1A" Text="Add Provider" LeftPosition="110" TopPosition="160" ZIndex="180" CssClass="Button" style="z-index: 1; left: 26px; top: 230px; position: absolute; width: 113px;" />
                         &nbsp;
                         <ccJSIM:OpenIFrameButton ID="OpenIFrameButton3" runat="server" FrameSrc="AddProvider.aspx?mode=edit" HeightPosition="360" WidthPosition="704"
-                            IFrameName="ifExamProvider_1A" Text="Edit Person" LeftPosition="110" TopPosition="160"  ZIndex="180" CssClass="Button" style="z-index: 1; left: 152px; top: 230px; position: absolute; width: 103px;" />
+                            IFrameName="ifExamProvider_1A" Text="Edit Provider" LeftPosition="110" TopPosition="160"  ZIndex="180" CssClass="Button" style="z-index: 1; left: 152px; top: 230px; position: absolute; width: 103px;" />
                         &nbsp;
                         <ccJSIM:OpenIFrameButton ID="workOnProvider" runat="server" FrameSrc="WorkOnStaff.aspx" IFrameName="WorkOnStaff" Text="Work On Provider Staff"
     						HeightPosition="260" LeftPosition="110" TopPosition="160" WidthPosition="580" ZIndex="180" CssClass="Button" style="z-index: 1; top: 230px; position: absolute; width: 201px;"/>

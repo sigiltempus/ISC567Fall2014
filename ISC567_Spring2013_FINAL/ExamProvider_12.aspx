@@ -67,9 +67,9 @@
                        
                             <asp:Label ID="lblExam" runat="server" Text="Exam" Position="absolute" style="z-index: 1; left: 164px; top: 44px; position: absolute"></asp:Label>
                             <asp:TextBox ID="txtExam" runat="server" ReadOnly="true" Position="absolute" style="z-index: 1; left: 209px; top: 44px; position: absolute; width: 467px;"></asp:TextBox>
-                            <asp:Label ID="lblType" runat="server" Text="Exam Type" Position="absolute" style="z-index: 1; left: 128px; top: 73px; position: absolute"></asp:Label>
+                            <asp:Label ID="lblType" runat="server" Text="Exam Type" Position="absolute" style="z-index: 1; left: 128px; top: 68px; position: absolute"></asp:Label>
                             <br />
-                            <asp:TextBox ID="txtType" runat="server" ReadOnly="true" Position="absolute" style="z-index: 1; left: 207px; top: 72px; position: absolute; width: 540px"></asp:TextBox>                                              
+                            <asp:TextBox ID="txtType" runat="server" ReadOnly="true" Position="absolute" style="z-index: 1; left: 207px; top: 67px; position: absolute; width: 540px"></asp:TextBox>                                              
                             <br />
                             <br />
                     </td>
@@ -134,7 +134,7 @@
                                 </tr>
                                 <tr class="auto-style6" style="text-decoration-style: solid;">
                                     <td class="auto-style6">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-                                    <asp:TextBox ID="txtObjective" runat="server" TextMode="MultiLine" style="z-index: 1; " Width="811px"></asp:TextBox>
+                                    <asp:TextBox ID="txtObjective" runat="server" TextMode="MultiLine" style="z-index: 1;font-family:Verdana; font-size:12px" Width="811px"></asp:TextBox>
                                     </td>
                                 </tr>
                                 <tr style="text-decoration-style: solid;">
@@ -144,7 +144,7 @@
                                 </tr>
                                 <tr class="auto-style6" style="text-decoration-style: solid;">
                                     <td class="auto-style6">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-                                    <asp:TextBox ID="txtItem" TextMode="MultiLine" runat="server" style="z-index: 1; " Width="811px"></asp:TextBox>
+                                    <asp:TextBox ID="txtItem" TextMode="MultiLine" runat="server" style="z-index: 1; font-family:Verdana;font-size:12px" Width="811px"></asp:TextBox>
                                     </td>
                                 </tr>	
                                <tr style="text-decoration-style: solid;">

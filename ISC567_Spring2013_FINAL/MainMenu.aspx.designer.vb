@@ -86,6 +86,15 @@ Partial Public Class MainMenu
     Protected WithEvents lbtnExamProviderFunctions As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
 
     '''<summary>
+    '''lbtnProgramFunctions control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbtnProgramFunctions As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
+
+    '''<summary>
     '''lbtnTakerFunctions control.
     '''</summary>
     '''<remarks>
