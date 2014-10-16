@@ -65,7 +65,7 @@ Public Class ExamProvider_8
     End Sub
 
     'Protected Sub ddlExamType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlExamType.SelectedIndexChanged
-
+    'check if ddlExamType_selected index working on save sub, if so delete else create routine to populate variable.
     'End Sub
 
 
