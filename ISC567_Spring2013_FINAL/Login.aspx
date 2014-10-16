@@ -35,7 +35,7 @@
                     <br />
                     <asp:Label ID="lblRegister" runat="server" Text="If you are not yet registered with the system, please "></asp:Label>
                     <ccJSIM:OpenIFrameLinkButton ID="lbtnAddEditPerson" runat="server" FrameSrc="AddEditPerson.aspx" HeightPosition="610"
-                        IFrameName="ifAddEditPerson" LeftPosition="250" TopPosition="100" WidthPosition="400"
+                        IFrameName="ifAddEditPerson" LeftPosition="250" TopPosition="100" WidthPosition="800"
                         ZIndex="150" Visible="true">create a new user account</ccJSIM:OpenIFrameLinkButton>
                 </div>
 
