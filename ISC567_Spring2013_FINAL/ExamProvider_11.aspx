@@ -86,10 +86,10 @@
                             </ccJSIM:RadioButtonGridView>
                            
                                    
-                            <asp:Button ID="Button6" Cssstyle="Button" runat="server" style="z-index: 1; left: 570px; top: 405px; position: absolute; width: 156px; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Text="Print Objectives" />
+                           <! <asp:Button ID="Button6" Cssstyle="Button" runat="server" style="z-index: 1; left: 570px; top: 405px; position: absolute; width: 156px; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Text="Print Objectives" />>
                              
                                    
-                            <asp:Button ID="Button5" Cssstyle="Button" runat="server" style="z-index: 1; left: 728px; top: 405px; position: absolute; width: 193px; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Text="Print Detail" />
+                           <! <asp:Button ID="Button5" Cssstyle="Button" runat="server" style="z-index: 1; left: 728px; top: 405px; position: absolute; width: 193px; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Text="Print Detail" />>
                            
                                    
                         </asp:Panel>
