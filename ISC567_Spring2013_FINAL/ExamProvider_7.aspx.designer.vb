@@ -59,6 +59,15 @@ Partial Public Class ExamProvider_7
     Protected WithEvents lblTitle As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''lbtnClose control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbtnClose As Global.JSIM.Custom_Controls.CloseIFrameButton
+
+    '''<summary>
     '''lblErrorMessage control.
     '''</summary>
     '''<remarks>
