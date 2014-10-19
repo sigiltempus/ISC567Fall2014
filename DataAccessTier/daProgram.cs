@@ -528,10 +528,12 @@ namespace DataAccessTier {
             SqlParameter[] arParms = new SqlParameter[4];
             arParms[0] = new SqlParameter("@skillclassid", SqlDbType.Int);
             arParms[0].Value = skillclassid;
-            arParms[1] = new SqlParameter("@skillsname", SqlDbType.NVarChar);
+            arParms[1] = new SqlParameter("@scname", SqlDbType.NVarChar);
             arParms[1].Value = skillsname;
             arParms[2] = new SqlParameter("@skillsclassnum", SqlDbType.Int);
             arParms[2].Value = skillsclassnum;
+            arParms[3] = new SqlParameter("@programid", SqlDbType.Int);
+            arParms[3].Value = programid;
             this.ExecuteWithoutResult(arParms, "editskillclass", ConnectionString);
         }
 
