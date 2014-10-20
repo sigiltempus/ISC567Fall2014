@@ -108,6 +108,19 @@ Public Class AddEditSkillClass
 
         Return strStatus
     End Function
+    ' Private Function deleteskillclass(ByVal skillclassid As Integer) As String
+    ' Dim strStatus As String = ""
+    'Dim con As String = GetConnectionString("ConnectionString")
+    'Dim oUser As New DataAccessTier.daProgram
+    '    oUser.deleteskillclass(skillclassid, con)
+    '    If oUser.TransactionSuccessful Then
+    '        strStatus = "SkillClass deleted Successfull"
+    '    Else
+    '        strStatus = "Error occured"
+    '    End If
+
+    '    Return strStatus
+    'End Function
 #End Region
 
 #Region "Click Event Handlers for Page Controls"
