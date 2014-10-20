@@ -1577,6 +1577,44 @@ namespace DataAccessTier
         }
 
 
+        public void InsertScheduleExamForTaker(int personid, string examname,
+             string status, string ConnectionString)
+        {
+            // Set up parameters in parameter array 
+            SqlParameter[] arParms = new SqlParameter[3];
+
+            arParms[0] = new SqlParameter("@personid", SqlDbType.Int);
+            arParms[0].Value = personid;
+            arParms[1] = new SqlParameter("@examname", SqlDbType.NVarChar);
+            arParms[1].Value = examname;
+            arParms[2] = new SqlParameter("@status", SqlDbType.NVarChar);
+            arParms[2].Value = status;
+
+            //Remember to adjust the array dimension when adding or subtracting elements.
+
+            pTransactionSuccessful = true;
+
+            try
+            {
+                SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, "InsertScheduleExamForTaker", arParms);
+            }
+            catch (SqlException InsertError)
+            {
+                pErrorMessage = InsertError.Message.ToString();
+                pErrorNumber = InsertError.Number;
+                pErrorClass = InsertError.Class;
+                pErrorState = InsertError.State;
+                pErrorLineNumber = InsertError.LineNumber;
+
+                pTransactionSuccessful = false;
+            }
+
+            //If using output paramters
+
+
+
+        }
+
 
 
         public DataTable GetExamItem(int examid, string ConnectionString)

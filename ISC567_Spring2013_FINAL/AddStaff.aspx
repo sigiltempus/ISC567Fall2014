@@ -37,15 +37,19 @@
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
                             <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" width="100%"
+                               
                                 BorderColor="Black" BorderStyle="Solid" BorderWidth="2px" Height="350px">
-                                                <asp:Label ID="lblName" runat="server" Text="Name :" style="z-index: 1; left: 67px; top: 127px; position: absolute; width: 67px"></asp:Label>
-                                                <asp:CheckBox ID="isEPSA" runat="server" style="z-index: 1; left: 135px; top: 179px; position: absolute" Text="EPSA" />
-                                                <asp:CheckBox ID="isDeveloper" runat="server" style="z-index: 1; left: 241px; top: 178px; position: absolute" Text="Developer" />
-                                                <asp:DropDownList ID="ddlName" runat="server" style="z-index: 1; height:11px; left: 146px; top: 125px; position: absolute; height: 25px; width: 221px">
+                                                 <ccJSIM:CheckboxGridView ID="CGVRosterNotProvider" runat="server"></ccJSIM:CheckboxGridView>
+                                                <asp:Label ID="lblName" runat="server" Text="Name :" style="z-index: 1; left: 53px; top: 108px; position: absolute; width: 67px"></asp:Label>
+                                                <asp:CheckBox ID="isDeveloper" runat="server" style="z-index: 1; left: 359px; top: 164px; position: absolute" Text="Developer" />
+                                                <asp:DropDownList ID="ddlName" runat="server" style="z-index: 1; height:11px; left: 79px; top: 304px; position: absolute; height: 25px; width: 221px">
                                                 </asp:DropDownList>
-                                                <asp:Label ID="nameValue" runat="server" Text="Name" Visible="false" style="z-index: 1; height:14px; left: 127px; top: 128px; position: absolute; height: 25px; width: 221px"></asp:Label>
                                                 <div>
                                                 <%--<asp:Label ID="Label3" runat="server" Font-Bold="True" style="z-index: 1; left: 13px; top: 29px; position: absolute; width: 683px" Text="Add Staff" Font-Size="30" BackColor="Red"></asp:Label>--%>
+
+                                                    <asp:CheckBox ID="isEPSA" runat="server" style="z-index: 1; left: 368px; top: 213px; position: absolute" Text="EPSA" />
+                                                    <ccJSIM:SaveAndCloseIFrameButton ID="saveProvider" runat="server" FrameSrc="AddStaff.aspx?mode=Add" HeightPosition="550" IFrameName="ifAddEdit" Interval="10" LeftPosition="250" style="z-index: 1; left: 84px; top: 367px; position: absolute; background-color: #FFFAC2" Text="Save Staff" TopPosition="100" WidthPosition="525" />
+                                                    <asp:Label ID="nameValue" runat="server" style="z-index: 1; height:14px; left: 122px; top: 98px; position: absolute; height: 53px; width: 105px" Text="Name" Visible="false"></asp:Label>
 
                             </asp:Panel>
                         </ContentTemplate>
@@ -66,8 +70,7 @@
                     &nbsp;
                       <ccJSIM:CloseIFrameButton ID="SaveAndCloseIFrameButton1" runat="server" Text="Close" CssClass="Button1" 
                           Interval="10" ZIndex="160" HeightPosition="550" LeftPosition="450" TopPosition="100" WidthPosition="1000"/>--%>
-                    <ccJSIM:SaveAndCloseIFrameButton ID="saveProvider" runat="server" Text="Save Staff" style="z-index: 1; left: 93px; top: 261px; position: absolute; background-color: #FFFAC2" IFrameName="ifAddEdit" FrameSrc="AddStaff.aspx?mode=Add" Interval="10" HeightPosition="550" LeftPosition="250" TopPosition="100" WidthPosition="525" />
-                    <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" style="z-index: 1; left: 242px; top: 263px; position: absolute; width: 73px; background-color: #FFFAC2" Text="Close"  Interval="10" IFrameName="ifAddEdit" PostBackUrl="WorkOnStaff.aspx"/>
+                    <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" style="z-index: 1; left: 275px; top: 365px; position: absolute; width: 73px; background-color: #FFFAC2" Text="Close"  Interval="10" IFrameName="ifAddEdit" PostBackUrl="WorkOnStaff.aspx"/>
                 </td>
                 
                 </tr>
