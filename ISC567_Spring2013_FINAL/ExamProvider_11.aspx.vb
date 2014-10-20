@@ -7,6 +7,8 @@ Public Class ExamProvider_11
     Inherits System.Web.UI.Page
     Dim oUser As New DataAccessTier.daUser
     Dim cn As String = GetConnectionString("connectionString")
+
+
     'Inherits JSIM.Bases.BaseClass
     'Dim cn As String = GetConnectionString("connectionString")
     'Dim id As Integer
@@ -21,25 +23,35 @@ Public Class ExamProvider_11
 
     'updated 11/30/2013
     Public Sub setForm()
+
         Dim oUser As New DataAccessTier.daUser
         Dim dtExamItem As DataTable
-        'Dim examid As Integer = CInt(Session("ExamID"))
-        dtExamItem = oUser.GetExamItemByExam(CInt(Session("examid").ToString()), cn)
+        Try
+            Dim eid As Integer = CInt(Session("examid"))
+            dtExamItem = oUser.GetExamItemByExam(eid, cn)
+            Dim dtExamListView As DataView
+            dtExamListView = dtExamItem.DefaultView()
+            gvExamList.DataSource = dtExamListView
+            gvExamList.DataBind()
+        Catch ex As Exception
+            lblErrorMessage.ForeColor = Drawing.Color.Red
+            lblErrorMessage.Text = "No value selected for exam. Please close and try again."
+        End Try
 
-        Dim dtExamListView As DataView
-        dtExamListView = dtExamItem.DefaultView()
-
-        gvExamList.DataSource = dtExamListView
-        gvExamList.DataBind()
     End Sub
 
     'updated 11/30/2013
     Private Sub PopulateTextBox()
-        Dim eid As Integer = CInt(Session("examid"))
-        Dim dtExamInfo As DataTable = oUser.getExamNames(eid, cn)
-        txtExam.Text = dtExamInfo.Rows(0).Item("examname").ToString()
-        txtStatus.Text = dtExamInfo.Rows(0).Item("status").ToString()
-        txtType.Text = dtExamInfo.Rows(0).Item("description").ToString()
+        Try
+            Dim eid As Integer = CInt(Session("examid"))
+            Dim dtExamInfo As DataTable = oUser.getExamNames(eid, cn)
+            txtExam.Text = dtExamInfo.Rows(0).Item("examname").ToString()
+            txtStatus.Text = dtExamInfo.Rows(0).Item("status").ToString()
+            txtType.Text = dtExamInfo.Rows(0).Item("description").ToString()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     'Public Sub populategvExamItemList(cn)
