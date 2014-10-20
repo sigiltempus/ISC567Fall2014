@@ -93,10 +93,10 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <ccJSIM:OpenIFrameButton ID="OpenIFrameButton1" runat="server" FrameSrc="AddEditPerson.aspx?mode=add&caller=lstExamProvider" HeightPosition="424" WidthPosition="704"
+                        <ccJSIM:OpenIFrameButton ID="OpenIFrameButton1" runat="server" FrameSrc="AddStaff.aspx?mode=add" HeightPosition="424" WidthPosition="704"
                             IFrameName="ifAddEditPerson" Text="Add Staff" LeftPosition="250" TopPosition="160" ZIndex="190" CssClass="Button" style="z-index: 1; left: 26px; top: 230px; position: absolute; width: 113px;" />
                         &nbsp;
-                        <ccJSIM:OpenIFrameButton ID="EditProvider" runat="server" FrameSrc="AddEditPerson.aspx?mode=edit&caller=lstExamProvider" HeightPosition="424" WidthPosition="704"
+                        <ccJSIM:OpenIFrameButton ID="EditProvider" runat="server" FrameSrc="AddStaff.aspx?mode=edit" HeightPosition="424" WidthPosition="704"
                             IFrameName="ifAddEditPerson" Text="Edit Staff" LeftPosition="250" TopPosition="160"  ZIndex="190" CssClass="Button" style="z-index: 1; left: 152px; top: 230px; position: absolute; width: 103px;" />
                         &nbsp;
                         <ccJSIM:OpenIFrameButton ID="OpenIFrameButton3" runat="server" FrameSrc="ExamProvider_7.aspx" IFrameName="ifWorkOnExam" Text="Work On Exam"

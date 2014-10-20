@@ -68,6 +68,15 @@ Partial Public Class WorkOnStaff
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
+    '''CGVRosterNotProvider control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CGVRosterNotProvider As Global.JSIM.Custom_Controls.CheckboxGridView
+
+    '''<summary>
     '''lblName control.
     '''</summary>
     '''<remarks>
@@ -75,15 +84,6 @@ Partial Public Class WorkOnStaff
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblName As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''isEPSA control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents isEPSA As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
     '''isDeveloper control.
@@ -104,13 +104,13 @@ Partial Public Class WorkOnStaff
     Protected WithEvents ddlName As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''nameValue control.
+    '''isEPSA control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents nameValue As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents isEPSA As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
     '''saveProvider control.
@@ -120,6 +120,15 @@ Partial Public Class WorkOnStaff
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents saveProvider As Global.JSIM.Custom_Controls.SaveAndCloseIFrameButton
+
+    '''<summary>
+    '''nameValue control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents nameValue As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''btnClose control.

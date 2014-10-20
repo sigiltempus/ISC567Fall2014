@@ -127,6 +127,7 @@
     <Content Include="ProgramOutcomeSubSkill.aspx" />
     <Content Include="Roster.aspx" />
     <Content Include="ScheduleExam.aspx" />
+    <Content Include="ScheduleExamV2.aspx" />
     <Content Include="Scripts\jQuery\jquery-1.7.2.min.js" />
     <Content Include="Scripts\jQuery\jquery-1.9.1.js" />
     <Content Include="Scripts\jQuery\jquery-ui.js" />
@@ -445,6 +446,13 @@
     </Compile>
     <Compile Include="ScheduleExam.aspx.vb">
       <DependentUpon>ScheduleExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScheduleExamV2.aspx.designer.vb">
+      <DependentUpon>ScheduleExamV2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleExamV2.aspx.vb">
+      <DependentUpon>ScheduleExamV2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SkillClass.aspx.designer.vb">

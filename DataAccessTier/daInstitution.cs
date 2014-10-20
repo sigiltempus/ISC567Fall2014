@@ -12,11 +12,6 @@ namespace DataAccessTier
     public class daInstitution
     {
 
-        /*
-         *  EDWIN IS AWESOME
-         * 
-         * */
-
         #region " Public properties "
 
         public static bool pTransactionSuccessful;
