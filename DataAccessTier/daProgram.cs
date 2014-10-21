@@ -587,6 +587,42 @@ namespace DataAccessTier {
         ///
         /// Delete Methods Here..
         /// 
+        //public void deleteskillclass(int SkillClassID, string ConnectionString)
+        //{
+        //    // Set up parameters in parameter array 
+        //    SqlParameter[] arParms = new SqlParameter[1];
+
+        //    arParms[0] = new SqlParameter("@SkillClassID", SqlDbType.Int);
+        //    arParms[0].Value = SkillClassID;
+
+        //    //Example of an output paramter
+        //    // arParms[n] = new SqlParameter("@Paramtern", SqlDbType.Bit);
+        //    // arParms[n].Direction = ParameterDirection.Output;
+        //    //Remember to adjust the array dimension when adding or subtracting elements.
+
+        //    pTransactionSuccessful = true;
+
+        //    try
+        //    {
+        //        SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, "DeleteSkillClass", arParms);
+        //    }
+        //    catch (SqlException DeleteError)
+        //    {
+        //        pErrorMessage = DeleteError.Message.ToString();
+        //        pErrorNumber = DeleteError.Number;
+        //        pErrorClass = DeleteError.Class;
+        //        pErrorState = DeleteError.State;
+        //        pErrorLineNumber = DeleteError.LineNumber;
+
+        //        pTransactionSuccessful = false;
+        //    }
+
+        //    //If using output paramters
+        //    //pSomeParameter = (bool)arParms[n].Value;
+
+
+        //}
+
 
         public void DeleteProgrOuctomeSubskill(int ProgramOutcomeId, int subSkillId, string ConnectionString) {
             // Set up parameters in parameter array 
