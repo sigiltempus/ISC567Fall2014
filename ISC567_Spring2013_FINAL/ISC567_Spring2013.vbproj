@@ -102,6 +102,7 @@
     <Content Include="bin\JSIM.dll" />
     <Content Include="blank.htm" />
     <Content Include="ConfirmationPage.aspx" />
+    <Content Include="Exam Registration.aspx" />
     <Content Include="ListCourse.aspx" />
     <Content Include="ListCourseOutcome.aspx" />
     <Content Include="ListProgramBK.aspx" />
@@ -272,6 +273,13 @@
     <Compile Include="ConfirmationPage.aspx.vb">
       <DependentUpon>ConfirmationPage.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Exam Registration.aspx.designer.vb">
+      <DependentUpon>Exam Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Exam Registration.aspx.vb">
+      <DependentUpon>Exam Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ListCourse.aspx.designer.vb">
       <DependentUpon>ListCourse.aspx</DependentUpon>
