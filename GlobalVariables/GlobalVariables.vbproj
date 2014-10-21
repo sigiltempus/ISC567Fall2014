@@ -45,7 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="JSIM">
-      <HintPath>..\ISC567_Spring2013\bin\JSIM.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\Visual Studio 2012\Projects\JSIMTutorial\JSIMTutorial\dll\JSIM.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

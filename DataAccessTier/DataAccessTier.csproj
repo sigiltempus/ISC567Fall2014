@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="daBodyOfKnowledge.cs" />
     <Compile Include="daCourse.cs" />
+    <Compile Include="daDataAccessModule.cs" />
     <Compile Include="daInstitution.cs" />
     <Compile Include="daProgram.cs" />
     <Compile Include="daProvider.cs" />

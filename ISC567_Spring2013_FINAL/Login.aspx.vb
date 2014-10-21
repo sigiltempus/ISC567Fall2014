@@ -27,11 +27,13 @@ Public Class Login
                 'Create the SV Table
                 CreateSVTable(cn)
 
+                Dim foo As DataTable = GetSVTable()
+
                 Session("Lastname") = dtUserProfile.Rows(0)("lastname").ToString()
 
                 'Place data from table into variables that will be passed to the SV table
                 Dim personid As String = dtUserProfile.Rows(0)("personid").ToString()
-                InsertSVTableValue(Of String)("personid", personid)
+                InsertSVTableValue(Of String)("personid", personid)               
                 Dim institutionid As String = dtUserProfile.Rows(0)("institutionid").ToString()
                 InsertSVTableValue(Of String)("institutionid", institutionid)
                 Dim isTaker As String = dtUserProfile.Rows(0)("isTaker").ToString()
