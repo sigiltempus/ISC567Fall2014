@@ -3,7 +3,7 @@ Public Class Skills
     Inherits JSIM.Bases.BaseClass
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+      
         Dim skillclassid As Integer
         skillclassid = GetSVTableValue(Of Integer)("skillsclassnum")
         'skillclassid = 1
@@ -12,25 +12,28 @@ Public Class Skills
         End If
 
         If Not IsPostBack Then
-            Setform()
+            setform()
         End If
 
         ' End If
     End Sub
 
-    Private Sub Setform()
+    Private Sub setform()
 
         Dim skillsclassnum As Integer
         Dim con As String = GetConnectionString("ConnectionString")
         'New Instance for creating an object
         Dim oProgram As New DataAccessTier.daProgram
-        skillsclassnum = CInt(Session("skillsclassnum"))
+        skillsclassnum = GetSVTableValue(Of Integer)("skillclassid")
+        'CInt(Session("skillsclassnum"))
         'accessing Validateuser 
         'Checking if user exists in database
         Dim dtUserSkillset As DataTable = oProgram.getskillsbyskillclassnum(skillsclassnum, con) 'need to pass a parameter of ProgramID, to call
         If Not IsNothing(dtUserSkillset) AndAlso dtUserSkillset.Rows.Count > 0 Then
             UserProfile = dtUserSkillset
             'Creating SVtable
+            'Dim success As Boolean = CreateSVTable(con)
+            'Debug.Print(CStr(success))
             CreateSVTable(con)
             ProjectsGridView.DataSource = dtUserSkillset
             ProjectsGridView.DataBind()
@@ -51,9 +54,12 @@ Public Class Skills
         'InsertSVTableValue(Of Integer)("skillsclassnum", skillsclassnum)
         'InsertSVTableValue(Of Integer)("skillsnum", skillsnum)
         'InsertSVTableValue(Of Integer)("skillsid", skillsid)
+        'Dim skillsid As Integer = CInt(ProjectsGridView.SelectedValue)
 
         Dim skillsId As String = ProjectsGridView.SelectedValue.ToString()
-        Session.Add("skillsid", skillsid)
+        'InsertSVTableValue(Of Integer)("skillsid", skillsId)
+
+        Session.Add("skillsid", skillsId)
         'Dim selectedSubSkillId As String = ProjectsGridView.SelectedValue.ToString()
         'Session.Add("selectedSubSkillId", selectedSubSkillId)
         'Dim skillclassid As String = ProjectsGridView.SelectedValue.ToString()
