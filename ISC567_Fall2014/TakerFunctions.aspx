@@ -8,17 +8,6 @@
 <head id="Head1" runat="server">
     <title></title>
      <link rel="Stylesheet" type="text/css" href="styles/IFrameStyles.css" />
-    <style type="text/css">
-        .auto-style1 {
-            height: 21px;
-        }
-        .auto-style2 {
-            height: 42px;
-        }
-        .auto-style3 {
-            height: 18px;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -38,31 +27,23 @@
                 </td>
             </tr>
          <tr>
-                <td class="auto-style2">
+                <td>
                      <br />
                     <asp:Label ID="lblMessage" runat="server" Text="You may select any of the following functions: (click a link)" Font-Bold="true" Width ="90%"></asp:Label>
 
                 </td>
             </tr>
         <tr>
-                <td class="auto-style1">
-                    <ccJSIM:OpenIFrameLinkButton ID="btnRoster0" runat="server" CssClass="Button" 
-                     FrameSrc="Exam Registration.aspx" HeightPosition="500" 
-                     IFrameName="ifRoster" LeftPosition="20" Text=" Registration For Exam " TopPosition="120" 
-                     WidthPosition="808" ZIndex="160" ></ccJSIM:OpenIFrameLinkButton>
-                </td>
-            </tr>
-        <tr>
-                <td class="auto-style1">
+                <td>
+                     <br />
                     <ccJSIM:OpenIFrameLinkButton ID="btnRoster" runat="server" CssClass="Button" 
                      FrameSrc="Roster.aspx" HeightPosition="500" 
                      IFrameName="ifRoster" LeftPosition="20" Text="" TopPosition="120" 
                      WidthPosition="808" ZIndex="160" > Exam Roster </ccJSIM:OpenIFrameLinkButton>
-                     <br />
                 </td>
             </tr>
         <tr>
-                <td class="auto-style3">
+                <td>
                     
                     <ccJSIM:OpenIFrameLinkButton ID="btnAddEditPerson" runat="server" CssClass="Button" 
                      FrameSrc="AddEditTaker.aspx?mode=edit" HeightPosition="404" 

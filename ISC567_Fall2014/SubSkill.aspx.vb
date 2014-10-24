@@ -41,8 +41,8 @@ Public Class SubSkill
 
     Protected Sub ProjectsGridView_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ProjectsGridView.SelectedIndexChanged
         Dim con As String = GetConnectionString("ConnectionString")
-        'Dim row As Integer = ProjectsGridView.SelectedIndex
-        'Dim subskillid As Integer = Convert.ToInt32(ProjectsGridView.DataKeys(row).Value.ToString())
+        Dim row As Integer = ProjectsGridView.SelectedIndex
+        Dim subskillid As Integer = Convert.ToInt32(ProjectsGridView.DataKeys(row).Value.ToString())
         'Dim ls As Label = DirectCast(ProjectsGridView.Rows(row).FindControl("lblskillsclassnum"), Label)
         'Dim skillsclassnum As Integer = Convert.ToInt32(ls.Text)
         'Dim ls1 As Label = DirectCast(ProjectsGridView.Rows(row).FindControl("lblskillsnum"), Label)
@@ -54,7 +54,7 @@ Public Class SubSkill
         ''InsertSVTableValue(Of Integer)("skillsclassnum", skillsclassnum)
         ''InsertSVTableValue(Of Integer)("subskillid", subskillid)
 
-        Dim subskillid As String = ProjectsGridView.SelectedValue.ToString()
+        'Dim subskillid As String = ProjectsGridView.SelectedValue.ToString()
         Session.Add("subskillid", subskillid)
     End Sub
 

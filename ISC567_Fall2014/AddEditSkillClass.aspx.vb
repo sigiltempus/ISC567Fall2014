@@ -3,18 +3,19 @@ Public Class AddEditSkillClass
     Inherits JSIM.Bases.BaseClass
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        GetSVTable()
-        Dim skillclassid As Integer = GetSVTableValue(Of Integer)("skillclassid")
+        Dim skillclassid As Integer
+        skillclassid = GetSVTableValue(Of Integer)("skillclassid")
+        'DODSkillClassSv = 1
         If IsNothing(skillclassid) Then
             Response.Redirect("Login.aspx")
         End If
         If Not IsPostBack Then
-            SetForm()
+            SetFrom()
         End If
     End Sub
 
 #Region "Local Methods"
-    Private Sub SetForm()
+    Private Sub SetFrom()
         Dim mode As String = Request.QueryString("mode")
         If mode = "add" Then
             AddNew()
@@ -28,8 +29,7 @@ Public Class AddEditSkillClass
         dgFrame.Text = "Add Skill Class"
         txtscname.Text = ""
         txtskillsclassnum.Text = ""
-        'Dim ProgramId As Integer = CInt(Session("selectedProgramId"))
-        ddlProgram.SelectedValue = Session("selectedProgramId").ToString()
+        ddlProgram.SelectedIndex = -1
     End Sub
 
 
@@ -37,7 +37,10 @@ Public Class AddEditSkillClass
         dgFrame.Text = "Edit Skill Class"
         GetSVTable()
         ' Dim skillclassid As Integer
-        Dim skillclassid As Integer = GetSVTableValue(Of Integer)("skillclassid")
+        Dim skillclassid = CInt(Session("skillclassid"))
+        Dim skillsclassnum = CInt(Session("skillsclassnum"))
+        Dim skillsnum = CInt(Session("skillsnum"))
+        Dim skillsname = CStr(Session("skillsname"))
         Dim oUser As New DataAccessTier.daProgram
         Dim con As String = GetConnectionString("ConnectionString")
         Dim dtUserlInfo As DataTable = oUser.GetSkillClassInfo(skillclassid, con)
@@ -57,12 +60,12 @@ Public Class AddEditSkillClass
         MyBase.paramContainer = New JSIM.ParameterContainer()
         Dim mode As String = Request.QueryString("mode")
         paramContainer.AddParameter("mode", mode, False)
-        paramContainer.AddParameter("skillsclassnum", txtskillsclassnum) ' txtscname)
         paramContainer.AddParameter("scname", txtscname)
+        paramContainer.AddParameter("skillsclassnum", txtskillsclassnum)
         paramContainer.AddParameter("programid", ddlProgram)
-        Dim foo As Integer = GetSVTableValue(Of Integer)("skillclassid")
-        Dim skillclassid As String = CStr(foo)
-        paramContainer.AddParameter("skillclassid", skillclassid, False)
+        Dim skillclassid As Integer = Convert.ToInt32(GetSVTableValue(Of Integer)("skillclassid"))
+        'Dim skillclassid As Integer = 1
+        'paramContainer.AddParameter("skillclassid", skillclassid, False)
         Return MyBase.CreateParameters()
     End Function
 
@@ -108,19 +111,6 @@ Public Class AddEditSkillClass
 
         Return strStatus
     End Function
-    ' Private Function deleteskillclass(ByVal skillclassid As Integer) As String
-    ' Dim strStatus As String = ""
-    'Dim con As String = GetConnectionString("ConnectionString")
-    'Dim oUser As New DataAccessTier.daProgram
-    '    oUser.deleteskillclass(skillclassid, con)
-    '    If oUser.TransactionSuccessful Then
-    '        strStatus = "SkillClass deleted Successfull"
-    '    Else
-    '        strStatus = "Error occured"
-    '    End If
-
-    '    Return strStatus
-    'End Function
 #End Region
 
 #Region "Click Event Handlers for Page Controls"
@@ -140,8 +130,42 @@ Public Class AddEditSkillClass
             strmsg = "No Mode was Selected"
         End If
         Return strmsg
-    End Function
+    #End Function
 
 #End Region
 
+    'Protected Sub ddlProgram_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ddlProgram.SelectedIndexChanged
+    '    MessageBox("Do you want to save these changes")
+    'End Sub
+
+    Private Sub MessageBox(ByVal msg As String)
+        Dim lbl As New Label
+        lbl.Text = "<script language='javascript'>" & Environment.NewLine & _
+               "window.alert('" + msg + "')</script>"
+        Page.Controls.Add(lbl)
+    End Sub
+
+    Protected Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        'mode = Request.QueryString("mode")
+
+
+        Dim skillsclassnum = txtskillsclassnum.Text
+        Dim scname = txtscname.Text
+        Dim programid = ddlProgram.Text
+
+        Dim ConnectionString As String = GetConnectionString("ConnectionString")
+        Dim oUser As New DataAccessTier.daProgram
+        oUser.insertskillclass(scname, CInt(skillsclassnum), CInt(programid), ConnectionString)
+
+
+        'Dim skillsclassnum As String = ProjectsGridView.SelectedValue.ToString()
+        'Session.Add("skillsclassnum", skillsclassnum)
+        'Dim skillsname As String = ProjectsGridView.SelectedValue.ToString()
+        'Session.Add("skillsname", skillsname)
+        'programid As String = ProjectsGridView.SelectedValue.ToString()
+        'Session.Add("programid", programid)
+
+
+
+    End Sub
 End Class

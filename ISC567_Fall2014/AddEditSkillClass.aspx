@@ -5,6 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title></title>
+    <script type="text/javascript">
+        function ShowAlert() {
+
+            alert('Do you want to save these changes');
+
+        };
+    </script>
     <link href="styles/IFrameStyles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -30,7 +37,7 @@
                 </td>
                 <td align="left">
                     <asp:DropDownList ID="ddlProgram" runat="server" DataSourceID="sdsProgram" DataTextField="shortname"
-                        DataValueField="programid">
+                        onchange="ShowAlert();" DataValueField="programid">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="sdsProgram" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
                         SelectCommand="SELECT [programid], [shortname] FROM [program]"></asp:SqlDataSource>
@@ -63,8 +70,8 @@
             <tr>
                 <td align="left">
                     <ccJSIM:SaveAndCloseIFrameButton ID="btnSave" Text="Save" runat="server" CssClass="Button"
-                        align="left" IFrameName="IfAddEditSkillClass" MethodName="wsAddEditSkillClass"
-                        ParentFrame="ifProgramSkillClass" ParentPage="SkillClass.aspx" Width="53px" StatusPanelId="lblStatus"
+                        align="left" IFrameName="IfAddEditSkillClass" 
+                        ParentFrame="ifManageSkillClass" ParentPage="SkillClass.aspx" Width="53px" StatusPanelId="lblStatus"
                         RefreshParentPage="True" />
                 </td>
             </tr>

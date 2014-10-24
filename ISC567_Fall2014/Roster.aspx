@@ -28,9 +28,6 @@
         .auto-style1 {
             width: 274px;
         }
-        .auto-style2 {
-            width: 317px;
-        }
     </style>
 
 </head>
@@ -97,8 +94,8 @@
 
                             <tr>
 
-                                <td class="auto-style2">
-                                    <ccJSIM:OpenIFrameButton ID="btnIfExamSchedule" Text="Schedule Another Exam" runat="server" CssClass="Button" IFrameName="ifScheduleExam" FrameSrc="ScheduleExamV2.aspx"
+                                <td>
+                                    <ccJSIM:OpenIFrameButton ID="btnIfExamSchedule" Text="Schedule Another Exam" runat="server" CssClass="Button" IFrameName="ifScheduleExam" FrameSrc="ScheduleExam.aspx"
                                         HeightPosition="500" LeftPosition="20" TopPosition="120"
                                         WidthPosition="808" ZIndex="160" />
                                 </td>
@@ -116,14 +113,15 @@
                             </tr>
                             <tr>
 
-                                <td class="auto-style2">
+                                <td>
                                     <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="Cancel" CssClass="Button" IFrameName="ifRoster" Interval="10" />
 
                                 <td>
-                                    &nbsp;</td>
+                                    <asp:Button ID="Button5" runat="server" Text="Logout"
+                                        Width="139px" CssClass="Button" /></td>
                                 <td class="auto-style1">
-                                    <asp:Button ID="Button5" runat="server" CssClass="Button" Text="Logout" Width="139px" />
-                                    </td>
+                                    <asp:Button ID="Button6" runat="server" Text="  print results for scheduled exam"
+                                        Width="202px" CssClass="Button" /></td>
 
 
                             </tr>

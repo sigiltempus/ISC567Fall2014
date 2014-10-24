@@ -34,7 +34,7 @@
                 <td colspan="2" align="left">
                     <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Height="260px">
                         <ccJSIM:RadioButtonGridView ID="ProjectsGridView" runat="server" AutoGenerateColumns="False"
-                            IncludeSorting="True" EmptyDataText="No Data Found" GridSortColumn="" DataKeyNames="skillsnum"
+                            IncludeSorting="True" EmptyDataText="No Data Found" GridSortColumn="" DataKeyNames="subskillid"
                             ForeColor="#333333" HighlighedRowColor="#FFFFAD" HeaderStyle-CssClass="gridViewHeader"
                             Width="650px" HeaderStyle-ForeColor="White">
                             <AlternatingRowStyle BackColor="#FFFFFF" />

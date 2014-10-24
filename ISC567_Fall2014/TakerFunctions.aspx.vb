@@ -26,7 +26,4 @@ Public Class TakerFunctions
 #End Region
 
 
-    Protected Sub btnRoster_Click(sender As Object, e As EventArgs) Handles btnRoster.Click
-
-    End Sub
 End Class

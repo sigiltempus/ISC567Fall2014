@@ -1,6 +1,5 @@
 ﻿Imports JSIM.Bases.SVTable
 Imports GlobalVariables.AppVariable
-Imports DataAccessTier.daUser
 Public Class ExamProvider_7
     Inherits JSIM.Bases.BaseClass
     Dim cn As String = GetConnectionString("connectionString")
@@ -13,7 +12,6 @@ Public Class ExamProvider_7
     End Sub
     Public Sub setForm()
         populateddl()
-
         populategv(InstitutionID)
     End Sub
 
@@ -38,9 +36,6 @@ Public Class ExamProvider_7
 
         Dim oUser As New DataAccessTier.daUser
         Dim dtInstitutionExams As DataTable
-        If InstitutionID = 0 Then
-            InstitutionID = 973
-        End If
         dtInstitutionExams = oUser.GetExamList(InstitutionID, cn)
         'Dim dtInstitutionExamsView As DataView
         'dtInstitutionExamsView = dtInstitutionExams.DefaultView
@@ -54,7 +49,6 @@ Public Class ExamProvider_7
     Public Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList1.SelectedIndexChanged
         RadioButtonGridView2.Visible = True
         InstitutionID = CInt(DropDownList1.SelectedValue)
-
         populategv(InstitutionID)
 
     End Sub
@@ -64,13 +58,5 @@ Public Class ExamProvider_7
 
     Protected Sub RadioButtonGridView2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles RadioButtonGridView2.SelectedIndexChanged
         Session("examid") = RadioButtonGridView2.SelectedDataKey.Value
-    End Sub
-
-
-    Protected Sub OpenIFrameButton4_Click(sender As Object, e As EventArgs) Handles OpenIFrameButton4.Click
-        If RadioButtonGridView2.SelectedDataKey.Value Is Nothing Then
-            lblErrorMessage.Text = "Please select an Exam."
-            setForm()
-        End If
     End Sub
 End Class

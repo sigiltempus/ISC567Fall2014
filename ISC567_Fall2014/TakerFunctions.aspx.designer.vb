@@ -68,15 +68,6 @@ Partial Public Class TakerFunctions
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''btnRoster0 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnRoster0 As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
-
-    '''<summary>
     '''btnRoster control.
     '''</summary>
     '''<remarks>
