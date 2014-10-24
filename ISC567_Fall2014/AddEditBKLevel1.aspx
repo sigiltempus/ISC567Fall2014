@@ -77,7 +77,7 @@
                 <td>
                     <ccJSIM:SaveAndCloseIFrameButton ID="btnSave" Text="Save" runat="server" CssClass="Button"
                         align="left" IFrameName="IfAddEditBKLevel1" MethodName="wsAddEditBKLevel1"
-                        ParentFrame="ifListProgramBK" ParentPage="ListProgramBK.aspx" Width="53px" StatusPanelId="lblStatus"
+                        ParentFrame="ifListProgramBK" ParentPage="ListProgramBK.aspx?mode=edit" Width="53px" StatusPanelId="lblStatus"
                         RefreshParentPage="True" />
                 </td>
             </tr>
