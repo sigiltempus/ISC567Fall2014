@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExitApplication.aspx.vb" Inherits="ISC567_Spring2013.ExitApplication" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExitApplication.aspx.vb" Inherits="ISC567_Fall2014.ExitApplication" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 

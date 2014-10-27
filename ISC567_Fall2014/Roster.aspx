@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Roster.aspx.vb" Inherits="ISC567_Spring2013.Roster" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Roster.aspx.vb" Inherits="ISC567_Fall2014.Roster" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
