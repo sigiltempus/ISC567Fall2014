@@ -3,7 +3,7 @@ Public Class Skills
     Inherits JSIM.Bases.BaseClass
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        ' nirosha
+        ' nirosha   anusha
         Dim skillclassid As Integer
         skillclassid = GetSVTableValue(Of Integer)("skillsclassnum")
         'skillclassid = 1
