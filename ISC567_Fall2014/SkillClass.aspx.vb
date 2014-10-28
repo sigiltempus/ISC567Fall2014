@@ -27,8 +27,7 @@ Public Class SkillClass
         If Not IsNothing(dtUserSkillset) AndAlso dtUserSkillset.Rows.Count > 0 Then
             UserProfile = dtUserSkillset
             'Creating SVtable
-            Dim success As Boolean = CreateSVTable(con)
-            Debug.Print(CStr(success))
+            CreateSVTable(con)
             ProjectsGridView.DataSource = dtUserSkillset
             ProjectsGridView.DataBind()
         Else
@@ -38,8 +37,22 @@ Public Class SkillClass
     End Sub
 
     Protected Sub ProjectsGridView_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ProjectsGridView.SelectedIndexChanged
-        Dim skillclassid As Integer = CInt(ProjectsGridView.SelectedValue)
-        InsertSVTableValue(Of Integer)("skillclassid", skillclassid)
+        Dim con As String = GetConnectionString("ConnectionString")
+        'CreateSVTable(con)
+        'Dim row As Integer = ProjectsGridView.SelectedIndex
+        'Dim skillclassid As Integer = Convert.ToInt32(ProjectsGridView.DataKeys(row).Value.ToString())
+        'Dim ls As Label = DirectCast(ProjectsGridView.Rows(row).FindControl("lblSkillsclassnum"), Label)
+        'Dim skillsclassnum As Integer = Convert.ToInt32(ls.Text)
+        'InsertSVTableValue(Of Integer)("skillsclassnum", skillsclassnum)
+        'InsertSVTableValue(Of Integer)("skillclassid", skillclassid)
+        Dim skillclassid As String = ProjectsGridView.SelectedValue.ToString()
+        Session.Add("skillclassid", skillclassid)
+        Dim skillsnum As String = ProjectsGridView.SelectedValue.ToString()
+        Session.Add("skillsnum", skillsnum)
+        Dim skillsclassnum As String = ProjectsGridView.SelectedValue.ToString()
+        Session.Add("skillsclassnum", skillsclassnum)
+        Dim skillsname As String = ProjectsGridView.SelectedValue.ToString()
+        Session.Add("skillsname", skillsname)
     End Sub
 
 

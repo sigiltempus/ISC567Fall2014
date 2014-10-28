@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditPerson.aspx.vb" Inherits="ISC567_Spring2013.AddEditPerson" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditPerson.aspx.vb" Inherits="ISC567_Fall2014.AddEditPerson" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 

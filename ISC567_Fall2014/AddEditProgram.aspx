@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditProgram.aspx.vb" Inherits="ISC567_Spring2013.AddEditProgram" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditProgram.aspx.vb" Inherits="ISC567_Fall2014.AddEditProgram" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
@@ -14,7 +14,7 @@
 
     <style type="text/css">
         .auto-style1 {
-            height: 460px;
+            height: 320px;
             width: 690px;
         }
 
@@ -36,10 +36,9 @@
     <form id="form" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="ListIFrame" style="height: 420px;">
-        </div>
-            <table style="height: 431px">
+            <table>
                 <tr>
-                    <td class="auto-style2">
+                    <td colspan="2" class="auto-style2">
                         <ccJSIM:DragIFrame ID="lblHeader" runat="server" CanDragIFrame="True" Text="" CssClass="IFrameHeader" Width="100%">
                             <asp:Label ID="lblTitle" runat="server" Text="" Width="85%" style="text-align: left;"></asp:Label>
                             <ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifAddEditProgram" Text="[X] Close" style="text-align: right" />
@@ -47,12 +46,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">
+                    <td colspan="2" class="auto-style2">
                         <asp:Label ID="lblMessage" runat="server" Text="" ForeColor="" Visible="false"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style1">
+                    <td colspan="2" class="auto-style1">
                         <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" BorderStyle="Solid" BorderColor="Black"
                             BorderWidth="2px" class="auto-style1">
                             <table style="width: 98%;" id="tblName">
@@ -89,21 +88,23 @@
                             </table>
                             <table>
                                 <tr>
-                                    <td>
+                                    <td colspan="2">
                                         <asp:ValidationSummary ID="ValidationSummary1" HeaderText="Please correct the errors specified below before proceeding"
                                             DisplayMode="BulletList" EnableClientScript="true" ForeColor="Red" runat="server" />
                                     </td>
                                 </tr>
                             </table>
-                            <ccJSIM:SaveAndCloseIFrameButton ID="btnSave" runat="server" CssClass="Button" IFrameName="ifAddEditProgram" Interval="10" MethodName="wsADDEditProgram" ParentFrame="ifProgramList" ParentPage="ListProgram.aspx" RefreshParentPage="True" StatusPanelId="lblStatus" Text=" [✓] SAVE " Width="100px" />
                         </asp:Panel>
                     </td>
                 </tr>
                 <tr>
-                    <td style="height: 20px;">
-                        &nbsp;</td>
+                    <td colspan="2" style="height: 20px;">
+                        <ccJSIM:SaveAndCloseIFrameButton ID="btnSave" runat="server" OnClick="btnSave_Click" IFrameName="ifAddEditProgram" Interval="100"
+                            Text=" [✓] SAVE " Width="100px" ParentFrame="ifProgramList" ParentPage="ListProgram.aspx" CssClass="Button" />
+                    </td>
                 </tr>
             </table>
+        </div>
     </form>
 </body>
 </html>

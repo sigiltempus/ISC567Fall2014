@@ -79,34 +79,12 @@ Public Class ExamProvider_8
         If mode = "add" Then
             AppUser.addOrUpdateExam(-1, txtName.Text, CDec(txtDuration.Text), CInt(Session("providerid")),
                                     CInt(ddlExamType.SelectedValue.ToString()), txtPurpose.Text, cn)
-            'Edit 10/17/2014 - J00087408 
-            'provide confirmation of success and clear screen to prevent duplicate data.
-            If AppUser.TransactionSuccessful Then
-                lblMessage.Visible = True
-                lblMessage.Text = "Exam sucessfully added"
-                txtName.Text = ""
-                txtPurpose.Text = ""
-                txtDuration.Text = ""
-
-            End If
-            'End edit
         ElseIf mode = "edit" Then
             Dim eid As Integer = CInt(Session("examid"))
 
             AppUser.addOrUpdateExam(eid, txtName.Text, CDec(txtDuration.Text), CInt(Session("providerid")),
                                     CInt(ddlExamType.SelectedValue.ToString()), txtPurpose.Text, cn)
-            'Edit 10/17/2014 - J00087408 
-            'provide confirmation of success and clear screen to prevent duplicate data.
-            If AppUser.TransactionSuccessful Then
-                lblMessage.Visible = True
-                lblMessage.Text = "Exam sucessfully added"
-                txtName.Text = ""
-                txtPurpose.Text = ""
-                txtDuration.Text = ""
-
-            End If
-
-            'End edit
         End If
+
     End Sub
 End Class

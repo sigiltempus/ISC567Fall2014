@@ -19,12 +19,6 @@ Public Class WorkOnStaff
 
         providerid = CInt(Session("providerid"))
         mode = Request.QueryString("mode")
-
-        Dim dtProviderInfo As DataTable = oUser.getPersonsNotAsProviderStaff(providerid, cn)
-
-        CGVRosterNotProvider.DataSource = dtProviderInfo
-        CGVRosterNotProvider.DataBind()
-
         If mode = "add" Then
             AddProviderMethod()
         ElseIf mode = "edit" Then

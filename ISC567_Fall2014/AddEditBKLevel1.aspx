@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditBKLevel1.aspx.vb" Inherits="ISC567_Spring2013.AddEditBKLevel1" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditBKLevel1.aspx.vb" Inherits="ISC567_Fall2014.AddEditBKLevel1" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
@@ -77,7 +77,7 @@
                 <td>
                     <ccJSIM:SaveAndCloseIFrameButton ID="btnSave" Text="Save" runat="server" CssClass="Button"
                         align="left" IFrameName="IfAddEditBKLevel1" MethodName="wsAddEditBKLevel1"
-                        ParentFrame="ifListProgramBK" ParentPage="ListProgramBK.aspx?mode=edit" Width="53px" StatusPanelId="lblStatus"
+                        ParentFrame="ifListProgramBK" ParentPage="ListProgramBK.aspx" Width="53px" StatusPanelId="lblStatus"
                         RefreshParentPage="True" />
                 </td>
             </tr>
