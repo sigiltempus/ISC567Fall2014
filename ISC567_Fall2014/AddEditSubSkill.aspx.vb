@@ -3,13 +3,9 @@ Public Class AddEditSubSkill
     Inherits JSIM.Bases.BaseClass
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim subskillidSv As Integer
-        subskillidSv = GetSVTableValue(Of Integer)("subskillid")
-        'subskillidSv = 1
-        If IsNothing(subskillidSv) Then
-            Response.Redirect("Login.aspx")
+        If Not IsPostBack Then
+            SetFrom()
         End If
-        SetFrom()
     End Sub
 
 #Region "Local Methods"
@@ -37,10 +33,9 @@ Public Class AddEditSubSkill
     Private Sub EditSubSkill()
         dgFrame.Text = "Edit Sub Skill"
         Dim Subskillid = CInt(Session("subskillid"))
-        'Dim subskillid As Integer = 1
         Dim oUser As New DataAccessTier.daProgram
         Dim con As String = GetConnectionString("ConnectionString")
-        Dim dtUserlInfo As DataTable = GetSubSkillInfo(subskillid)
+        Dim dtUserlInfo As DataTable = GetSubSkillInfo(Subskillid)
         If Not IsNothing(dtUserlInfo) AndAlso dtUserlInfo.Rows.Count > 0 Then
             With dtUserlInfo
                 txtskillsclassnum.Text = .Rows(0)("skillsclassnum").ToString()
@@ -87,34 +82,34 @@ Public Class AddEditSubSkill
     End Function
 
 
-    Private Shared Function insertsubskill(ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal subskillnum As Integer, ByVal subskilltitle As String, ByVal subskillcomb As String, ByVal jobadwords As String) As String
-        Dim strStatus As String = ""
-        Dim con As String = GetConnectionString("ConnectionString")
-        Dim oUser As New DataAccessTier.daProgram
-        oUser.insertsubskill(skillsclassnum, skillsnum, subskillnum, subskilltitle, subskillcomb, jobadwords, con)
-        If oUser.TransactionSuccessful Then
-            strStatus = "SubSkill added Successfull"
-        Else
-            strStatus = "Error occured"
-        End If
+    'Private Shared Function insertsubskill(ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal subskillnum As Integer, ByVal subskilltitle As String, ByVal subskillcomb As String, ByVal jobadwords As String) As String
+    '    Dim strStatus As String = ""
+    '    Dim con As String = GetConnectionString("ConnectionString")
+    '    Dim oUser As New DataAccessTier.daProgram
+    '    oUser.insertsubskill(skillsclassnum, skillsnum, subskillnum, subskilltitle, subskillcomb, jobadwords, con)
+    '    If oUser.TransactionSuccessful Then
+    '        strStatus = "SubSkill added Successfull"
+    '    Else
+    '        strStatus = "Error occured"
+    '    End If
 
-        Return strStatus
-    End Function
+    '    Return strStatus
+    'End Function
 
-    Private Shared Function editsubskill(ByVal subskillid As Integer, ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal subskillnum As Integer, ByVal subskilltitle As String, ByVal subskillcomb As String, ByVal jobadwords As String) As String
+    'Private Shared Function editsubskill(ByVal subskillid As Integer, ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal subskillnum As Integer, ByVal subskilltitle As String, ByVal subskillcomb As String, ByVal jobadwords As String) As String
 
-        Dim strStatus As String = ""
-        Dim con As String = GetConnectionString("ConnectionString")
-        Dim oUser As New DataAccessTier.daProgram
-        oUser.editsubskill(subskillid, skillsclassnum, skillsnum, subskillnum, subskilltitle, subskillcomb, jobadwords, con)
-        If oUser.TransactionSuccessful Then
-            strStatus = "SubSkill added Successfull"
-        Else
-            strStatus = "Error occured"
-        End If
+    '    Dim strStatus As String = ""
+    '    Dim con As String = GetConnectionString("ConnectionString")
+    '    Dim oUser As New DataAccessTier.daProgram
+    '    oUser.editsubskill(subskillid, skillsclassnum, skillsnum, subskillnum, subskilltitle, subskillcomb, jobadwords, con)
+    '    If oUser.TransactionSuccessful Then
+    '        strStatus = "SubSkill added Successfull"
+    '    Else
+    '        strStatus = "Error occured"
+    '    End If
 
-        Return strStatus
-    End Function
+    '    Return strStatus
+    'End Function
 #End Region
 
 #Region "Click Event Handlers for Page Controls"
@@ -126,11 +121,12 @@ Public Class AddEditSubSkill
         Dim subskillcombo = txtsubskillcombo.Text
         Dim subskilltitle = txtsubskilltitle.Text
         Dim jobadwords = txtjobadwords.Text
-
+        Dim Subskillid = CInt(Session("subskillid"))
 
         Dim ConnectionString As String = GetConnectionString("ConnectionString")
         Dim oUser As New DataAccessTier.daProgram
         oUser.insertsubskill(CInt(skillsclassnum), CInt(skillsnum), CInt(subskillnum), subskilltitle, subskillcombo, jobadwords, ConnectionString)
+        oUser.editsubskill(Subskillid, CInt(skillsclassnum), CInt(skillsnum), CInt(subskillnum), subskilltitle, subskillcombo, jobadwords, ConnectionString)
     End Sub
 
 #End Region
