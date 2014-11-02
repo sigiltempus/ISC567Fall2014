@@ -40,6 +40,7 @@ Public Class SkillClass
     Protected Sub ProjectsGridView_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ProjectsGridView.SelectedIndexChanged
         Dim skillclassid As Integer = CInt(ProjectsGridView.SelectedValue)
         InsertSVTableValue(Of Integer)("skillclassid", skillclassid)
+        Session("skillclassid") = skillclassid.ToString()
     End Sub
 
 

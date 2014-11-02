@@ -4,8 +4,11 @@ Public Class AddEditSkills
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim skillsidSv As Integer
-        skillsidSv = GetSVTableValue(Of Integer)("skillsid")
-        'skillsidSv = 1
+        skillsidSv = GetSVTableValue(Of Integer)("skillsnum")
+        If skillsidSv = 0 Then
+            skillsidSv = Convert.ToInt32(Session("skillsnum"))
+        End If
+
         If IsNothing(skillsidSv) Then
             Response.Redirect("Login.aspx")
         End If
@@ -25,19 +28,16 @@ Public Class AddEditSkills
 
     Private Sub AddNew()
         dgFrame.Text = "Add Skills"
-        'txtskillsclassnum.Text = ""
-        'txtskillsnum.Text = ""
-        'txtskillsname.Text = ""
+        Dim skillclassid As Integer = Convert.ToInt32(Session("skillclassid"))
+        txtskillsclassnum.Text = skillclassid.ToString()
     End Sub
 
 
     Private Sub EditSkills()
         dgFrame.Text = "Edit Skills"
-        Dim skillsId = CInt(Session("skillsid"))
-        'Dim skillsnum = CInt(Session("skillsnum"))
-        'Dim skillsclassnum = CInt(Session("skillsclassnum"))
+        Dim skillsnum As Integer = GetSVTableValue(Of Integer)("skillsnum")
         Dim oUser As New DataAccessTier.daProgram
-        Dim dtUserlInfo As DataTable = GetSkillsInfo(skillsId)
+        Dim dtUserlInfo As DataTable = GetSkillsInfo(skillsnum)
 
         If Not IsNothing(dtUserlInfo) AndAlso dtUserlInfo.Rows.Count > 0 Then
             With dtUserlInfo
@@ -57,9 +57,6 @@ Public Class AddEditSkills
         paramContainer.AddParameter("skillsclassnum", txtskillsclassnum)
         paramContainer.AddParameter("skillsnum", txtskillsnum)
         paramContainer.AddParameter("skillsname", txtskillsname)
-        Dim skillsid As Integer = Convert.ToInt16(GetSVTableValue(Of Integer)("skillsid"))
-        'Dim skillsid As Integer = 1
-        'paramContainer.AddParameter("skillsid", skillsid, False)
         Return MyBase.CreateParameters()
     End Function
 
@@ -84,7 +81,7 @@ Public Class AddEditSkills
         Dim oUser As New DataAccessTier.daProgram
         oUser.insertskills(skillsclassnum, skillsnum, skillsname, con)
         If oUser.TransactionSuccessful Then
-            strStatus = "Skills added Successfull"
+            strStatus = "Skills added Successfully"
         Else
             strStatus = "Error occured"
         End If
@@ -92,13 +89,14 @@ Public Class AddEditSkills
         Return strStatus
     End Function
 
-    Private Shared Function editskills(ByVal skillsid As Integer, ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal skillsname As String) As String
+    Private Shared Function editskill(ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal skillsname As String) As String
         Dim strStatus As String = ""
         Dim con As String = GetConnectionString("ConnectionString")
         Dim oUser As New DataAccessTier.daProgram
+        Dim skillsid As Integer = GetSVTableValue(Of Integer)("skillsnum")
         oUser.editskills(skillsid, skillsclassnum, skillsnum, skillsname, con)
         If oUser.TransactionSuccessful Then
-            strStatus = "Skills added Successfull"
+            strStatus = "Skills edited Successfully"
         Else
             strStatus = "Error occured"
         End If
@@ -113,41 +111,16 @@ Public Class AddEditSkills
 
 #Region "Local WebService Methods"
     <Services.WebMethod()> _
-    Public Shared Function wsAddEditSkills(ByVal mode As String, ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal skillsname As String,
-                                            ByVal skillsid As Integer) As String
+    Public Shared Function wsAddEditSkills(ByVal mode As String, ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal skillsname As String) As String
         Dim strmsg As String = ""
         If mode = "add" Then
             strmsg = insertskills(skillsclassnum, skillsnum, skillsname)
         ElseIf mode = "edit" Then
-            strmsg = EditSkills(skillsid, skillsclassnum, skillsnum, skillsname)
+            strmsg = editskill(skillsclassnum, skillsnum, skillsname)
         Else
             strmsg = "No Mode was Selected"
         End If
         Return strmsg
     #End Function
 #End Region
-
-    Protected Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        'mode = Request.QueryString("mode")
-
-
-        Dim skillsclassnum = txtskillsclassnum.Text
-        Dim skillsnum = txtskillsnum.Text
-        Dim skillsname = txtskillsname.Text
-
-        Dim ConnectionString As String = GetConnectionString("ConnectionString")
-        Dim oUser As New DataAccessTier.daProgram
-        oUser.insertskills(CInt(skillsclassnum), CInt(skillsnum), skillsname, ConnectionString)
-
-
-        'Dim skillsclassnum As String = ProjectsGridView.SelectedValue.ToString()
-        'Session.Add("skillsclassnum", skillsclassnum)
-        'Dim skillsname As String = ProjectsGridView.SelectedValue.ToString()
-        'Session.Add("skillsname", skillsname)
-        'programid As String = ProjectsGridView.SelectedValue.ToString()
-        'Session.Add("programid", programid)
-
-
-
-    End Sub
 End Class

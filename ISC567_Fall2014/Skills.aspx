@@ -79,18 +79,18 @@
                         <td align="left">
                             <ccJSIM:OpenIFrameButton ID="btnAddSkills" runat="server" Text="Add Skill"
                                 FrameSrc="AddEditSkills.aspx?mode=add" IFrameName="IfAddEditSkills"
-                                HeightPosition="300" LeftPosition="400" ZIndex="300" TopPosition="320" WidthPosition="520"
+                                HeightPosition="187" LeftPosition="400" ZIndex="300" TopPosition="320" WidthPosition="300"
                                 CssClass="Button" />
                         </td>
                         <td align="center">
                             <ccJSIM:OpenIFrameButton ID="btnEditSkills" runat="server" Text="Edit Skill"
                                 FrameSrc="AddEditSkills.aspx?mode=edit" IFrameName="IfAddEditSkills"
-                                HeightPosition="300"  LeftPosition="400" ZIndex="300" TopPosition="320" WidthPosition="520"
+                                HeightPosition="187"  LeftPosition="400" ZIndex="300" TopPosition="320" WidthPosition="300"
                                 CssClass="Button" />
                         </td>
                         <td align="right">
                             <ccJSIM:OpenIFrameButton ID="btnSkills" runat="server" Text="Go To Sub Skill" FrameSrc="SubSkill.aspx?mode=edit"
-                                IFrameName="IfSubSkill" HeightPosition="450" LeftPosition="450" ZIndex="200" TopPosition="250"
+                                IFrameName="IfSubSkill" HeightPosition="300" LeftPosition="450" ZIndex="200" TopPosition="250"
                                 WidthPosition="715" CssClass="Button" />
                         </td>
                     </tr>
