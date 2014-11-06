@@ -82,70 +82,55 @@ Public Class AddEditSubSkill
     End Function
 
 
-    'Private Shared Function insertsubskill(ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal subskillnum As Integer, ByVal subskilltitle As String, ByVal subskillcomb As String, ByVal jobadwords As String) As String
-    '    Dim strStatus As String = ""
-    '    Dim con As String = GetConnectionString("ConnectionString")
-    '    Dim oUser As New DataAccessTier.daProgram
-    '    oUser.insertsubskill(skillsclassnum, skillsnum, subskillnum, subskilltitle, subskillcomb, jobadwords, con)
-    '    If oUser.TransactionSuccessful Then
-    '        strStatus = "SubSkill added Successfull"
-    '    Else
-    '        strStatus = "Error occured"
-    '    End If
+    Private Shared Function insertNewSubSkill(ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal subskillnum As Integer, ByVal subskilltitle As String, ByVal subskillcomb As String, ByVal jobadwords As String) As String
+        Dim strStatus As String = ""
+        Dim con As String = GetConnectionString("ConnectionString")
+        Dim oUser As New DataAccessTier.daProgram
+        oUser.insertsubskill(skillsclassnum, skillsnum, subskillnum, subskilltitle, subskillcomb, jobadwords, con)
+        If oUser.TransactionSuccessful Then
+            strStatus = "SubSkill added Successfull"
+        Else
+            strStatus = "Error occured"
+        End If
 
-    '    Return strStatus
-    'End Function
+        Return strStatus
+    End Function
 
-    'Private Shared Function editsubskill(ByVal subskillid As Integer, ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal subskillnum As Integer, ByVal subskilltitle As String, ByVal subskillcomb As String, ByVal jobadwords As String) As String
+    Private Shared Function editSelectedSubSkill(ByVal subskillid As Integer, ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal subskillnum As Integer, ByVal subskilltitle As String, ByVal subskillcomb As String, ByVal jobadwords As String) As String
 
-    '    Dim strStatus As String = ""
-    '    Dim con As String = GetConnectionString("ConnectionString")
-    '    Dim oUser As New DataAccessTier.daProgram
-    '    oUser.editsubskill(subskillid, skillsclassnum, skillsnum, subskillnum, subskilltitle, subskillcomb, jobadwords, con)
-    '    If oUser.TransactionSuccessful Then
-    '        strStatus = "SubSkill added Successfull"
-    '    Else
-    '        strStatus = "Error occured"
-    '    End If
+        Dim strStatus As String = ""
+        Dim con As String = GetConnectionString("ConnectionString")
+        Dim oUser As New DataAccessTier.daProgram
+        oUser.editsubskill(subskillid, skillsclassnum, skillsnum, subskillnum, subskilltitle, subskillcomb, jobadwords, con)
+        If oUser.TransactionSuccessful Then
+            strStatus = "SubSkill added Successfull"
+        Else
+            strStatus = "Error occured"
+        End If
 
-    '    Return strStatus
-    'End Function
+        Return strStatus
+    End Function
 #End Region
 
 #Region "Click Event Handlers for Page Controls"
-    Protected Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-
-        Dim skillsclassnum = txtskillsclassnum.Text
-        Dim skillsnum = txtskillsnum.Text
-        Dim subskillnum = txtsubskillnum.Text
-        Dim subskillcombo = txtsubskillcombo.Text
-        Dim subskilltitle = txtsubskilltitle.Text
-        Dim jobadwords = txtjobadwords.Text
-        Dim Subskillid = CInt(Session("subskillid"))
-
-        Dim ConnectionString As String = GetConnectionString("ConnectionString")
-        Dim oUser As New DataAccessTier.daProgram
-        oUser.insertsubskill(CInt(skillsclassnum), CInt(skillsnum), CInt(subskillnum), subskilltitle, subskillcombo, jobadwords, ConnectionString)
-        oUser.editsubskill(Subskillid, CInt(skillsclassnum), CInt(skillsnum), CInt(subskillnum), subskilltitle, subskillcombo, jobadwords, ConnectionString)
-    End Sub
 
 #End Region
 
-    '#Region "Local WebService Methods"
-    '    <Services.WebMethod()> _
-    '    Public Shared Function wsAddEditSubSkill(ByVal mode As String, ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal subskillnum As Integer, ByVal subskilltitle As String, ByVal subskillcomb As String, ByVal jobadwords As String,
-    '                                            ByVal subskillid As Integer) As String
-    '        Dim strmsg As String = ""
-    '        If mode = "add" Then
-    '            strmsg = insertsubskill(skillsclassnum, skillsnum, subskillnum, subskilltitle, subskillcomb, jobadwords)
-    '        ElseIf mode = "edit" Then
-    '            strmsg = EditSubSkill(subskillid, skillsclassnum, skillsnum, subskillnum, subskilltitle, subskillcomb, jobadwords)
-    '        Else
-    '            strmsg = "No Mode was Selected"
-    '        End If
-    '        Return strmsg
-    '    #End Function
-    '#End Region
+#Region "Local WebService Methods"
+    <Services.WebMethod()> _
+    Public Shared Function wsAddEditSubSkill(ByVal mode As String, ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal subskillnum As Integer, ByVal subskilltitle As String, ByVal subskillcomb As String, ByVal jobadwords As String,
+                                                ByVal subskillid As Integer) As String
+        Dim strmsg As String = ""
+        If mode = "add" Then
+            strmsg = insertNewSubSkill(skillsclassnum, skillsnum, subskillnum, subskilltitle, subskillcomb, jobadwords)
+        ElseIf mode = "edit" Then
+            strmsg = editSelectedSubSkill(subskillid, skillsclassnum, skillsnum, subskillnum, subskilltitle, subskillcomb, jobadwords)
+        Else
+            strmsg = "No Mode was Selected"
+        End If
+        Return strmsg
+        #End Function
+#End Region
 
 
 End Class

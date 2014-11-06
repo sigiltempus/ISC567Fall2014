@@ -49,10 +49,10 @@ Public Class SubSkill
         Dim skillsnum As Integer = Convert.ToInt32(ls1.Text)
         Dim ls2 As Label = DirectCast(ProjectsGridView.Rows(row).FindControl("lblsubskillnum"), Label)
         Dim subskillnum As Integer = Convert.ToInt32(ls2.Text)
-        InsertSVTableValue(Of Integer)("skillsclassnum", skillsclassnum)
-        InsertSVTableValue(Of Integer)("skillsnum", skillsnum)
-        InsertSVTableValue(Of Integer)("skillsclassnum", skillsclassnum)
-        InsertSVTableValue(Of Integer)("subskillid", subskillid)
+        Session("skillsclassnum") = skillsclassnum
+        Session("skillsnum") = skillsnum
+        Session("skillsclassnum") = skillsclassnum
+        Session("subskillid") = subskillid
         
 
         'Dim subskillid As String = ProjectsGridView.SelectedValue.ToString()
