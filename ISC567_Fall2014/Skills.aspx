@@ -90,7 +90,7 @@
                         </td>
                         <td align="right">
                             <ccJSIM:OpenIFrameButton ID="btnSkills" runat="server" Text="Go To Sub Skill" FrameSrc="SubSkill.aspx?mode=edit"
-                                IFrameName="IfSubSkill" HeightPosition="300" LeftPosition="450" ZIndex="200" TopPosition="250"
+                                IFrameName="IfSubSkill" HeightPosition="330" LeftPosition="450" ZIndex="200" TopPosition="250"
                                 WidthPosition="715" CssClass="Button" />
                         </td>
                     </tr>
