@@ -141,8 +141,6 @@
     <Content Include="TakerFunctions.aspx" />
     <Content Include="WaitForExamTime.aspx" />
     <Content Include="WorkOnStaff.aspx" />
-    <Content Include="ExamProvider_5.aspx" />
-    <Content Include="ExamProvider_5A.aspx" />
     <Content Include="ExamProvider_6.aspx" />
     <Content Include="ExamProvider_7.aspx" />
     <Content Include="ExamProvider_8.aspx" />
@@ -504,20 +502,6 @@
     <Compile Include="WorkOnStaff.aspx.vb">
       <DependentUpon>WorkOnStaff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_5.aspx.designer.vb">
-      <DependentUpon>ExamProvider_5.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_5.aspx.vb">
-      <DependentUpon>ExamProvider_5.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_5A.aspx.designer.vb">
-      <DependentUpon>ExamProvider_5A.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_5A.aspx.vb">
-      <DependentUpon>ExamProvider_5A.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ExamProvider_6.aspx.designer.vb">
       <DependentUpon>ExamProvider_6.aspx</DependentUpon>

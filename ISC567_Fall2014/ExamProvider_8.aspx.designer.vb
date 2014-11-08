@@ -140,13 +140,22 @@ Partial Public Class ExamProvider_8
     Protected WithEvents lblDuration As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''txtDuration control.
+    '''ddlDuration control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtDuration As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlDuration As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''OpenIFrameButton2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents OpenIFrameButton2 As Global.JSIM.Custom_Controls.OpenIFrameButton
 
     '''<summary>
     '''btnSave control.
