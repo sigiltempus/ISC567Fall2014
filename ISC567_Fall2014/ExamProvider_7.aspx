@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExamProvider_7.aspx.vb" Inherits="ISC567_Fall2014.ExamProvider_7" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExamProvider_7.aspx.vb" Inherits="ISC567_Spring2013.ExamProvider_7" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
@@ -33,7 +33,7 @@
                     <td colspan="2" class="auto-style2">
                         <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="" CssClass="IFrameHeader" Width="99.5%">
                         <asp:Label ID="lblTitle" runat="server" Text="Choose An Exam" Width="90%" style="text-align: left;"></asp:Label>
-                        <ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifExamProviderFunctions" Text="[X] Close" style="text-align: right"> </ccJSIM:CloseIFrameButton>
+                        <%--<ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifExamProviderFunctions" Text="[X] Close" style="text-align: right"> </ccJSIM:CloseIFrameButton>--%>
                         </ccJSIM:DragIFrame>
                     </td>
                 </tr>
