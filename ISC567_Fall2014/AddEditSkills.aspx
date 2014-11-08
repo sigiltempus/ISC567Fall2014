@@ -13,7 +13,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
     </asp:ScriptManager>
         <div class="AddEditIFrame">
-            <table align="center" border="0px" cellpadding="0px" cellspacing="0px" style="height: 183px">
+            <table align="center" border="0px" cellpadding="0px" cellspacing="0px" style="height: 183px; width:296px;">
                 <tr>
                     <td align="left" class="IFrameHeader">
                         <ccJSIM:DragIFrame ID="dgFrame" runat="server" Text="Add Skills">
@@ -62,7 +62,7 @@
                     <td align="left">
                         <ccJSIM:SaveAndCloseIFrameButton ID="btnSave" Text="Save" runat="server" CssClass="Button"
                             align="left" IFrameName="IfAddEditSkills" ParentFrame="IfSkills"
-                            ParentPage="Skills.aspx" Width="53px" StatusPanelId="lblStatus" RefreshParentPage="True" />
+                            ParentPage="Skills.aspx" Width="53px" StatusPanelId="lblStatus" RefreshParentPage="True" MethodName="wsAddEditSkills" />
                     </td>
                 </tr>
             </table>
