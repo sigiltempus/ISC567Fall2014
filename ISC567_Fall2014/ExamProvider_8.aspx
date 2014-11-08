@@ -74,7 +74,15 @@
                                         <asp:Label ID="lblDuration" runat="server" Text="Duration " Font-Bold="true"></asp:Label>
                                     </td>
                                     <td style="width: 73%;">
-                                        <asp:TextBox ID="txtDuration" runat="server" Width="66px"></asp:TextBox> Minutes
+                                        <asp:DropDownList ID="ddlDuration" runat="server">
+                                            <asp:ListItem>30</asp:ListItem>
+                                            <asp:ListItem>45</asp:ListItem>
+                                            <asp:ListItem>60</asp:ListItem>
+                                            <asp:ListItem>75</asp:ListItem>
+                                            <asp:ListItem>90</asp:ListItem>
+                                            <asp:ListItem>105</asp:ListItem>
+                                            <asp:ListItem>120</asp:ListItem>
+                                        </asp:DropDownList> Minutes
                                     </td>
                                 </tr>
                                 <tr>
@@ -86,14 +94,17 @@
                         </asp:Panel>
                     </td>
                 </tr>
-                <tr>
-                    <td colspan="2" style="height: 20px;">
-                               <ccJSIM:SaveandCloseIFrameButton ID="btnSave" runat="server" Text="Save" Cssclass="Button" style="z-index: 1; left: 87px; top: 214px; position: absolute; height: 21px; width: 93px;" />
-							   <ccJSIM:CloseIFrameButton ID="Close" runat="server" Text="Close" Cssclass="Button" IFrameName="ifAddExam" PostBackUrl="ExamProvider_7.aspx"  Width="70px" style="z-index: 1; left: 304px; top: 215px; position: absolute; height: 21px;" />
+                  </table>
+               
+                    
+            <ccJSIM:OpenIFrameButton ID="OpenIFrameButton2" runat="server" FrameSrc="AddEditExamSchedule.aspx"
+                IFrameName="ifScheduleExam" Text="Schedule Exam" HeightPosition="245" LeftPosition="450" TopPosition="200" WidthPosition="500" ZIndex="210" CssClass="Button"  Style="z-index: 1; left: 20px; top: 215px; position: absolute; height: 21px;" />
+                               <ccJSIM:SaveandCloseIFrameButton ID="btnSave" runat="server" Text="Save" Cssclass="Button" style="z-index: 1; left: 200px; top: 215px; position: absolute; height: 21px; width: 93px;" />
+							   <ccJSIM:CloseIFrameButton ID="Close" runat="server" Text="Close" Cssclass="Button" IFrameName="ifAddExam" PostBackUrl="ExamProvider_7.aspx"  Width="70px" style="z-index: 1; left: 375px; top: 215px; position: absolute; height: 21px;" />
 
-              </td>
-                </tr>
-            </table>
+                       
+              
+          
         </div>
     </form>
 </body>
