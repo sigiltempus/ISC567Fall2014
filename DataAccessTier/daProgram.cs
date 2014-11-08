@@ -425,19 +425,7 @@ namespace DataAccessTier {
             arParms[2] = new SqlParameter("@skillsname", SqlDbType.NVarChar);
             arParms[2].Value = skillsname;
 
-            pTransactionSuccessful = true;
-
-            try {
-                SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, "insertskills", arParms);
-            } catch (SqlException InsertError) {
-                pErrorMessage = InsertError.Message.ToString();
-                pErrorNumber = InsertError.Number;
-                pErrorClass = InsertError.Class;
-                pErrorState = InsertError.State;
-                pErrorLineNumber = InsertError.LineNumber;
-
-                pTransactionSuccessful = false;
-            }
+            this.ExecuteWithoutResult(arParms, "insertskills", ConnectionString);
         }
 
         //For Inserting SubSkill
