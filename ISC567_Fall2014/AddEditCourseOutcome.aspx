@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditCourseOutcome.aspx.vb"
-    Inherits="ISC567_Spring2013.AddEditCourseOutcome" %>
+    Inherits="ISC567_Fall2014.AddEditCourseOutcome" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 <html xmlns="http://www.w3.org/1999/xhtml">

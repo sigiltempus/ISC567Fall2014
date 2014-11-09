@@ -11,8 +11,8 @@
     <ProjectGuid>{FD9FC963-2153-45C6-9FF2-17766F4D76EE}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>ISC567_Spring2013</RootNamespace>
-    <AssemblyName>ISC567_Spring2013</AssemblyName>
+    <RootNamespace>ISC567_Fall2014</RootNamespace>
+    <AssemblyName>ISC567_Fall2014</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <UseIISExpress>true</UseIISExpress>
@@ -28,7 +28,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>ISC567_Spring2013.xml</DocumentationFile>
+    <DocumentationFile>ISC567_Fall2014.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>ISC567_Spring2013.xml</DocumentationFile>
+    <DocumentationFile>ISC567_Fall2014.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
@@ -209,8 +209,8 @@
       <DependentUpon>AddEditExamSchedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddEditExamSchedule.aspx.vb">
-      <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>AddEditExamSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddEditPerson.aspx.designer.vb">
       <DependentUpon>AddEditPerson.aspx</DependentUpon>
@@ -272,14 +272,14 @@
     </Compile>
     <Compile Include="AddProvider.aspx.vb">
       <DependentUpon>AddProvider.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConfirmationPage.aspx.designer.vb">
       <DependentUpon>ConfirmationPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConfirmationPage.aspx.vb">
       <DependentUpon>ConfirmationPage.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Exam Registration.aspx.designer.vb">
       <DependentUpon>Exam Registration.aspx</DependentUpon>
@@ -348,8 +348,8 @@
       <DependentUpon>Exam.aspx</DependentUpon>
     </Compile>
     <Compile Include="Exam.aspx.vb">
-      <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Exam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ExamProvider_11.aspx.designer.vb">
       <DependentUpon>ExamProvider_11.aspx</DependentUpon>
@@ -411,8 +411,8 @@
       <DependentUpon>ListPerson.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListPerson.aspx.vb">
-      <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ListPerson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ListProgram.aspx.designer.vb">
       <DependentUpon>ListProgram.aspx</DependentUpon>
@@ -439,8 +439,8 @@
       <DependentUpon>MainMenu.aspx</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.aspx.vb">
-      <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>MainMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ProctorExam.aspx.designer.vb">
       <DependentUpon>ProctorExam.aspx</DependentUpon>
@@ -538,7 +538,7 @@
     </Compile>
     <Compile Include="ExamProvider_8.aspx.vb">
       <DependentUpon>ExamProvider_8.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ExamProvider_9.aspx.designer.vb">
       <DependentUpon>ExamProvider_9.aspx</DependentUpon>
@@ -585,7 +585,7 @@
     </Compile>
     <Compile Include="AddStaff.aspx.vb">
       <DependentUpon>AddStaff.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

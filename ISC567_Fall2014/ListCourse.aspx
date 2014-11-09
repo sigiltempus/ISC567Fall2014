@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ListCourse.aspx.vb" Inherits="ISC567_Spring2013.ListCourse" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ListCourse.aspx.vb" Inherits="ISC567_Fall2014.ListCourse" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
