@@ -19,9 +19,9 @@
                     </ccJSIM:DragIFrame>
                 </td>
                 <td align="right" class="IFrameHeader">
-                    <ccJSIM:CloseIFrameLinkButton ID="CloseIFrameLinkButton1" runat="server" Text="[x] Close"
-                        ForeColor="White" BorderColor="White" IFrameName="ifProgramSkillClass">
-                    </ccJSIM:CloseIFrameLinkButton>
+                    <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" Text="[x] Close"
+                        IFrameName="ifProgramSkillClass">
+                    </ccJSIM:CloseIFrameButton>
                 </td>
             </tr>
             <tr>
@@ -59,22 +59,17 @@
                         <tr>
                             <td align="left">
                                 <ccJSIM:OpenIFrameButton ID="btnAddSkillClass" runat="server" Text="Add Skill Class"
-                                    FrameSrc="AddEditSkillClass.aspx?mode=add" IFrameName="IfAddEditSkillClass" HeightPosition="205"
-                                    LeftPosition="180" ZIndex="300" TopPosition="215" WidthPosition="555" CssClass="Button" />
+                                    FrameSrc="AddEditSkillClass.aspx?mode=add" IFrameName="IfAddEditSkillClass" HeightPosition="186"
+                                    LeftPosition="250" ZIndex="300" TopPosition="215" WidthPosition="555" CssClass="Button" />
 
                                 <ccJSIM:OpenIFrameButton ID="btnEditSkillClass" runat="server" Text="Edit Skill Class"
                                     FrameSrc="AddEditSkillClass.aspx?mode=edit" IFrameName="IfAddEditSkillClass"
-                                    HeightPosition="205" LeftPosition="180" ZIndex="300" TopPosition="215" WidthPosition="555"
+                                    HeightPosition="186" LeftPosition="250" ZIndex="300" TopPosition="215" WidthPosition="555"
                                     CssClass="Button" />
 
                                 <ccJSIM:OpenIFrameButton ID="btnSkills" runat="server" Text="Go To Skill" FrameSrc="Skills.aspx?mode=edit"
-                                    IFrameName="IfSkills" HeightPosition="330" LeftPosition="300" Style="left: 0px"
-                                    ZIndex="200" TopPosition="200" WidthPosition="720" CssClass="Button" />
-                            </td>
-                            <td align="right">
-                                <ccJSIM:OpenIFrameButton ID="btnprintskills" runat="server" Text="Print Skills" FrameSrc="RptskillsList.aspx"
-                                    IFrameName="ifReportskill" HeightPosition="550" LeftPosition="130" 
-                                    ZIndex="130" TopPosition="130" WidthPosition="685" CssClass="Button" />
+                                    IFrameName="IfSkills" HeightPosition="318" LeftPosition="250" Style="left: 0px"
+                                    ZIndex="200" TopPosition="200" WidthPosition="711" CssClass="Button" />
                             </td>
                         </tr>
                     </table>
