@@ -85,7 +85,7 @@
                     <td align="left">
                         <ccJSIM:SaveAndCloseIFrameButton ID="btnSave" Text="Save" runat="server" CssClass="Button"
                             align="left" IFrameName="IfAddEditSubSkill" ParentFrame="IfSubSkill"
-                            ParentPage="SubSkill.aspx" Width="53px" StatusPanelId="lblStatus" RefreshParentPage="True" />
+                            ParentPage="SubSkill.aspx" Width="53px" StatusPanelId="lblStatus" RefreshParentPage="True" MethodName="wsAddEditSubSkill" />
                     </td>
                 </tr>
             </table>
