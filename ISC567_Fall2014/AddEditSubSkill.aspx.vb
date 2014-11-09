@@ -61,9 +61,7 @@ Public Class AddEditSubSkill
         paramContainer.AddParameter("subskilltitle", txtsubskilltitle)
         paramContainer.AddParameter("subskillcombo", txtsubskillcombo)
         paramContainer.AddParameter("jobadwords", txtjobadwords)
-        Dim subskillid As Integer = Convert.ToInt16(GetSVTableValue(Of Integer)("subskillid"))
-        'Dim subskillid As Integer = 1
-        'paramContainer.AddParameter("subskillid", subskillid, False)
+        paramContainer.AddParameter("subskillid", txtsubskillnum)
         Return MyBase.CreateParameters()
     End Function
 

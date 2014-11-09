@@ -445,20 +445,7 @@ namespace DataAccessTier {
             arParms[4].Value = subskillcomb;
             arParms[5] = new SqlParameter("@jobadwords", SqlDbType.NVarChar);
             arParms[5].Value = jobadwords;
-
-            pTransactionSuccessful = true;
-
-            try {
-                SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, "insertsubskill", arParms);
-            } catch (SqlException InsertError) {
-                pErrorMessage = InsertError.Message.ToString();
-                pErrorNumber = InsertError.Number;
-                pErrorClass = InsertError.Class;
-                pErrorState = InsertError.State;
-                pErrorLineNumber = InsertError.LineNumber;
-
-                pTransactionSuccessful = false;
-            }
+            this.ExecuteWithoutResult(arParms, "insertsubskill", ConnectionString);
         }
         #endregion
 
