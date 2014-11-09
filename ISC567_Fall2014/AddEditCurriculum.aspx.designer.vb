@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class MainMenu
+Partial Public Class AddEditCurriculum
 
     '''<summary>
     '''Head1 control.
@@ -23,92 +23,119 @@ Partial Public Class MainMenu
     Protected WithEvents Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
 
     '''<summary>
-    '''Form1 control.
+    '''form control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents form As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''lblLogOutTxt control.
+    '''ScriptManager1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblLogOutTxt As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
 
     '''<summary>
-    '''lblSVLineName control.
+    '''lblHeader control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblSVLineName As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblHeader As Global.JSIM.Custom_Controls.DragIFrame
 
     '''<summary>
-    '''menuList control.
+    '''lblTitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents menuList As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents lblTitle As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lbtnListPersons control.
+    '''lbtnClose control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtnListPersons As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
+    Protected WithEvents lbtnClose As Global.JSIM.Custom_Controls.CloseIFrameButton
 
     '''<summary>
-    '''lbtnInstitutionFunctions control.
+    '''lblMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtnInstitutionFunctions As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
+    Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lbtnExamProviderFunctions control.
+    '''Panel1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtnExamProviderFunctions As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''lbtnCurriculumFunctions control.
+    '''txtShortName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtnCurriculumFunctions As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
+    Protected WithEvents txtShortName As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''lbtnsociety control.
+    '''ValShortName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtnsociety As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
+    Protected WithEvents ValShortName As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''lbtnTakerFunctions control.
+    '''txtLongName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtnTakerFunctions As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
+    Protected WithEvents txtLongName As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ValLongName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ValLongName As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''ValidationSummary1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ValidationSummary1 As Global.System.Web.UI.WebControls.ValidationSummary
+
+    '''<summary>
+    '''btnCSave control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCSave As Global.JSIM.Custom_Controls.SaveAndCloseIFrameButton
 End Class

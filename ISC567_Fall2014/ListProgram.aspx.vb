@@ -23,7 +23,7 @@ Public Class ListProgram
         Try
             If Not IsNothing(dtProgramList) AndAlso dtProgramList.Rows.Count > 0 Then
                 dvProgramList = dtProgramList.DefaultView
-                dvProgramList.Sort = String.Format("{0} {1}", gvProgramList.GridSortColumn, gvProgramList.GridSortDirection.ToString())
+                'dvProgramList.Sort = String.Format("{0} {1}", gvProgramList.GridSortColumn, gvProgramList.GridSortDirection.ToString())
                 gvProgramList.DataSource = dvProgramList
                 gvProgramList.DataBind()
             Else
@@ -44,7 +44,7 @@ Public Class ListProgram
         Dim dtProgramList As DataTable
         Dim oProgram As New DataAccessTier.daProgram
         Dim cn As String = GetConnectionString("connectionString")
-        dtProgramList = oProgram.GetProgramList(cn)
+        dtProgramList = oProgram.GetProgramList(cn, CInt(Session("selectedCurriculumId")))
         If Not oProgram.TransactionSuccessful Then
             dtProgramList = Nothing
         End If
@@ -64,6 +64,7 @@ Public Class ListProgram
         Dim selectedProgramId As String = gvProgramList.SelectedValue.ToString()
         Dim s As Boolean = InsertSVTableValue(Of Integer)("programId", CInt(selectedProgramId)) 'Using SV Table
         Session.Add("selectedProgramId", selectedProgramId) ' Instead of using SV Table some code may just be requesting from Session Variable
+        Session.Add("selectedprogramName", gvProgramList.SelectedDataKey.Values.Item("shortname"))
     End Sub
 
 #End Region

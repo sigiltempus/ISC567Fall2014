@@ -86,6 +86,24 @@ Partial Public Class AddEditProgram
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
+    '''Txtcurriculumname control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Txtcurriculumname As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''valcurriculum control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents valcurriculum As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
     '''txtShortName control.
     '''</summary>
     '''<remarks>
