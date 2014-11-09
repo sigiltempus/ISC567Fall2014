@@ -17,7 +17,7 @@ Public Class AddEditProgram
         mode = Request.QueryString("mode") ' Get the actual mode from the Query string
 
         LoadProgramStatus()
-
+        Txtcurriculumname.Text = CStr(Session("selectedCurriculumName"))
         If mode = "add" Then
             AddNew()
         ElseIf mode = "edit" Then
@@ -27,8 +27,8 @@ Public Class AddEditProgram
 
     Private Sub AddNew()
         lblTitle.Text = "Add New Program"
-    End Sub
 
+    End Sub
     Private Sub EditUser()
         lblTitle.Text = "Edit Program"
 
@@ -63,13 +63,13 @@ Public Class AddEditProgram
 #End Region
 
 #Region "Local Functions"
-    Private Function AddEditUser(ByVal programId As Integer, ByVal shortName As String, ByVal longName As String,
+    Private Function AddEditUser(ByVal curriculumid As Integer, ByVal programId As Integer, ByVal shortName As String, ByVal longName As String,
                                  ByVal description As String, ByVal statusId As Integer) As String
         Dim strStatus As String = "Error"
         Dim cn As String = GetConnectionString("connectionString")
         Dim oProgram As New DataAccessTier.daProgram
 
-        oProgram.AddEditProgramInformation(programId, shortName, longName, description, statusId, cn)
+        oProgram.AddEditProgramInformation(curriculumid, programId, shortName, longName, description, statusId, cn)
 
         If oProgram.TransactionSuccessful Then
             strStatus = "Success"
@@ -87,20 +87,26 @@ Public Class AddEditProgram
         mode = Request.QueryString("mode") ' Get the actual mode from the Query string
 
         Dim strMsg As String = ""
-
         Dim programId As Integer = -1 ' Default value
+        Dim curriculumid As Integer
+
+        curriculumid = CInt(Session("selectedcurriculumId"))
+
         If mode = "edit" Then
             programId = CInt(Session("selectedProgramId"))
         End If
 
         Try
             'Try to convert the value from the screen to appropriate data type and pass to add edit function
-            strMsg = AddEditUser(programId, txtShortName.Text, txtLongName.Text, txtDescription.Text, CInt(ddlProgramStatus.SelectedValue))
+            strMsg = AddEditUser(curriculumid, programId, txtShortName.Text, txtLongName.Text, txtDescription.Text, CInt(ddlProgramStatus.SelectedValue))
 
             If strMsg = "Success" Then
                 'if the Add/Edit was successful
                 lblMessage.ForeColor = Drawing.Color.Green
                 lblMessage.Text = "Program was successfully " + mode + "ed"
+                'Response.Write("<script>parent.window.location.reload();</script>")
+                Response.End()
+
             Else
                 'if there was an error trying to add/edit user
                 lblMessage.ForeColor = Drawing.Color.Red
@@ -117,5 +123,13 @@ Public Class AddEditProgram
     End Sub
 
 #End Region
+    '#Region "Local WebService Methods"
+    '    <Services.WebMethod()> _
+    '    Public Shared Function wsAddEditBKLevel1(ByVal programId As Integer, ByVal shortName As String, ByVal longName As String,
+    '                                 ByVal description As String, ByVal statusId As Integer) As String
 
+
+    '    #End Function
+
+    '#End Region
 End Class

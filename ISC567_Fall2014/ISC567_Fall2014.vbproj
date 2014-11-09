@@ -90,6 +90,7 @@
     <Content Include="AddEditBKLevel4.aspx" />
     <Content Include="AddEditCourse.aspx" />
     <Content Include="AddEditCourseOutcome.aspx" />
+    <Content Include="AddEditCurriculum.aspx" />
     <Content Include="AddEditExamSchedule.aspx" />
     <Content Include="AddEditPerson.aspx" />
     <Content Include="AddEditProgram.aspx" />
@@ -105,6 +106,7 @@
     <Content Include="Exam Registration.aspx" />
     <Content Include="ListCourse.aspx" />
     <Content Include="ListCourseOutcome.aspx" />
+    <Content Include="ListCurriculum.aspx" />
     <Content Include="ListProgramBK.aspx" />
     <Content Include="ListProgramBK2.aspx" />
     <Content Include="ListProgramBK3.aspx" />
@@ -196,6 +198,13 @@
     </Compile>
     <Compile Include="AddEditCourseOutcome.aspx.vb">
       <DependentUpon>AddEditCourseOutcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditCurriculum.aspx.designer.vb">
+      <DependentUpon>AddEditCurriculum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditCurriculum.aspx.vb">
+      <DependentUpon>AddEditCurriculum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddEditExamSchedule.aspx.designer.vb">
@@ -293,6 +302,13 @@
     </Compile>
     <Compile Include="ListCourseOutcome.aspx.vb">
       <DependentUpon>ListCourseOutcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListCurriculum.aspx.designer.vb">
+      <DependentUpon>ListCurriculum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListCurriculum.aspx.vb">
+      <DependentUpon>ListCurriculum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ListProgramBK.aspx.designer.vb">

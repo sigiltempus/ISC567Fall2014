@@ -49,13 +49,14 @@
                                     BorderStyle="Solid" BorderColor="Black" BorderWidth="2px"
                                     class="auto-style1">
                                     <ccJSIM:OpenIFrameGridView ID="gvProgramList" runat="server" AutoGenerateColumns="False" CellPadding="4"
-                                        ChangeRowColor="True" DataKeyNames="programId" ForeColor="#333333" FrameSrc="AddEditProgram.aspx" IncludeSorting="True"
+                                        ChangeRowColor="True" DataKeyNames="programid,shortname" ForeColor="#333333" FrameSrc="AddEditProgram.aspx" IncludeSorting="True"
                                         GridLines="None" GridSortColumn="ProgramName" GridSortDirection="ASC" HighlighedRowColor="Yellow" ShowEditButton="False"
                                         ShowDeleteButton="False" ShowSelectorButton="True" AllowSorting="True" GridDeleteButtonText="" GridEditButtonText="" Interval="" >
                                         <Columns>
                                             <asp:BoundField DataField="ProgramId" HeaderText="ProgramId" SortExpression="ProgramId" Visible="False" />
-                                            <asp:BoundField DataField="ProgramName" HeaderText="Program Name" SortExpression="ProgramName" />
-                                            <asp:BoundField DataField="ProgramStatus" HeaderText="Program Status" SortExpression="ProgramStatus" />
+                                            <asp:BoundField DataField="shortname" HeaderText="Program Name" SortExpression="ProgramName" />
+                                             <asp:BoundField DataField="longname" HeaderText="Program Full Name" SortExpression="ProgramName" />
+                                            <asp:BoundField DataField="value" HeaderText="Program Status" SortExpression="ProgramStatus" />
                                         </Columns>
                                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                                         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
