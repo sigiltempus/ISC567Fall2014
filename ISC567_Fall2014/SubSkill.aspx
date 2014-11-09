@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="SubSkill.aspx.vb" Inherits="ISC567_Fall2014.SubSkill" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="SubSkill.aspx.vb" Inherits="ISC567_Spring2013.SubSkill" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -25,16 +25,17 @@
                     </ccJSIM:DragIFrame>
                 </td>
                 <td align="right" class="IFrameHeader">
-                    <ccJSIM:CloseIFrameLinkButton ID="CloseIFrameLinkButton1" runat="server" Text="[x] Close"
-                        ForeColor="White" BorderColor="White" IFrameName="IfSubSkill">
-                    </ccJSIM:CloseIFrameLinkButton>
+                    <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" Text="[x] Close"
+                        IFrameName="IfSubSkill">
+                    </ccJSIM:CloseIFrameButton>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" align="left">
                     <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Height="260px">
+                        <%--DataKeyNames="skillsnum"--%>
                         <ccJSIM:RadioButtonGridView ID="ProjectsGridView" runat="server" AutoGenerateColumns="False"
-                            IncludeSorting="True" EmptyDataText="No Data Found" GridSortColumn="" DataKeyNames="subskillid"
+                            IncludeSorting="True" EmptyDataText="No Data Found" GridSortColumn="" DataKeyNames="skillsnum"
                             ForeColor="#333333" HighlighedRowColor="#FFFFAD" HeaderStyle-CssClass="gridViewHeader"
                             Width="650px" HeaderStyle-ForeColor="White">
                             <AlternatingRowStyle BackColor="#FFFFFF" />
@@ -75,13 +76,13 @@
                         <tr>
                             <td align="left">
                                 <ccJSIM:OpenIFrameButton ID="btnAddSUbSkill" runat="server" Text="Add Sub Skill"
-                                    FrameSrc="AddEditSubSkill.aspx?mode=add" IFrameName="IfAddEditSubSkill" HeightPosition="405"
-                                    LeftPosition="400" ZIndex="300" TopPosition="210" WidthPosition="550" CssClass="Button" />
+                                    FrameSrc="AddEditSubSkill.aspx?mode=add" IFrameName="IfAddEditSubSkill" HeightPosition="340"
+                                    LeftPosition="425" ZIndex="300" TopPosition="210" WidthPosition="550" CssClass="Button" />
                             </td>
                             <td align="center">
                                 <ccJSIM:OpenIFrameButton ID="btnEditSubSkill" runat="server" Text="Edit Sub Skill"
-                                    FrameSrc="AddEditSubSkill.aspx?mode=edit" IFrameName="IfAddEditSubSkill" HeightPosition="405"
-                                    LeftPosition="400" ZIndex="300" TopPosition="210" WidthPosition="550" CssClass="Button" />
+                                    FrameSrc="AddEditSubSkill.aspx?mode=edit" IFrameName="IfAddEditSubSkill" HeightPosition="340"
+                                    LeftPosition="425" ZIndex="300" TopPosition="210" WidthPosition="550" CssClass="Button" />
                             </td>
                         </tr>
                     </table>

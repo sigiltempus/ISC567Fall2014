@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditBKLevel4.aspx.vb" Inherits="ISC567_Fall2014.AddEditBKLevel4" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditBKLevel4.aspx.vb" Inherits="ISC567_Spring2013.AddEditBKLevel4" %>
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
 <!DOCTYPE html>

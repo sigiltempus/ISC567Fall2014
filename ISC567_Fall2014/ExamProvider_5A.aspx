@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExamProvider_5A.aspx.vb" Inherits="ISC567_Fall2014.ExamProvider_5A" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExamProvider_5A.aspx.vb" Inherits="ISC567_Spring2013.ExamProvider_5A" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 

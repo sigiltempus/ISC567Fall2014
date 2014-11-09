@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ListProgram.aspx.vb" Inherits="ISC567_Fall2014.ListProgram" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ListProgram.aspx.vb" Inherits="ISC567_Spring2013.ListProgram" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
@@ -94,8 +94,8 @@
                         <ccJSIM:OpenIFrameButton ID="lbtnOpenProgramOutcome" runat="server" FrameSrc="ListProgramOutcome.aspx" HeightPosition="524" WidthPosition="724"
                             IFrameName="ifListProgramOutcome" Text="Program Outcome" LeftPosition="250" TopPosition="170" ZIndex="185" CssClass="Button" />
                         &nbsp;
-                        <ccJSIM:OpenIFrameButton ID="lbtnOpenProgramSkillClass" runat="server" FrameSrc="SkillClass.aspx" HeightPosition="320" WidthPosition="724"
-                            IFrameName="ifProgramSkillClass" Text="Skill Class" LeftPosition="250" TopPosition="160"  ZIndex="185" CssClass="Button" />
+                        <ccJSIM:OpenIFrameButton ID="lbtnOpenProgramSkillClass" runat="server" FrameSrc="SkillClass.aspx" HeightPosition="280" WidthPosition="714"
+                            IFrameName="ifProgramSkillClass" Text="Skill Class" LeftPosition="200" TopPosition="160"  ZIndex="185" CssClass="Button" />
                         &nbsp;
                     </td>
                 </tr>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExamProvider_3.aspx.vb" Inherits="ISC567_Fall2014.ExamProvider_3" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExamProvider_3.aspx.vb" Inherits="ISC567_Spring2013.ExamProvider_3" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1" runat="server"><title></title><link href="styles/IFramestyles.css" rel ="stylesheet" type="text/css" /></head><body><form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">

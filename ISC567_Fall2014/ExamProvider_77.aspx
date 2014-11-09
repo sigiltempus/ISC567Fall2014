@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExamProvider_77.aspx.vb" Inherits="ISC567_Fall2014.ExamProvider_77" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExamProvider_77.aspx.vb" Inherits="ISC567_Spring2013.ExamProvider_77" %>
 
 <!DOCTYPE html>
 

@@ -1,17 +1,10 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditSkillClass.aspx.vb" Inherits="ISC567_Fall2014.AddEditSkillClass" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditSkillClass.aspx.vb" Inherits="ISC567_Spring2013.AddEditSkillClass" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title></title>
-    <script type="text/javascript">
-        function ShowAlert() {
-
-            alert('Do you want to save these changes');
-
-        };
-    </script>
     <link href="styles/IFrameStyles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,9 +19,9 @@
                     </ccJSIM:DragIFrame>
                 </td>
                 <td align="right" class="IFrameHeader">
-                    <ccJSIM:CloseIFrameLinkButton ID="CloseIFrameLinkButton1" runat="server" Text="[x] Close"
-                        BorderColor="White" ForeColor="White" IFrameName="IfAddEditSkillClass">
-                    </ccJSIM:CloseIFrameLinkButton>
+                    <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" Text="[x] Close"
+                        IFrameName="IfAddEditSkillClass">
+                    </ccJSIM:CloseIFrameButton>
                 </td>
             </tr>
             <tr>
@@ -37,7 +30,7 @@
                 </td>
                 <td align="left">
                     <asp:DropDownList ID="ddlProgram" runat="server" DataSourceID="sdsProgram" DataTextField="shortname"
-                        onchange="ShowAlert();" DataValueField="programid">
+                        DataValueField="programid">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="sdsProgram" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
                         SelectCommand="SELECT [programid], [shortname] FROM [program]"></asp:SqlDataSource>
@@ -70,8 +63,8 @@
             <tr>
                 <td align="left">
                     <ccJSIM:SaveAndCloseIFrameButton ID="btnSave" Text="Save" runat="server" CssClass="Button"
-                        align="left" IFrameName="IfAddEditSkillClass" 
-                        ParentFrame="ifManageSkillClass" ParentPage="SkillClass.aspx" Width="53px" StatusPanelId="lblStatus"
+                        align="left" IFrameName="IfAddEditSkillClass" MethodName="wsAddEditSkillClass"
+                        ParentFrame="ifProgramSkillClass" ParentPage="SkillClass.aspx" Width="53px" StatusPanelId="lblStatus"
                         RefreshParentPage="True" />
                 </td>
             </tr>

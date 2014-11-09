@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="WaitForExamTime.aspx.vb" Inherits="ISC567_Fall2014.WaitForExamTime" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="WaitForExamTime.aspx.vb" Inherits="ISC567_Spring2013.WaitForExamTime" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 <!DOCTYPE html>

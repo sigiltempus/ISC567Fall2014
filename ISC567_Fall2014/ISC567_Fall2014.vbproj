@@ -11,8 +11,8 @@
     <ProjectGuid>{FD9FC963-2153-45C6-9FF2-17766F4D76EE}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>ISC567_Fall2014</RootNamespace>
-    <AssemblyName>ISC567_Fall2014</AssemblyName>
+    <RootNamespace>ISC567_Spring2013</RootNamespace>
+    <AssemblyName>ISC567_Spring2013</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <UseIISExpress>true</UseIISExpress>
@@ -28,7 +28,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>ISC567_Fall2014.xml</DocumentationFile>
+    <DocumentationFile>ISC567_Spring2013.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>ISC567_Fall2014.xml</DocumentationFile>
+    <DocumentationFile>ISC567_Spring2013.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
@@ -143,8 +143,6 @@
     <Content Include="TakerFunctions.aspx" />
     <Content Include="WaitForExamTime.aspx" />
     <Content Include="WorkOnStaff.aspx" />
-    <Content Include="ExamProvider_5.aspx" />
-    <Content Include="ExamProvider_5A.aspx" />
     <Content Include="ExamProvider_6.aspx" />
     <Content Include="ExamProvider_7.aspx" />
     <Content Include="ExamProvider_8.aspx" />
@@ -520,20 +518,6 @@
     <Compile Include="WorkOnStaff.aspx.vb">
       <DependentUpon>WorkOnStaff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_5.aspx.designer.vb">
-      <DependentUpon>ExamProvider_5.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_5.aspx.vb">
-      <DependentUpon>ExamProvider_5.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_5A.aspx.designer.vb">
-      <DependentUpon>ExamProvider_5A.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_5A.aspx.vb">
-      <DependentUpon>ExamProvider_5A.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ExamProvider_6.aspx.designer.vb">
       <DependentUpon>ExamProvider_6.aspx</DependentUpon>

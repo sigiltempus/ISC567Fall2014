@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ConfirmationPage.aspx.vb" Inherits="ISC567_Fall2014.ConfirmationPage" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ConfirmationPage.aspx.vb" Inherits="ISC567_Spring2013.ConfirmationPage" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 

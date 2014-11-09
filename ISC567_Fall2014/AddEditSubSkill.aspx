@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditSubSkill.aspx.vb"
-    Inherits="ISC567_Fall2014.AddEditSubSkill" %>
+    Inherits="ISC567_Spring2013.AddEditSubSkill" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
@@ -20,9 +20,9 @@
                         </ccJSIM:DragIFrame>
                     </td>
                     <td align="right" class="IFrameHeader">
-                        <ccJSIM:CloseIFrameLinkButton ID="CloseIFrameLinkButton1" runat="server" Text="[x] Close"
-                            BorderColor="White" ForeColor="White" IFrameName="IfAddEditSubSkill">
-                        </ccJSIM:CloseIFrameLinkButton>
+                        <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" Text="[x] Close"
+                            IFrameName="IfAddEditSubSkill">
+                        </ccJSIM:CloseIFrameButton>
                     </td>
                 </tr>
                 <tr>

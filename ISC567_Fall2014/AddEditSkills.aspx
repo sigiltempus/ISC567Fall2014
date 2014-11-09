@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditSkills.aspx.vb"
-    Inherits="ISC567_Fall2014.AddEditSkills" %>
+    Inherits="ISC567_Spring2013.AddEditSkills" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
@@ -13,16 +13,16 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
     </asp:ScriptManager>
         <div class="AddEditIFrame">
-            <table align="center" border="0px" cellpadding="0px" cellspacing="0px" style="height: 183px">
+            <table align="center" border="0px" cellpadding="0px" cellspacing="0px" style="height: 183px; width:296px;">
                 <tr>
                     <td align="left" class="IFrameHeader">
                         <ccJSIM:DragIFrame ID="dgFrame" runat="server" Text="Add Skills">
                         </ccJSIM:DragIFrame>
                     </td>
                     <td align="right" class="IFrameHeader">
-                        <ccJSIM:CloseIFrameLinkButton ID="CloseIFrameLinkButton1" runat="server" Text="[x] Close"
-                            BorderColor="White" ForeColor="White" IFrameName="IfAddEditSkills">
-                        </ccJSIM:CloseIFrameLinkButton>
+                        <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" Text="[x] Close"
+                           IFrameName="IfAddEditSkills">
+                        </ccJSIM:CloseIFrameButton>
                     </td>
                 </tr>
                 <tr>
@@ -62,7 +62,7 @@
                     <td align="left">
                         <ccJSIM:SaveAndCloseIFrameButton ID="btnSave" Text="Save" runat="server" CssClass="Button"
                             align="left" IFrameName="IfAddEditSkills" ParentFrame="IfSkills"
-                            ParentPage="Skills.aspx" Width="53px" StatusPanelId="lblStatus" RefreshParentPage="True" />
+                            ParentPage="Skills.aspx" Width="53px" StatusPanelId="lblStatus" RefreshParentPage="True" MethodName="wsAddEditSkills" />
                     </td>
                 </tr>
             </table>

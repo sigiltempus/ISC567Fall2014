@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditTaker.aspx.vb" Inherits="ISC567_Fall2014.AddEditTaker" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditTaker.aspx.vb" Inherits="ISC567_Spring2013.AddEditTaker" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
