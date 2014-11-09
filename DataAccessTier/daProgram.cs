@@ -389,7 +389,7 @@ namespace DataAccessTier
 
                 dtSkillClass = dsSkillClass.Tables[0];
 
-            }
+        }
             catch (SqlException ReadError)
             {
                 pErrorMessage = ReadError.Message.ToString();
@@ -422,7 +422,7 @@ namespace DataAccessTier
 
                 dtSkills = dsSkills.Tables[0];
 
-            }
+        }
             catch (SqlException ReadError)
             {
                 pErrorMessage = ReadError.Message.ToString();
@@ -451,7 +451,7 @@ namespace DataAccessTier
             {
                 DataSet dsSkillClass = SqlHelper.ExecuteDataset(ConnectionString, CommandType.StoredProcedure, "GetSkillClassInfo", arParms);
                 dtSkillClass = dsSkillClass.Tables[0];
-            }
+        }
             catch (SqlException ReadError)
             {
                 pErrorMessage = ReadError.Message.ToString();
@@ -483,7 +483,7 @@ namespace DataAccessTier
 
                 dtSubSkill = dsSubSkill.Tables[0];
 
-            }
+        }
             catch (SqlException ReadError)
             {
                 pErrorMessage = ReadError.Message.ToString();
@@ -706,12 +706,9 @@ namespace DataAccessTier
 
             pTransactionSuccessful = true;
 
-            try
-            {
+            try {
                 SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, "insertskills", arParms);
-            }
-            catch (SqlException InsertError)
-            {
+            } catch (SqlException InsertError) {
                 pErrorMessage = InsertError.Message.ToString();
                 pErrorNumber = InsertError.Number;
                 pErrorClass = InsertError.Class;
@@ -934,7 +931,7 @@ namespace DataAccessTier
                 pTransactionSuccessful = false;
             }
         }
-    
+
         #endregion
 
         #region " Delete methods "
