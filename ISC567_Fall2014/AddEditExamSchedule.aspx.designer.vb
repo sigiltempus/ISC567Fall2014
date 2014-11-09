@@ -257,11 +257,11 @@ Partial Public Class AddEditExam
     Protected WithEvents ValidationSummary1 As Global.System.Web.UI.WebControls.ValidationSummary
 
     '''<summary>
-    '''btnSave control.
+    '''CloseIFrameButton1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnSave As Global.JSIM.Custom_Controls.SaveAndCloseIFrameButton
+    Protected WithEvents CloseIFrameButton1 As Global.JSIM.Custom_Controls.CloseIFrameButton
 End Class

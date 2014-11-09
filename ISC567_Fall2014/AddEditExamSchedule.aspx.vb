@@ -142,44 +142,44 @@ Public Class AddEditExam
 
 #Region "Click Event Handlers for Page Controls"
     
-    Protected Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Dim mode As String = Request.QueryString("mode")
+    'Protected Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    '    Dim mode As String = Request.QueryString("mode")
 
-        Dim examDate As DateTime
-        Dim examStartTime As DateTime
-        Dim examEndTime As DateTime
-        Dim scheduledExamId = -1 ' Default for Upsert
+    '    Dim examDate As DateTime
+    '    Dim examStartTime As DateTime
+    '    Dim examEndTime As DateTime
+    '    Dim scheduledExamId = -1 ' Default for Upsert
 
-        If mode = "edit" Then
-            scheduledExamId = CInt(Session("selectedExamId"))
-        Else
-            scheduledExamId = -1
-        End If
+    '    If mode = "edit" Then
+    '        scheduledExamId = CInt(Session("selectedExamId"))
+    '    Else
+    '        scheduledExamId = -1
+    '    End If
 
-        Dim institutionid As Integer = CInt(Session("institutionIdInContext"))
-        Dim examid As Integer = CInt(ddlExam.SelectedItem.Value)
-        Dim examName As String = ddlExam.SelectedItem.Text
-        Dim personid As Integer = GetSVTableValue(Of Integer)("personid")
-        Dim examlocation As String = txtLocation.Text
+    '    Dim institutionid As Integer = CInt(Session("institutionIdInContext"))
+    '    Dim examid As Integer = CInt(ddlExam.SelectedItem.Value)
+    '    Dim examName As String = ddlExam.SelectedItem.Text
+    '    Dim personid As Integer = GetSVTableValue(Of Integer)("personid")
+    '    Dim examlocation As String = txtLocation.Text
 
-        Dim strMssg As String = ""
+    '    Dim strMssg As String = ""
 
-        Try
-            examDate = CDate(txtDate.Value + " 00:00:00.000")
-            examStartTime = CDate("1900-01-01 " + txtStartTime.Text)
-            examEndTime = CDate("1900-01-01 " + txtEndTime.Text)
-        Catch ex As Exception
-            ' if an exception occur trying to convert the user entered value to appropriate data type
-            lblMessage.ForeColor = Drawing.Color.Red
-            lblMessage.Text = ex.Message
-            lblMessage.Visible = True
-        Finally
-            strMssg = AddEditScheduledExam(scheduledExamId, examid, examName, examDate, examStartTime, examEndTime, examlocation, personid, mode)
-        End Try
+    '    Try
+    '        examDate = CDate(txtDate.Value + " 00:00:00.000")
+    '        examStartTime = CDate("1900-01-01 " + txtStartTime.Text)
+    '        examEndTime = CDate("1900-01-01 " + txtEndTime.Text)
+    '    Catch ex As Exception
+    '        ' if an exception occur trying to convert the user entered value to appropriate data type
+    '        lblMessage.ForeColor = Drawing.Color.Red
+    '        lblMessage.Text = ex.Message
+    '        lblMessage.Visible = True
+    '    Finally
+    '        strMssg = AddEditScheduledExam(scheduledExamId, examid, examName, examDate, examStartTime, examEndTime, examlocation, personid, mode)
+    '    End Try
 
-        lblMessage.Text = strMssg
-        lblMessage.Visible = True
-    End Sub
+    '    lblMessage.Text = strMssg
+    '    lblMessage.Visible = True
+    'End Sub
 
 #End Region
 

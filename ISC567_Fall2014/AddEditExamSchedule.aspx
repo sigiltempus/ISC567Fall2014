@@ -34,7 +34,7 @@
     <form id="form" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="ListIFrame" style="height: 236px;">
-            <table>
+            <table style="height: 178px">
                 <tr>
                     <td colspan="2" class="auto-style2">
                         <ccJSIM:DragIFrame ID="lblHeader" runat="server" CanDragIFrame="True" CssClass="IFrameHeader" Width="100%">
@@ -53,8 +53,8 @@
                 <tr>
                     <td colspan="2" class="auto-style1">
                         <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" BorderStyle="Solid" BorderColor="Black"
-                            BorderWidth="2px" class="auto-style1">
-                            <table style="width: 98%;" id="tblName">
+                            BorderWidth="2px" class="auto-style1" Height="140px">
+                            <table style="width: 98%; margin-bottom: 0px;" id="tblName">
                                 <tr style="text-decoration-style: solid;">
                                     <td style="width: 25%;">
                                         <asp:Label ID="lblExamName" runat="server" Text="Exam Name: " Font-Bold="true"></asp:Label>
@@ -118,11 +118,13 @@
                                             Display="Dynamic" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr >
                                     <td colspan="2">
                                         <asp:ValidationSummary ID="ValidationSummary1" HeaderText="Please correct the errors specified below before proceeding"
-                                            DisplayMode="BulletList" EnableClientScript="true" ForeColor="Red" runat="server" />
+                                            DisplayMode="BulletList" EnableClientScript="true" ForeColor="Red" runat="server" Width="445px" />
+                                        <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" Text="Close" Cssclass="Button" IFrameName="ifExamList" PostBackUrl="ExamProvider_7.aspx"  Width="70px" style="z-index: 1; left: 490px; top: 210px; position: absolute; height: 21px;" />
                                     </td>
+ 
                                 </tr>
                             </table>
                         </asp:Panel>
@@ -130,8 +132,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="height: 20px;">
-                        <ccJSIM:SaveAndCloseIFrameButton ID="btnSave" runat="server" OnClick="btnSave_Click" IFrameName="ifAddEditExam" Interval="100" Text=" [✓] SAVE " Width="100px"
-                            ParentFrame="ifListScheduledExam" ParentPage="ListScheduledExam.aspx" CssClass="Button" />
+                        
                     </td>
                 </tr>
             </table>

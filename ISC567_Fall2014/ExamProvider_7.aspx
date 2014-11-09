@@ -100,7 +100,7 @@
                             IFrameName="ifAuthor" Text="Authors" Interval="10" HeightPosition="550" LeftPosition="250" TopPosition="100" WidthPosition="990" ZIndex="210" CssClass="Button" style="z-index: 1; left: 198px; top: 350px; position: absolute; width: 81px;" />
                         &nbsp;--%>
                         <ccJSIM:OpenIFrameButton ID="OpenIFrameButton4" runat="server" FrameSrc="ExamProvider_11.aspx" IFrameName="ifExamList" Text="Work On Exam Item"
-    						Interval="10" HeightPosition="432" LeftPosition="240" TopPosition="120" WidthPosition="955" ZIndex="210" CssClass="Button" style="z-index: 1; top: 350px; left:218px; position: absolute; width: 220px;"/>
+    						Interval="10" HeightPosition="432" LeftPosition="420" TopPosition="160" WidthPosition="955" ZIndex="210" CssClass="Button" style="z-index: 1; top: 350px; left:218px; position: absolute; width: 220px;"/>
 						&nbsp;
 						<ccJSIM:OpenIFrameButton ID="OpenIFrameButton1" runat="server" Text ="Add Exam" IFrameName="ifAddExam" Framesrc="ExamProvider_8.aspx?mode=add" Interval="10" HeightPosition="245" LeftPosition="450" TopPosition="200" WidthPosition="500" ZIndex="210" CssClass="Button" style="z-index: 1; left: 19px; top: 350px; position: absolute; width: 72px;"/>
 
