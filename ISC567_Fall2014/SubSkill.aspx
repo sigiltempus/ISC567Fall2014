@@ -25,9 +25,9 @@
                     </ccJSIM:DragIFrame>
                 </td>
                 <td align="right" class="IFrameHeader">
-                    <ccJSIM:CloseIFrameLinkButton ID="CloseIFrameLinkButton1" runat="server" Text="[x] Close"
-                        ForeColor="White" BorderColor="White" IFrameName="IfSubSkill">
-                    </ccJSIM:CloseIFrameLinkButton>
+                    <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" Text="[x] Close"
+                        IFrameName="IfSubSkill">
+                    </ccJSIM:CloseIFrameButton>
                 </td>
             </tr>
             <tr>
@@ -76,13 +76,13 @@
                         <tr>
                             <td align="left">
                                 <ccJSIM:OpenIFrameButton ID="btnAddSUbSkill" runat="server" Text="Add Sub Skill"
-                                    FrameSrc="AddEditSubSkill.aspx?mode=add" IFrameName="IfAddEditSubSkill" HeightPosition="405"
-                                    LeftPosition="400" ZIndex="300" TopPosition="210" WidthPosition="550" CssClass="Button" />
+                                    FrameSrc="AddEditSubSkill.aspx?mode=add" IFrameName="IfAddEditSubSkill" HeightPosition="340"
+                                    LeftPosition="425" ZIndex="300" TopPosition="210" WidthPosition="550" CssClass="Button" />
                             </td>
                             <td align="center">
                                 <ccJSIM:OpenIFrameButton ID="btnEditSubSkill" runat="server" Text="Edit Sub Skill"
-                                    FrameSrc="AddEditSubSkill.aspx?mode=edit" IFrameName="IfAddEditSubSkill" HeightPosition="405"
-                                    LeftPosition="400" ZIndex="300" TopPosition="210" WidthPosition="550" CssClass="Button" />
+                                    FrameSrc="AddEditSubSkill.aspx?mode=edit" IFrameName="IfAddEditSubSkill" HeightPosition="340"
+                                    LeftPosition="425" ZIndex="300" TopPosition="210" WidthPosition="550" CssClass="Button" />
                             </td>
                         </tr>
                     </table>
