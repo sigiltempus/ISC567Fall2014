@@ -19,9 +19,9 @@
                     </ccJSIM:DragIFrame>
                 </td>
                 <td align="right" class="IFrameHeader">
-                    <ccJSIM:CloseIFrameLinkButton ID="CloseIFrameLinkButton1" runat="server" Text="[x] Close"
-                        BorderColor="White" ForeColor="White" IFrameName="IfAddEditSkillClass">
-                    </ccJSIM:CloseIFrameLinkButton>
+                    <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" Text="[x] Close"
+                        IFrameName="IfAddEditSkillClass">
+                    </ccJSIM:CloseIFrameButton>
                 </td>
             </tr>
             <tr>
