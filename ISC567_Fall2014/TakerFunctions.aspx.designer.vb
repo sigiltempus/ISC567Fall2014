@@ -68,6 +68,24 @@ Partial Public Class TakerFunctions
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''lblSVLineName2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblSVLineName2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''btnAddEditPerson control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAddEditPerson As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
+
+    '''<summary>
     '''btnRoster0 control.
     '''</summary>
     '''<remarks>
@@ -84,15 +102,6 @@ Partial Public Class TakerFunctions
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnRoster As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
-
-    '''<summary>
-    '''btnAddEditPerson control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnAddEditPerson As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
 
     '''<summary>
     '''btnClose control.
