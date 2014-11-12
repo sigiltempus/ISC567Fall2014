@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class TakerFunctions
+Partial Public Class AddEditCurriculum
 
     '''<summary>
     '''Head1 control.
@@ -23,13 +23,13 @@ Partial Public Class TakerFunctions
     Protected WithEvents Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
 
     '''<summary>
-    '''form1 control.
+    '''form control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents form As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
     '''ScriptManager1 control.
@@ -50,13 +50,22 @@ Partial Public Class TakerFunctions
     Protected WithEvents lblHeader As Global.JSIM.Custom_Controls.DragIFrame
 
     '''<summary>
-    '''lblTakerHeader control.
+    '''lblTitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblTakerHeader As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblTitle As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbtnClose control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbtnClose As Global.JSIM.Custom_Controls.CloseIFrameButton
 
     '''<summary>
     '''lblMessage control.
@@ -68,47 +77,65 @@ Partial Public Class TakerFunctions
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblSVLineName2 control.
+    '''Panel1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblSVLineName2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''btnAddEditPerson control.
+    '''txtShortName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnAddEditPerson As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
+    Protected WithEvents txtShortName As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''btnRoster0 control.
+    '''ValShortName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnRoster0 As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
+    Protected WithEvents ValShortName As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''btnRoster control.
+    '''txtLongName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnRoster As Global.JSIM.Custom_Controls.OpenIFrameLinkButton
+    Protected WithEvents txtLongName As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''btnClose control.
+    '''ValLongName control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnClose As Global.JSIM.Custom_Controls.CloseIFrameButton
+    Protected WithEvents ValLongName As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''ValidationSummary1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ValidationSummary1 As Global.System.Web.UI.WebControls.ValidationSummary
+
+    '''<summary>
+    '''btnCSave control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCSave As Global.JSIM.Custom_Controls.SaveAndCloseIFrameButton
 End Class

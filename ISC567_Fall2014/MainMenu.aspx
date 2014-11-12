@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="MainMenu.aspx.vb" Inherits="ISC567_Spring2013.MainMenu" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="MainMenu.aspx.vb" Inherits="ISC567_Fall2014.MainMenu" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
@@ -78,13 +78,20 @@
                         </a>
                     </li>
                     <li>
-                        <ccJSIM:OpenIFrameLinkButton ID="lbtnProgramFunctions" runat="server" FrameSrc="ListProgram.aspx"
-                            IFrameName="ifProgramList" LeftPosition="15" TopPosition="120" WidthPosition="954" HeightPosition="404"
-                            ZIndex="180" Visible="false" CssClass="LinkButton">Program</ccJSIM:OpenIFrameLinkButton>
+                       <ccJSIM:OpenIFrameLinkButton ID="lbtnCurriculumFunctions" runat="server" FrameSrc="ListCurriculum.aspx"
+                            IFrameName="ifCurriculumList" LeftPosition="15" TopPosition="120" WidthPosition="954" HeightPosition="404"
+                            ZIndex="180" Visible="false" CssClass="LinkButton">Curriculm</ccJSIM:OpenIFrameLinkButton>
                     </li>
                     <li>
-                        <ccJSIM:OpenIFrameLinkButton ID="lbtnTakerFunctions" runat="server" FrameSrc="TakerFunctions.aspx" HeightPosition="254"
-                            IFrameName="ifTakerFunctions" LeftPosition="20" TopPosition="120" WidthPosition="804"
+                        <a href="#">
+                        <ccJSIM:OpenIFrameLinkButton ID="lbtnsociety" runat="server" FrameSrc="Listsociety.aspx" HeightPosition="404"
+                            IFrameName="ifsocietylist" LeftPosition="20" TopPosition="120" WidthPosition="955"
+                            ZIndex="190" Visible="false" CssClass="LinkButton">Society</ccJSIM:OpenIFrameLinkButton>
+                            </a>
+                    </li>
+                    <li>
+                       <ccJSIM:OpenIFrameLinkButton ID="lbtnTakerFunctions" runat="server" FrameSrc="TakerFunctions.aspx" HeightPosition="254"
+                            IFrameName="ifTakerFunctions" LeftPosition="25" TopPosition="120" WidthPosition="804"
                             ZIndex="160" Visible="false" CssClass="LinkButton">Exam Taker</ccJSIM:OpenIFrameLinkButton>
                     </li>
                 </ul>

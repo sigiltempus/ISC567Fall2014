@@ -14,15 +14,79 @@ namespace DataAccessTier {
 
         #region " Read methods "
 
-        public DataTable GetProgramList(string connectionString) {
+        public DataTable GetCurriculumList(string connectionString)
+        {
+            pTransactionSuccessful = true;
+
+            DataTable dtCurriculumList = new DataTable("CurriculumList");
+
+            try
+            {
+                DataSet dsProgramList = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "sp_GetcurriculumList");
+                dtCurriculumList = dsProgramList.Tables[0];
+            }
+            catch (SqlException ReadError)
+            {
+                pErrorMessage = ReadError.Message.ToString();
+                pErrorNumber = ReadError.Number;
+                pErrorClass = ReadError.Class;
+                pErrorState = ReadError.State;
+                pErrorLineNumber = ReadError.LineNumber;
+
+                pTransactionSuccessful = false;
+            }
+
+            return dtCurriculumList;
+        }
+
+        public DataTable GetCurriculumById(int CurriculumId, string connectionString)
+        {
+            // Set up parameters in parameter array 
+            SqlParameter[] arParms = new SqlParameter[1];
+
+            arParms[0] = new SqlParameter("@curriculumid", SqlDbType.Int);
+            arParms[0].Value = CurriculumId;
+
+
+            pTransactionSuccessful = true;
+
+            DataTable dtCurriculumInfo = new DataTable("CurriculumInfo");
+
+            try
+            {
+                DataSet dsCurriculumInfo = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "GetcurriculumInfo", arParms);
+                dtCurriculumInfo = dsCurriculumInfo.Tables[0];
+            }
+            catch (SqlException ReadError)
+            {
+                pErrorMessage = ReadError.Message.ToString();
+                pErrorNumber = ReadError.Number;
+                pErrorClass = ReadError.Class;
+                pErrorState = ReadError.State;
+                pErrorLineNumber = ReadError.LineNumber;
+
+                pTransactionSuccessful = false;
+            }
+            return dtCurriculumInfo;
+        }
+
+        public DataTable GetProgramList(string connectionString, int curriculumid)
+        {
+            SqlParameter[] arParms = new SqlParameter[1];
+
+            arParms[0] = new SqlParameter("@curriculumid", SqlDbType.Int);
+            arParms[0].Value = curriculumid;
             pTransactionSuccessful = true;
 
             DataTable dtProgramList = new DataTable("ProgramList");
 
-            try {
-                DataSet dsProgramList = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "sp_GetProgramList");
+            try
+            {
+                DataSet dsProgramList = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "sp_GetProgramList", arParms);
                 dtProgramList = dsProgramList.Tables[0];
-            } catch (SqlException ReadError) {
+            }
+            catch (SqlException ReadError)
+            {
                 pErrorMessage = ReadError.Message.ToString();
                 pErrorNumber = ReadError.Number;
                 pErrorClass = ReadError.Class;
@@ -55,7 +119,8 @@ namespace DataAccessTier {
             return dtProgramStatus;
         }
 
-        public DataTable GetProgramInfoById(int programId, string connectionString) {
+        public DataTable GetProgramInfoById(int programId, string connectionString)
+        {
             // Set up parameters in parameter array 
             SqlParameter[] arParms = new SqlParameter[1];
 
@@ -67,10 +132,13 @@ namespace DataAccessTier {
 
             DataTable dtProgramInfo = new DataTable("ProgramInfo");
 
-            try {
+            try
+            {
                 DataSet dsProgramInfo = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "sp_GetProgramInfoByID", arParms);
                 dtProgramInfo = dsProgramInfo.Tables[0];
-            } catch (SqlException ReadError) {
+            }
+            catch (SqlException ReadError)
+            {
                 pErrorMessage = ReadError.Message.ToString();
                 pErrorNumber = ReadError.Number;
                 pErrorClass = ReadError.Class;
@@ -106,8 +174,10 @@ namespace DataAccessTier {
             }
             return dtProgramOutcomes;
         }
+
         //Get List of ProgramList with searchargument
-        public DataTable GetProgram(int ProgramId, string ConnectionString) {
+        public DataTable GetProgram(int ProgramId, string ConnectionString)
+        {
             // Set up parameters in parameter array 
             SqlParameter[] arParms = new SqlParameter[1];
             arParms[0] = new SqlParameter("@Programid", SqlDbType.NVarChar);
@@ -118,12 +188,15 @@ namespace DataAccessTier {
 
             DataTable dtProgram = new DataTable("ProgramList");
 
-            try {
+            try
+            {
                 DataSet dsProgram = SqlHelper.ExecuteDataset(ConnectionString, CommandType.StoredProcedure, "GetProgram", arParms);
 
                 dtProgram = dsProgram.Tables[0];
 
-            } catch (SqlException ReadError) {
+            }
+            catch (SqlException ReadError)
+            {
                 pErrorMessage = ReadError.Message.ToString();
                 pErrorNumber = ReadError.Number;
                 pErrorClass = ReadError.Class;
@@ -134,6 +207,7 @@ namespace DataAccessTier {
             }
             return dtProgram;
         }
+
         //Get  Program Outcome with searchargument
         public DataTable GetProgramOutcome(int prgoutcomesid, string ConnectionString) {
             // Set up parameters in parameter array 
@@ -445,12 +519,37 @@ namespace DataAccessTier {
             arParms[4].Value = subskillcomb;
             arParms[5] = new SqlParameter("@jobadwords", SqlDbType.NVarChar);
             arParms[5].Value = jobadwords;
+            this.ExecuteWithoutResult(arParms, "insertsubskill", ConnectionString);
+        }
+        #endregion
+
+        #region " Update methods "
+
+        ///
+        /// Update Methods Here..
+        /// 
+
+        // Call this method with correct parameters to add or update the person and relative institutionpeople table
+        public void EditCurriculumInformation(int CurriculumId, string shortName, string longName, string connectionString)
+        {
+            // Set up parameters in parameter array 
+            SqlParameter[] arParms = new SqlParameter[3];
+
+            arParms[0] = new SqlParameter("@curriculumid", SqlDbType.NVarChar);
+            arParms[0].Value = CurriculumId;
+            arParms[1] = new SqlParameter("@curriculum_shortname", SqlDbType.NVarChar);
+            arParms[1].Value = shortName;
+            arParms[2] = new SqlParameter("@curriculum_longname", SqlDbType.NVarChar);
+            arParms[2].Value = longName;
 
             pTransactionSuccessful = true;
 
-            try {
-                SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, "insertsubskill", arParms);
-            } catch (SqlException InsertError) {
+            try
+            {
+                SqlHelper.ExecuteNonQuery(connectionString, CommandType.StoredProcedure, "EditcurriculumInfo", arParms);
+            }
+            catch (SqlException InsertError)
+            {
                 pErrorMessage = InsertError.Message.ToString();
                 pErrorNumber = InsertError.Number;
                 pErrorClass = InsertError.Class;
@@ -460,13 +559,6 @@ namespace DataAccessTier {
                 pTransactionSuccessful = false;
             }
         }
-        #endregion
-
-        #region " Update methods "
-
-        ///
-        /// Update Methods Here..
-        /// 
 
         //For Updatting ProgramOutcome
         public void UpdateProgramOutcome(int prgoutcomesid, int programid, string prgoutcometext, string prgshortoutcome, string prgsequencenum, string ConnectionString) {
@@ -640,13 +732,42 @@ namespace DataAccessTier {
 
         #endregion
 
-        #region " Upsert methods "
-
+        #region " Insert methods "
 
         // Call this method with correct parameters to add or update the person and relative institutionpeople table
-        public void AddEditProgramInformation(int programId, string shortName, string longName, string description, int statusId, string connectionString) {
+        public void InsertCurriculumInformation(string shortName, string longName, string connectionString)
+        {
             // Set up parameters in parameter array 
-            SqlParameter[] arParms = new SqlParameter[5];
+            SqlParameter[] arParms = new SqlParameter[2];
+
+            arParms[0] = new SqlParameter("@curriculum_shortname", SqlDbType.NVarChar);
+            arParms[0].Value = shortName;
+            arParms[1] = new SqlParameter("@curriculum_longname", SqlDbType.NVarChar);
+            arParms[1].Value = longName;
+
+            pTransactionSuccessful = true;
+
+            try
+            {
+                SqlHelper.ExecuteNonQuery(connectionString, CommandType.StoredProcedure, "Insertcurriculum", arParms);
+            }
+            catch (SqlException InsertError)
+            {
+                pErrorMessage = InsertError.Message.ToString();
+                pErrorNumber = InsertError.Number;
+                pErrorClass = InsertError.Class;
+                pErrorState = InsertError.State;
+                pErrorLineNumber = InsertError.LineNumber;
+
+                pTransactionSuccessful = false;
+            }
+        }
+
+        // Call this method with correct parameters to add or update the person and relative institutionpeople table
+        public void AddEditProgramInformation(int curriculumid, int programId, string shortName, string longName, string description, int statusId, string connectionString)
+        {
+            // Set up parameters in parameter array 
+            SqlParameter[] arParms = new SqlParameter[6];
 
             arParms[0] = new SqlParameter("@programId", SqlDbType.NVarChar);
             arParms[0].Value = programId;
@@ -658,12 +779,17 @@ namespace DataAccessTier {
             arParms[3].Value = description;
             arParms[4] = new SqlParameter("@statusId", SqlDbType.NVarChar);
             arParms[4].Value = statusId;
+            arParms[5] = new SqlParameter("@curriculumid", SqlDbType.NVarChar);
+            arParms[5].Value = curriculumid;
 
             pTransactionSuccessful = true;
 
-            try {
+            try
+            {
                 SqlHelper.ExecuteNonQuery(connectionString, CommandType.StoredProcedure, "sp_UpsertProgramAndStatus", arParms);
-            } catch (SqlException InsertError) {
+            }
+            catch (SqlException InsertError)
+            {
                 pErrorMessage = InsertError.Message.ToString();
                 pErrorNumber = InsertError.Number;
                 pErrorClass = InsertError.Class;

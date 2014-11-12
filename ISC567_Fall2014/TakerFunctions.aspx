@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="TakerFunctions.aspx.vb" Inherits="ISC567_Spring2013.TakerFunctions" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="TakerFunctions.aspx.vb" Inherits="ISC567_Fall2014.TakerFunctions" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
@@ -17,6 +17,9 @@
         }
         .auto-style3 {
             height: 18px;
+        }
+        .auto-style4 {
+            height: 43px;
         }
     </style>
 </head>
@@ -45,19 +48,12 @@
                 </td>
             </tr>
         <tr>
-                <td class="auto-style1">
-                    <ccJSIM:OpenIFrameLinkButton ID="btnRoster0" runat="server" CssClass="Button" 
-                     FrameSrc="Exam Registration.aspx" HeightPosition="500" 
-                     IFrameName="ifRoster" LeftPosition="20" Text=" Registration For Exam " TopPosition="120" 
-                     WidthPosition="808" ZIndex="160" ></ccJSIM:OpenIFrameLinkButton>
+                <td>
+                    <asp:Label ID="lblSVLineName2" runat="server" Visible="true"></asp:Label>
                 </td>
             </tr>
         <tr>
                 <td class="auto-style1">
-                    <ccJSIM:OpenIFrameLinkButton ID="btnRoster" runat="server" CssClass="Button" 
-                     FrameSrc="Roster.aspx" HeightPosition="500" 
-                     IFrameName="ifRoster" LeftPosition="20" Text="" TopPosition="120" 
-                     WidthPosition="808" ZIndex="160" > Exam Roster </ccJSIM:OpenIFrameLinkButton>
                      <br />
                 </td>
             </tr>
@@ -67,7 +63,15 @@
                     <ccJSIM:OpenIFrameLinkButton ID="btnAddEditPerson" runat="server" CssClass="Button" 
                      FrameSrc="AddEditTaker.aspx?mode=edit" HeightPosition="404" 
                      IFrameName="ifAddEditUser" LeftPosition="20" Text="Edit User" TopPosition="120" 
-                     WidthPosition="404" ZIndex="160" > Edit Personal Information </ccJSIM:OpenIFrameLinkButton>
+                     WidthPosition="404" ZIndex="160" > Edit Personal Information </ccJSIM:OpenIFrameLinkButton>&nbsp;&nbsp;&nbsp;
+                    <ccJSIM:OpenIFrameLinkButton ID="btnRoster0" runat="server" CssClass="Button" 
+                     FrameSrc="Exam Registration.aspx" HeightPosition="500" 
+                     IFrameName="ifRoster" LeftPosition="20" Text=" Registration For Exam " TopPosition="120" 
+                     WidthPosition="808" ZIndex="160" ></ccJSIM:OpenIFrameLinkButton>&nbsp;&nbsp;
+&nbsp;                    <ccJSIM:OpenIFrameLinkButton ID="btnRoster" runat="server" CssClass="Button" 
+                     FrameSrc="Roster.aspx" HeightPosition="500" 
+                     IFrameName="ifRoster" LeftPosition="20" Text="" TopPosition="120" 
+                     WidthPosition="808" ZIndex="160" > Exam Roster </ccJSIM:OpenIFrameLinkButton>
                 </td>
             </tr>
         <tr>
@@ -77,9 +81,10 @@
               
             </tr>
         <tr align="left">
-            <td>
+            <td class="auto-style4">
                 <br />
-                <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="Back To Main Page" CssClass="Button" IFrameName="ifTakerFunctions" Interval="10"/>
+                <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="Close" CssClass="Button" IFrameName="ifTakerFunctions" Interval="10"/>
+              
             </td>
         </tr>
     </table>        
