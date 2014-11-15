@@ -101,7 +101,7 @@
             <div class="footerwrapper">
                 <br />
                 <div class="copyright">
-                    Copyright © FALL 2013 ISC567 Group Project All Rights Reserved.
+                    Copyright © FALL 2014 ISC567 Group Project All Rights Reserved.
                 </div>
             </div>
             <!-- End of footer !-->

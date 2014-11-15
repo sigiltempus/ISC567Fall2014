@@ -77,15 +77,6 @@ Partial Public Class ExamProvider_7
     Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
-    '''DropDownList1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''Panel1 control.
     '''</summary>
     '''<remarks>
@@ -104,13 +95,13 @@ Partial Public Class ExamProvider_7
     Protected WithEvents RadioButtonGridView2 As Global.JSIM.Custom_Controls.RadioButtonGridView
 
     '''<summary>
-    '''CloseIFrameButton1 control.
+    '''OpenIFrameButton1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CloseIFrameButton1 As Global.JSIM.Custom_Controls.CloseIFrameButton
+    Protected WithEvents OpenIFrameButton1 As Global.JSIM.Custom_Controls.OpenIFrameButton
 
     '''<summary>
     '''OpenIFrameButton2 control.
@@ -131,11 +122,11 @@ Partial Public Class ExamProvider_7
     Protected WithEvents OpenIFrameButton4 As Global.JSIM.Custom_Controls.OpenIFrameButton
 
     '''<summary>
-    '''OpenIFrameButton1 control.
+    '''CloseIFrameButton1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents OpenIFrameButton1 As Global.JSIM.Custom_Controls.OpenIFrameButton
+    Protected WithEvents CloseIFrameButton1 As Global.JSIM.Custom_Controls.CloseIFrameButton
 End Class

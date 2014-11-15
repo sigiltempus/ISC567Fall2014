@@ -30,6 +30,7 @@ Public Class Login
                 Dim foo As DataTable = GetSVTable()
 
                 Session("Lastname") = dtUserProfile.Rows(0)("lastname").ToString()
+                Session("institutionid") = dtUserProfile.Rows(0)("institutionid").ToString()
 
                 'Place data from table into variables that will be passed to the SV table
                 Dim personid As String = dtUserProfile.Rows(0)("personid").ToString()

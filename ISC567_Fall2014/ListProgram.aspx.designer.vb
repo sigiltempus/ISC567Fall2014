@@ -122,13 +122,13 @@ Partial Public Class ListProgram
     Protected WithEvents lbtnOpenEditProgram As Global.JSIM.Custom_Controls.OpenIFrameButton
 
     '''<summary>
-    '''lblSpacer control.
+    '''lbtnWorkOnExam control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblSpacer As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lbtnWorkOnExam As Global.JSIM.Custom_Controls.OpenIFrameButton
 
     '''<summary>
     '''lbtnOpenBK control.
@@ -165,4 +165,13 @@ Partial Public Class ListProgram
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbtnOpenProgramSkillClass As Global.JSIM.Custom_Controls.OpenIFrameButton
+
+    '''<summary>
+    '''lblSpacer control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblSpacer As Global.System.Web.UI.WebControls.Label
 End Class

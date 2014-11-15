@@ -2195,11 +2195,11 @@ namespace DataAccessTier
             }
         }
 
-        public void addOrUpdateExam(int examid, String examname, Decimal duration, int etypeid, int providerid,
+        public void addOrUpdateExam(int examid, String examname, Decimal duration, int etypeid, 
                                     string exampurpose, string ConnectionString)
         {
             // Set up parameters in parameter array 
-            SqlParameter[] arParms = new SqlParameter[6];
+            SqlParameter[] arParms = new SqlParameter[5];
 
             arParms[0] = new SqlParameter("@examId", SqlDbType.Int);
             arParms[0].Value = examid;
@@ -2211,8 +2211,7 @@ namespace DataAccessTier
             arParms[3].Value = etypeid;
             arParms[4] = new SqlParameter("@exampurpose", SqlDbType.NVarChar);
             arParms[4].Value = exampurpose;
-            arParms[5] = new SqlParameter("@providerid", SqlDbType.Int);
-            arParms[5].Value = providerid;
+
 
 
             pTransactionSuccessful = true;

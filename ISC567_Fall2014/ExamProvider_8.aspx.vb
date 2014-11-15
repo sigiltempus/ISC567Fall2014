@@ -71,38 +71,41 @@ Public Class ExamProvider_8
 
     Protected Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         'Dim examname As String
-        Dim Duration As String = "hh:mm:ss"
+        ' Dim Duration As String = "hh:mm:ss"
 
         mode = Request.QueryString("mode")
         Dim examid As Integer = Convert.ToInt32(Session("examid"))
+        Dim hours As Decimal = CDec(ddlHours.SelectedValue.ToString())
+        Dim minutes As Decimal = CDec(ddlminutes.SelectedValue.ToString())
+
+        Dim duration As Decimal = (hours + minutes) * 60
 
         If mode = "add" Then
-            AppUser.addOrUpdateExam(-1, txtName.Text, CDec(ddlDuration.SelectedValue.ToString()), CInt(Session("providerid")),
+            AppUser.addOrUpdateExam(-1, txtName.Text, duration,
                                     CInt(ddlExamType.SelectedValue.ToString()), txtPurpose.Text, cn)
             'Edit 10/17/2014 - J00087408 
             'provide confirmation of success and clear screen to prevent duplicate data.
             If AppUser.TransactionSuccessful Then
                 lblMessage.Visible = True
-                Session("examname") = txtName.Text
-                Session("examduration") = ddlDuration.SelectedValue
-                lblMessage.Text = "Exam sucessfully addedand is able to be scheduled."
+                lblMessage.Text = "Exam sucessfully added"
                 txtName.Text = ""
                 txtPurpose.Text = ""
+
 
             End If
             'End edit
         ElseIf mode = "edit" Then
             Dim eid As Integer = CInt(Session("examid"))
 
-            AppUser.addOrUpdateExam(eid, txtName.Text, CDec(ddlDuration.SelectedValue.ToString()), CInt(Session("providerid")),
+
+            AppUser.addOrUpdateExam(eid, txtName.Text, duration,
                                     CInt(ddlExamType.SelectedValue.ToString()), txtPurpose.Text, cn)
             'Edit 10/17/2014 - J00087408 
             'provide confirmation of success and clear screen to prevent duplicate data.
             If AppUser.TransactionSuccessful Then
-                Session("examname") = txtName.Text
-                Session("examduration") = ddlDuration.SelectedValue
+
                 lblMessage.Visible = True
-                lblMessage.Text = "Exam sucessfully added and is able to be scheduled."
+                lblMessage.Text = "Exam sucessfully added"
                 txtName.Text = ""
                 txtPurpose.Text = ""
 
@@ -113,7 +116,5 @@ Public Class ExamProvider_8
         End If
     End Sub
 
-    Protected Sub ddlDuration_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlDuration.SelectedIndexChanged
 
-    End Sub
 End Class
