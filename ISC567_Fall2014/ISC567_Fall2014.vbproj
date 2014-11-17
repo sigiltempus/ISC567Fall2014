@@ -143,6 +143,7 @@
     <Content Include="Skills.aspx" />
     <Content Include="Styles\jQuery\jquery-ui.css" />
     <Content Include="SubSkill.aspx" />
+    <Content Include="SubSkillInBK.aspx" />
     <Content Include="TakerFunctions.aspx" />
     <Content Include="WaitForExamTime.aspx" />
     <Content Include="WorkOnStaff.aspx" />
@@ -520,6 +521,13 @@
     </Compile>
     <Compile Include="SubSkill.aspx.vb">
       <DependentUpon>SubSkill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubSkillInBK.aspx.designer.vb">
+      <DependentUpon>SubSkillInBK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubSkillInBK.aspx.vb">
+      <DependentUpon>SubSkillInBK.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TakerFunctions.aspx.designer.vb">

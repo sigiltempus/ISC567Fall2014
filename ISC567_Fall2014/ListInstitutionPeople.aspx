@@ -32,14 +32,14 @@
                 <tr>
                     <td colspan="2" class="auto-style2">
                         <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="" CssClass="IFrameHeader" Width="100%">
-                        <asp:Label ID="lblTitle" runat="server" Text="List Institution People" Width="90%" style="text-align: left;"></asp:Label>
+                        <asp:Label ID="lblTitle" runat="server" Text="List University People" Width="90%" style="text-align: left;"></asp:Label>
                         <ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifInstitutionPeopleList" Text="[X] Close" style="text-align: right" />
                         </ccJSIM:DragIFrame>
                     </td>
                 </tr>
                 <tr style="text-decoration-style: solid;">
                     <td style="width: 30%;">
-                        Institution<br />
+                        University<br />
                         <asp:DropDownList ID="ddlInstitution" runat="server" Style="width: 100%;" OnSelectedIndexChanged="ddlInstitution_SelectedIndexChanged" AutoPostBack="True">
                         </asp:DropDownList>
                     </td>
@@ -66,6 +66,7 @@
                                             <asp:CheckBoxField DataField="isProctor" HeaderText="Proctor" SortExpression="isProctor" />
                                             <asp:CheckBoxField DataField="isReports" HeaderText="Rpt" SortExpression="isReports" />
                                             <asp:CheckBoxField DataField="isTaker" HeaderText="Taker" SortExpression="isTaker" />
+                                            <asp:CheckBoxField DataField="isEmployee" HeaderText="isEmployee" SortExpression="isEmployee" />
                                         </Columns>
                                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                                         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

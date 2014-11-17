@@ -56,7 +56,7 @@
                                             <asp:BoundField DataField="personID" HeaderText="personID" SortExpression="personID" Visible="False" />
                                             <asp:BoundField DataField="lastname" HeaderText="Last Name" SortExpression="lastname" />
                                             <asp:BoundField DataField="firstname" HeaderText="First Name" SortExpression="firstname" />
-                                            <asp:BoundField DataField="institutionName" HeaderText="Institution Name" SortExpression="institutionName" />
+                                            <asp:BoundField DataField="institutionName" HeaderText="University Name" SortExpression="institutionName" />
                                             <asp:CheckBoxField DataField="isSA" HeaderText="SA" SortExpression="isSA"/>
                                             <asp:CheckBoxField DataField="isProvider" HeaderText="Provider" SortExpression="isProvider" />
                                             <asp:CheckBoxField DataField="isEPSA" HeaderText="EPSA" SortExpression="isEPSA" />
@@ -66,6 +66,8 @@
                                             <asp:CheckBoxField DataField="isProctor" HeaderText="Proctor" SortExpression="isProctor" />
                                             <asp:CheckBoxField DataField="isReports" HeaderText="Rpt" SortExpression="isReports" />
                                             <asp:CheckBoxField DataField="isTaker" HeaderText="Taker" SortExpression="isTaker" />
+                                            <asp:CheckBoxField DataField="isCurriculum" HeaderText="Curriculum" SortExpression="IsCurriculum" />
+                                            <asp:CheckBoxField DataField="IsEmployee" HeaderText="UEmployee" SortExpression="IsEmployee" />
                                         </Columns>
                                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                                         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

@@ -30,6 +30,10 @@ Public Class Login
                 Dim foo As DataTable = GetSVTable()
 
                 Session("Lastname") = dtUserProfile.Rows(0)("lastname").ToString()
+                Session("isEmployee") = dtUserProfile.Rows(0)("isEmployee").ToString()
+                Session("isCurriculum") = dtUserProfile.Rows(0)("isCurriculum").ToString()
+
+
 
                 'Place data from table into variables that will be passed to the SV table
                 Dim personid As String = dtUserProfile.Rows(0)("personid").ToString()
@@ -44,6 +48,8 @@ Public Class Login
                 InsertSVTableValue(Of String)("isInstitution", isInstitution)
                 Dim isSA As String = dtUserProfile.Rows(0)("isSA").ToString()
                 InsertSVTableValue(Of String)("isSA", isSA)
+               
+
 
                 ' Redirect to main menu
                 Response.Redirect("MainMenu.aspx")
