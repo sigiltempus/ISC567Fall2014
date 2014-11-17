@@ -2084,10 +2084,10 @@ namespace DataAccessTier
                                              string city, string state, string zip, string phoneNumber1, string phoneNumber1Type,
                                              string phoneNumber2, string phoneNumber2Type, string username, string password, Boolean isTaker,
                                              Boolean isProvider, Boolean isInstitution, Boolean isSA, Boolean isISA, Boolean isProctor,
-                                             Boolean isReports, Boolean isEPSA, Boolean isDeveloper, string ConnectionString)
+                                             Boolean isReports, Boolean isEPSA, Boolean isDeveloper,Boolean isCurriculum,Boolean isEmployee, string ConnectionString)
         {
             // Set up parameters in parameter array 
-            SqlParameter[] arParms = new SqlParameter[27];
+            SqlParameter[] arParms = new SqlParameter[29];
 
             arParms[0] = new SqlParameter("@personId", SqlDbType.NVarChar);
             arParms[0].Value = personId;
@@ -2143,6 +2143,11 @@ namespace DataAccessTier
             arParms[25].Value = isEPSA;
             arParms[26] = new SqlParameter("@isDeveloper", SqlDbType.Bit);
             arParms[26].Value = isDeveloper;
+            arParms[27] = new SqlParameter("@isCurriculum", SqlDbType.Bit);
+            arParms[27].Value = isCurriculum;
+            arParms[28] = new SqlParameter("@isEmployee", SqlDbType.Bit);
+            arParms[28].Value = isEmployee;
+
 
             pTransactionSuccessful = true;
 

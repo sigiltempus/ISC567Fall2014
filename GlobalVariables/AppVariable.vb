@@ -16,6 +16,9 @@ Public Class AppVariable
     Public Shared isRoster As Boolean = GetSVTableValue(Of Boolean)("isRoster")
     Public Shared isProvider As Boolean = GetSVTableValue(Of Boolean)("isProvider")
     Public Shared isInstitution As Boolean = GetSVTableValue(Of Boolean)("isInstitution")
+    Public Shared isCurriculum As Boolean = GetSVTableValue(Of Boolean)("isCurriculum")
+    Public Shared isEmployee As Boolean = GetSVTableValue(Of Boolean)("isEmployee")
+
 
 #End Region
 
@@ -45,6 +48,10 @@ Public Class AppVariable
         InsertSVTableValue(Of String)("isRoster", isRoster)
         Dim isSA As String = dtUserProfile.Rows(0)("isSA").ToString()
         InsertSVTableValue(Of String)("isSA", isSA)
+        Dim isCurriculum As String = dtUserProfile.Rows(0)("isCurriculum").ToString()
+        InsertSVTableValue(Of String)("isCurriculum", isCurriculum)
+        Dim isEmployee As String = dtUserProfile.Rows(0)("isEmployee").ToString()
+        InsertSVTableValue(Of String)("isEmployee", isEmployee)
     End Sub
 
 

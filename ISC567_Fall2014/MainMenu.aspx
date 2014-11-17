@@ -66,7 +66,7 @@
                         <a href="#">
                             <ccJSIM:OpenIFrameLinkButton ID="lbtnInstitutionFunctions" runat="server" FrameSrc="ListInstitutionPeople.aspx"
                                 IFrameName="ifInstitutionPeopleList" LeftPosition="15" TopPosition="120" WidthPosition="954" HeightPosition="404"
-                                ZIndex="100" Visible="false" CssClass="LinkButton">Institution People</ccJSIM:OpenIFrameLinkButton>
+                                ZIndex="100" Visible="false" CssClass="LinkButton">University </ccJSIM:OpenIFrameLinkButton>
                         </a>
                     </li>
                     <li>

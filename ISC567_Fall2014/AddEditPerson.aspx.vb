@@ -1,6 +1,7 @@
 ﻿Imports JSIM.Bases.SVTable
 Imports GlobalVariables.AppVariable
 
+
 Public Class AddEditPerson
     Inherits JSIM.Bases.BaseClass
 
@@ -90,6 +91,12 @@ Public Class AddEditPerson
                     If chkBx.ToString() = "Is Proctor" Then
                         chkBx.Selected = CBool(.Rows(0)("isProctor"))
                     End If
+                    If chkBx.ToString() = "Is Curriculum" Then
+                        chkBx.Selected = CBool(dtUserInfo.Rows(0)("isCurriculum"))
+                    End If
+                    If chkBx.ToString() = "Is Employee" Then
+                        chkBx.Selected = CBool(dtUserInfo.Rows(0)("isEmployee"))
+                    End If
                 Next
             End With
         End If
@@ -142,6 +149,11 @@ Public Class AddEditPerson
             chkBxRoleLists.Items.Insert(6, "Is Taker")
             chkBxRoleLists.Items.Insert(7, "Is Developer")
             chkBxRoleLists.Items.Insert(8, "Is Proctor")
+            chkBxRoleLists.Items.Insert(9, "Is Curriculum")
+            chkBxRoleLists.Items.Insert(9, "Is Employee")
+
+
+
         ElseIf isProvider Or parentScreen = "lstExamProvider" Then
             If isInstitution Then
                 chkBxRoleLists.Items.Insert(0, "Is Provider")
@@ -183,13 +195,13 @@ Public Class AddEditPerson
                                  ByVal city As String, ByVal state As String, ByVal zip As String, ByVal phoneNumber1 As String, ByVal phoneNumber1Type As String,
                                  ByVal phoneNumber2 As String, ByVal phoneNumber2Type As String, ByVal username As String, ByVal password As String,
                                  ByVal isSA As Boolean, ByVal isReports As Boolean, ByVal isTaker As Boolean, ByVal isProvider As Boolean, ByVal isEPSA As Boolean,
-                                 ByVal isDeveloper As Boolean, ByVal isInstitution As Boolean, ByVal isISA As Boolean, ByVal isProctor As Boolean) As String
+                                 ByVal isDeveloper As Boolean, ByVal isInstitution As Boolean, ByVal isISA As Boolean, ByVal isProctor As Boolean, ByVal isCurriculum As Boolean, ByVal isEmployee As Boolean) As String
         Dim strStatus As String = "Error"
         Dim cn As String = GetConnectionString("connectionString")
 
         AppUser.AddEditPersonInformation(personId, institutionId, providerId, firstName, lastName, dob, email, address1, address2, city, state, zip,
                                          phoneNumber1, phoneNumber1Type, phoneNumber2, phoneNumber2Type, username, password, isTaker,
-                                         isProvider, isInstitution, isSA, isISA, isProctor, isReports, isEPSA, isDeveloper, cn)
+                                         isProvider, isInstitution, isSA, isISA, isProctor, isReports, isEPSA, isDeveloper, isCurriculum, isEmployee, cn)
 
         If AppUser.TransactionSuccessful Then
             strStatus = "Success"
@@ -217,6 +229,11 @@ Public Class AddEditPerson
         Dim isInstitutionChecked As Boolean = False
         Dim isISAChecked As Boolean = False
         Dim isProctorChecked As Boolean = False
+        Dim isCurriculumChecked As Boolean = False
+        Dim isEmployeeChecked As Boolean = False
+
+
+
 
         Dim strMsg As String = ""
 
@@ -254,6 +271,12 @@ Public Class AddEditPerson
             If chkBx.ToString() = "Is Proctor" Then
                 isProctorChecked = chkBx.Selected
             End If
+            If chkBx.ToString() = "Is Curriculum" Then
+                isCurriculumChecked = chkBx.Selected
+            End If
+            If chkBx.ToString() = "Is Employee" Then
+                isEmployeeChecked = chkBx.Selected
+            End If
         Next
 
         Try
@@ -261,7 +284,7 @@ Public Class AddEditPerson
             strMsg = AddEditUser(personId, CInt(ddlInstitution.SelectedValue), CInt(ddlProvider.SelectedValue), txtFirstName.Text, txtLastName.Text, CDate(txtDateOfBirth.Value), txtEmail.Text, txtAddress1.Text, txtAddress2.Text,
                                  txtCity.Text, txtState.Text, txtZip.Text, txtPrimaryPhone.Text, ddlPhoneType1.SelectedValue, txtAlternatePhone.Text, ddlPhoneType2.SelectedValue,
                                  txtUserName.Text, txtPassword.Text, isSAChecked, isReportsChecked, isTakerChecked, isProviderChecked, isEPSAChecked, isDeveloperChecked,
-                                 isInstitutionChecked, isISAChecked, isProctorChecked)
+                                 isInstitutionChecked, isISAChecked, isProctorChecked, isCurriculumChecked, isEmployeeChecked)
 
             If strMsg = "Success" Then
                 'if the Add/Edit was successful
