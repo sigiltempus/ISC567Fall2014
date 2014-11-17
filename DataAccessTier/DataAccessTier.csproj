@@ -46,6 +46,8 @@
     <Compile Include="daInstitution.cs" />
     <Compile Include="daProgram.cs" />
     <Compile Include="daProvider.cs" />
+    <Compile Include="dasociety.cs" />
+    <Compile Include="dasponsor.cs" />
     <Compile Include="daUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
