@@ -26,11 +26,11 @@ Public Class ExamProvider_7
         dtInstitutionNames = oUser.GetInstitutionNames(cn)
         Dim dtInstitutionNamesView As DataView
         dtInstitutionNamesView = dtInstitutionNames.DefaultView
-        DropDownList1.DataTextField = "name"
-        DropDownList1.DataValueField = "institutionid"
-        DropDownList1.DataSource = dtInstitutionNamesView
-        DropDownList1.DataBind()
-        DropDownList1.Items.Insert(0, New ListItem("Name of Universities", "0"))
+        'DropDownList1.DataTextField = "name"
+        'DropDownList1.DataValueField = "institutionid"
+        'DropDownList1.DataSource = dtInstitutionNamesView
+        'DropDownList1.DataBind()
+        'DropDownList1.Items.Insert(0, New ListItem("Name of Universities", "0"))
 
     End Sub
 
@@ -38,9 +38,7 @@ Public Class ExamProvider_7
 
         Dim oUser As New DataAccessTier.daUser
         Dim dtInstitutionExams As DataTable
-        If InstitutionID = 0 Then
-            InstitutionID = 973
-        End If
+        InstitutionID = CInt(Session("institutionid").ToString)
         dtInstitutionExams = oUser.GetExamList(InstitutionID, cn)
         'Dim dtInstitutionExamsView As DataView
         'dtInstitutionExamsView = dtInstitutionExams.DefaultView
@@ -51,13 +49,13 @@ Public Class ExamProvider_7
     End Sub
 
 
-    Public Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList1.SelectedIndexChanged
-        RadioButtonGridView2.Visible = True
-        InstitutionID = CInt(DropDownList1.SelectedValue)
+    'Public Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList1.SelectedIndexChanged
+    '    RadioButtonGridView2.Visible = True
+    '    InstitutionID = CInt(DropDownList1.SelectedValue)
 
-        populategv(InstitutionID)
+    '    populategv(InstitutionID)
 
-    End Sub
+    'End Sub
 
 
 

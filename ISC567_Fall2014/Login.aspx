@@ -43,7 +43,7 @@
             <div class="footerwrapper">
 
                 <div class="copyright">
-                    Copyright © 2011 ISC567 Group Project All Rights Reserved.
+                    Copyright © 2014 ISC567 Group Project All Rights Reserved.
                 </div>
             </div>
             <!-- End of footer !-->

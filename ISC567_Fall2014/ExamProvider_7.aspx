@@ -10,11 +10,7 @@
      <link rel="stylesheet" type="text/css" href="styles/IFrameStyles.css" />
 
     <style type="text/css">
-        .auto-style1 {
-            height: 325px;
-            width: 940px;
-        }
-
+        
         .auto-style2 {
             width: 570px;
         }
@@ -22,13 +18,19 @@
         #form1 {
             width: 570px;
         }
+        .auto-style3 {
+            height: 237px;
+        }
+        .auto-style4 {
+            height: 28px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="ListIFrame">
-            <table>
+            <table style="height: 302px">
                 <tr>
                     <td colspan="2" class="auto-style2">
                         <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="" CssClass="IFrameHeader" Width="99.5%">
@@ -42,17 +44,17 @@
                         <asp:Label ID="lblErrorMessage" runat="server" Text="" ForeColor="Red" Visible="false"></asp:Label></td>
                 </tr>
                 <tr>
-                    <td colspan="2">
+                    <td colspan="2" class="auto-style3">
                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
 
-                            <asp:DropDownList ID="DropDownList1" runat="server" Height="20px" Width="450px" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                            <%--<asp:DropDownList ID="DropDownList1" runat="server" Height="20px" Width="450px" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                                <asp:ListItem>Name of Universities</asp:ListItem>
                                <asp:ListItem></asp:ListItem>
-                           </asp:DropDownList>
+                           </asp:DropDownList>--%>
 
                             <asp:Panel ID="Panel1" runat="server" ScrollBars="Both" width="99%"
-                                BorderColor="Black" BorderStyle="Solid" BorderWidth="2px" Height="281px">
+                                BorderColor="Black" BorderStyle="Solid" BorderWidth="2px" Height="282px">
     <ccJSIM:RadioButtonGridView ID="RadioButtonGridView2" runat="server" 
         AutoGenerateColumns="False" CellPadding="4" ChangeRowColor="True" 
         ForeColor="#333333" GridLines="None" GridSortDirection="ASC" 
@@ -85,25 +87,32 @@
         <SortedDescendingCellStyle BackColor="#E9EBEF" />
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </ccJSIM:RadioButtonGridView>
-                                <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" IFrameName="ifWorkOnExam" Interval="10" PostBackUrl="WorkOnStaff.aspx" style="z-index: 1; left: 468px; top: 350px; position: absolute; width: 86px;" Text="Close" CssClass="Button" />
+                               
                     </asp:Panel>
                         </ContentTemplate>
                         </asp:UpdatePanel>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
-                        <ccJSIM:OpenIFrameButton ID="OpenIFrameButton2" runat="server" FrameSrc="ExamProvider_8.aspx?mode=edit" 
-						IFrameName="ifAddExam" Text="Edit Exam" HeightPosition="245" LeftPosition="450" TopPosition="200" WidthPosition="500" ZIndex="210" CssClass="Button" style="z-index: 1; left: 100px; top: 351px; position: absolute; width: 94px;" />
+                    <td colspan="2" class="auto-style4">
                         &nbsp;
+                        <ccJSIM:OpenIFrameButton ID="OpenIFrameButton1" runat="server" Text ="Add Exam" IFrameName="ifAddExam" Framesrc="ExamProvider_8.aspx?mode=add" 
+                            Interval="10" HeightPosition="245" LeftPosition="450" TopPosition="200" WidthPosition="500" ZIndex="210" CssClass="Button" style="width: 72px;"/>
+                        &nbsp;
+                        <ccJSIM:OpenIFrameButton ID="OpenIFrameButton2" runat="server" FrameSrc="ExamProvider_8.aspx?mode=edit" 
+						IFrameName="ifAddExam" Text="Edit Exam" HeightPosition="245" LeftPosition="450" TopPosition="200" WidthPosition="500" ZIndex="210" CssClass="Button" style="width: 94px;" />
+                       &nbsp;
+                         &nbsp;
                        <%-- <ccJSIM:OpenIFrameButton ID="OpenIFrameButton3" runat="server" FrameSrc= "ExamProvider_11.aspx"
                             IFrameName="ifAuthor" Text="Authors" Interval="10" HeightPosition="550" LeftPosition="250" TopPosition="100" WidthPosition="990" ZIndex="210" CssClass="Button" style="z-index: 1; left: 198px; top: 350px; position: absolute; width: 81px;" />
                         &nbsp;--%>
                         <ccJSIM:OpenIFrameButton ID="OpenIFrameButton4" runat="server" FrameSrc="ExamProvider_11.aspx" IFrameName="ifExamList" Text="Work On Exam Item"
-    						Interval="10" HeightPosition="432" LeftPosition="420" TopPosition="160" WidthPosition="955" ZIndex="210" CssClass="Button" style="z-index: 1; top: 350px; left:218px; position: absolute; width: 220px;"/>
+    						Interval="10" HeightPosition="432" LeftPosition="420" TopPosition="160" WidthPosition="955" ZIndex="210" CssClass="Button" style="width: 220px;"/>
 						&nbsp;
-						<ccJSIM:OpenIFrameButton ID="OpenIFrameButton1" runat="server" Text ="Add Exam" IFrameName="ifAddExam" Framesrc="ExamProvider_8.aspx?mode=add" Interval="10" HeightPosition="245" LeftPosition="450" TopPosition="200" WidthPosition="500" ZIndex="210" CssClass="Button" style="z-index: 1; left: 19px; top: 350px; position: absolute; width: 72px;"/>
-
+                        &nbsp;
+                        &nbsp;
+                         <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" IFrameName="ifWorkOnExam" Interval="10" PostBackUrl="WorkOnStaff.aspx" style="width: 86px;" Text="Close" CssClass="Button" />
+						
                     </td>
                 </tr>
             </table>

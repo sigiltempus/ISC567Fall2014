@@ -1,4 +1,4 @@
-﻿Imports JSIM.Bases.SVTable
+Imports JSIM.Bases.SVTable
 Public Class Login
     Inherits JSIM.Bases.BaseClass
 
@@ -32,8 +32,7 @@ Public Class Login
                 Session("Lastname") = dtUserProfile.Rows(0)("lastname").ToString()
                 Session("isEmployee") = dtUserProfile.Rows(0)("isEmployee").ToString()
                 Session("isCurriculum") = dtUserProfile.Rows(0)("isCurriculum").ToString()
-
-
+                Session("institutionid") = dtUserProfile.Rows(0)("institutionid").ToString()
 
                 'Place data from table into variables that will be passed to the SV table
                 Dim personid As String = dtUserProfile.Rows(0)("personid").ToString()
