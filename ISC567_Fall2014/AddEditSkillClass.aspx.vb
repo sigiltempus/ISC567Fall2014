@@ -36,8 +36,7 @@ Public Class AddEditSkillClass
     Private Sub EditSkillClass()
         dgFrame.Text = "Edit Skill Class"
         GetSVTable()
-        ' Dim skillclassid As Integer
-        Dim skillclassid As Integer = GetSVTableValue(Of Integer)("skillclassid")
+        Dim skillclassid = Convert.ToInt32(Session("skillclassid"))
         Dim oUser As New DataAccessTier.daProgram
         Dim con As String = GetConnectionString("ConnectionString")
         Dim dtUserlInfo As DataTable = oUser.GetSkillClassInfo(skillclassid, con)
@@ -60,8 +59,7 @@ Public Class AddEditSkillClass
         paramContainer.AddParameter("skillsclassnum", txtskillsclassnum) ' txtscname)
         paramContainer.AddParameter("scname", txtscname)
         paramContainer.AddParameter("programid", ddlProgram)
-        Dim foo As Integer = GetSVTableValue(Of Integer)("skillclassid")
-        Dim skillclassid As String = CStr(foo)
+        Dim skillclassid As String = Session("skillclassid").ToString()
         paramContainer.AddParameter("skillclassid", skillclassid, False)
         Return MyBase.CreateParameters()
     End Function

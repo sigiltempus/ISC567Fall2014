@@ -235,24 +235,9 @@ namespace DataAccessTier {
         public DataTable GetProgramoutcomesforsubskill(int ProgramOutcomeId, string ConnectionString) {
             // Set up parameters in parameter array 
             SqlParameter[] arParms = new SqlParameter[1];
-            arParms[0] = new SqlParameter("@ProgramOutcomeId ", SqlDbType.Int);
+            arParms[0] = new SqlParameter("@prgoutcomesid ", SqlDbType.Int);
             arParms[0].Value = ProgramOutcomeId;
-
-            pTransactionSuccessful = true;
-            DataTable dtProgramOutcome = new DataTable("ProgramOutcome");
-            try {
-                DataSet dsProgramOutcome = SqlHelper.ExecuteDataset(ConnectionString, CommandType.StoredProcedure, "Programoutcomesforsubskill", arParms);
-                dtProgramOutcome = dsProgramOutcome.Tables[0];
-            } catch (SqlException ReadError) {
-                pErrorMessage = ReadError.Message.ToString();
-                pErrorNumber = ReadError.Number;
-                pErrorClass = ReadError.Class;
-                pErrorState = ReadError.State;
-                pErrorLineNumber = ReadError.LineNumber;
-
-                pTransactionSuccessful = false;
-            }
-            return dtProgramOutcome;
+            return this.GetTable("Listprogramoutcomestosubskill", ConnectionString, "ProgramOutcome", arParms);
         }
 
         public DataTable Getproglist(int prgoutcomesid, string connectionString) {
@@ -347,7 +332,7 @@ namespace DataAccessTier {
             SqlParameter[] arParms = new SqlParameter[1];
             arParms[0] = new SqlParameter("@skillclassid", SqlDbType.Int);
             arParms[0].Value = skillclassid;
-            return this.GetTable("GetSkillCLassInfo", ConnectionString, "Skillsets", arParms);
+            return this.GetTable("GetSkillClassInfo", ConnectionString, "Skillsets", arParms);
         }
 
         /// <summary>
