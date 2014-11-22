@@ -68,6 +68,24 @@ Partial Public Class ExamProvider_7
     Protected WithEvents lblErrorMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Panel2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel2 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''rblSelect control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rblSelect As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
     '''UpdatePanel1 control.
     '''</summary>
     '''<remarks>

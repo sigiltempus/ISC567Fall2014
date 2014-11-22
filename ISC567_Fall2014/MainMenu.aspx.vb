@@ -42,7 +42,7 @@ Public Class MainMenu
         If isSA = True Then
             lbtnListPersons.Visible = True ' List Person
             lbtnInstitutionFunctions.Visible = True ' Institution Function
-            lbtnExamProviderFunctions.Visible = True ' Exam Provider Function
+            'lbtnExamProviderFunctions.Visible = True ' Exam Provider Function
             lbtnTakerFunctions.Visible = True ' Exam Taker Function
             lbtnCurriculumFunctions.Visible = True ' List Program
             lbtnsociety.Visible = True ' List society
@@ -54,9 +54,9 @@ Public Class MainMenu
 
         End If
         'Enables Exam Provider functionality
-        If isProvider = True Then
-            lbtnExamProviderFunctions.Visible = True ' Exam Provider Function
-        End If
+        'If isProvider = True Then
+        '    lbtnExamProviderFunctions.Visible = True ' Exam Provider Function
+        'End If
         'Enables Taker functionality
         If isTaker = True Then
             lbtnTakerFunctions.Visible = True ' Exam Taker Function

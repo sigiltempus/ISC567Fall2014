@@ -43,6 +43,15 @@
                     <td colspan="2" class="auto-style2">
                         <asp:Label ID="lblErrorMessage" runat="server" Text="" ForeColor="Red" Visible="false"></asp:Label></td>
                 </tr>
+                         <tr>
+                    <td colspan="2">
+                        <asp:Panel ID="Panel2" runat="server" Width="100%" Height="25px" CssClass="PanelStyle">
+                            <asp:RadioButtonList ID="rblSelect" runat="server" AutoPostBack="True" RepeatDirection="Horizontal" Visible="true"
+                                 OnSelectedIndexChanged="rblSelect_SelectedIndexChanged" >
+                            </asp:RadioButtonList>
+                        </asp:Panel>
+                    </td>
+                </tr>
                 <tr>
                     <td colspan="2" class="auto-style3">
                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">

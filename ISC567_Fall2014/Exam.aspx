@@ -46,19 +46,21 @@
                                      <table style="height: 400px">
                                         <tr>
                                             <td style="vertical-align:top">
-                                                <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="Exam" CssClass="IFrameHeader" Width="100%">
+                                                <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="Exam" CssClass="IFrameHeader" Width="100%" >
+                                                    <%--<ccJSIM:CloseIFrameButton ID="CloseIFrameButton1"  runat="server" IFrameName="ifExam" Text="[X] Close" />--%>
                                                 </ccJSIM:DragIFrame>               
                                             </td>
-                                            <td style="text-align:right">                   
-                                                <%--<ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifManageExam" Text="Close" style="z-index: 1; left: 477px; top: 80px; position: absolute" />--%>
-                                            </td>             
-                                        </tr>
+                                            </tr>
+                                           <%-- <td style="text-align:right">                   
+                                               <ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifExam" Text="[X] Close" />
+                                            </--%>            
+                                        
                                         <tr>
                                             <td class="auto-style3">
-                                                <asp:Label ID="lblErrorMessage" runat="server" Text="" ForeColor="Red" Visible="false" style="z-index: 1; left: 3px; top: 111px; position: absolute"> </asp:Label>
+                                                <asp:Label ID="lblErrorMessage" runat="server" Text="" ForeColor="Red" Visible="false" style="z-index: 1; left: 8px; top: 158px; position: absolute"> </asp:Label>
                                                 
                                                 
-                                                <asp:RadioButtonList ID="rbAnswerOptions" runat="server" RepeatDirection="Vertical">
+                                                <asp:RadioButtonList ID="rbAnswerOptions" runat="server" RepeatDirection="Vertical" >
                                                 </asp:RadioButtonList>
                                                 
                                                 
@@ -80,10 +82,10 @@
                                                     <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 180px; top: 83px; position: absolute" Text="Minutes"></asp:Label>
                                                     <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 113px; top: 84px; position: absolute" Text=""></asp:Label>
                                                     <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 33px; top: 82px; position:absolute; width:94px" Text="Time to go "></asp:Label>                             
-                                                    <asp:Button  ID="btnFinished" runat="server" CssClass="Button" style="z-index: 1; left: 598px; top: 66px; position: absolute"  Text="Finished" />
+                                                    <asp:Button  ID="btnFinished" runat="server" CssClass="Button" style="z-index: 1; left: 512px; top: 66px; position: absolute"  Text="Finished" />
 
-                                                    <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 31px; top: 110px; position: absolute; right: 642px" Text="Question"></asp:Label>
-                                                    <asp:Label ID="lblQuestion" runat="server" style="z-index: 1; left: 116px; top: 110px; position: absolute; width: 449px; height: auto" Text="Ques"></asp:Label>
+                                                    <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 31px; top: 110px; position: absolute; right: 642px" Text="Question:"></asp:Label>
+                                                    <asp:Label ID="lblQuestion" runat="server" style="z-index: 1; left: 107px; top: 110px; position: absolute; width: 449px; height: auto" Text="Ques"></asp:Label>
 
                                                     <asp:LinkButton ID="linkprev" runat="server" style="z-index: 1; left: 28px; top: 355px; position: absolute; bottom: 178px;" Text="Previous">Previous</asp:LinkButton>    
                                                     <asp:LinkButton ID="linknext" runat="server" style="z-index: 1; left: 408px; top: 356px; position: absolute" Text="Next" OnClick="linknext_Click" >Next</asp:LinkButton>
