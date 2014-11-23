@@ -37,7 +37,7 @@
                             <Columns>
                                 <asp:TemplateField HeaderText="Skill Class Num">
                                     <ItemTemplate>
-                                            <asp:Label ID="lblSkillsclassnum" runat="server" Text='<%# Eval("skillsclassnum") %>'
+                                            <asp:Label ID="lblSkillsclassnum" runat="server" Text='<%# Eval("skillclassid") %>'
                                             Width="2px"></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>

@@ -44,7 +44,7 @@ Public Class AddEditSkillClass
         If Not IsNothing(dtUserlInfo) AndAlso dtUserlInfo.Rows.Count > 0 Then
             With dtUserlInfo
                 txtscname.Text = .Rows(0)("scname").ToString()
-                txtskillsclassnum.Text = .Rows(0)("skillsclassnum").ToString()
+                txtskillsclassnum.Text = .Rows(0)("skillclassid").ToString()
                 ddlProgram.SelectedValue = .Rows(0)("programid").ToString()
             End With
 
@@ -56,7 +56,6 @@ Public Class AddEditSkillClass
         MyBase.paramContainer = New JSIM.ParameterContainer()
         Dim mode As String = Request.QueryString("mode")
         paramContainer.AddParameter("mode", mode, False)
-        paramContainer.AddParameter("skillsclassnum", txtskillsclassnum) ' txtscname)
         paramContainer.AddParameter("scname", txtscname)
         paramContainer.AddParameter("programid", ddlProgram)
         Dim skillclassid As String = Session("skillclassid").ToString()
@@ -79,11 +78,11 @@ Public Class AddEditSkillClass
     End Function
 
 
-    Private Shared Function insertskillclass(ByVal scname As String, ByVal skillsclassnum As Integer, ByVal programid As Integer) As String
+    Private Shared Function dainsertskillclass(ByVal scname As String, ByVal programid As Integer) As String
         Dim strStatus As String = ""
         Dim con As String = GetConnectionString("ConnectionString")
         Dim oUser As New DataAccessTier.daProgram
-        oUser.insertskillclass(scname, skillsclassnum, programid, con)
+        oUser.insertskillclass(scname, programid, con)
         If oUser.TransactionSuccessful Then
             strStatus = "SkillClass added Successfull"
         Else
@@ -93,11 +92,11 @@ Public Class AddEditSkillClass
         Return strStatus
     End Function
 
-    Private Shared Function editskillclass(ByVal skillclassid As Integer, ByVal skillsclassnum As Integer, ByVal skillsname As String, ByVal programid As Integer) As String
+    Private Shared Function daeditskillclass(ByVal skillclassid As Integer, ByVal skillsname As String, ByVal programid As Integer) As String
         Dim strStatus As String = ""
         Dim con As String = GetConnectionString("ConnectionString")
         Dim oUser As New DataAccessTier.daProgram
-        oUser.editskillclass(skillclassid, skillsclassnum, skillsname, programid, con)
+        oUser.editskillclass(skillclassid, skillsname, programid, con)
         If oUser.TransactionSuccessful Then
             strStatus = "SkillClass added Successfull"
         Else
@@ -127,13 +126,13 @@ Public Class AddEditSkillClass
 
 #Region "Local WebService Methods"
     <Services.WebMethod()> _
-    Public Shared Function wsAddEditSkillClass(ByVal mode As String, ByVal skillsclassnum As Integer, ByVal skillsname As String, ByVal programid As Integer,
+    Public Shared Function wsAddEditSkillClass(ByVal mode As String, ByVal skillsname As String, ByVal programid As Integer,
                                             ByVal skillclassid As Integer) As String
         Dim strmsg As String = ""
         If mode = "add" Then
-            strmsg = insertskillclass(skillsname, skillsclassnum, programid)
+            strmsg = dainsertskillclass(skillsname, programid)
         ElseIf mode = "edit" Then
-            strmsg = EditSkillClass(skillclassid, skillsclassnum, skillsname, programid)
+            strmsg = daeditskillclass(skillclassid, skillsname, programid)
         Else
             strmsg = "No Mode was Selected"
         End If

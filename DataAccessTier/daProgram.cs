@@ -460,15 +460,13 @@ namespace DataAccessTier {
         /// <param name="skillsclassnum">Skill Class number</param>
         /// <param name="programid">Program ID</param>
         /// <param name="ConnectionString">Connection String</param>
-        public void insertskillclass(string scname, int skillsclassnum, int programid, string ConnectionString) {
+        public void insertskillclass(string scname, int programid, string ConnectionString) {
             // Set up parameters in parameter array 
-            SqlParameter[] arParms = new SqlParameter[3];
+            SqlParameter[] arParms = new SqlParameter[2];
             arParms[0] = new SqlParameter("@scname", SqlDbType.NVarChar);
             arParms[0].Value = scname;
-            arParms[1] = new SqlParameter("@skillsclassnum", SqlDbType.Int);
-            arParms[1].Value = skillsclassnum;
-            arParms[2] = new SqlParameter("@programid", SqlDbType.Int);
-            arParms[2].Value = programid;
+            arParms[1] = new SqlParameter("@programid", SqlDbType.Int);
+            arParms[1].Value = programid;
             this.ExecuteWithoutResult(arParms, "insertskillclass", ConnectionString);
         }
 
@@ -584,21 +582,18 @@ namespace DataAccessTier {
         /// Edit a skill class record with new values.
         /// </summary>
         /// <param name="skillclassid">Skill Class ID</param>
-        /// <param name="skillsclassnum">Skill Class Number</param>
         /// <param name="skillsname">Name of Skill Class</param>
         /// <param name="programid">Program ID</param>
         /// <param name="ConnectionString">Connection String</param>
-        public void editskillclass(int skillclassid, int skillsclassnum, string skillsname, int programid, string ConnectionString) {
+        public void editskillclass(int skillclassid, string skillsname, int programid, string ConnectionString) {
             // Set up parameters in parameter array 
-            SqlParameter[] arParms = new SqlParameter[4];
+            SqlParameter[] arParms = new SqlParameter[3];
             arParms[0] = new SqlParameter("@skillclassid", SqlDbType.Int);
             arParms[0].Value = skillclassid;
             arParms[1] = new SqlParameter("@scname", SqlDbType.NVarChar);
             arParms[1].Value = skillsname;
-            arParms[2] = new SqlParameter("@skillsclassnum", SqlDbType.Int);
-            arParms[2].Value = skillsclassnum;
-            arParms[3] = new SqlParameter("@programid", SqlDbType.Int);
-            arParms[3].Value = programid;
+            arParms[2] = new SqlParameter("@programid", SqlDbType.Int);
+            arParms[2].Value = programid;
             this.ExecuteWithoutResult(arParms, "editskillclass", ConnectionString);
         }
 
