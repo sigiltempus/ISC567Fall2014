@@ -344,7 +344,7 @@ namespace DataAccessTier {
         public DataTable GetSubSkillBySkillClassNum(int skillsnum, string ConnectionString) {
             // Set up parameters in parameter array 
             SqlParameter[] arParms = new SqlParameter[1];
-            arParms[0] = new SqlParameter("@skillsnum", SqlDbType.Int);
+            arParms[0] = new SqlParameter("@skillsid", SqlDbType.Int);
             arParms[0].Value = skillsnum;
             return this.GetTable("GetSubSkillBySkillClassNum", ConnectionString, "getsubskillbyskillclassskill", arParms);
         }
