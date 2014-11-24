@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class AddEditCurriculum
+Partial Public Class AddEditsociety
 
     '''<summary>
     '''Head1 control.
@@ -41,15 +41,6 @@ Partial Public Class AddEditCurriculum
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
 
     '''<summary>
-    '''lbtnC1lose control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbtnC1lose As Global.JSIM.Custom_Controls.CloseIFrameButton
-
-    '''<summary>
     '''lblHeader control.
     '''</summary>
     '''<remarks>
@@ -59,13 +50,22 @@ Partial Public Class AddEditCurriculum
     Protected WithEvents lblHeader As Global.JSIM.Custom_Controls.DragIFrame
 
     '''<summary>
-    '''lblCTitle control.
+    '''lblTitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblCTitle As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblTitle As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lbtnClose control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbtnClose As Global.JSIM.Custom_Controls.CloseIFrameButton
 
     '''<summary>
     '''lblMessage control.

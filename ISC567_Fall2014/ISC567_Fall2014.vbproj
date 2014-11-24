@@ -97,6 +97,7 @@
     <Content Include="AddEditProgramOutcome.aspx" />
     <Content Include="AddEditSkillClass.aspx" />
     <Content Include="AddEditSkills.aspx" />
+    <Content Include="AddEditsociety.aspx" />
     <Content Include="AddEditSubSkill.aspx" />
     <Content Include="AddEditTaker.aspx" />
     <Content Include="AddProvider.aspx" />
@@ -125,6 +126,8 @@
     <Content Include="ListProgram.aspx" />
     <Content Include="ListProgramOutCome.aspx" />
     <Content Include="ListScheduledExam.aspx" />
+    <Content Include="Listsociety.aspx" />
+    <Content Include="Listsponsor.aspx" />
     <Content Include="MainMenu.aspx" />
     <Content Include="ProctorExam.aspx" />
     <Content Include="ProgramOutcomeSubSkill.aspx" />
@@ -140,6 +143,7 @@
     <Content Include="Skills.aspx" />
     <Content Include="Styles\jQuery\jquery-ui.css" />
     <Content Include="SubSkill.aspx" />
+    <Content Include="SubSkillInBK.aspx" />
     <Content Include="TakerFunctions.aspx" />
     <Content Include="WaitForExamTime.aspx" />
     <Content Include="WorkOnStaff.aspx" />
@@ -245,6 +249,13 @@
     </Compile>
     <Compile Include="AddEditSkills.aspx.vb">
       <DependentUpon>AddEditSkills.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditsociety.aspx.designer.vb">
+      <DependentUpon>AddEditsociety.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditsociety.aspx.vb">
+      <DependentUpon>AddEditsociety.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddEditSubSkill.aspx.designer.vb">
@@ -435,6 +446,20 @@
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>ListScheduledExam.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Listsociety.aspx.designer.vb">
+      <DependentUpon>Listsociety.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Listsociety.aspx.vb">
+      <DependentUpon>Listsociety.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Listsponsor.aspx.designer.vb">
+      <DependentUpon>Listsponsor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Listsponsor.aspx.vb">
+      <DependentUpon>Listsponsor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="MainMenu.aspx.designer.vb">
       <DependentUpon>MainMenu.aspx</DependentUpon>
     </Compile>
@@ -496,6 +521,13 @@
     </Compile>
     <Compile Include="SubSkill.aspx.vb">
       <DependentUpon>SubSkill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubSkillInBK.aspx.designer.vb">
+      <DependentUpon>SubSkillInBK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SubSkillInBK.aspx.vb">
+      <DependentUpon>SubSkillInBK.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="TakerFunctions.aspx.designer.vb">

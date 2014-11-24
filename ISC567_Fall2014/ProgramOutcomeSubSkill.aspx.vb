@@ -60,7 +60,7 @@ Public Class ProgramOutcomeSubSkill
         gvSubSkill.Parameters = CreateParameters()
         Dim prgoutcomesid As Integer = CInt(Session("prgoutcomesid "))
         If Not IsNothing(Session("prgoutcomesid ")) AndAlso CInt(Session("prgoutcomesid ")) > 0 Then
-            Dim dtUserAssignedRoles As DataTable = GetAssignedSubskill((CInt(Session("prgoutcomesid "))))
+            Dim dtUserAssignedRoles As DataTable = GetAssignedSubskill(CInt(Session("prgoutcomesid ")))
             Dim dv As DataView = dtUserAssignedRoles.DefaultView
             Try
                 gvSubSkill.DataSource = dv
@@ -93,7 +93,7 @@ Public Class ProgramOutcomeSubSkill
         Dim dtUsers As DataTable
         Dim cn As String = GetConnectionString("ConnectionString")
         Dim oRole As New DataAccessTier.daProgram
-        dtUsers = oRole.GetProgramoutcomesforsubskill(CInt(Session("prgoutcomesid ")), cn)
+        dtUsers = oRole.GetProgramoutcomesforsubskill(prgoutcomesid, cn)
         If Not oRole.TransactionSuccessful Then
             dtUsers = Nothing
         End If
@@ -141,7 +141,7 @@ Public Class ProgramOutcomeSubSkill
     Public Shared Function wsAssignSubskill(ByVal checked As Boolean, ByVal subSkillId As Integer, ByVal programOutomeID As String) As String
         Dim strMssg As String = ""
         Dim progOutcomeId As Integer = CInt(programOutomeID)
-        If checked = True Then
+        If checked Then
             strMssg = AssignSubskill(progOutcomeId, subSkillId) 'subskillcomb)
         Else
             strMssg = "Assign method was called but checked value was not set to true"
@@ -153,7 +153,7 @@ Public Class ProgramOutcomeSubSkill
     Public Shared Function wsUnAssignSubskill(ByVal checked As Boolean, ByVal programOutomeID As Integer, ByVal subskillcomb As Integer) As String
         Dim strMssg As String = ""
         Dim progOutcomeId As Integer = CInt(programOutomeID)
-        If checked = False Then
+        If Not checked Then
             strMssg = UnAssignSubskill(progOutcomeId, subskillcomb)
         Else
             strMssg = "Unassign method was called but checked value was not set to false"
