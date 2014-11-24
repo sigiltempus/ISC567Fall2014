@@ -1,5 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Listsociety.aspx.vb" 
-    Inherits="ISC567_Fall2014.Listsociety" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Listsociety.aspx.vb" Inherits="ISC567_Spring2013.Listsociety" %>
 
 
 

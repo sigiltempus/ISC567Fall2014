@@ -12,6 +12,8 @@ Public Class AddEditBKLevel1
     End Sub
     Private Sub SetForm()
         Dim mode As String = Request.QueryString("mode") ' Get the actual mode from the Query string
+        Txtcurriculumname.Text = CStr(Session("selectedCurriculumName"))
+        txtShortName.Text = CStr(Session("selectedprogramName"))
         If mode = "add" Then
             AddNew()
         ElseIf mode = "edit" Then
@@ -23,7 +25,8 @@ Public Class AddEditBKLevel1
         dgFrame.Text = "Add BKLevel1"
         txtNumberL1.Text = ""
         txtTitle.Text = ""
-        ddlProgram.SelectedIndex = -1
+        
+        'ddlProgram.SelectedIndex = -1
     End Sub
 
 
@@ -40,7 +43,8 @@ Public Class AddEditBKLevel1
             With dtBKLevel1Info
                 txtTitle.Text = .Rows(0)("title").ToString()
                 txtNumberL1.Text = .Rows(0)("NumberL1").ToString()
-                ddlProgram.SelectedValue = .Rows(0)("ISModelID").ToString()
+                ' Txtcurriculumname = .Rows(0)("curriculumid").ToString()
+                'ddlProgram.SelectedValue = .Rows(0)("ISModelID").ToString()
             End With
 
         End If
@@ -52,8 +56,10 @@ Public Class AddEditBKLevel1
         paramContainer.AddParameter("mode", mode, False)
         paramContainer.AddParameter("title", txtTitle)
         paramContainer.AddParameter("NumberL1", txtNumberL1)
-        paramContainer.AddParameter("programid", ddlProgram)
-
+        Dim programid As Integer = CInt(Session("selectedProgramId"))
+        paramContainer.AddParameter("programid", CStr(programid), False)
+        Dim curriculumid As Integer = CInt(Session("selectedCurriculumId"))
+        paramContainer.AddParameter("curriculumid", CStr(curriculumid), False)
         Dim BKLevel1ID As Integer
         'Dim BKLevel1ID As Integer = Convert.ToInt16(GetSVTableValue(Of Integer)("BKLevel1ID"))
 
@@ -64,11 +70,11 @@ Public Class AddEditBKLevel1
     End Function
 
 #Region "Local Functions"
-    Private Shared Function insertBKLevel1Info(ByVal title As String, ByVal NumberL1 As Integer, ByVal programid As Integer) As String
+    Private Shared Function insertBKLevel1Info(ByVal title As String, ByVal NumberL1 As Integer, ByVal programid As Integer, ByVal curriculumid As Integer) As String
         Dim strStatus As String = ""
         Dim cn As String = GetConnectionString("connectionString")
         Dim oBKLevel1 As New DataAccessTier.daBodyOfKnowledge
-        oBKLevel1.insertBKLevel1(title, NumberL1, programid, cn)
+        oBKLevel1.insertBKLevel1(title, NumberL1, programid, curriculumid, cn)
         If oBKLevel1.TransactionSuccessful Then
             strStatus = "BKLevel1 added Successfull"
         Else
@@ -89,11 +95,11 @@ Public Class AddEditBKLevel1
         Return dtBKLevel1Info
     End Function
 
-    Private Shared Function editBKLevel1Info(ByVal BKLevel1ID As Integer, ByVal title As String, ByVal NumberL1 As Integer, ByVal programid As Integer) As String
+    Private Shared Function editBKLevel1Info(ByVal BKLevel1ID As Integer, ByVal title As String, ByVal NumberL1 As Integer, ByVal programid As Integer, ByVal curriculumid As Integer) As String
         Dim strStatus As String = ""
         Dim con As String = GetConnectionString("connectionString")
         Dim oBKLevel1 As New DataAccessTier.daBodyOfKnowledge
-        oBKLevel1.editBKLevel1Info(BKLevel1ID, title, NumberL1, programid, con)
+        oBKLevel1.editBKLevel1Info(BKLevel1ID, title, NumberL1, programid, curriculumid, con)
         If oBKLevel1.TransactionSuccessful Then
             strStatus = "SkillClass added Successfull"
         Else
@@ -106,13 +112,13 @@ Public Class AddEditBKLevel1
 
 #Region "Local WebService Methods"
     <Services.WebMethod()> _
-    Public Shared Function wsAddEditBKLevel1(ByVal mode As String, ByVal title As String, ByVal NumberL1 As Integer, ByVal programid As Integer,
+    Public Shared Function wsAddEditBKLevel1(ByVal mode As String, ByVal title As String, ByVal NumberL1 As Integer, ByVal programid As Integer, ByVal curriculumid As Integer,
                                             ByVal BKLevel1ID As Integer) As String
         Dim strmsg As String = ""
         If mode = "add" Then
-            strmsg = insertBKLevel1Info(title, NumberL1, programid)
+            strmsg = insertBKLevel1Info(title, NumberL1, programid, curriculumid)
         ElseIf mode = "edit" Then
-            strmsg = editBKLevel1Info(BKLevel1ID, title, NumberL1, programid)
+            strmsg = editBKLevel1Info(BKLevel1ID, title, NumberL1, programid, curriculumid)
         Else
             strmsg = "No Mode was Selected"
         End If
@@ -128,4 +134,7 @@ Public Class AddEditBKLevel1
         Page.Controls.Add(lbl)
     End Sub
 
+    'Protected Sub ddlProgram_Unload(sender As Object, e As EventArgs) Handles ddlProgram.Unload
+
+    'End Sub
 End Class

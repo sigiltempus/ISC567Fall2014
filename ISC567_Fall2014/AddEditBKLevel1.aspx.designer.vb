@@ -41,40 +41,67 @@ Partial Public Class AddEditBKLevel1
     Protected WithEvents dgFrame As Global.JSIM.Custom_Controls.DragIFrame
 
     '''<summary>
-    '''CloseIFrameLinkButton1 control.
+    '''lblCTitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CloseIFrameLinkButton1 As Global.JSIM.Custom_Controls.CloseIFrameLinkButton
+    Protected WithEvents lblCTitle As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label2 control.
+    '''btnCSave control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents btnCSave As Global.JSIM.Custom_Controls.CloseIFrameButton
 
     '''<summary>
-    '''ddlProgram control.
+    '''Txtcurriculumname control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddlProgram As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents Txtcurriculumname As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''sdsProgram control.
+    '''valcurriculum control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents sdsProgram As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents valcurriculum As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''Labelp control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Labelp As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''txtShortName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtShortName As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ValShortName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ValShortName As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Label1 control.

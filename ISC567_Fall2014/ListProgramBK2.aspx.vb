@@ -32,9 +32,10 @@ Public Class ListProgramBK2
         Dim dtBKLevel2 As DataTable
         Dim oBKLevel2 As New DataAccessTier.daBodyOfKnowledge
         Dim cn As String = GetConnectionString("connectionString")
-        Dim NumberL1 As Integer = CInt(Session("NumberL1"))
-        Dim ISModelID As Integer = CInt(Session("selectedProgramId"))
-        dtBKLevel2 = oBKLevel2.getBKLevel2byBKLevel1(ISModelID, NumberL1, cn)
+        'Dim NumberL1 As Integer = CInt(Session("NumberL1"))
+        'Dim ISModelID As Integer = CInt(Session("selectedProgramId"))
+        Dim BkLevel1ID As Integer = CInt(Session("BKLevel1ID"))
+        dtBKLevel2 = oBKLevel2.getBKLevel2byBKLevel1(BKLevel1ID, cn)
         If Not oBKLevel2.TransactionSuccessful Then
             dtBKLevel2 = Nothing
         End If

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditBKLevel2.aspx.vb" Inherits="ISC567_Fall2014.AddEditBKLevel2" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditBKLevel2.aspx.vb" Inherits="ISC567_Spring2013.AddEditBKLevel2" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
@@ -25,39 +25,44 @@
     </asp:ScriptManager>
     <div class="AddEditIFrame" style="height: 320px;width:700px">
             <table style="height: 300px; width: 702px">
-                <tr>
-                    <td colspan="1" class="IFrameHeader">
-                        <ccJSIM:DragIFrame ID="dgFrame" runat="server" Text="Add BK Level2" style="text-align: left">
+            <tr>
+                <td colspan="2" class="auto-style2">
+                   <ccJSIM:DragIFrame ID="dgFrame" runat="server" Text="Add/Edit Bklevel1" CssClass="IFrameHeader" Width="100%"  style="text-align: left" CanDragIFrame="True">
+                   <asp:Label ID="lblCTitle" runat="server" Text="" Width="80%" style="text-align: left;"></asp:Label>
+                       
                         </ccJSIM:DragIFrame>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="auto-style2">
+                     <ccJSIM:CloseIFrameButton ID="btnCSave" runat="server" IFrameName="IfAddEditBKLevel2" Text="[X] Close" style="text-align: right; position: relative; top: -34px; left: 600px;" />
+                 </td>
+            </tr>
+                     
+                 <tr>
+                    <td>
+                        <asp:Label ID="Label6" runat="server" Text="Curriculum Name" style="text-align: right" Enabled="false"></asp:Label>
                     </td>
-                    <td colspan="1" class="IFrameHeader">
-                        <ccJSIM:CloseIFrameLinkButton ID="CloseIFrameLinkButton1" runat="server" Text="[x] Close"
-                            BorderColor="White" ForeColor="White" IFrameName="IfAddEditBKLevel2" style="text-align: right">
-                        </ccJSIM:CloseIFrameLinkButton>
+                    <td>
+                        <asp:TextBox ID="TxtCName" runat="server" Width="100px" style="text-align: left" Enabled="false"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="Label4" runat="server" Text="Program ID" style="text-align: right"></asp:Label>
+                        <asp:Label ID="Label4" runat="server" Text="Program Name" style="text-align: right" Enabled="false"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtISModelID" runat="server" Width="25px" style="text-align: left"></asp:TextBox>
+                        <asp:TextBox ID="txtPname" runat="server" Width="100px" style="text-align: left" Enabled="false"></asp:TextBox>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="Label5" runat="server" Text="BKLevel1ID" style="text-align: right"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:TextBox ID="txtBKLevel1ID" runat="server" Width="25px" style="text-align: left"></asp:TextBox>
-                    </td>
-                </tr>
+                
                 <tr>
                     <td>
                         <asp:Label ID="Label1" runat="server" Text="NumberL1 - BKLevel1" style="text-align: right"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtNumberL1" runat="server" Width="25px" style="text-align: left"></asp:TextBox>
+                        <asp:TextBox ID="txtNumberL1" runat="server" Width="25px" style="text-align: left" Enabled="false"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

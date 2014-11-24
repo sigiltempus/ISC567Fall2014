@@ -11,6 +11,9 @@ Public Class AddEditBKLevel2
 #Region "Local Methods"
     Private Sub SetForm()
         Dim mode As String = Request.QueryString("mode")
+        TxtCName.Text = CStr(Session("selectedCurriculumName"))
+        txtPname.Text = CStr(Session("selectedprogramName"))
+        txtNumberL1.Text = CStr(Session("NumberL1"))
         If mode = "add" Then
             AddNewBKLevel2()
         Else
@@ -21,9 +24,6 @@ Public Class AddEditBKLevel2
 
     Private Sub AddNewBKLevel2()
         dgFrame.Text = "Add BKLevel2"
-        txtISModelID.Text = ""
-        txtBKLevel1ID.Text = ""
-        txtNumberL1.Text = ""
         txtNumberL2.Text = ""
         txtTitle.Text = ""
     End Sub
@@ -39,11 +39,9 @@ Public Class AddEditBKLevel2
         Dim dtBKLevel2 As DataTable = GetBKLevel2Info(BKLevel2ID)
         If Not IsNothing(dtBKLevel2) AndAlso dtBKLevel2.Rows.Count > 0 Then
             With dtBKLevel2
-                txtISModelID.Text = .Rows(0)("ISModelID").ToString()
-                txtBKLevel1ID.Text = .Rows(0)("BKLevel1ID").ToString()
-                txtNumberL1.Text = .Rows(0)("NumberL1").ToString()
+                ' txtNumberL1.Text = .Rows(0)("NumberL1").ToString()
                 txtNumberL2.Text = .Rows(0)("NumberL2").ToString()
-                txtTitle.Text = .Rows(0)("title").ToString()
+                txtTitle.Text = .Rows(0)("Title").ToString()
             End With
 
         End If
@@ -54,8 +52,9 @@ Public Class AddEditBKLevel2
         MyBase.paramContainer = New JSIM.ParameterContainer()
         Dim mode As String = Request.QueryString("mode")
         paramContainer.AddParameter("mode", mode, False)
-        paramContainer.AddParameter("selectedProgramId", txtISModelID)
-        paramContainer.AddParameter("BKLevel1ID", txtBKLevel1ID)
+        paramContainer.AddParameter("curriculumid", CStr(Session("selectedCurriculumId")), False)
+        paramContainer.AddParameter("programid", CStr(Session("selectedProgramId")), False)
+        paramContainer.AddParameter("BKLevel1ID", CStr(Session("BKLevel1ID")), False)
         paramContainer.AddParameter("NumberL1", txtNumberL1)
         paramContainer.AddParameter("NumberL2", txtNumberL2)
         paramContainer.AddParameter("title", txtTitle)
@@ -83,12 +82,12 @@ Public Class AddEditBKLevel2
     End Function
 
 
-    Private Shared Function insertBKLevel2Info(ByVal selectedprogramid As Integer, ByVal BKLevel1ID As Integer,
+    Private Shared Function insertBKLevel2Info(ByVal curriculumid As Integer, ByVal programid As Integer, ByVal BKLevel1ID As Integer,
                                                ByVal NumberL1 As Integer, ByVal NumberL2 As Integer, ByVal title As String) As String
         Dim strStatus As String = ""
         Dim con As String = GetConnectionString("connectionString")
         Dim oBKLevel2 As New DataAccessTier.daBodyOfKnowledge
-        oBKLevel2.insertBKLevel2(selectedprogramid, BKLevel1ID, NumberL1, NumberL2, title, con)
+        oBKLevel2.insertBKLevel2(curriculumid, programid, BKLevel1ID, NumberL1, NumberL2, title, con)
         If oBKLevel2.TransactionSuccessful Then
             strStatus = "BKLevel2 added Successfull"
         Else
@@ -98,12 +97,12 @@ Public Class AddEditBKLevel2
         Return strStatus
     End Function
 
-    Private Shared Function editBKLevel2Info(ByVal BKLevel2ID As Integer, ByVal selectedprogramid As Integer, ByVal BKLevel1ID As Integer, ByVal NumberL1 As Integer, ByVal NumberL2 As Integer, ByVal title As String) As String
+    Private Shared Function editBKLevel2Info(ByVal BKLevel2ID As Integer, ByVal curriculumid As Integer, ByVal programid As Integer, ByVal BKLevel1ID As Integer, ByVal NumberL1 As Integer, ByVal NumberL2 As Integer, ByVal title As String) As String
 
         Dim strStatus As String = ""
         Dim con As String = GetConnectionString("connectionString")
         Dim oBKLevel2 As New DataAccessTier.daBodyOfKnowledge
-        oBKLevel2.editBKLevel2Info(BKLevel2ID, selectedprogramid, BKLevel1ID, NumberL1, NumberL2, title, con)
+        oBKLevel2.editBKLevel2Info(BKLevel2ID, curriculumid, programid, BKLevel1ID, NumberL1, NumberL2, title, con)
         If oBKLevel2.TransactionSuccessful Then
             strStatus = "SubSkill added Successfull"
         Else
@@ -120,13 +119,13 @@ Public Class AddEditBKLevel2
 
 #Region "Local WebService Methods"
     <Services.WebMethod()> _
-    Public Shared Function wsAddEditBKLevel2(ByVal mode As String, ByVal selectedprogramid As Integer, ByVal BKLevel1ID As Integer, ByVal NumberL1 As Integer,
+    Public Shared Function wsAddEditBKLevel2(ByVal mode As String, ByVal curriculumid As Integer, ByVal programid As Integer, ByVal BKLevel1ID As Integer, ByVal NumberL1 As Integer,
                                              ByVal NumberL2 As Integer, ByVal title As String, ByVal BKLevel2ID As Integer) As String
         Dim strmsg As String = ""
         If mode = "add" Then
-            strmsg = insertBKLevel2Info(selectedprogramid, BKLevel1ID, NumberL1, NumberL2, title)
+            strmsg = insertBKLevel2Info(curriculumid, programid, BKLevel1ID, NumberL1, NumberL2, title)
         ElseIf mode = "edit" Then
-            strmsg = editBKLevel2Info(BKLevel2ID, selectedprogramid, BKLevel1ID, NumberL1, NumberL2, title)
+            strmsg = editBKLevel2Info(BKLevel2ID, curriculumid, programid, BKLevel1ID, NumberL1, NumberL2, title)
         Else
             strmsg = "No Mode was Selected"
         End If

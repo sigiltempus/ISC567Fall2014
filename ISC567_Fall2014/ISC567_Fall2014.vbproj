@@ -86,8 +86,6 @@
   <ItemGroup>
     <Content Include="AddEditBKLevel1.aspx" />
     <Content Include="AddEditBKLevel2.aspx" />
-    <Content Include="AddEditBKLevel3.aspx" />
-    <Content Include="AddEditBKLevel4.aspx" />
     <Content Include="AddEditCourse.aspx" />
     <Content Include="AddEditCourseOutcome.aspx" />
     <Content Include="AddEditCurriculum.aspx" />
@@ -98,6 +96,7 @@
     <Content Include="AddEditSkillClass.aspx" />
     <Content Include="AddEditSkills.aspx" />
     <Content Include="AddEditsociety.aspx" />
+    <Content Include="AddEditSponsor.aspx" />
     <Content Include="AddEditSubSkill.aspx" />
     <Content Include="AddEditTaker.aspx" />
     <Content Include="AddProvider.aspx" />
@@ -110,8 +109,6 @@
     <Content Include="ListCurriculum.aspx" />
     <Content Include="ListProgramBK.aspx" />
     <Content Include="ListProgramBK2.aspx" />
-    <Content Include="ListProgramBK3.aspx" />
-    <Content Include="ListProgramBK4.aspx" />
     <Content Include="ListProgramCourse.aspx" />
     <Content Include="Exam.aspx" />
     <Content Include="ExamProvider_11.aspx" />
@@ -172,20 +169,6 @@
     </Compile>
     <Compile Include="AddEditBKLevel2.aspx.vb">
       <DependentUpon>AddEditBKLevel2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddEditBKLevel3.aspx.designer.vb">
-      <DependentUpon>AddEditBKLevel3.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AddEditBKLevel3.aspx.vb">
-      <DependentUpon>AddEditBKLevel3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddEditBKLevel4.aspx.designer.vb">
-      <DependentUpon>AddEditBKLevel4.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AddEditBKLevel4.aspx.vb">
-      <DependentUpon>AddEditBKLevel4.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddEditCourse.aspx.designer.vb">
@@ -256,6 +239,13 @@
     </Compile>
     <Compile Include="AddEditsociety.aspx.vb">
       <DependentUpon>AddEditsociety.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditSponsor.aspx.designer.vb">
+      <DependentUpon>AddEditSponsor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditSponsor.aspx.vb">
+      <DependentUpon>AddEditSponsor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddEditSubSkill.aspx.designer.vb">
@@ -332,20 +322,6 @@
     </Compile>
     <Compile Include="ListProgramBK2.aspx.vb">
       <DependentUpon>ListProgramBK2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ListProgramBK3.aspx.designer.vb">
-      <DependentUpon>ListProgramBK3.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ListProgramBK3.aspx.vb">
-      <DependentUpon>ListProgramBK3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ListProgramBK4.aspx.designer.vb">
-      <DependentUpon>ListProgramBK4.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ListProgramBK4.aspx.vb">
-      <DependentUpon>ListProgramBK4.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ListProgramCourse.aspx.designer.vb">
