@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="SubSkillInBK.aspx.vb" Inherits="ISC567_Spring2013.SubSkillInBK" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="SubSkillInBK.aspx.vb" Inherits="ISC567_Fall2014.SubSkillInBK" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 

@@ -41,13 +41,40 @@ Partial Public Class AddEditBKLevel2
     Protected WithEvents dgFrame As Global.JSIM.Custom_Controls.DragIFrame
 
     '''<summary>
-    '''CloseIFrameLinkButton1 control.
+    '''lblCTitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CloseIFrameLinkButton1 As Global.JSIM.Custom_Controls.CloseIFrameLinkButton
+    Protected WithEvents lblCTitle As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''btnCSave control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCSave As Global.JSIM.Custom_Controls.CloseIFrameButton
+
+    '''<summary>
+    '''Label6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''TxtCName control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TxtCName As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Label4 control.
@@ -59,31 +86,13 @@ Partial Public Class AddEditBKLevel2
     Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''txtISModelID control.
+    '''txtPname control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtISModelID As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Label5 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtBKLevel1ID control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtBKLevel1ID As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtPname As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Label1 control.

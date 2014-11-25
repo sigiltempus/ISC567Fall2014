@@ -50,14 +50,9 @@
                         <RowStyle BackColor="#EEEEEE" />
                         <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
                         <Columns>
-                            <asp:TemplateField HeaderText="Skill Class Num">
+                            <asp:TemplateField HeaderText="Skill ID">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblskillsclassnum" runat="server" Text='<%# Eval("skillsclassnum") %>' Width="2px"></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Skill Num">
-                                <ItemTemplate>
-                                    <asp:Label ID="lblStatus" runat="server" Text='<%# Eval("skillsnum")%>' Width="2px"></asp:Label>
+                                    <asp:Label ID="lblStatus" runat="server" Text='<%# Eval("skillsid")%>' Width="2px"></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Skill Name">

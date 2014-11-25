@@ -34,15 +34,14 @@
         <div class="ListIFrame">
         <table>
             <tr>
-                <td colspan="1" class="IFrameHeader">
-                    <ccJSIM:DragIFrame ID="dgFrame" runat="server" Text="List Body Of Knowledge" width="100%" style="text-align: left">
-                    </ccJSIM:DragIFrame>
-                </td>
-                <td colspan="1" class="IFrameHeader">
-                    <ccJSIM:CloseIFrameLinkButton ID="CloseIFrameLinkButton1" runat="server" Text="[x] Close" style="text-align: right"
-                        ForeColor="White" BorderColor="White" IFrameName="ifListProgramBK">
-                    </ccJSIM:CloseIFrameLinkButton>
-                </td>
+               
+                <td colspan="2" class="auto-style2">
+                        <ccJSIM:DragIFrame ID="lblCHeader" runat="server" Text="" CssClass="IFrameHeader" Width="100%">
+                        <asp:Label ID="lblCTitle" runat="server" Text="List BkLevel1" Width="90%" style="text-align: left;"></asp:Label>
+                        <ccJSIM:CloseIFrameButton ID="btnCSave" runat="server" IFrameName="ifListProgramBK" Text="[X] Close" style="text-align: right" />
+                        </ccJSIM:DragIFrame>
+                    </td>
+
             </tr>
             <tr>
                 <td colspan="2">
@@ -79,18 +78,20 @@
                     <table>
                         <tr>
                             <td >
-                                <ccJSIM:OpenIFrameButton ID="btnAddBKLevel1" runat="server" Text="Add Body Of Knowledge"
-                                    FrameSrc="AddEditBKLevel1.aspx?mode=add" IFrameName="IfAddEditBKLevel1" HeightPosition="330"
-                                    LeftPosition="300" ZIndex="230" TopPosition="215" WidthPosition="770" CssClass="Button" />
-
-                                <ccJSIM:OpenIFrameButton ID="btnEditBKLevel1" runat="server" Text="Edit Body Of Knowledge"
+                                <ccJSIM:OpenIFrameButton ID="btnAddBKLevel1" runat="server" Text="Add Bklevel1"
+                                    FrameSrc="AddEditBKLevel1.aspx?mode=add" IFrameName="IfAddEditBKLevel1" HeightPosition="327"
+                                    LeftPosition="300" ZIndex="230" TopPosition="215" WidthPosition="704" CssClass="Button" Width="100px" />
+                                &nbsp;
+                                <ccJSIM:OpenIFrameButton ID="btnEditBKLevel1" runat="server" Text="Edit Bklevel1"
                                     FrameSrc="AddEditBKLevel1.aspx?mode=edit" IFrameName="IfAddEditBKLevel1"
-                                    HeightPosition="330" LeftPosition="300" ZIndex="230" TopPosition="215" WidthPosition="770"
-                                    CssClass="Button" />
+                                    HeightPosition="327" LeftPosition="300" ZIndex="230" TopPosition="215" WidthPosition="704"
+                                    CssClass="Button" Width="100px" />
+                                <asp:Label ID="lblCSpacer" runat="server" Text="  " Width="250px"></asp:Label>
+                        &nbsp;
 
                                 <ccJSIM:OpenIFrameButton ID="btnSkills" runat="server" Text="Go To BKLevel2" FrameSrc="ListProgramBK2.aspx?mode=edit"
-                                    IFrameName="IfListProgramBK2" HeightPosition="350" LeftPosition="320" Style="left: 0px"
-                                    ZIndex="230" TopPosition="210" WidthPosition="800" CssClass="Button" />
+                                    IFrameName="IfListProgramBK2" HeightPosition="342" LeftPosition="360" Style="left: 4px"
+                                    ZIndex="230" TopPosition="230" WidthPosition="755" CssClass="Button" Width="100px" />
                             </td>                            
                         </tr>
                     </table>
