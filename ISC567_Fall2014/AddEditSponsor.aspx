@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditSponsor.aspx.vb" Inherits="ISC567_Spring2013.AddEditSponsor" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditSponsor.aspx.vb" Inherits="ISC567_Fall2014.AddEditSponsor" %>
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
 <!DOCTYPE html>
