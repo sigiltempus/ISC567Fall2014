@@ -35,27 +35,21 @@
                     <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Height="260px">
                         <%--DataKeyNames="skillsnum"--%>
                         <ccJSIM:RadioButtonGridView ID="ProjectsGridView" runat="server" AutoGenerateColumns="False"
-                            IncludeSorting="True" EmptyDataText="No Data Found" GridSortColumn="" DataKeyNames="skillsnum"
+                            IncludeSorting="True" EmptyDataText="No Data Found" GridSortColumn="" DataKeyNames="subskillid"
                             ForeColor="#333333" HighlighedRowColor="#FFFFAD" HeaderStyle-CssClass="gridViewHeader"
                             Width="650px" HeaderStyle-ForeColor="White">
                             <AlternatingRowStyle BackColor="#FFFFFF" />
                             <RowStyle BackColor="#EEEEEE" />
                             <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
                             <Columns>
-                                <asp:TemplateField HeaderText="Skill Class Num">
-                                    <ItemTemplate>
-                                        <asp:Label ID="lblskillsclassnum" runat="server" Text='<%# Eval("skillsclassnum") %>'
-                                            Width="2px"></asp:Label>
-                                    </ItemTemplate>
-                                </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Skill Num">
                                     <ItemTemplate>
-                                        <asp:Label ID="lblskillsnum" runat="server" Text='<%# Eval("skillsnum") %>' Width="2px"></asp:Label>
+                                        <asp:Label ID="lblskillsnum" runat="server" Text='<%# Eval("skillsid")%>' Width="2px"></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Sub Skill Num">
                                     <ItemTemplate>
-                                        <asp:Label ID="lblsubskillnum" runat="server" Text='<%# Eval("subskillnum") %>' Width="2px"></asp:Label>
+                                        <asp:Label ID="lblsubskillnum" runat="server" Text='<%# Eval("subskillid")%>' Width="2px"></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Sub Skill Title ">

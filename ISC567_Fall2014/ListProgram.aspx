@@ -85,6 +85,24 @@
                         &nbsp;
                         <asp:Label ID="lblSpacer" runat="server" Text="  " Width="200px"></asp:Label>
                         &nbsp;
+
+                        <ccJSIM:OpenIFrameButton 
+                            ID="lbtnWorkOnExam" 
+                            runat="server" 
+                            FrameSrc="ExamProvider_7.aspx" 
+                            HeightPosition="400" 
+                            WidthPosition="575"
+                            IFrameName="ifWorkOnExam" 
+                            Text="Work On Exam" 
+                            LeftPosition="250" 
+                            TopPosition="170" 
+                            ZIndex="185" 
+                            CssClass="Button" 
+                            style="z-index: 1; top: 230px;" 
+                            Width="189px" 
+                        />
+
+                         &nbsp;
                         <ccJSIM:OpenIFrameButton ID="lbtnOpenBK" runat="server" FrameSrc="ListProgramBK.aspx" HeightPosition="305" WidthPosition="778"
                             IFrameName="ifListProgramBK" Text="Body Of Knowledge" LeftPosition="290" TopPosition="195" ZIndex="220" CssClass="Button" Width="120px" />
                         &nbsp;
