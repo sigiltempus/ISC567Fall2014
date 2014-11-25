@@ -112,7 +112,7 @@ namespace DataAccessTier
             return dtsponsorinfo;
         }
 
-        public void insertSponsor(int societyid, int curriculumid, int sponsored_date, string connectionString)
+        public void insertSponsor(int societyid, int curriculumid, string sponsored_date, string connectionString)
         {
             // Set up parameters in parameter array 
             SqlParameter[] arParms = new SqlParameter[3];
@@ -121,7 +121,7 @@ namespace DataAccessTier
             arParms[0].Value = societyid;
             arParms[1] = new SqlParameter("@curriculumid", SqlDbType.NVarChar);
             arParms[1].Value = curriculumid;
-            arParms[2] = new SqlParameter("@sponsored_date", SqlDbType.NVarChar);
+            arParms[2] = new SqlParameter("@sponsored_on", SqlDbType.NVarChar);
             arParms[2].Value = sponsored_date;
 
             pTransactionSuccessful = true;
@@ -141,7 +141,7 @@ namespace DataAccessTier
                 pTransactionSuccessful = false;
             }
         }
-        public void editSponsorInfo(int sponsorid,int societyid, int curriculumid, int sponsored_date, string connectionString)
+        public void editSponsorInfo(int sponsorid, int societyid, int curriculumid, string sponsored_date, string connectionString)
         {
             // Set up parameters in parameter array 
             SqlParameter[] arParms = new SqlParameter[4];
@@ -150,7 +150,7 @@ namespace DataAccessTier
             arParms[0].Value = societyid;
             arParms[1] = new SqlParameter("@curriculumid", SqlDbType.NVarChar);
             arParms[1].Value = curriculumid;
-            arParms[2] = new SqlParameter("@sponsored_date", SqlDbType.NVarChar);
+            arParms[2] = new SqlParameter("@sponsored_on", SqlDbType.NVarChar);
             arParms[2].Value = sponsored_date;
             arParms[3] = new SqlParameter("@sponsorid", SqlDbType.NVarChar);
             arParms[3].Value = sponsorid;

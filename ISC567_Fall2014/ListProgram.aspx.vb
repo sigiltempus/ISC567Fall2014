@@ -59,12 +59,13 @@ Public Class ListProgram
         PopulateGVPrograms()
     End Sub
 
-    Protected Sub gvProgramList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvProgramList.SelectedIndexChanged
+    Public Sub gvProgramList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvProgramList.SelectedIndexChanged
         'Place selected data from Grid into the session variable
         Dim selectedProgramId As String = gvProgramList.SelectedValue.ToString()
         Dim s As Boolean = InsertSVTableValue(Of Integer)("programId", CInt(selectedProgramId)) 'Using SV Table
         Session.Add("selectedProgramId", selectedProgramId) ' Instead of using SV Table some code may just be requesting from Session Variable
         Session.Add("selectedprogramName", gvProgramList.SelectedDataKey.Values.Item("shortname"))
+
     End Sub
 
 #End Region

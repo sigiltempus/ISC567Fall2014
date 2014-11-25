@@ -17,8 +17,9 @@ Public Class ListCourse
     End Sub
 
     Private Sub setform()
-        Dim ProgramId As Integer
-        ProgramId = GetSVTableValue(Of Integer)("programId")
+        Dim ProgramId As Integer = CInt(Session("selectedProgramId"))
+        ' ProgramId = GetSVTableValue(Of Integer)("programId")
+
         PopulateProgram()
         'If peopleid > 0 Then
         Dim cn As String = GetConnectionString("connectionString")

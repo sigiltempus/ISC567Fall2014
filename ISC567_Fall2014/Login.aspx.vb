@@ -1,4 +1,4 @@
-Imports JSIM.Bases.SVTable
+﻿Imports JSIM.Bases.SVTable
 Public Class Login
     Inherits JSIM.Bases.BaseClass
 
@@ -30,25 +30,21 @@ Public Class Login
                 Dim foo As DataTable = GetSVTable()
 
                 Session("Lastname") = dtUserProfile.Rows(0)("lastname").ToString()
-                'Session("isEmployee") = dtUserProfile.Rows(0)("isEmployee").ToString()
-                'Session("isCurriculum") = dtUserProfile.Rows(0)("isCurriculum").ToString()
                 Session("institutionid") = dtUserProfile.Rows(0)("institutionid").ToString()
 
                 'Place data from table into variables that will be passed to the SV table
                 Dim personid As String = dtUserProfile.Rows(0)("personid").ToString()
-                InsertSVTableValue(Of String)("personid", personid)               
+                InsertSVTableValue(Of String)("personid", personid)
                 Dim institutionid As String = dtUserProfile.Rows(0)("institutionid").ToString()
                 InsertSVTableValue(Of String)("institutionid", institutionid)
                 Dim isTaker As String = dtUserProfile.Rows(0)("isTaker").ToString()
                 InsertSVTableValue(Of String)("isTaker", isTaker)
-                Dim isProvider As String = dtUserProfile.Rows(0)("isProvider").ToString()
-                InsertSVTableValue(Of String)("isProvider", isProvider)
+                'Dim isProvider As String = dtUserProfile.Rows(0)("isProvider").ToString()
+                'InsertSVTableValue(Of String)("isProvider", isProvider)
                 Dim isInstitution As String = dtUserProfile.Rows(0)("isInstitution").ToString()
                 InsertSVTableValue(Of String)("isInstitution", isInstitution)
                 Dim isSA As String = dtUserProfile.Rows(0)("isSA").ToString()
                 InsertSVTableValue(Of String)("isSA", isSA)
-               
-
 
                 ' Redirect to main menu
                 Response.Redirect("MainMenu.aspx")

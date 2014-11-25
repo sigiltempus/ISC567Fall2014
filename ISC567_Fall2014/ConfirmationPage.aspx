@@ -15,7 +15,7 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
         </asp:ScriptManager>
-        <div class="ListIFrame" style="width: 800px; height: 500px;">
+        <div class="ListIFrame" style="width: 600px; height: 350px;">
             <table style="width: 100%;">
                 <tr style="text-align: left">
                     <td colspan="2">
@@ -34,11 +34,8 @@
 
                         <br />
                         <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
+                        
+                       
 
                     </td>
                 </tr>
@@ -46,12 +43,13 @@
                     <td style="width: 50%">You :
                         <asp:Label ID="txtName" runat="server" BorderStyle="None" Style="width: auto; height: 98%; text-align: center" Font-Bold="True"></asp:Label>
                     </td>
+                    
                     <td style="width: 50%">
                         <asp:Label ID="txtAddress" runat="server" BorderStyle="None" Style="width: auto; height: 98%" Font-Bold="True"></asp:Label>
                         <br />
-                        <asp:Label ID="lblCity" runat="server" BorderStyle="None" Style="width: auto; height: 98%" Font-Bold="True"></asp:Label><br />
-                        &nbsp&nbsp,<asp:Label ID="lblSt" runat="server" BorderStyle="None" Style="width: auto; height: 98%" Font-Bold="True"></asp:Label>
-                        &nbsp&nbsp-<asp:Label ID="lblZip" runat="server" BorderStyle="None" Style="width: auto; height: 98%" Font-Bold="True"></asp:Label>
+                        <asp:Label ID="lblCity" runat="server" BorderStyle="None" Style="width: auto; height: 98%" Font-Bold="True"></asp:Label>
+                        &nbsp,<asp:Label ID="lblSt" runat="server" BorderStyle="None" Style="width: auto; height: 98%" Font-Bold="True"></asp:Label><br />
+                        &nbsp-<asp:Label  ID="lblZip" runat="server" BorderStyle="None" Style="width: auto; height: 98%" Font-Bold="True"></asp:Label>
 
                     </td>
                 </tr>
@@ -62,7 +60,7 @@
                 </tr>
                 <tr>
                     <td style="width: 50%">Exam Name :
-                        <asp:Label ID="lblexamName" runat="server" Style="width: auto; height: 98%; text-align: center" Font-Bold="True"></asp:Label>
+                        <asp:Label ID="lblexamName" runat="server" Style="width: auto; height: 98%; text-align: center" Font-Bold="True"></asp:Label><br />
                         <br />
                         <br />
                     </td>
@@ -101,9 +99,9 @@
                 <tr align="left">
                     <td colspan="2">
                         <ccJSIM:OpenIFrameButton ID="OpenIFrameButton" runat="server" CssClass="ButtonDisplay" 
-                     FrameSrc="WaitForExamTime.aspx" HeightPosition="500" 
-                     IFrameName="ifAddEditExams" LeftPosition="80" Text="Submit" TopPosition="80" 
-                     WidthPosition="708" ZIndex="160" >
+                     FrameSrc="WaitForExamTime.aspx" HeightPosition="340" 
+                     IFrameName="ifAddEditExams" LeftPosition="350" Text="Submit" TopPosition="120" 
+                     WidthPosition="600" ZIndex="160" >
 
                         </ccJSIM:OpenIFrameButton>
                         <br />

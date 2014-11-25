@@ -26,29 +26,38 @@
     </asp:ScriptManager>
     <div class="AddEditIFrame" style="height: 320px;width:700px">
         <table style="height: 300px; width: 702px">
-            <tr>
-                <td colspan="1" class="IFrameHeader">
-                    <ccJSIM:DragIFrame ID="dgFrame" runat="server" Text="Add BKLevel1" style="text-align: left">
-                    </ccJSIM:DragIFrame>
-                </td>
-                <td colspan="1" class="IFrameHeader">
-                    <ccJSIM:CloseIFrameLinkButton ID="CloseIFrameLinkButton1" runat="server" Text="[x] Close"
-                        BorderColor="White" ForeColor="White" IFrameName="IfAddEditBKLevel1"  style="text-align: right">
-                    </ccJSIM:CloseIFrameLinkButton>
+             <tr>
+                <td colspan="2" class="auto-style2">
+                   <ccJSIM:DragIFrame ID="dgFrame" runat="server" Text="Add/Edit Bklevel1" CssClass="IFrameHeader" Width="100%"  style="text-align: left" CanDragIFrame="True">
+                   <asp:Label ID="lblCTitle" runat="server" Text="" Width="80%" style="text-align: left;"></asp:Label>
+                       
+                        </ccJSIM:DragIFrame>
+                    
                 </td>
             </tr>
             <tr>
-                <td >
-                    <asp:Label ID="Label2" runat="server" Text="Program Name" style="text-align: left"></asp:Label>
-                </td>
-                <td >
-                    <asp:DropDownList ID="ddlProgram" runat="server" DataSourceID="sdsProgram" DataTextField="shortname"
-                        onchange="ShowAlert();" DataValueField="programid">
-                    </asp:DropDownList>
-                    <asp:SqlDataSource ID="sdsProgram" runat="server" ConnectionString="<%$ ConnectionStrings:connectionString %>"
-                        SelectCommand="SELECT [programid], [shortname] FROM [program]"></asp:SqlDataSource>
-                </td>
+                <td colspan="2" class="auto-style2">
+                     <ccJSIM:CloseIFrameButton ID="btnCSave" runat="server" IFrameName="IfAddEditBKLevel1" Text="[X] Close" style="text-align: right; position: relative; top: -32px; left: 600px;" />
+                 </td>
             </tr>
+           
+            <tr>
+                                    <td style="width: 96%;">Curriculum Short Name
+                                        <asp:TextBox ID="Txtcurriculumname" runat="server" Style="width: 100%; position: relative; top: -13px; left: 288px;" MaxLength="10" Enabled="false"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="valcurriculum" runat="server" ErrorMessage="curriculum Short Name is required"
+                                            Text="*" ForeColor="Red" ControlToValidate="Txtcurriculumname" >
+                                        </asp:RequiredFieldValidator>
+                                    </td>
+                                </tr>
+                              <tr>
+                                   <td>
+                                    <asp:Label ID="Labelp" runat="server" Text="Program Short Name" style="text-align: right"></asp:Label>
+                                        <asp:TextBox ID="txtShortName" runat="server" Style="width: 100%; position: relative; top: -16px; left: 288px;" MaxLength="10" Enabled="false"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="ValShortName" runat="server" ErrorMessage="Program Short Name is required"
+                                            Text="*" ForeColor="Red" ControlToValidate="txtShortName">
+                                        </asp:RequiredFieldValidator>
+                                    </td>
+                                </tr>
             <tr>
                 <td>
                     <asp:Label ID="Label1" runat="server" Text="NumberL1 - BK Level1" style="text-align: right"></asp:Label>
@@ -77,7 +86,7 @@
                 <td>
                     <ccJSIM:SaveAndCloseIFrameButton ID="btnSave" Text="Save" runat="server" CssClass="Button"
                         align="left" IFrameName="IfAddEditBKLevel1" MethodName="wsAddEditBKLevel1"
-                        ParentFrame="ifListProgramBK" ParentPage="ListProgramBK.aspx?mode=edit" Width="53px" StatusPanelId="lblStatus"
+                        ParentFrame="ifListProgramBK" ParentPage="ListProgramBK.aspx" Width="53px" StatusPanelId="lblStatus"
                         RefreshParentPage="True" />
                 </td>
             </tr>

@@ -43,8 +43,8 @@ Public Class ListProgramBK
         Dim dtBKLevel1 As DataTable
         Dim oBKLevel1 As New DataAccessTier.daBodyOfKnowledge
         Dim cn As String = GetConnectionString("connectionString")
-        Dim ISModelID As Integer = CInt(Session("selectedProgramId"))
-        dtBKLevel1 = oBKLevel1.ListBKLevel1(ISModelID, cn)
+        Dim programid As Integer = CInt(Session("selectedProgramId"))
+        dtBKLevel1 = oBKLevel1.ListBKLevel1(programid, cn)
         If Not oBKLevel1.TransactionSuccessful Then
             dtBKLevel1 = Nothing
         End If

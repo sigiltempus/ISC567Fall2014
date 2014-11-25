@@ -32,22 +32,31 @@ Partial Public Class ListProgramBK2
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
 
     '''<summary>
-    '''dgFrame control.
+    '''lblCHeader control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents dgFrame As Global.JSIM.Custom_Controls.DragIFrame
+    Protected WithEvents lblCHeader As Global.JSIM.Custom_Controls.DragIFrame
 
     '''<summary>
-    '''CloseIFrameLinkButton1 control.
+    '''lblCTitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CloseIFrameLinkButton1 As Global.JSIM.Custom_Controls.CloseIFrameLinkButton
+    Protected WithEvents lblCTitle As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''btnCSave control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCSave As Global.JSIM.Custom_Controls.CloseIFrameButton
 
     '''<summary>
     '''Panel1 control.
@@ -86,11 +95,11 @@ Partial Public Class ListProgramBK2
     Protected WithEvents btnEditBKLevel2 As Global.JSIM.Custom_Controls.OpenIFrameButton
 
     '''<summary>
-    '''btnBKLevel3 control.
+    '''lblCSpacer control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnBKLevel3 As Global.JSIM.Custom_Controls.OpenIFrameButton
+    Protected WithEvents lblCSpacer As Global.System.Web.UI.WebControls.Label
 End Class

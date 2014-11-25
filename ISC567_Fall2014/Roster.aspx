@@ -18,7 +18,7 @@
             background-color: #ba1c1c;
             font-family: Verdana;
             padding: 5px 5px 5px 5px;
-            width: 604px;
+            width: 550px;
         }
 
         .style2 {
@@ -29,7 +29,7 @@
             width: 274px;
         }
         .auto-style2 {
-            width: 317px;
+            height: 6px;
         }
     </style>
 
@@ -38,23 +38,24 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="True">
         </asp:ScriptManager>
-        <div class="ListIFrame" style="width: 804px; height: 496px;">
-            <table style="width: 100%;">
+        <div class="ListIFrame" style="width: 804px; height: 500px;">
+            <table style="width: 100%; height: 478px;">
                 <tr style="text-align: left">
-                    <td colspan="2">
+                    <td colspan="2" class="auto-style2">
                         <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="Exam in which you are involved" CanDragIFrame="True" CssClass="IFrameHeader" Visible="True" Width="98%">
                         </ccJSIM:DragIFrame>
+                        </td>
                 </tr>
                 <tr>
                     <td colspan="2" valign="top">
                         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                             <ContentTemplate>
                                 <asp:Panel ID="Panel2" runat="server" ScrollBars="Vertical"
-                                    BorderStyle="Solid" BorderColor="Black" BorderWidth="2px" Width="100%" Height="350px">
+                                    BorderStyle="Solid" BorderColor="Black" BorderWidth="2px" Width="100%" Height="332px">
                                     <ccJSIM:OpenIFrameGridView ID="gvroster" runat="server" Width="100%"
                                         AutoGenerateColumns="False" CellPadding="4" ChangeRowColor="True"
                                         DataKeyNames="examid" ForeColor="#333333" FrameSrc="roster.aspx" GridLines="None"
-                                        GridSortColumn="status" GridSortDirection="ASC" HeightPosition="300"
+                                        GridSortColumn="status" GridSortDirection="ASC" HeightPosition="200"
                                         HighlighedRowColor="Blue" IFrameName="ifAddEditUser" IncludeSorting="True"
                                         LeftPosition="60" ShowDeleteButton="False" ShowEditButton="False"
                                         ShowSelectorButton="True" TopPosition="60" WidthPosition="300"
@@ -83,6 +84,38 @@
                                         <SortedDescendingCellStyle BackColor="#E9EBEF" />
                                         <SortedDescendingHeaderStyle BackColor="#4870BE" />
                                     </ccJSIM:OpenIFrameGridView>
+
+
+                                    <br />
+                                    <br />
+                                    <br />
+
+
+                                    <br />
+                                    <table style="text-align: center; width: 100%; height: 83px;">
+                                        <tr>
+                                            <td>
+                                                <ccJSIM:OpenIFrameButton ID="btnIfExamSchedule" runat="server" CssClass="Button" FrameSrc="ScheduleExam.aspx" HeightPosition="500" IFrameName="ifScheduleExam" LeftPosition="350" Text="Schedule Another Exam" TopPosition="80" WidthPosition="600" ZIndex="160" />
+                                            </td>
+                                            <td>
+                                                <ccJSIM:OpenIFrameButton ID="btnifTakeExam" runat="server" CssClass="Button" Enabled="False" FrameSrc="ConfirmationPage.aspx" HeightPosition="360" IFrameName="ifConfirmationPage" LeftPosition="250" Text="Take The EXAM" TopPosition="120" Width="98%" WidthPosition="610" ZIndex="160" />
+                                            </td>
+                                            <td class="auto-style1">
+                                                <asp:Button ID="btnCancelExam" runat="server" CssClass="Button" Text="  cancel the scheduled exam" Width="197px" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" CssClass="Button" IFrameName="ifRoster" Interval="10" Text="Cancel" />
+                                                <td>
+                                                    <asp:Button ID="Button5" runat="server" CssClass="Button" Text="Logout" Width="139px" />
+                                                </td>
+                                                <td class="auto-style1">
+                                                    <asp:Button ID="Button6" runat="server" CssClass="Button" Text="  print results for scheduled exam" Width="237px" />
+                                                </td>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </asp:Panel>
                             </ContentTemplate>
                         </asp:UpdatePanel>
@@ -90,49 +123,7 @@
                     </td>
                 </tr>
             </table>
-            <asp:Panel ID="Panel3" runat="server" BorderStyle="Solid" BorderColor="Black" BorderWidth="2px" Width="100%" Height="150px">
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>
-                        <table style="text-align: center; width: 98%">
-
-                            <tr>
-
-                                <td class="auto-style2">
-                                    <ccJSIM:OpenIFrameButton ID="btnIfExamSchedule" Text="Schedule Another Exam" runat="server" CssClass="Button" IFrameName="ifScheduleExam" FrameSrc="ScheduleExamV2.aspx"
-                                        HeightPosition="500" LeftPosition="20" TopPosition="120"
-                                        WidthPosition="808" ZIndex="160" />
-                                </td>
-
-                                <td>
-                                    <ccJSIM:OpenIFrameButton ID="btnifTakeExam" Text="Take The EXAM" runat="server" CssClass="Button" Width="98%" IFrameName="ifConfirmationPage" FrameSrc="ConfirmationPage.aspx"
-                                        HeightPosition="504" LeftPosition="20" TopPosition="120" 
-                                        WidthPosition="804" ZIndex="160" Enabled="False" />
-                                </td>
-                                <td class="auto-style1">
-                                    <asp:Button ID="btnCancelExam" runat="server" Text="  cancel the scheduled exam"
-                                        Width="190px" CssClass="Button" /></td>
-
-
-                            </tr>
-                            <tr>
-
-                                <td class="auto-style2">
-                                    <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="Cancel" CssClass="Button" IFrameName="ifRoster" Interval="10" />
-
-                                <td>
-                                    &nbsp;</td>
-                                <td class="auto-style1">
-                                    <asp:Button ID="Button5" runat="server" CssClass="Button" Text="Logout" Width="139px" />
-                                    </td>
-
-
-                            </tr>
-
-                        </table>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
-            </asp:Panel>
-
+            
         </div>
     </form>
 </body>
