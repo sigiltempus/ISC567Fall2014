@@ -235,9 +235,9 @@ namespace DataAccessTier {
         public DataTable GetProgramoutcomesforsubskill(int ProgramOutcomeId, string ConnectionString) {
             // Set up parameters in parameter array 
             SqlParameter[] arParms = new SqlParameter[1];
-            arParms[0] = new SqlParameter("@prgoutcomesid ", SqlDbType.Int);
+            arParms[0] = new SqlParameter("@CourseOutcomesID ", SqlDbType.Int);
             arParms[0].Value = ProgramOutcomeId;
-            return this.GetTable("Listprogramoutcomestosubskill", ConnectionString, "ProgramOutcome", arParms);
+            return this.GetTable("sp_ListSubskillInCourseOutcome", ConnectionString, "CourseOutcome", arParms);
         }
 
         public DataTable Getproglist(int prgoutcomesid, string connectionString) {
