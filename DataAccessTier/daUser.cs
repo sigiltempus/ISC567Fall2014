@@ -1577,6 +1577,44 @@ namespace DataAccessTier
         }
 
 
+        public void InsertScheduleExamForTaker(int personid, string examname,
+             string status, string ConnectionString)
+        {
+            // Set up parameters in parameter array 
+            SqlParameter[] arParms = new SqlParameter[3];
+
+            arParms[0] = new SqlParameter("@personid", SqlDbType.Int);
+            arParms[0].Value = personid;
+            arParms[1] = new SqlParameter("@examname", SqlDbType.NVarChar);
+            arParms[1].Value = examname;
+            arParms[2] = new SqlParameter("@status", SqlDbType.NVarChar);
+            arParms[2].Value = status;
+
+            //Remember to adjust the array dimension when adding or subtracting elements.
+
+            pTransactionSuccessful = true;
+
+            try
+            {
+                SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, "InsertScheduleExamForTaker", arParms);
+            }
+            catch (SqlException InsertError)
+            {
+                pErrorMessage = InsertError.Message.ToString();
+                pErrorNumber = InsertError.Number;
+                pErrorClass = InsertError.Class;
+                pErrorState = InsertError.State;
+                pErrorLineNumber = InsertError.LineNumber;
+
+                pTransactionSuccessful = false;
+            }
+
+            //If using output paramters
+
+
+
+        }
+
 
 
         public DataTable GetExamItem(int examid, string ConnectionString)
@@ -2046,10 +2084,10 @@ namespace DataAccessTier
                                              string city, string state, string zip, string phoneNumber1, string phoneNumber1Type,
                                              string phoneNumber2, string phoneNumber2Type, string username, string password, Boolean isTaker,
                                              Boolean isProvider, Boolean isInstitution, Boolean isSA, Boolean isISA, Boolean isProctor,
-                                             Boolean isReports, Boolean isEPSA, Boolean isDeveloper, string ConnectionString)
+                                             Boolean isReports, Boolean isEPSA, Boolean isDeveloper,Boolean isCurriculum,Boolean isEmployee, string ConnectionString)
         {
             // Set up parameters in parameter array 
-            SqlParameter[] arParms = new SqlParameter[27];
+            SqlParameter[] arParms = new SqlParameter[29];
 
             arParms[0] = new SqlParameter("@personId", SqlDbType.NVarChar);
             arParms[0].Value = personId;
@@ -2105,6 +2143,11 @@ namespace DataAccessTier
             arParms[25].Value = isEPSA;
             arParms[26] = new SqlParameter("@isDeveloper", SqlDbType.Bit);
             arParms[26].Value = isDeveloper;
+            arParms[27] = new SqlParameter("@isCurriculum", SqlDbType.Bit);
+            arParms[27].Value = isCurriculum;
+            arParms[28] = new SqlParameter("@isEmployee", SqlDbType.Bit);
+            arParms[28].Value = isEmployee;
+
 
             pTransactionSuccessful = true;
 
@@ -2157,11 +2200,11 @@ namespace DataAccessTier
             }
         }
 
-        public void addOrUpdateExam(int examid, String examname, Decimal duration, int etypeid, int providerid,
+        public void addOrUpdateExam(int examid, String examname, Decimal duration, int etypeid, 
                                     string exampurpose, string ConnectionString)
         {
             // Set up parameters in parameter array 
-            SqlParameter[] arParms = new SqlParameter[6];
+            SqlParameter[] arParms = new SqlParameter[5];
 
             arParms[0] = new SqlParameter("@examId", SqlDbType.Int);
             arParms[0].Value = examid;
@@ -2173,8 +2216,7 @@ namespace DataAccessTier
             arParms[3].Value = etypeid;
             arParms[4] = new SqlParameter("@exampurpose", SqlDbType.NVarChar);
             arParms[4].Value = exampurpose;
-            arParms[5] = new SqlParameter("@providerid", SqlDbType.Int);
-            arParms[5].Value = providerid;
+
 
 
             pTransactionSuccessful = true;
