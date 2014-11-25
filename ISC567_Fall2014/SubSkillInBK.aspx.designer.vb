@@ -50,56 +50,56 @@ Partial Public Class SubSkillInBK
     Protected WithEvents dgFrame As Global.JSIM.Custom_Controls.DragIFrame
 
     '''<summary>
-    '''CloseIFrameLinkButton1 control.
+    '''CloseIFrameButton1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CloseIFrameLinkButton1 As Global.JSIM.Custom_Controls.CloseIFrameLinkButton
+    Protected WithEvents CloseIFrameButton1 As Global.JSIM.Custom_Controls.CloseIFrameButton
 
     '''<summary>
-    '''Label1 control.
+    '''lblsubskillinbk control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblsubskillinbk As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Label2 control.
+    '''lblStatus1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblStatus1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''ddlSubskill control.
+    '''UpdatePanel1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddlSubskill As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
-    '''ddlBk1 control.
+    '''Panel1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddlBk1 As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''btnSave control.
+    '''gvSubSkill control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnSave As Global.JSIM.Custom_Controls.SaveAndCloseIFrameButton
+    Protected WithEvents gvSubSkill As Global.JSIM.Custom_Controls.CheckboxGridView
 End Class

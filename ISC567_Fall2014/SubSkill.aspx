@@ -17,7 +17,7 @@
     <form id="form1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
     </asp:ScriptManager>
-    <div class="ListIFrame">
+        `<div class="ListIFrame">
         <table align="left" width="700px" border="0px" cellpadding="0px" cellspacing="0px">
             <tr>
                 <td align="left" class="IFrameHeader">
@@ -84,6 +84,11 @@
                                     FrameSrc="AddEditSubSkill.aspx?mode=edit" IFrameName="IfAddEditSubSkill" HeightPosition="340"
                                     LeftPosition="425" ZIndex="300" TopPosition="210" WidthPosition="550" CssClass="Button" />
                             </td>
+                            <td align="right">
+                            <ccJSIM:OpenIFrameButton ID="btnSubSkills" runat="server" Text="Go To Sub SkillIn Bk" FrameSrc="SubSkillInBK.aspx?mode=edit"
+                                IFrameName="IfSubSkillInBk" HeightPosition="325" LeftPosition="400" ZIndex="200" TopPosition="250"
+                                WidthPosition="715" CssClass="Button" />
+                        </td>
                         </tr>
                     </table>
                 </td>
