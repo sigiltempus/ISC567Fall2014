@@ -212,13 +212,13 @@ namespace DataAccessTier {
         public DataTable GetProgramOutcome(int prgoutcomesid, string ConnectionString) {
             // Set up parameters in parameter array 
             SqlParameter[] arParms = new SqlParameter[1];
-            arParms[0] = new SqlParameter("@prgoutcomesid", SqlDbType.Int);
+            arParms[0] = new SqlParameter("@crsoutcomesid", SqlDbType.Int);
             arParms[0].Value = prgoutcomesid;
 
             pTransactionSuccessful = true;
             DataTable dtProgramOutcome = new DataTable("ProgramOutcome");
             try {
-                DataSet dsProgramOutcome = SqlHelper.ExecuteDataset(ConnectionString, CommandType.StoredProcedure, "GetProgramOutComes", arParms);
+                DataSet dsProgramOutcome = SqlHelper.ExecuteDataset(ConnectionString, CommandType.StoredProcedure, "GetCourseOutcomes", arParms);
                 dtProgramOutcome = dsProgramOutcome.Tables[0];
             } catch (SqlException ReadError) {
                 pErrorMessage = ReadError.Message.ToString();
@@ -429,28 +429,23 @@ namespace DataAccessTier {
                 pTransactionSuccessful = false;
             }
         }
-        public void InsertProgrOuctomeSubskill(int programOutomeID, int subSkillId, string ConnectionString) {
+
+        /// <summary>
+        /// Toggles whether an intersect record exists for Outcome and Subskill.
+        /// </summary>
+        /// <param name="programOutomeID">Course/Program Outcome ID</param>
+        /// <param name="subSkillId">Subskill ID</param>
+        /// <param name="ConnectionString">Connection string to use</param>
+        /// <returns>Whether the value is now Checked</returns>
+        public void ToggleSubskillInCourseOutcome(int programOutomeID, int subSkillId, string ConnectionString)
+        {
             // Set up parameters in parameter array 
             SqlParameter[] arParms = new SqlParameter[2];
-
-            arParms[0] = new SqlParameter("@programOutomeID", SqlDbType.Int);
+            arParms[0] = new SqlParameter("@CourseOutcomesID", SqlDbType.Int);
             arParms[0].Value = programOutomeID;
-            arParms[1] = new SqlParameter("@subSkillId", SqlDbType.Int);
+            arParms[1] = new SqlParameter("@SubskillID", SqlDbType.Int);
             arParms[1].Value = subSkillId;
-
-            pTransactionSuccessful = true;
-
-            try {
-                SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, "InsertProgrOutcomeSubskill", arParms);
-            } catch (SqlException InsertError) {
-                pErrorMessage = InsertError.Message.ToString();
-                pErrorNumber = InsertError.Number;
-                pErrorClass = InsertError.Class;
-                pErrorState = InsertError.State;
-                pErrorLineNumber = InsertError.LineNumber;
-
-                pTransactionSuccessful = false;
-            }
+            this.ExecuteWithoutResult(arParms, "sp_ToggleSubskillInCourseOutcome", ConnectionString);
         }
 
         /// <summary>
