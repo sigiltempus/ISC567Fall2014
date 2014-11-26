@@ -2,6 +2,9 @@
 Public Class ProgramOutcomeSubSkill
     Inherits JSIM.Bases.BaseClass
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        ' Session("prgoutcomesid ") = 1
+
         If Not IsPostBack Then
             Dim prgoutcomesid As Integer
             prgoutcomesid = CInt(Session("prgoutcomesid "))
@@ -82,7 +85,7 @@ Public Class ProgramOutcomeSubSkill
         MyBase.paramContainer = New JSIM.ParameterContainer()
         'Gets prgoutcomesid from dropDownlist
         Dim prgoutcomesid As Integer = CInt(Session("prgoutcomesid "))
-        paramContainer.AddParameter("prgoutcomesid", CStr(prgoutcomesid), False)
+        paramContainer.AddParameter("crsoutcomesid", CStr(prgoutcomesid), False)
         Return MyBase.CreateParameters()
     End Function
 #End Region
@@ -100,29 +103,16 @@ Public Class ProgramOutcomeSubSkill
         Return dtUsers
     End Function
 
-    'Assigns a specified subskill to ProgramOutcome
-    Private Shared Function AssignSubskill(ByVal ProgramOutomeID As Integer, ByVal subSkillId As Integer) As String
+    ' Toggles a specified subskill to ProgramOutcome
+    Private Shared Function ToggleSubskill(ByVal ProgramOutomeID As Integer, ByVal subSkillId As Integer) As String
         Dim strMssg As String = ""
         Dim cn As String = GetConnectionString("ConnectionString")
         Dim oRole As New DataAccessTier.daProgram
-        oRole.InsertProgrOuctomeSubskill(ProgramOutomeID, subSkillId, cn)
+        oRole.ToggleSubskillInCourseOutcome(ProgramOutomeID, subSkillId, cn)
         If oRole.TransactionSuccessful Then
-            strMssg = "Subskill was successfully assigned toto the Program OutCome "
+            strMssg = "Subskill Toggled"
         Else
-            strMssg = "An error occured while trying to assign the role:" & oRole.ErrorMessage
-        End If
-        Return strMssg
-    End Function
-    'Unassigns a selected subskill to ProgramOutcome
-    Private Shared Function UnAssignSubskill(ByVal ProgramOutcomeId As Integer, ByVal subSkillId As Integer) As String
-        Dim strMssg As String = ""
-        Dim cn As String = GetConnectionString("ConnectionString")
-        Dim oRole As New DataAccessTier.daProgram
-        oRole.DeleteProgrOuctomeSubskill(ProgramOutcomeId, subSkillId, cn)
-        If oRole.TransactionSuccessful Then
-            strMssg = "Subskill was successfully unassigned fromto the Program OutCome"
-        Else
-            strMssg = "An error occured while trying to unassign the role:" & oRole.ErrorMessage
+            strMssg = "Error: " & oRole.ErrorMessage
         End If
         Return strMssg
     End Function
@@ -133,70 +123,27 @@ Public Class ProgramOutcomeSubSkill
 #End Region
 
 #Region "Click Event Handlers For GridView Controls  "
+    Protected Sub gvSubSkill_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvSubSkill.SelectedIndexChanged
+        PopulateAssignedSubskills()
+    End Sub
 
+    Protected Sub gvSubSkill_CheckBoxClick(sender As Object, e As EventArgs) Handles gvSubSkill.CheckBoxClick
+        PopulateAssignedSubskills()
+    End Sub
+
+    Protected Sub gvSubSkill_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gvSubSkill.RowCommand
+        PopulateAssignedSubskills()
+    End Sub
 #End Region
 
 #Region "Local Webservice Methods  "
     <Services.WebMethod()> _
-    Public Shared Function wsAssignSubskill(ByVal checked As Boolean, ByVal subSkillId As Integer, ByVal programOutomeID As String) As String
+    Public Shared Function wsToggleSubskill(ByVal checked As Boolean, ByVal subSkillId As Integer, ByVal programOutomeID As Integer) As String
         Dim strMssg As String = ""
         Dim progOutcomeId As Integer = CInt(programOutomeID)
-        If checked Then
-            strMssg = AssignSubskill(progOutcomeId, subSkillId) 'subskillcomb)
-        Else
-            strMssg = "Assign method was called but checked value was not set to true"
-        End If
-        Return strMssg
-    End Function
-
-    <Services.WebMethod()> _
-    Public Shared Function wsUnAssignSubskill(ByVal checked As Boolean, ByVal programOutomeID As Integer, ByVal subskillcomb As Integer) As String
-        Dim strMssg As String = ""
-        Dim progOutcomeId As Integer = CInt(programOutomeID)
-        If Not checked Then
-            strMssg = UnAssignSubskill(progOutcomeId, subskillcomb)
-        Else
-            strMssg = "Unassign method was called but checked value was not set to false"
-        End If
+        strMssg = ToggleSubskill(progOutcomeId, subSkillId)
         Return strMssg
     End Function
 #End Region
 
-
-
-
-
-
-    'Protected Sub gvSubSkill_SelectedIndexChanged(sender As Object, e As EventArgs)
-    '    Dim s As Boolean
-    '    Dim k As Integer = gvSubSkill.SelectedIndex
-    '    s = True
-    '    'Dim strng As String = "C"
-    '    'Dim rng As String = "C"
-    '    'wsAssignSubskill(s, rng, strng)
-
-    '    '  s = CheckBox.Checked
-    'End Sub
-
-    'Protected Sub gvSubSkill_CheckBoxClick(sender As Object, e As EventArgs)
-    '    'TODO
-    '    Dim a As String = "I am here"
-    'End Sub
-
-    ''Protected Sub gvSubSkill_SelectedIndexChanged(sender As Object, e As GridViewSelectEventArgs)
-    ''    Dim s As Boolean
-    ''    Dim k As Integer = gvSubSkill.SelectedIndex
-    ''    s = True
-    ''    'Dim strng As String = "C"
-    ''    'Dim rng As String = "C"
-    ''    'wsAssignSubskill(s, rng, strng)
-
-    ''End Sub
-
-    'Protected Sub gvSubSkill_SelectedIndexChanged1(sender As Object, e As EventArgs)
-    '    Dim s As Boolean
-    '    '    Dim k As Integer = gvSubSkill.SelectedIndex
-    '    '    s = True
-    '    '    'Dim strng As String = "C"
-    'End Sub
 End Class
