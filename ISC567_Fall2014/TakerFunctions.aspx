@@ -69,7 +69,7 @@
                      IFrameName="ifRoster" LeftPosition="20" Text=" Registration For Exam " TopPosition="120" 
                      WidthPosition="808" ZIndex="160" ></ccJSIM:OpenIFrameLinkButton>&nbsp;&nbsp;
 &nbsp;                    <ccJSIM:OpenIFrameLinkButton ID="btnRoster" runat="server" CssClass="Button" 
-                     FrameSrc="Roster.aspx" HeightPosition="500" 
+                     FrameSrc="Roster.aspx" HeightPosition="400" 
                      IFrameName="ifRoster" LeftPosition="20" Text="" TopPosition="120" 
                      WidthPosition="808" ZIndex="160" > Exam Roster </ccJSIM:OpenIFrameLinkButton>
                 </td>
@@ -81,9 +81,11 @@
               
             </tr>
         <tr align="left">
+            <td></td>
             <td class="auto-style4">
                 <br />
-                <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="Close" CssClass="Button" IFrameName="ifTakerFunctions" Interval="10"/>
+               
+                <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="Close" CssClass="Button" IFrameName="ifTakerFunctions" Interval="10" Height="22px"/>
               
             </td>
         </tr>

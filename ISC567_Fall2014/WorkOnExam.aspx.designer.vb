@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class ExamProvider_7
+Partial Public Class WorkonExam
 
     '''<summary>
     '''Head1 control.
@@ -68,6 +68,15 @@ Partial Public Class ExamProvider_7
     Protected WithEvents lblErrorMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''rblSelect control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rblSelect As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
     '''Panel2 control.
     '''</summary>
     '''<remarks>
@@ -77,13 +86,13 @@ Partial Public Class ExamProvider_7
     Protected WithEvents Panel2 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''rblSelect control.
+    '''RadioButtonGridView2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents rblSelect As Global.System.Web.UI.WebControls.RadioButtonList
+    Protected WithEvents RadioButtonGridView2 As Global.JSIM.Custom_Controls.RadioButtonGridView
 
     '''<summary>
     '''UpdatePanel1 control.
@@ -102,15 +111,6 @@ Partial Public Class ExamProvider_7
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''RadioButtonGridView2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents RadioButtonGridView2 As Global.JSIM.Custom_Controls.RadioButtonGridView
 
     '''<summary>
     '''OpenIFrameButton1 control.

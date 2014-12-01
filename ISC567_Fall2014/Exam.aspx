@@ -69,10 +69,11 @@
                                         <tr style="top:380px; left:120px">
                                             <td >
                                                 &nbsp;
+                                               
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2" class="auto-style2">
+                                            <td class="auto-style2">
                                                 &nbsp;
                                             </td>
                                         </tr>
@@ -82,13 +83,13 @@
                                                     <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 180px; top: 83px; position: absolute" Text="Minutes"></asp:Label>
                                                     <asp:Label ID="Label7" runat="server" style="z-index: 1; left: 113px; top: 84px; position: absolute" Text=""></asp:Label>
                                                     <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 33px; top: 82px; position:absolute; width:94px" Text="Time to go "></asp:Label>                             
-                                                    <asp:Button  ID="btnFinished" runat="server" CssClass="Button" style="z-index: 1; left: 512px; top: 66px; position: absolute"  Text="Finished" />
 
                                                     <asp:Label ID="Label5" runat="server" style="z-index: 1; left: 31px; top: 110px; position: absolute; right: 642px" Text="Question:"></asp:Label>
-                                                    <asp:Label ID="lblQuestion" runat="server" style="z-index: 1; left: 107px; top: 110px; position: absolute; width: 449px; height: auto" Text="Ques"></asp:Label>
+                                                    <asp:Label ID="lblQuestion" runat="server" style="z-index: 1; left: 107px; top:110px; position: absolute; width:449px; height: auto" Text="Ques"></asp:Label>
 
-                                                    <asp:LinkButton ID="linkprev" runat="server" style="z-index: 1; left: 28px; top: 355px; position: absolute; bottom: 178px;" Text="Previous">Previous</asp:LinkButton>    
-                                                    <asp:LinkButton ID="linknext" runat="server" style="z-index: 1; left: 408px; top: 356px; position: absolute" Text="Next" OnClick="linknext_Click" >Next</asp:LinkButton>
+                                                    <asp:LinkButton ID="linkprev" runat="server" style="z-index: 1; left: 28px; top:355px; position: absolute; bottom: 178px;" Text="Previous">Previous</asp:LinkButton>    
+                                                    <asp:LinkButton ID="linknext" runat="server" style="z-index: 1; left: 408px; top:356px; position: absolute" Text="Next" OnClick="linknext_Click" >Next</asp:LinkButton>
+                                                    
                                                 </div>
                                             </td>
                                         </tr>
@@ -96,8 +97,19 @@
                             </asp:Panel>
                     </ContentTemplate>
             </asp:UpdatePanel>
+             <table>
+           <tr>
+               <td></td>
+               <td>
+                  <asp:Button  ID="btnFinished" runat="server" CssClass="Button" style="z-index: 1; left: 547px; top: 355px; position: absolute"  Text="Finished" />
+
+                                                    
+               </td>
+           </tr>
+       </table>
        
        </div>
+  
     </form>
 </body>
 </html>

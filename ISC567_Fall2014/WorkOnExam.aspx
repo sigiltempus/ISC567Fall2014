@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExamProvider_7.aspx.vb" Inherits="ISC567_Fall2014.ExamProvider_7" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="WorkOnExam.aspx.vb" Inherits="ISC567_Fall2014.WorkonExam" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
@@ -43,12 +43,44 @@
                     <td colspan="2" class="auto-style2">
                         <asp:Label ID="lblErrorMessage" runat="server" Text="" ForeColor="Red" Visible="false"></asp:Label></td>
                 </tr>
+                <tr>
+                    <td colspan="2" class="auto-style2">
+                        <asp:RadioButtonList ID="rblSelect" runat="server" AutoPostBack="True" RepeatDirection="Horizontal" Visible="true"
+                                 OnSelectedIndexChanged="rblSelect_SelectedIndexChanged" >
+                            </asp:RadioButtonList></td>
+                </tr>
                          <tr>
                     <td colspan="2">
                         <asp:Panel ID="Panel2" runat="server" Width="100%" Height="25px" CssClass="PanelStyle">
-                            <asp:RadioButtonList ID="rblSelect" runat="server" AutoPostBack="True" RepeatDirection="Horizontal" Visible="true"
-                                 OnSelectedIndexChanged="rblSelect_SelectedIndexChanged" >
-                            </asp:RadioButtonList>
+                            <ccJSIM:RadioButtonGridView ID="RadioButtonGridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" ChangeRowColor="True" DataKeyNames="examid" ForeColor="#333333" GridLines="None" GridSortDirection="ASC" HighlighedRowColor="" IncludeSorting="True" ShowSelectorButton="True" Width="99%" >
+                                <AlternatingRowStyle BackColor="White" />
+                                <Columns>
+                                    <asp:BoundField DataField="examid" HeaderText="examid" Visible="false" />
+                                    <asp:BoundField DataField="institutionid" HeaderText="institutionid" Visible="false">
+                                    <HeaderStyle HorizontalAlign="Left" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="examname" HeaderText="Exam Name">
+                                    <HeaderStyle HorizontalAlign="Left" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="exampurpose" HeaderText="Purpose of the exam">
+                                    <HeaderStyle HorizontalAlign="Left" />
+                                    </asp:BoundField>
+                                    <asp:BoundField DataField="duration" HeaderText="Duration">
+                                    <HeaderStyle HorizontalAlign="Left" />
+                                    </asp:BoundField>
+                                </Columns>
+                                <EditRowStyle BackColor="#2461BF" />
+                                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                <RowStyle BackColor="#EFF3FB" />
+                                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                            </ccJSIM:RadioButtonGridView>
+
                         </asp:Panel>
                     </td>
                 </tr>
@@ -63,39 +95,7 @@
                            </asp:DropDownList>--%>
 
                             <asp:Panel ID="Panel1" runat="server" ScrollBars="Both" width="99%"
-                                BorderColor="Black" BorderStyle="Solid" BorderWidth="2px" Height="282px">
-    <ccJSIM:RadioButtonGridView ID="RadioButtonGridView2" runat="server" 
-        AutoGenerateColumns="False" CellPadding="4" ChangeRowColor="True" 
-        ForeColor="#333333" GridLines="None" GridSortDirection="ASC" 
-        HighlighedRowColor="" IncludeSorting="True" ShowSelectorButton="True" 
-        Width="99%" DataKeyNames="examid">
-        <AlternatingRowStyle BackColor="White" />
-        <Columns>
-            <asp:BoundField DataField="examid" HeaderText="examid" Visible="false" />
-            <asp:BoundField DataField="institutionid" HeaderText="institutionid" Visible="false" >
-            <HeaderStyle HorizontalAlign="Left" />
-            </asp:BoundField>
-            <asp:BoundField DataField="examname" HeaderText="Exam Name">
-            <HeaderStyle HorizontalAlign="Left" />
-            </asp:BoundField>
-            <asp:BoundField DataField="exampurpose" HeaderText="Purpose of the exam">
-            <HeaderStyle HorizontalAlign="Left" />
-            </asp:BoundField>
-            <asp:BoundField DataField="duration" HeaderText="Duration">
-            <HeaderStyle HorizontalAlign="Left" />
-            </asp:BoundField>
-        </Columns>
-        <EditRowStyle BackColor="#2461BF" />
-        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#EFF3FB" />
-        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-        <SortedAscendingCellStyle BackColor="#F5F7FB" />
-        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-        <SortedDescendingCellStyle BackColor="#E9EBEF" />
-        <SortedDescendingHeaderStyle BackColor="#4870BE" />
-    </ccJSIM:RadioButtonGridView>
+                                BorderColor="Black" BorderStyle="Solid" BorderWidth="2px" Height="282px" style="margin-bottom: 0px">
                                
                     </asp:Panel>
                         </ContentTemplate>
@@ -105,17 +105,17 @@
                 <tr>
                     <td colspan="2" class="auto-style4">
                         &nbsp;
-                        <ccJSIM:OpenIFrameButton ID="OpenIFrameButton1" runat="server" Text ="Add Exam" IFrameName="ifAddExam" Framesrc="ExamProvider_8.aspx?mode=add" 
+                        <ccJSIM:OpenIFrameButton ID="OpenIFrameButton1" runat="server" Text ="Add Exam" IFrameName="ifAddExam" Framesrc="CreateEditExam.aspx?mode=add" 
                             Interval="10" HeightPosition="245" LeftPosition="450" TopPosition="200" WidthPosition="500" ZIndex="210" CssClass="Button" style="width: 72px;"/>
                         &nbsp;
-                        <ccJSIM:OpenIFrameButton ID="OpenIFrameButton2" runat="server" FrameSrc="ExamProvider_8.aspx?mode=edit" 
+                        <ccJSIM:OpenIFrameButton ID="OpenIFrameButton2" runat="server" FrameSrc="CreateEditExam.aspx?mode=edit" 
 						IFrameName="ifAddExam" Text="Edit Exam" HeightPosition="245" LeftPosition="450" TopPosition="200" WidthPosition="500" ZIndex="210" CssClass="Button" style="width: 94px;" />
                        &nbsp;
                          &nbsp;
-                       <%-- <ccJSIM:OpenIFrameButton ID="OpenIFrameButton3" runat="server" FrameSrc= "ExamProvider_11.aspx"
+                       <%-- <ccJSIM:OpenIFrameButton ID="OpenIFrameButton3" runat="server" FrameSrc= "WorkonExamItem.aspx"
                             IFrameName="ifAuthor" Text="Authors" Interval="10" HeightPosition="550" LeftPosition="250" TopPosition="100" WidthPosition="990" ZIndex="210" CssClass="Button" style="z-index: 1; left: 198px; top: 350px; position: absolute; width: 81px;" />
                         &nbsp;--%>
-                        <ccJSIM:OpenIFrameButton ID="OpenIFrameButton4" runat="server" FrameSrc="ExamProvider_11.aspx" IFrameName="ifExamList" Text="Work On Exam Item"
+                        <ccJSIM:OpenIFrameButton ID="OpenIFrameButton4" runat="server" FrameSrc="WorkonExamItem.aspx" IFrameName="ifExamList" Text="Work On Exam Item"
     						Interval="10" HeightPosition="432" LeftPosition="420" TopPosition="160" WidthPosition="955" ZIndex="210" CssClass="Button" style="width: 220px;"/>
 						&nbsp;
                         &nbsp;

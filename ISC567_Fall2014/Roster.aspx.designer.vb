@@ -77,24 +77,6 @@ Partial Public Class Roster
     Protected WithEvents gvroster As Global.JSIM.Custom_Controls.OpenIFrameGridView
 
     '''<summary>
-    '''Panel3 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Panel3 As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''UpdatePanel1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
-
-    '''<summary>
     '''btnIfExamSchedule control.
     '''</summary>
     '''<remarks>
@@ -129,13 +111,4 @@ Partial Public Class Roster
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnClose As Global.JSIM.Custom_Controls.CloseIFrameButton
-
-    '''<summary>
-    '''Button5 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Button5 As Global.System.Web.UI.WebControls.Button
 End Class
