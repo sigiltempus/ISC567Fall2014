@@ -3,11 +3,9 @@ Public Class ProgramOutcomeSubSkill
     Inherits JSIM.Bases.BaseClass
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        ' Session("prgoutcomesid ") = 1
-
         If Not IsPostBack Then
             Dim prgoutcomesid As Integer
-            prgoutcomesid = CInt(Session("prgoutcomesid "))
+            prgoutcomesid = CInt(Session("crsoutcomesid"))
             SetForm()
         End If
 
@@ -28,10 +26,10 @@ Public Class ProgramOutcomeSubSkill
 
     ''Populates ProgramOutcome to label
     Private Sub PopulateProgramOutCome()
-        Dim dtProgram As DataTable = GetProgramOutCome()
+        Dim dtProgram As DataTable = GetCourseOutcomeShortlist()
         If Not IsNothing(dtProgram) AndAlso dtProgram.Rows.Count > 0 Then
             With dtProgram
-                lblProgOutcome.Text = lblProgOutcome.Text + " " + .Rows(0)("prgshortoutcome").ToString() + "  Choose SubSkill"
+                lblProgOutcome.Text = lblProgOutcome.Text + " " + .Rows(0)("crsshortoutcome").ToString() + "  Choose SubSkill"
             End With
         Else
             lblStatus.Text = " "
@@ -40,17 +38,11 @@ Public Class ProgramOutcomeSubSkill
     End Sub
 
     ''Get ProgramOutcome from Database
-    Private Function GetProgramOutCome() As DataTable
-
-       Dim dtProgram As DataTable
-        ' Dim prgoutcomesid As Integer = GetSVTableValue(Of Integer)("prgoutcomesid")
-        Dim prgoutcomesid As Integer = CInt(Session("prgoutcomesid "))
-        'Dim index As Integer = gvProgramOutcome.SelectedIndex
-        'Dim prgoutcomesid As Integer = CInt(gvProgramOutcome.DataKeys(index).Value)
-        ' Dim prgoutcomesid As Integer = 1
+    Private Function GetCourseOutcomeShortlist() As DataTable
+        Dim dtProgram As DataTable
         Dim cn As String = GetConnectionString("ConnectionString")
-        Dim oRole As New DataAccessTier.daProgram
-        dtProgram = oRole.GetProgramOutcome(CInt(prgoutcomesid), cn)
+        Dim oRole As New DataAccessTier.daCourse
+        dtProgram = oRole.GetCourseOutcomeShortlist(cn)
         If Not oRole.TransactionSuccessful Then
             dtProgram = Nothing
         End If
@@ -61,9 +53,9 @@ Public Class ProgramOutcomeSubSkill
     Private Sub PopulateAssignedSubskills()
         'creating the parameters
         gvSubSkill.Parameters = CreateParameters()
-        Dim prgoutcomesid As Integer = CInt(Session("prgoutcomesid "))
-        If Not IsNothing(Session("prgoutcomesid ")) AndAlso CInt(Session("prgoutcomesid ")) > 0 Then
-            Dim dtUserAssignedRoles As DataTable = GetAssignedSubskill(CInt(Session("prgoutcomesid ")))
+        Dim prgoutcomesid As Integer = CInt(Session("crsoutcomesid"))
+        If Not IsNothing(Session("crsoutcomesid")) AndAlso CInt(Session("crsoutcomesid")) > 0 Then
+            Dim dtUserAssignedRoles As DataTable = GetAssignedSubskill(CInt(Session("crsoutcomesid")))
             Dim dv As DataView = dtUserAssignedRoles.DefaultView
             Try
                 gvSubSkill.DataSource = dv
@@ -84,7 +76,7 @@ Public Class ProgramOutcomeSubSkill
     Protected Overrides Function CreateParameters() As JSIM.ParameterContainer
         MyBase.paramContainer = New JSIM.ParameterContainer()
         'Gets prgoutcomesid from dropDownlist
-        Dim prgoutcomesid As Integer = CInt(Session("prgoutcomesid "))
+        Dim prgoutcomesid As Integer = CInt(Session("crsoutcomesid"))
         paramContainer.AddParameter("crsoutcomesid", CStr(prgoutcomesid), False)
         Return MyBase.CreateParameters()
     End Function

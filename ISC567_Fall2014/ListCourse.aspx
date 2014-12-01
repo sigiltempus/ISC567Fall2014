@@ -88,13 +88,8 @@
                             
                             <td align="left">
                                 <ccJSIM:OpenIFrameButton ID="btnGotoCourseOutCome" runat="server" Text="Go To Course Outcome"
-                                    FrameSrc="ListCourseOutcome.aspx" IFrameName="ifListCourseOutcome" HeightPosition="630"
-                                    LeftPosition="270" ZIndex="200" TopPosition="50" WidthPosition="740" CssClass="Button" />
-                            </td>
-                            <td align="left">
-                                <ccJSIM:OpenIFrameButton ID="OpenIFrameButton1" runat="server" Text="Course Outcomes SubSkill"
-                                    FrameSrc="CourseOutcometoSubSkill.aspx" IFrameName="ifcrsOutSubsill" HeightPosition="590"
-                                    LeftPosition="330" ZIndex="200" TopPosition="50" WidthPosition="653" CssClass="Button" />
+                                    FrameSrc="ListCourseOutcome.aspx" IFrameName="ifListCourseOutcome" HeightPosition="450"
+                                    LeftPosition="270" ZIndex="200" TopPosition="50" WidthPosition="725" CssClass="Button" />
                             </td>
                         </tr>
                     </table>

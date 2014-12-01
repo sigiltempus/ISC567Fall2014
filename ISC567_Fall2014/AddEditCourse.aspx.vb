@@ -1,4 +1,5 @@
 ﻿Imports JSIM.Bases.SVTable
+Imports DataAccessTier
 Public Class AddEditCourse
     Inherits JSIM.Bases.BaseClass
 
@@ -80,7 +81,7 @@ Public Class AddEditCourse
 #Region "Local Functions"
     Private Function GetCourseInfo(ByVal CourseId As Integer) As DataTable
         Dim dtUserlInfo As DataTable
-        Dim oUser As New DataAccess.daCourse
+        Dim oUser As New DataAccessTier.daCourse
         Dim con As String = GetConnectionString("connectionString")
         dtUserlInfo = oUser.GetCourse(CourseId, con)
         If Not oUser.TransactionSuccessful Then
@@ -93,7 +94,7 @@ Public Class AddEditCourse
     Private Shared Function InsertCourse(ByVal shorttitle As String, ByVal progid As Integer, ByVal longtitle As String, ByVal catdesc As String, ByVal topics As String, ByVal discussion As String, ByVal yearinprog As String, ByVal sequencenum As Integer) As String
         Dim strStatus As String = ""
         Dim con As String = GetConnectionString("connectionString")
-        Dim oUser As New DataAccess.daCourse
+        Dim oUser As New DataAccessTier.daCourse
         oUser.InsertCourse(shorttitle, progid, longtitle, catdesc, topics, discussion, yearinprog, sequencenum, con)
         If oUser.TransactionSuccessful Then
             strStatus = "Course added Successfull"
@@ -107,7 +108,7 @@ Public Class AddEditCourse
     Private Shared Function UpdateCourse(ByVal CourseId As Integer, ByVal shorttitle As String, ByVal progid As Integer, ByVal longtitle As String, ByVal catdesc As String, ByVal topics As String, ByVal discussion As String, ByVal yearinprog As String, ByVal sequencenum As Integer) As String
         Dim strStatus As String = ""
         Dim con As String = GetConnectionString("connectionString")
-        Dim oUser As New DataAccess.daCourse
+        Dim oUser As New DataAccessTier.daCourse
         oUser.UpdateCourse(CourseId, shorttitle, progid, longtitle, catdesc, topics, discussion, yearinprog, sequencenum, con)
         If oUser.TransactionSuccessful Then
             strStatus = "Course added Successfull"

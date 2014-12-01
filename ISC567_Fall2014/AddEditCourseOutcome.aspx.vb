@@ -87,7 +87,7 @@ Public Class AddEditCourseOutcome
 #Region "Local Functions"
     Private Function GetCourseOutcome(ByVal crsoutcomesid As Integer) As DataTable
         Dim dtUserlInfo As DataTable
-        Dim oUser As New DataAccess.daCourse
+        Dim oUser As New DataAccessTier.daCourse
         Dim con As String = GetConnectionString("connectionString")
         dtUserlInfo = oUser.GetCourseOutcome(crsoutcomesid, con)
         If Not oUser.TransactionSuccessful Then
@@ -101,7 +101,7 @@ Public Class AddEditCourseOutcome
 
         Dim strStatus As String = ""
         Dim con As String = GetConnectionString("connectionString")
-        Dim oUser As New DataAccess.daCourse
+        Dim oUser As New DataAccessTier.daCourse
         oUser.InsertCourseOutcomes(programid, CourseId, crsoutcometext, crsshortoutcome, crssequencenum, crsoutcomenum, crsoutcomesid, con)
         If oUser.TransactionSuccessful Then
             strStatus = "Course Outcome added Successfull"
@@ -115,7 +115,7 @@ Public Class AddEditCourseOutcome
     Private Shared Function UpdateCourseOutcome(ByVal programid As Integer, ByVal CourseId As Integer, ByVal crsoutcometext As String, ByVal crsshortoutcome As String, ByVal crssequencenum As Integer, ByVal crsoutcomenum As String, ByVal crsoutcomesid As Integer) As String
         Dim strStatus As String = ""
         Dim con As String = GetConnectionString("connectionString")
-        Dim oUser As New DataAccess.daCourse
+        Dim oUser As New DataAccessTier.daCourse
         oUser.UpdateCourseOutcome(crsoutcomesid, programid, CourseId, crsoutcometext, crsshortoutcome, crssequencenum, crsoutcomenum, con)
         If oUser.TransactionSuccessful Then
             strStatus = "Course Outcome added Successfull"
