@@ -945,13 +945,17 @@ namespace DataAccessTier
             return dtInstitutionPeopleInfo;
         }
 
-        public DataTable GetExamList(int InstitutionID, string ConnectionString)
+        public DataTable GetExamList(int InstitutionID, int ProgramID, int ExamStatusID, string ConnectionString)
         {
             // Set up parameters in parameter array 
-            SqlParameter[] arParms = new SqlParameter[1];
+            SqlParameter[] arParms = new SqlParameter[3];
 
-            arParms[0] = new SqlParameter("@InstitutionID", SqlDbType.Int);
+            arParms[0] = new SqlParameter("@institutionid", SqlDbType.Int);
             arParms[0].Value = InstitutionID;
+            arParms[1] = new SqlParameter("@programid", SqlDbType.Int);
+            arParms[1].Value = ProgramID;
+            arParms[2] = new SqlParameter("@examstatusid", SqlDbType.Int);
+            arParms[2].Value = ExamStatusID;
 
             pTransactionSuccessful = true;
 
@@ -2200,22 +2204,27 @@ namespace DataAccessTier
             }
         }
 
-        public void addOrUpdateExam(int examid, String examname, Decimal duration, int etypeid, 
-                                    string exampurpose, string ConnectionString)
+        public void AddOrUpdateExam(int examid, int etypeid, String examname, string exampurpose, Decimal duration, int examstatusid, int programid,
+                                     string ConnectionString)
         {
             // Set up parameters in parameter array 
-            SqlParameter[] arParms = new SqlParameter[5];
+            SqlParameter[] arParms = new SqlParameter[7];
 
             arParms[0] = new SqlParameter("@examId", SqlDbType.Int);
             arParms[0].Value = examid;
-            arParms[1] = new SqlParameter("@examname", SqlDbType.NVarChar);
-            arParms[1].Value = examname;
-            arParms[2] = new SqlParameter("@duration", SqlDbType.Decimal);
-            arParms[2].Value = duration;
-            arParms[3] = new SqlParameter("@etypeid", SqlDbType.Int);
-            arParms[3].Value = etypeid;
-            arParms[4] = new SqlParameter("@exampurpose", SqlDbType.NVarChar);
-            arParms[4].Value = exampurpose;
+            arParms[1] = new SqlParameter("@etypeid", SqlDbType.Int);
+            arParms[1].Value = etypeid;
+            arParms[2] = new SqlParameter("@examname", SqlDbType.NVarChar);
+            arParms[2].Value = examname;
+            arParms[3] = new SqlParameter("@exampurpose", SqlDbType.NVarChar);
+            arParms[3].Value = exampurpose;
+            arParms[4] = new SqlParameter("@duration", SqlDbType.Decimal);
+            arParms[4].Value = duration;
+            arParms[5] = new SqlParameter("@examstatusid", SqlDbType.Int);
+            arParms[5].Value = examstatusid;
+            arParms[6] = new SqlParameter("@programid", SqlDbType.Int);
+            arParms[6].Value = programid;
+
 
 
 
@@ -2237,36 +2246,30 @@ namespace DataAccessTier
             }
         }
 
-        public void AddorUpdateExamItem(int examitemid, int examid, int key1id, int key2id, int key3id, string questionobjective, string stem,
+        public void AddorUpdateExamItem(int examitemid, int examid, string questionobjective, string stem,
     string destractor1, string destractor2, string destractor3, string destractor4, string correctanswer, string ConnectionString)
         {
 
-            SqlParameter[] arParms = new SqlParameter[12];
+            SqlParameter[] arParms = new SqlParameter[9];
 
-            arParms[0] = new SqlParameter("@key1id", SqlDbType.Int);
-            arParms[0].Value = key1id;
-            arParms[1] = new SqlParameter("@key2id", SqlDbType.Int);
-            arParms[1].Value = key2id;
-            arParms[2] = new SqlParameter("@key3id", SqlDbType.Int);
-            arParms[2].Value = key3id;
-            arParms[3] = new SqlParameter("@questionobjective", SqlDbType.NVarChar);
-            arParms[3].Value = questionobjective;
-            arParms[4] = new SqlParameter("@stem", SqlDbType.NVarChar);
-            arParms[4].Value = stem;
-            arParms[5] = new SqlParameter("@destractor1", SqlDbType.NVarChar);
-            arParms[5].Value = destractor1;
-            arParms[6] = new SqlParameter("@destractor2", SqlDbType.NVarChar);
-            arParms[6].Value = destractor2;
-            arParms[7] = new SqlParameter("@destractor3", SqlDbType.NChar);
-            arParms[7].Value = destractor3;
-            arParms[8] = new SqlParameter("@destractor4", SqlDbType.NChar);
-            arParms[8].Value = destractor4;
-            arParms[9] = new SqlParameter("@correctanswer", SqlDbType.NChar);
-            arParms[9].Value = correctanswer;
-            arParms[10] = new SqlParameter("@examitemid", SqlDbType.Int);
-            arParms[10].Value = examitemid;
-            arParms[11] = new SqlParameter("@examid", SqlDbType.Int);
-            arParms[11].Value = examid;
+            arParms[0] = new SqlParameter("@questionobjective", SqlDbType.NVarChar);
+            arParms[0].Value = questionobjective;
+            arParms[1] = new SqlParameter("@stem", SqlDbType.NVarChar);
+            arParms[1].Value = stem;
+            arParms[2] = new SqlParameter("@destractor1", SqlDbType.NVarChar);
+            arParms[2].Value = destractor1;
+            arParms[3] = new SqlParameter("@destractor2", SqlDbType.NVarChar);
+            arParms[3].Value = destractor2;
+            arParms[4] = new SqlParameter("@destractor3", SqlDbType.NChar);
+            arParms[4].Value = destractor3;
+            arParms[5] = new SqlParameter("@destractor4", SqlDbType.NChar);
+            arParms[5].Value = destractor4;
+            arParms[6] = new SqlParameter("@correctanswer", SqlDbType.NChar);
+            arParms[6].Value = correctanswer;
+            arParms[7] = new SqlParameter("@examitemid", SqlDbType.Int);
+            arParms[7].Value = examitemid;
+            arParms[8] = new SqlParameter("@examid", SqlDbType.Int);
+            arParms[8].Value = examid;
 
             pTransactionSuccessful = true;
 

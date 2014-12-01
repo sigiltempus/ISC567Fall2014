@@ -131,15 +131,6 @@ Partial Public Class Exam
     Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''btnFinished control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnFinished As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''Label5 control.
     '''</summary>
     '''<remarks>
@@ -174,4 +165,13 @@ Partial Public Class Exam
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents linknext As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''btnFinished control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnFinished As Global.System.Web.UI.WebControls.Button
 End Class

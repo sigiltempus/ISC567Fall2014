@@ -3,7 +3,7 @@ Imports GlobalVariables.AppVariable
 Imports System.Data.SqlClient
 Imports DataAccessTier.daUser
 
-Public Class ExamProvider_8
+Public Class CreateEditExam
     Inherits JSIM.Bases.BaseClass
     Dim cn As String = GetConnectionString("connectionString")
 
@@ -75,14 +75,15 @@ Public Class ExamProvider_8
 
         mode = Request.QueryString("mode")
         Dim examid As Integer = Convert.ToInt32(Session("examid"))
+        Dim programid As Integer = CInt(Session("selectedProgramId"))
         Dim hours As Decimal = CDec(ddlHours.SelectedValue.ToString())
         Dim minutes As Decimal = CDec(ddlminutes.SelectedValue.ToString())
 
         Dim duration As Decimal = (hours + minutes) * 60
 
         If mode = "add" Then
-            AppUser.addOrUpdateExam(-1, txtName.Text, duration,
-                                    CInt(ddlExamType.SelectedValue.ToString()), txtPurpose.Text, cn)
+            Dim examstatusid As Integer = 1
+            AppUser.AddOrUpdateExam(-1, CInt(ddlExamType.SelectedValue.ToString()), txtName.Text, txtPurpose.Text, duration, examstatusid, programid, cn)
             'Edit 10/17/2014 - J00087408 
             'provide confirmation of success and clear screen to prevent duplicate data.
             If AppUser.TransactionSuccessful Then
@@ -96,10 +97,10 @@ Public Class ExamProvider_8
             'End edit
         ElseIf mode = "edit" Then
             Dim eid As Integer = CInt(Session("examid"))
+            Dim examstatusid As Integer = CInt(Session("examstatusid"))
 
 
-            AppUser.addOrUpdateExam(eid, txtName.Text, duration,
-                                    CInt(ddlExamType.SelectedValue.ToString()), txtPurpose.Text, cn)
+            AppUser.AddOrUpdateExam(eid, CInt(ddlExamType.SelectedValue.ToString()), txtName.Text, txtPurpose.Text, duration, examstatusid, programid, cn)
             'Edit 10/17/2014 - J00087408 
             'provide confirmation of success and clear screen to prevent duplicate data.
             If AppUser.TransactionSuccessful Then
