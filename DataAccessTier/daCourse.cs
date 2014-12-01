@@ -6,56 +6,10 @@ using System.Data;
 using System.Data.SqlClient;
 using Microsoft.ApplicationBlocks.Data;
 
-namespace DataAccess
+namespace DataAccessTier
 {
-   public  class daCourse
+   public class daCourse : daDataAccessModule
     {
-        #region " Public properties "
-
-        public static bool pTransactionSuccessful;
-        public bool TransactionSuccessful()
-        {
-            return pTransactionSuccessful;
-        }
-        public static string pErrorMessage;
-        public string ErrorMessage()
-        {
-            return pErrorMessage;
-        }
-        public static int pErrorNumber;
-        public int ErrorNumber()
-        {
-            return pErrorNumber;
-        }
-        public static int pErrorClass;
-        public int ErrorClass()
-        {
-            return pErrorClass;
-        }
-        public static int pErrorState;
-        public int ErrorState()
-        {
-            return pErrorState;
-        }
-        public static int pErrorLineNumber;
-        public int ErrorLineNumber()
-        {
-            return pErrorLineNumber;
-        }
-        public static bool pIsFound;
-        public bool IsFound()
-        {
-            return pIsFound;
-        }
-
-        public static int pInsertedUserid;
-        public int InsertedUserid()
-        {
-            return pInsertedUserid;
-        }
-
-        #endregion
-
         #region " Read methods "
         //Get List of ProgramList with searchargument
         public DataTable GetCourseList(int ProgramId, string ConnectionString)
@@ -120,14 +74,12 @@ namespace DataAccess
         }
 
         //Get List of Course Outcome without searchargument
-        public DataTable GetCourseOutcomesList(int ProgramId,int CourseId, string ConnectionString)
+        public DataTable GetCourseOutcomesList(int CourseId, string ConnectionString)
         {
             // Set up parameters in parameter array 
-            SqlParameter[] arParms = new SqlParameter[2];
-            arParms[0] = new SqlParameter("@ProgramId", SqlDbType.Int);
-            arParms[0].Value = ProgramId;
-            arParms[1] = new SqlParameter("@CourseId", SqlDbType.Int);
-            arParms[1].Value = CourseId;
+            SqlParameter[] arParms = new SqlParameter[1];
+            arParms[0] = new SqlParameter("@CourseId", SqlDbType.Int);
+            arParms[0].Value = CourseId;
 
             pTransactionSuccessful = true;
 
@@ -261,6 +213,16 @@ namespace DataAccess
                 pTransactionSuccessful = false;
             }
             return dtProgramOutcome;
+        }
+
+        /// <summary>
+        /// Returns a list of all course outcomes, with their short descriptions.
+        /// </summary>
+        /// <param name="ConnectionString">Connection string to use</param>
+        /// <returns>DataTable listing short descriptions for all course outcomes</returns>
+        public DataTable GetCourseOutcomeShortlist(string ConnectionString)
+        {
+            return this.GetTable("sp_CourseOutcomesShortList", ConnectionString, "CourseOutcomes");
         }
 
        

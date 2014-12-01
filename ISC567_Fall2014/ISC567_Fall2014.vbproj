@@ -122,7 +122,7 @@
     <Content Include="Listsponsor.aspx" />
     <Content Include="MainMenu.aspx" />
     <Content Include="ProctorExam.aspx" />
-    <Content Include="ProgramOutcomeSubSkill.aspx" />
+    <Content Include="CourseOutcomeSubSkill.aspx" />
     <Content Include="Roster.aspx" />
     <Content Include="ScheduleExam.aspx" />
     <Content Include="ScheduleExamV2.aspx" />
@@ -408,11 +408,11 @@
       <DependentUpon>ProctorExam.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProgramOutcomeSubSkill.aspx.designer.vb">
-      <DependentUpon>ProgramOutcomeSubSkill.aspx</DependentUpon>
+    <Compile Include="CourseOutcomeSubSkill.aspx.designer.vb">
+      <DependentUpon>CourseOutcomeSubSkill.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProgramOutcomeSubSkill.aspx.vb">
-      <DependentUpon>ProgramOutcomeSubSkill.aspx</DependentUpon>
+    <Compile Include="CourseOutcomeSubSkill.aspx.vb">
+      <DependentUpon>CourseOutcomeSubSkill.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Roster.aspx.designer.vb">

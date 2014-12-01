@@ -69,8 +69,8 @@
                                         </asp:DropDownList>
                                     </td>
                                     <td>&nbsp;</td>
-                                    <td colspan="2" style="width: 48%;">Provider<br />
-                                        <asp:DropDownList ID="ddlProvider" runat="server" Style="width: 100%;">
+                                    <td colspan="2" style="width: 48%;">Curriculum<br />
+                                        <asp:DropDownList ID="ddlCurriculum" runat="server" Style="width: 100%;">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>

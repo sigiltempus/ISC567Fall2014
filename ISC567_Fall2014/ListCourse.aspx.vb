@@ -24,7 +24,7 @@ Public Class ListCourse
         'If peopleid > 0 Then
         Dim cn As String = GetConnectionString("connectionString")
         'New Instance for creating an object
-        Dim oUser As New DataAccess.daCourse
+        Dim oUser As New DataAccessTier.daCourse
         'accessing Validateuser 
         'Checking if user exists in database
         Dim dtCourse As DataTable = oUser.GetCourseList(ProgramId, cn)
@@ -53,7 +53,7 @@ Public Class ListCourse
         Dim dtRoleList As DataTable
         Dim ProgramId As Integer = GetSVTableValue(Of Integer)("programId")
         Dim cn As String = GetConnectionString("connectionString")
-        Dim oRole As New DataAccess.daCourse
+        Dim oRole As New DataAccessTier.daCourse
         dtRoleList = oRole.GetCourseProgram(ProgramId, cn)
         If Not oRole.TransactionSuccessful Then
             dtRoleList = Nothing

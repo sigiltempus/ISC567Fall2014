@@ -31,6 +31,8 @@ Public Class Login
 
                 Session("Lastname") = dtUserProfile.Rows(0)("lastname").ToString()
                 Session("institutionid") = dtUserProfile.Rows(0)("institutionid").ToString()
+                Session("isCurriculum") = dtUserProfile.Rows(0)("isCurriculum").ToString()
+
 
                 'Place data from table into variables that will be passed to the SV table
                 Dim personid As String = dtUserProfile.Rows(0)("personid").ToString()

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ProgramOutcomeSubSkill.aspx.vb" Inherits="ISC567_Fall2014.ProgramOutcomeSubSkill" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="CourseOutcomeSubSkill.aspx.vb" Inherits="ISC567_Fall2014.ProgramOutcomeSubSkill" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -15,16 +15,16 @@
         <table cellpadding="0" cellspacing="0" width="650">
             <tr valign="top">
                 <td align="left" class="IFrameHeader">
-                    <ccJSIM:DragIFrame ID="lblHeader" runat="server" Width="100%" Text="Program OutCome SubSkill"> </ccJSIM:DragIFrame>
+                    <ccJSIM:DragIFrame ID="lblHeader" runat="server" Width="100%" Text="Course OutCome SubSkill"> </ccJSIM:DragIFrame>
                 </td>
                 <td align="right" class="IFrameHeader">
-                    <ccJSIM:CloseIFrameLinkButton runat="server" IFrameName="ifProgrOutSubsill" ID="lbtnclose"
+                    <ccJSIM:CloseIFrameLinkButton runat="server" IFrameName="ifcrsOutSubskill" ID="lbtnclose"
                         Text="[x]Close"  BorderColor="White" ForeColor="white"></ccJSIM:CloseIFrameLinkButton>
                 </td>
             </tr>
             <tr valign="top">
                 <td colspan="2" height="40">
-                    <asp:Label ID="lblProgOutcome" runat="server" Height="25px" Text="For Program OutCome :" Font-Bold="true"></asp:Label>
+                    <asp:Label ID="lblProgOutcome" runat="server" Height="25px" Text="For Course OutCome :" Font-Bold="true"></asp:Label>
                 </td>
             </tr>
             <tr valign="top">
