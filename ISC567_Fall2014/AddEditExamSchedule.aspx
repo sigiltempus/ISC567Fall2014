@@ -122,8 +122,7 @@
                                     <td colspan="2">
                                         <asp:ValidationSummary ID="ValidationSummary1" HeaderText="Please correct the errors specified below before proceeding"
                                             DisplayMode="BulletList" EnableClientScript="true" ForeColor="Red" runat="server" Width="445px" />
-                                        <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" Text="Close" Cssclass="Button" IFrameName="ifExamList" PostBackUrl="WorkonExam.aspx"  Width="70px" style="z-index: 1; left: 490px; top: 210px; position: absolute; height: 21px;" />
-                                    </td>
+                                        </td>
  
                                 </tr>
                             </table>
@@ -132,7 +131,8 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="height: 20px;">
-                        
+                        <ccJSIM:SaveAndCloseIFrameButton ID="btnSave" runat="server" OnClick="btnSave_Click" IFrameName="ifAddEditExam" Interval="100" Text=" [✓] SAVE " Width="100px"
+                            ParentFrame="ifListScheduledExam" ParentPage="ListScheduledExam.aspx" CssClass="Button" />
                     </td>
                 </tr>
             </table>
