@@ -63,7 +63,6 @@
                                             <asp:BoundField DataField="lastname" HeaderText="Last Name" SortExpression="lastname" />
                                             <asp:BoundField DataField="firstname" HeaderText="First Name" SortExpression="firstname" />
                                             <asp:CheckBoxField DataField="isISA" HeaderText="ISA" SortExpression="isISA" />
-                                            <asp:CheckBoxField DataField="isProctor" HeaderText="Proctor" SortExpression="isProctor" />
                                             <asp:CheckBoxField DataField="isReports" HeaderText="Rpt" SortExpression="isReports" />
                                             <asp:CheckBoxField DataField="isTaker" HeaderText="Taker" SortExpression="isTaker" />
                                             <asp:CheckBoxField DataField="isEmployee" HeaderText="isEmployee" SortExpression="isEmployee" />
