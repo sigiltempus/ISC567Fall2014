@@ -95,13 +95,13 @@ Partial Public Class AddEditPerson
     Protected WithEvents ddlInstitution As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''ddlProvider control.
+    '''ddlCurriculum control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddlProvider As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlCurriculum As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''txtFirstName control.

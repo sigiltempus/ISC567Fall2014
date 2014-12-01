@@ -20,7 +20,7 @@ Public Class AddEditPerson
         parentScreen = Request.QueryString("caller") ' Get the actual caller/parent from the Query string
 
         LoadInstitution()
-        LoadProvider()
+        LoadCurriculum()
         LoadUserRoleChkBox()
 
         If mode = "add" Then
@@ -43,7 +43,7 @@ Public Class AddEditPerson
         If Not IsNothing(dtUserInfo) AndAlso dtUserInfo.Rows.Count > 0 Then
             With dtUserInfo
                 ddlInstitution.SelectedValue = .Rows(0)("institutionid").ToString()
-                ddlProvider.SelectedValue = .Rows(0)("providerId").ToString()
+                ddlCurriculum.SelectedValue = .Rows(0)("CurriculumID").ToString()
                 txtFirstName.Text = .Rows(0)("firstname").ToString()
                 txtLastName.Text = .Rows(0)("lastname").ToString()
                 txtEmail.Text = .Rows(0)("email").ToString()
@@ -73,23 +73,11 @@ Public Class AddEditPerson
                     If chkBx.ToString() = "Is Taker" Then
                         chkBx.Selected = CBool(.Rows(0)("isTaker"))
                     End If
-                    If chkBx.ToString() = "Is Provider" Then
-                        chkBx.Selected = CBool(.Rows(0)("isProvider"))
-                    End If
-                    If chkBx.ToString() = "Is EPSA" Then
-                        chkBx.Selected = CBool(.Rows(0)("isEPSA"))
-                    End If
-                    If chkBx.ToString() = "Is Developer" Then
-                        chkBx.Selected = CBool(.Rows(0)("isDeveloper"))
-                    End If
                     If chkBx.ToString() = "Is Institution" Then
                         chkBx.Selected = CBool(.Rows(0)("isInstitution"))
                     End If
                     If chkBx.ToString() = "Is ISA" Then
                         chkBx.Selected = CBool(.Rows(0)("isISA"))
-                    End If
-                    If chkBx.ToString() = "Is Proctor" Then
-                        chkBx.Selected = CBool(.Rows(0)("isProctor"))
                     End If
                     If chkBx.ToString() = "Is Curriculum" Then
                         chkBx.Selected = CBool(dtUserInfo.Rows(0)("isCurriculum"))
@@ -117,20 +105,21 @@ Public Class AddEditPerson
 
     End Sub
 
-    Private Sub LoadProvider()
-        Dim dtProviderNames As DataTable
-        Dim oProvider As New DataAccessTier.daProvider
+    
 
-        dtProviderNames = oProvider.GetProvidersList(con)
 
-        ddlProvider.DataTextField = "name"
-        ddlProvider.DataValueField = "providerid"
-        ddlProvider.DataSource = dtProviderNames
-        ddlProvider.DataBind()
-
-        ddlProvider.Items.Insert(0, New ListItem("-- Select Provider --", "-1"))
-
+    Private Sub LoadCurriculum()
+        Dim dtCurriculumNames As DataTable
+        Dim oCurriculum As New DataAccessTier.daUser
+        dtCurriculumNames = oCurriculum.GetCurriculumNames(con)
+        ddlCurriculum.DataTextField = "curriculum_longname"
+        ddlCurriculum.DataValueField = "CurriculumID"
+        ddlCurriculum.DataSource = dtCurriculumNames
+        ddlCurriculum.DataBind()
+        ddlCurriculum.Items.Insert(0, New ListItem("-- Select Curriculum --", "-1"))
     End Sub
+
+
 
     Private Sub LoadUserRoleChkBox()
         chkBxRoleLists.Items.Clear() ' Remove all the items if exists
@@ -141,48 +130,34 @@ Public Class AddEditPerson
             ' If the person isSA or the screen is launched from List Person then allow all Roles
         ElseIf isSA Or parentScreen = "lstPerson" Then
             chkBxRoleLists.Items.Insert(0, "Is SA")
-            chkBxRoleLists.Items.Insert(1, "Is Provider")
-            chkBxRoleLists.Items.Insert(2, "Is Institution")
-            chkBxRoleLists.Items.Insert(3, "Is Reports")
-            chkBxRoleLists.Items.Insert(4, "Is EPSA")
-            chkBxRoleLists.Items.Insert(5, "Is ISA")
-            chkBxRoleLists.Items.Insert(6, "Is Taker")
-            chkBxRoleLists.Items.Insert(7, "Is Developer")
-            chkBxRoleLists.Items.Insert(8, "Is Proctor")
-            chkBxRoleLists.Items.Insert(9, "Is Curriculum")
-            chkBxRoleLists.Items.Insert(9, "Is Employee")
 
+            chkBxRoleLists.Items.Insert(1, "Is Institution")
+            chkBxRoleLists.Items.Insert(2, "Is Reports")
 
+            chkBxRoleLists.Items.Insert(3, "Is ISA")
+            chkBxRoleLists.Items.Insert(4, "Is Taker")
 
-        ElseIf isProvider Or parentScreen = "lstExamProvider" Then
+            chkBxRoleLists.Items.Insert(5, "Is Curriculum")
+            chkBxRoleLists.Items.Insert(6, "Is Employee")
+
+        ElseIf isCurriculum Or parentScreen = "lstExamProvider" Then
             If isInstitution Then
-                chkBxRoleLists.Items.Insert(0, "Is Provider")
-                chkBxRoleLists.Items.Insert(1, "Is Institution")
-                chkBxRoleLists.Items.Insert(2, "Is Taker")
-                chkBxRoleLists.Items.Insert(3, "Is EPSA")
-                chkBxRoleLists.Items.Insert(4, "Is ISA")
-                chkBxRoleLists.Items.Insert(5, "Is Developer")
-                chkBxRoleLists.Items.Insert(6, "Is Proctor")
-            Else
-                chkBxRoleLists.Items.Insert(0, "Is Provider")
+                chkBxRoleLists.Items.Insert(0, "Is Institution")
                 chkBxRoleLists.Items.Insert(1, "Is Taker")
-                chkBxRoleLists.Items.Insert(2, "Is EPSA")
-                chkBxRoleLists.Items.Insert(3, "Is Developer")
+            Else
+                chkBxRoleLists.Items.Insert(1, "Is Taker")
             End If
         ElseIf isInstitution Or parentScreen = "lstInstPeople" Then
-            If isProvider Then
-                chkBxRoleLists.Items.Insert(0, "Is Provider")
+            If isCurriculum Then
+
                 chkBxRoleLists.Items.Insert(1, "Is Institution")
                 chkBxRoleLists.Items.Insert(2, "Is Taker")
-                chkBxRoleLists.Items.Insert(3, "Is EPSA")
                 chkBxRoleLists.Items.Insert(4, "Is ISA")
-                chkBxRoleLists.Items.Insert(5, "Is Developer")
-                chkBxRoleLists.Items.Insert(6, "Is Proctor")
+
             Else
                 chkBxRoleLists.Items.Insert(0, "Is Institution")
                 chkBxRoleLists.Items.Insert(1, "Is Taker")
                 chkBxRoleLists.Items.Insert(2, "Is ISA")
-                chkBxRoleLists.Items.Insert(3, "Is Proctor")
             End If
         End If
     End Sub
@@ -190,18 +165,17 @@ Public Class AddEditPerson
 #End Region
 
 #Region "Local Functions"
-    Private Function AddEditUser(ByVal personId As Integer, ByVal institutionId As Integer, ByVal providerId As Integer, ByVal firstName As String, ByVal lastName As String,
+    Private Function AddEditUser(ByVal personId As Integer, ByVal institutionId As Integer, ByVal CurriculumID As Integer, ByVal firstName As String, ByVal lastName As String,
                                  ByVal dob As Date, ByVal email As String, ByVal address1 As String, ByVal address2 As String,
                                  ByVal city As String, ByVal state As String, ByVal zip As String, ByVal phoneNumber1 As String, ByVal phoneNumber1Type As String,
                                  ByVal phoneNumber2 As String, ByVal phoneNumber2Type As String, ByVal username As String, ByVal password As String,
-                                 ByVal isSA As Boolean, ByVal isReports As Boolean, ByVal isTaker As Boolean, ByVal isProvider As Boolean, ByVal isEPSA As Boolean,
-                                 ByVal isDeveloper As Boolean, ByVal isInstitution As Boolean, ByVal isISA As Boolean, ByVal isProctor As Boolean, ByVal isCurriculum As Boolean, ByVal isEmployee As Boolean) As String
+                                 ByVal isSA As Boolean, ByVal isReports As Boolean, ByVal isTaker As Boolean, ByVal isInstitution As Boolean, ByVal isISA As Boolean,  ByVal isCurriculum As Boolean, ByVal isEmployee As Boolean) As String
         Dim strStatus As String = "Error"
         Dim cn As String = GetConnectionString("connectionString")
 
-        AppUser.AddEditPersonInformation(personId, institutionId, providerId, firstName, lastName, dob, email, address1, address2, city, state, zip,
+        AppUser.AddEditPersonInformation(personId, institutionId, CurriculumID, firstName, lastName, dob, email, address1, address2, city, state, zip,
                                          phoneNumber1, phoneNumber1Type, phoneNumber2, phoneNumber2Type, username, password, isTaker,
-                                         isProvider, isInstitution, isSA, isISA, isProctor, isReports, isEPSA, isDeveloper, isCurriculum, isEmployee, cn)
+                                          isInstitution, isSA, isISA, isReports, isCurriculum, isEmployee, cn)
 
         If AppUser.TransactionSuccessful Then
             strStatus = "Success"
@@ -223,12 +197,12 @@ Public Class AddEditPerson
         Dim isSAChecked As Boolean = False
         Dim isReportsChecked As Boolean = False
         Dim isTakerChecked As Boolean = False
-        Dim isProviderChecked As Boolean = False
-        Dim isEPSAChecked As Boolean = False
-        Dim isDeveloperChecked As Boolean = False
+
+
+
         Dim isInstitutionChecked As Boolean = False
         Dim isISAChecked As Boolean = False
-        Dim isProctorChecked As Boolean = False
+
         Dim isCurriculumChecked As Boolean = False
         Dim isEmployeeChecked As Boolean = False
 
@@ -253,24 +227,16 @@ Public Class AddEditPerson
             If chkBx.ToString() = "Is Taker" Then
                 isTakerChecked = chkBx.Selected
             End If
-            If chkBx.ToString() = "Is Provider" Then
-                isProviderChecked = chkBx.Selected
-            End If
-            If chkBx.ToString() = "Is EPSA" Then
-                isEPSAChecked = chkBx.Selected
-            End If
-            If chkBx.ToString() = "Is Developer" Then
-                isDeveloperChecked = chkBx.Selected
-            End If
+            
+           
+            
             If chkBx.ToString() = "Is Institution" Then
                 isInstitutionChecked = chkBx.Selected
             End If
             If chkBx.ToString() = "Is ISA" Then
                 isISAChecked = chkBx.Selected
             End If
-            If chkBx.ToString() = "Is Proctor" Then
-                isProctorChecked = chkBx.Selected
-            End If
+            
             If chkBx.ToString() = "Is Curriculum" Then
                 isCurriculumChecked = chkBx.Selected
             End If
@@ -281,10 +247,10 @@ Public Class AddEditPerson
 
         Try
             'Try to convert the value from the screen to appropriate data type and pass to add edit function
-            strMsg = AddEditUser(personId, CInt(ddlInstitution.SelectedValue), CInt(ddlProvider.SelectedValue), txtFirstName.Text, txtLastName.Text, CDate(txtDateOfBirth.Value), txtEmail.Text, txtAddress1.Text, txtAddress2.Text,
+            strMsg = AddEditUser(personId, CInt(ddlInstitution.SelectedValue), CInt(ddlCurriculum.SelectedValue), txtFirstName.Text, txtLastName.Text, CDate(txtDateOfBirth.Value), txtEmail.Text, txtAddress1.Text, txtAddress2.Text,
                                  txtCity.Text, txtState.Text, txtZip.Text, txtPrimaryPhone.Text, ddlPhoneType1.SelectedValue, txtAlternatePhone.Text, ddlPhoneType2.SelectedValue,
-                                 txtUserName.Text, txtPassword.Text, isSAChecked, isReportsChecked, isTakerChecked, isProviderChecked, isEPSAChecked, isDeveloperChecked,
-                                 isInstitutionChecked, isISAChecked, isProctorChecked, isCurriculumChecked, isEmployeeChecked)
+                                 txtUserName.Text, txtPassword.Text, isSAChecked, isReportsChecked, isTakerChecked,
+                                 isInstitutionChecked, isISAChecked, isCurriculumChecked, isEmployeeChecked)
 
             If strMsg = "Success" Then
                 'if the Add/Edit was successful
