@@ -36,14 +36,20 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
         <div class="ListIFrame" style="height: 420px;">
             <table>
-                <tr>
-                    <td colspan="2" class="auto-style2">
-                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" CanDragIFrame="True" Text="" CssClass="IFrameHeader" Width="100%">
-                            <asp:Label ID="lblTitle" runat="server" Text="" Width="85%" style="text-align: left;"></asp:Label>
-                            <ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifAddEditsociety" Text="[X] Close" style="text-align: right" />
+               <tr>
+                <td colspan="2" class="auto-style2">
+                   <ccJSIM:DragIFrame ID="dgFrame" runat="server" Text="Add/Edit Society" CssClass="IFrameHeader" Width="100%"  style="text-align: left" CanDragIFrame="True">
+                   <asp:Label ID="lblCTitle" runat="server" Text="" Width="80%" style="text-align: left;"></asp:Label>
+                       
                         </ccJSIM:DragIFrame>
-                    </td>
-                </tr>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="auto-style2">
+                     <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" IFrameName="ifAddEditsociety" Text="[X] Close" style="text-align: right; position: relative; top: -30px; left: 600px;" />
+                 </td>
+            </tr>
                 <tr>
                     <td colspan="2" class="auto-style2">
                         <asp:Label ID="lblMessage" runat="server" Text="" ForeColor="" Visible="false"></asp:Label>
@@ -70,8 +76,7 @@
                                         </asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
-                               
-                            </table>
+                               </table>
                             <table>
                                 <tr>
                                     <td>
@@ -83,17 +88,13 @@
                                     </caption>-->
                                 </tr>
                             </table>
+                            <ccJSIM:SaveAndCloseIFrameButton ID="btnCSave" runat="server" align="left" CssClass="Button" Height="25px" IFrameName="ifAddEditsociety" Interval="100" MethodName="wsAddEditsociety" ParentFrame="ifsocietylist" ParentPage="Listsociety.aspx" RefreshParentPage="True" StatusPanelId="lblStatus" Text=" [✓] SAVE " Width="100px" />
                         </asp:Panel>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2" style="height: 20px;">
-                        <ccJSIM:SaveAndCloseIFrameButton ID="btnCSave" runat="server" IFrameName="ifAddEditsociety" Interval="100"
-                            Text=" [✓] SAVE " Width="100px" ParentFrame="ifsocietylist" ParentPage="Listsociety.aspx" CssClass="Button" RefreshParentPage="True"
-                               align="left"  MethodName="wsAddEditsociety"
-                           StatusPanelId="lblStatus"/>
-                         
-                    </td>
+                        &nbsp;</td>
                 </tr>
             </table>
         </div>

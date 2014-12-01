@@ -54,9 +54,9 @@
                                         ShowDeleteButton="False" ShowSelectorButton="True" AllowSorting="True" GridDeleteButtonText="" GridEditButtonText="" Interval="" >
                                         <Columns>
                                             <asp:BoundField DataField="ProgramId" HeaderText="ProgramId" SortExpression="ProgramId" Visible="False" />
-                                            <asp:BoundField DataField="shortname" HeaderText="Program Name" SortExpression="ProgramName" />
-                                             <asp:BoundField DataField="longname" HeaderText="Program Full Name" SortExpression="ProgramName" />
-                                            <asp:BoundField DataField="value" HeaderText="Program Status" SortExpression="ProgramStatus" />
+                                            <asp:BoundField DataField="shortname" HeaderText="Model Name" SortExpression="ProgramName" />
+                                             <asp:BoundField DataField="longname" HeaderText="Model Full Name" SortExpression="ProgramName" />
+                                            <asp:BoundField DataField="value" HeaderText="Model Status" SortExpression="ProgramStatus" />
                                         </Columns>
                                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                                         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
