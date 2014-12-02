@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExamProvider_8.aspx.vb" Inherits="ISC567_Fall2014.ExamProvider_8" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="CreateEditExam.aspx.vb" Inherits="ISC567_Fall2014.CreateEditExam" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
@@ -113,7 +113,7 @@
             <%--<ccJSIM:OpenIFrameButton ID="OpenIFrameButton2" runat="server" FrameSrc="AddEditExamSchedule.aspx"
                 IFrameName="ifScheduleExam" Text="Schedule Exam" HeightPosition="245" LeftPosition="450" TopPosition="200" WidthPosition="500" ZIndex="210" CssClass="Button"  Style="z-index: 1; left: 20px; top: 215px; position: absolute; height: 21px;" />--%>
                                <ccJSIM:SaveandCloseIFrameButton ID="btnSave" runat="server" Text="Save" Cssclass="Button" style="z-index: 1; left: 200px; top: 215px; position: absolute; height: 21px; width: 93px;" />
-							   <ccJSIM:CloseIFrameButton ID="Close" runat="server" Text="Close" Cssclass="Button" IFrameName="ifAddExam" PostBackUrl="ExamProvider_7.aspx"  Width="70px" style="z-index: 1; left: 375px; top: 215px; position: absolute; height: 21px;" />
+							   <ccJSIM:CloseIFrameButton ID="Close" runat="server" Text="Close" Cssclass="Button" IFrameName="ifAddExam" PostBackUrl="WorkonExam.aspx"  Width="70px" style="z-index: 1; left: 375px; top: 215px; position: absolute; height: 21px;" />
 
                        
               

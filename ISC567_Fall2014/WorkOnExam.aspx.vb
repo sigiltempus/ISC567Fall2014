@@ -1,7 +1,7 @@
 ﻿Imports JSIM.Bases.SVTable
 Imports GlobalVariables.AppVariable
 Imports DataAccessTier.daUser
-Public Class ExamProvider_7
+Public Class WorkonExam
     Inherits JSIM.Bases.BaseClass
     Dim cn As String = GetConnectionString("connectionString")
     Dim InstitutionID As Integer
@@ -10,30 +10,15 @@ Public Class ExamProvider_7
         If Not IsPostBack Then
             setForm()
         End If
+
     End Sub
+#Region "Local Methods"
+
     Public Sub setForm()
-
-
-        populategv(InstitutionID)
         PopulateRadioList()
+        populategv(InstitutionID)
+
     End Sub
-
-    'Public Sub populateddl()
-
-    '    Dim cn As String = GetConnectionString("connectionString")
-
-    '    Dim oUser As New DataAccessTier.daUser
-    '    Dim dtInstitutionNames As DataTable
-    '    dtInstitutionNames = oUser.GetInstitutionNames(cn)
-    '    Dim dtInstitutionNamesView As DataView
-    '    dtInstitutionNamesView = dtInstitutionNames.DefaultView
-    '    'DropDownList1.DataTextField = "name"
-    '    'DropDownList1.DataValueField = "institutionid"
-    '    'DropDownList1.DataSource = dtInstitutionNamesView
-    '    'DropDownList1.DataBind()
-    '    'DropDownList1.Items.Insert(0, New ListItem("Name of Universities", "0"))
-
-    'End Sub
 
     Private Sub PopulateRadioList()
         Dim dtStatus As DataTable = GetExamStatus()
@@ -45,19 +30,30 @@ Public Class ExamProvider_7
 
         rblSelect.Items.Insert(0, New ListItem("All Exams", "-1"))
     End Sub
+
     Public Sub populategv(InstitutionID As Integer)
-
-        Dim oUser As New DataAccessTier.daUser
-        Dim dtInstitutionExams As DataTable
-        InstitutionID = CInt(Session("institutionid").ToString)
-        dtInstitutionExams = oUser.GetExamList(InstitutionID, cn)
-        'Dim dtInstitutionExamsView As DataView
-        'dtInstitutionExamsView = dtInstitutionExams.DefaultView
-
-        RadioButtonGridView2.DataSource = dtInstitutionExams
+        Dim dtInstitutuionExams As DataTable = GetExams(CInt(rblSelect.SelectedValue))
+        RadioButtonGridView2.DataSource = dtInstitutuionExams
         RadioButtonGridView2.DataBind()
-
     End Sub
+
+#End Region
+
+    Private Function GetExams(examStatus As Integer) As DataTable
+        Dim dtInstitutionExams As DataTable
+        Dim cn As String = GetConnectionString("connectionString")
+        Dim oExam As New DataAccessTier.daUser
+
+
+
+        dtInstitutionExams = oExam.GetExamList(CInt(Session("institutionid").ToString), CInt(Session("selectedProgramId").ToString), examStatus, cn)
+
+        If Not oExam.TransactionSuccessful Then
+            dtInstitutionExams = Nothing
+        End If
+
+        Return dtInstitutionExams
+    End Function
 
     Private Function GetExamStatus() As DataTable
         Dim dtStatus As DataTable
@@ -72,14 +68,6 @@ Public Class ExamProvider_7
 
         Return dtStatus
     End Function
-
-    'Public Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList1.SelectedIndexChanged
-    '    RadioButtonGridView2.Visible = True
-    '    InstitutionID = CInt(DropDownList1.SelectedValue)
-
-    '    populategv(InstitutionID)
-
-    'End Sub
 
 
 
@@ -98,6 +86,7 @@ Public Class ExamProvider_7
 
     Protected Sub rblSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles rblSelect.SelectedIndexChanged
         ' Update the Grid on radio selection change
+        Session("examstatusid") = rblSelect.SelectedValue
         populategv(InstitutionID)
 
 
