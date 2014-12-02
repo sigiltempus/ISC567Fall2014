@@ -12,6 +12,33 @@ namespace DataAccessTier {
     public class daProgram : daDataAccessModule {
 
         #region " Read methods "
+        {
+            SqlParameter[] arParms = new SqlParameter[1];
+
+            arParms[0] = new SqlParameter("@curriculumid", SqlDbType.Int);
+            arParms[0].Value = curriculumid;
+            pTransactionSuccessful = true;
+
+            DataTable dtCurriculumPeopleList = new DataTable("CurriculumPeople");
+
+            try
+            {
+                DataSet dsCurriculumPeopleList = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "sp_GetCurriculumPeople", arParms);
+                dtCurriculumPeopleList = dsCurriculumPeopleList.Tables[0];
+            }
+            catch (SqlException ReadError)
+            {
+                pErrorMessage = ReadError.Message.ToString();
+                pErrorNumber = ReadError.Number;
+                pErrorClass = ReadError.Class;
+                pErrorState = ReadError.State;
+                pErrorLineNumber = ReadError.LineNumber;
+
+                pTransactionSuccessful = false;
+            }
+
+            return dtCurriculumPeopleList;
+        }
 
         public DataTable GetCurriculumList(string connectionString)
         {
