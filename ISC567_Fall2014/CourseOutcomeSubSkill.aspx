@@ -18,8 +18,7 @@
                     <ccJSIM:DragIFrame ID="lblHeader" runat="server" Width="100%" Text="Course OutCome SubSkill"> </ccJSIM:DragIFrame>
                 </td>
                 <td align="right" class="IFrameHeader">
-                    <ccJSIM:CloseIFrameLinkButton runat="server" IFrameName="ifcrsOutSubskill" ID="lbtnclose"
-                        Text="[x]Close"  BorderColor="White" ForeColor="white"></ccJSIM:CloseIFrameLinkButton>
+                    <ccJSIM:CloseIFrameButton runat="server" IFrameName="ifcrsOutSubskill" ID="btnClose" Text="[x]Close" />
                 </td>
             </tr>
             <tr valign="top">
@@ -37,7 +36,7 @@
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
                             <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="100%" BorderColor="Black"
-                                BorderStyle="Solid" BorderWidth="2px" Height="475px">
+                                BorderStyle="Solid" BorderWidth="2px" Height="400px">
                                 <ccJSIM:CheckboxGridView ID="gvSubSkill" runat="server" CellPadding="4"
                                     ForeColor="#333333" GridLines="None" IncludeSorting="True" CheckedIdentifier="Checked"
                                     StatusPanelId="lblStatus" Width="99%" AutoGenerateColumns="False" DataKeyNames="subskillid" 
