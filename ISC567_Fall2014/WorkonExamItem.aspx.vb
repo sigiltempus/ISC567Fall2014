@@ -3,7 +3,7 @@ Imports GlobalVariables.AppVariable
 Imports DataAccessTier.daUser
 
 
-Public Class ExamProvider_11
+Public Class WorkonExamItem
     Inherits System.Web.UI.Page
     Dim oUser As New DataAccessTier.daUser
     Dim cn As String = GetConnectionString("connectionString")

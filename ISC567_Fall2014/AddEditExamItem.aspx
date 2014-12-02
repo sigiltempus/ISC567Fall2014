@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExamProvider_12.aspx.vb" Inherits="ISC567_Fall2014.ExamProvider_12" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AddEditExamItem.aspx.vb" Inherits="ISC567_Fall2014.AddEditExamItem" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
@@ -85,48 +85,7 @@
                         <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" BorderStyle="Solid" BorderColor="Black"
                             BorderWidth="2px" class="auto-style1" style="width: 885px;">
                             <table style="width: 100%; height: 24px;" id="tblName">
-                               <tr style="text-decoration-style: solid;">
-                                   <td class="auto-style3">&nbsp;
-                                   <asp:Label ID="lblK1" runat="server" Text="K1" style="z-index: 1;"></asp:Label>&nbsp;  
-                                   <asp:Label ID="Label1" runat="server" ForeColor="Black" style="z-index: 1;" Text="Course Objective"></asp:Label> &nbsp;
-                                   <asp:TextBox ID="TextBox3" runat="server" style="z-index: 1;"></asp:TextBox>
-                                   <br />
-                                    </td>
-                                </tr>
-                                <tr class="auto-style3" style="text-decoration-style: solid;">
-                                    <td class="auto-style3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-                                    <asp:DropDownList ID="ddlKey1" runat="server" OnSelectedIndexChanged="ddlKey1_SelectedIndexChanged" AutoPostBack="true" Style="width: 811px;">
-                                    </asp:DropDownList>
-                                    </td>
-                                </tr>
-                                <tr style="text-decoration-style: solid;">
-                                   <td class="auto-style3">&nbsp;
-                                   <asp:Label ID="lblK2" runat="server" Text="K2" style="z-index: 1;"></asp:Label>&nbsp;  
-                                   <asp:Label ID="Label2" runat="server" ForeColor="Black" style="z-index: 1;" Text="DOD Objective"></asp:Label> &nbsp;&nbsp;&nbsp;&nbsp;
-                                   <asp:TextBox ID="TextBox2" runat="server" style="z-index: 1;"></asp:TextBox>
-                                   <br />
-                                    </td>
-                                </tr>
-                                <tr class="auto-style3" style="text-decoration-style: solid;">
-                                    <td class="auto-style3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:DropDownList ID="ddlKey2" runat="server" OnSelectedIndexChanged="ddlKey2_SelectedIndexChanged" AutoPostBack="true" Style="width: 811px;">
-                                    </asp:DropDownList>
-                                    </td>
-                                </tr>
-                               <tr style="text-decoration-style: solid;">
-                                   <td class="auto-style3">&nbsp;
-                                   <asp:Label ID="lblK3" runat="server" Text="K3" style="z-index: 1;"></asp:Label>&nbsp;  
-                                   <asp:Label ID="Label3" runat="server" ForeColor="Black" style="z-index: 1;" Text="IS Skill"></asp:Label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                   <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1;"></asp:TextBox>
-                                   <br />
-                                    </td>
-                                </tr>
-                                <tr class="auto-style3" style="text-decoration-style: solid;">
-                                    <td class="auto-style3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:DropDownList ID="ddlKey3" runat="server" OnSelectedIndexChanged="ddlKey3_SelectedIndexChanged" AutoPostBack="true" Style="width: 811px;">
-                                    </asp:DropDownList>
-                                    </td>
-                                </tr>
+                         
                                 <tr style="text-decoration-style: solid;">
                                    <td class="auto-style3">&nbsp;
                                    <asp:Label ID="lblObjective" runat="server" Text="Objective" style="z-index: 1;"></asp:Label>&nbsp;  
@@ -190,10 +149,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="height: 20px;">
-                      <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="Close" IFrameName="iframeAddItem" PostBackUrl="ExamProvider_11.aspx" style="z-index: 1; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Csssytle="Button"/>&nbsp;         
+                    <td style="height: 20px;">
+                      
                       <ccJSIM:SaveAndCloseIFrameButton ID="btnSaveChanges" runat="server" Text="Save Changes" style="z-index: 1; width:300px; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Csssytle="Button"/>&nbsp;
-
+                                
+                    </td>
+                    <td style="align-content:center">
+                        &nbsp;
+                        <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="Close" IFrameName="iframeAddItem" PostBackUrl="WorkonExamItem.aspx" style="z-index: 1; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Csssytle="Button"/>
                     </td>
                 </tr>
             </table>

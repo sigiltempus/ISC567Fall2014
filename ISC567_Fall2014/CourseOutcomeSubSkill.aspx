@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ProgramOutcomeSubSkill.aspx.vb" Inherits="ISC567_Fall2014.ProgramOutcomeSubSkill" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="CourseOutcomeSubSkill.aspx.vb" Inherits="ISC567_Fall2014.ProgramOutcomeSubSkill" %>
 
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -15,16 +15,15 @@
         <table cellpadding="0" cellspacing="0" width="650">
             <tr valign="top">
                 <td align="left" class="IFrameHeader">
-                    <ccJSIM:DragIFrame ID="lblHeader" runat="server" Width="100%" Text="Program OutCome SubSkill"> </ccJSIM:DragIFrame>
+                    <ccJSIM:DragIFrame ID="lblHeader" runat="server" Width="100%" Text="Course OutCome SubSkill"> </ccJSIM:DragIFrame>
                 </td>
                 <td align="right" class="IFrameHeader">
-                    <ccJSIM:CloseIFrameLinkButton runat="server" IFrameName="ifProgrOutSubsill" ID="lbtnclose"
-                        Text="[x]Close"  BorderColor="White" ForeColor="white"></ccJSIM:CloseIFrameLinkButton>
+                    <ccJSIM:CloseIFrameButton runat="server" IFrameName="ifcrsOutSubskill" ID="btnClose" Text="[x]Close" />
                 </td>
             </tr>
             <tr valign="top">
                 <td colspan="2" height="40">
-                    <asp:Label ID="lblProgOutcome" runat="server" Height="25px" Text="For Program OutCome :" Font-Bold="true"></asp:Label>
+                    <asp:Label ID="lblProgOutcome" runat="server" Height="25px" Text="For Course OutCome :" Font-Bold="true"></asp:Label>
                 </td>
             </tr>
             <tr valign="top">
@@ -37,17 +36,17 @@
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
                             <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="100%" BorderColor="Black"
-                                BorderStyle="Solid" BorderWidth="2px" Height="475px">
+                                BorderStyle="Solid" BorderWidth="2px" Height="400px">
                                 <ccJSIM:CheckboxGridView ID="gvSubSkill" runat="server" CellPadding="4"
                                     ForeColor="#333333" GridLines="None" IncludeSorting="True" CheckedIdentifier="Checked"
                                     StatusPanelId="lblStatus" Width="99%" AutoGenerateColumns="False" DataKeyNames="subskillid" 
-                                    AllowSorting="true" GridSortColumn="Checked"
-                                    CheckedMethodName="wsAssignSubskill" UnCheckedMethodName="wsUnAssignSubskill"  >
+                                    AllowSorting="true" GridSortColumn="Checked" 
+                                    CheckedMethodName="wsToggleSubskill" UnCheckedMethodName="wsToggleSubskill" UseAjax="False" EnableSortingAndPagingCallbacks="True"  >
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
                                         <asp:BoundField DataField="Checked" HeaderText="Checked" Visible="False" /> 
-                                        <asp:BoundField DataField="subskilltitle" HeaderText="Sub Skill" SortExpression="fullname" />
                                         <asp:BoundField DataField="subskillcomb" HeaderText="Sub skill comb" SortExpression="fullname" />
+                                        <asp:BoundField DataField="subskilltitle" HeaderText="Sub Skill" SortExpression="fullname" />
                                     </Columns>
                                     <EditRowStyle BackColor="#2461BF" />
                                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -61,7 +60,7 @@
                                     <SortedDescendingHeaderStyle BackColor="#4870BE" />                                    
                                 </ccJSIM:CheckboxGridView>
                             </asp:Panel>
-                        </ContentTemplate>                        
+                        </ContentTemplate>                 
                     </asp:UpdatePanel>
                 </td>
             </tr>

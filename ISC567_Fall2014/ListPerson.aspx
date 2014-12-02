@@ -58,12 +58,8 @@
                                             <asp:BoundField DataField="firstname" HeaderText="First Name" SortExpression="firstname" />
                                             <asp:BoundField DataField="institutionName" HeaderText="University Name" SortExpression="institutionName" />
                                             <asp:CheckBoxField DataField="isSA" HeaderText="SA" SortExpression="isSA"/>
-                                            <asp:CheckBoxField DataField="isProvider" HeaderText="Provider" SortExpression="isProvider" />
-                                            <asp:CheckBoxField DataField="isEPSA" HeaderText="EPSA" SortExpression="isEPSA" />
-                                            <asp:CheckBoxField DataField="isDeveloper" HeaderText="Dev" SortExpression="isDeveloper" />
                                             <asp:CheckBoxField DataField="isInstitution" HeaderText="Inst" SortExpression="isInstitution" />
                                             <asp:CheckBoxField DataField="isISA" HeaderText="ISA" SortExpression="isISA" />
-                                            <asp:CheckBoxField DataField="isProctor" HeaderText="Proctor" SortExpression="isProctor" />
                                             <asp:CheckBoxField DataField="isReports" HeaderText="Rpt" SortExpression="isReports" />
                                             <asp:CheckBoxField DataField="isTaker" HeaderText="Taker" SortExpression="isTaker" />
                                             <asp:CheckBoxField DataField="isCurriculum" HeaderText="Curriculum" SortExpression="IsCurriculum" />
