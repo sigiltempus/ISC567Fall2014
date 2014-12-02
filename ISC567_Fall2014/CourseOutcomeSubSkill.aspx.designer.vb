@@ -50,13 +50,13 @@ Partial Public Class ProgramOutcomeSubSkill
     Protected WithEvents lblHeader As Global.JSIM.Custom_Controls.DragIFrame
 
     '''<summary>
-    '''lbtnclose control.
+    '''btnClose control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtnclose As Global.JSIM.Custom_Controls.CloseIFrameLinkButton
+    Protected WithEvents btnClose As Global.JSIM.Custom_Controls.CloseIFrameButton
 
     '''<summary>
     '''lblProgOutcome control.

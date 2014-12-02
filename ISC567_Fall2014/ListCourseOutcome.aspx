@@ -86,7 +86,7 @@
                             </td>
                               <td align="center">
                                 <ccJSIM:OpenIFrameButton ID="OpenIFrameButton1" runat="server" Text="Course Outcomes SubSkill"
-                                    FrameSrc="CourseOutcomeSubSkill.aspx" IFrameName="ifcrsOutSubskill" HeightPosition="500"
+                                    FrameSrc="CourseOutcomeSubSkill.aspx" IFrameName="ifcrsOutSubskill" HeightPosition="450"
                                     LeftPosition="330" ZIndex="225" TopPosition="260" WidthPosition="653" CssClass="Button" />
                             </td>
                         </tr>
