@@ -12,7 +12,9 @@ namespace DataAccessTier {
     public class daProgram : daDataAccessModule {
 
         #region " Read methods "
+        public DataTable GetCurriculumPeople(string connectionString, int curriculumid)
         {
+
             SqlParameter[] arParms = new SqlParameter[1];
 
             arParms[0] = new SqlParameter("@curriculumid", SqlDbType.Int);
