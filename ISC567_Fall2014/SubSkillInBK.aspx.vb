@@ -8,31 +8,30 @@ Public Class SubSkillInBK
         End If
     End Sub
     
-    '#Region "Local Methods  "
+#Region "Local Methods  "
     ''Intial Loading Operations
     Private Sub Setform()
         'Displaying Error Message
         lblStatus1.Text = ""
         'Setting Color to label
         lblStatus1.ForeColor = Drawing.Color.Blue
-        Populating DropDownList
+        ' Populating DropDownList
         populatesubskillinbk()
         'Populating Gridview
         ' PopulateAssignedSubskills()
-        'End Sub
+    End Sub
 
-        ''Populates ProgramOutcome to label
-        'Private Sub populatesubskillinbk()
+    ''Populates ProgramOutcome to label
+    Private Sub populatesubskillinbk()
         'Dim dt As DataTable = GetProgramOutCome()
         'If Not IsNothing(dtProgram) AndAlso dtProgram.Rows.Count > 0 Then
         'With dtProgram
         'lblProgOutcome.Text = lblProgOutcome.Text + " " + .Rows(0)("prgshortoutcome").ToString() + "  Choose SubSkill"
         ' End With
         ' Else
-        'lblStatus1.Text = " "
-        'lblStatus.ForeColor = Drawing.Color.Red
+        lblStatus1.Text = " "
+        lblStatus1.ForeColor = Drawing.Color.Red
         'End If
-        'End Sub
-        '#End Region
     End Sub
+#End Region
 End Class
