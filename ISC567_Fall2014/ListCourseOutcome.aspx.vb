@@ -5,9 +5,9 @@ Public Class ListCourseOutcome
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim ProgramidSv As Integer
         'ProgramidSv = GetSVTableValue(Of Integer)("Programid")
-        ProgramidSv = CInt(Session("programid"))
+        ProgramidSv = CInt(Session("courseid"))
         'ProgramidSv = 1
-        If IsNothing(ProgramidSv) Then
+        If IsNothing(ProgramidSv) Or ProgramidSv = 0 Then
             Response.Redirect("Loginpage.aspx")
         End If
         If Not IsPostBack Then
@@ -17,18 +17,16 @@ Public Class ListCourseOutcome
 
     Private Sub setform()
 
-        Dim Programid As Integer
-        Programid = CInt(Session("programid"))
         Dim CourseId As Integer
         CourseId = CInt(Session("courseid"))
         'If peopleid > 0 Then
         Dim con As String = GetConnectionString("connectionString")
         'New Instance for creating an object
-        Dim oUser As New DataAccess.daCourse
+        Dim oUser As New DataAccessTier.daCourse
         'accessing Validateuser 
         'Checking if user exists in database
 
-        Dim dtCourseOutcome As DataTable = oUser.GetCourseOutcomesList(Programid, CourseId, con)
+        Dim dtCourseOutcome As DataTable = oUser.GetCourseOutcomesList(CourseId, con)
         If Not IsNothing(dtCourseOutcome) AndAlso dtCourseOutcome.Rows.Count > 0 Then
             UserProfile = dtCourseOutcome
             'Creating SVtable
@@ -44,8 +42,6 @@ Public Class ListCourseOutcome
     Protected Sub gvCourseOutcome_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvCourseOutcome.SelectedIndexChanged
         Dim index As Integer = gvCourseOutcome.SelectedIndex
         Dim crsoutcomesid As Integer = CInt(gvCourseOutcome.DataKeys(index).Value.ToString())
-        Dim s As Boolean = InsertSVTableValue(Of Integer)("crsoutcomesid", crsoutcomesid)
-        Dim lbl As Label = DirectCast(gvCourseOutcome.Rows(index).FindControl("lblPrgsequence"), Label)
-        Session("crsoutcomenum") = lbl.Text
+        Session("crsoutcomesid") = crsoutcomesid
     End Sub
 End Class
