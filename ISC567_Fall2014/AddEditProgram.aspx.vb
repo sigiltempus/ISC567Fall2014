@@ -26,11 +26,11 @@ Public Class AddEditProgram
     End Sub
 
     Private Sub AddNew()
-        lblTitle.Text = "Add New Program"
+        lblTitle.Text = "Add New Model"
 
     End Sub
     Private Sub EditUser()
-        lblTitle.Text = "Edit Program"
+        lblTitle.Text = "Edit Model"
 
         Dim oProgram As New DataAccessTier.daProgram
         Dim dtProgramInfo As DataTable

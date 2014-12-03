@@ -5,60 +5,47 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using Microsoft.ApplicationBlocks.Data;
+
 namespace DataAccessTier
 {
-   public class daBodyOfKnowledge
+    public class daBodyOfKnowledge : daDataAccessModule
     {
-        #region " Public properties "
-
-        public static bool pTransactionSuccessful;
-        public bool TransactionSuccessful()
-        {
-            return pTransactionSuccessful;
-        }
-        public static string pErrorMessage;
-        public string ErrorMessage()
-        {
-            return pErrorMessage;
-        }
-        public static int pErrorNumber;
-        public int ErrorNumber()
-        {
-            return pErrorNumber;
-        }
-        public static int pErrorClass;
-        public int ErrorClass()
-        {
-            return pErrorClass;
-        }
-        public static int pErrorState;
-        public int ErrorState()
-        {
-            return pErrorState;
-        }
-        public static int pErrorLineNumber;
-        public int ErrorLineNumber()
-        {
-            return pErrorLineNumber;
-        }
-        public static bool pIsFound;
-        public bool IsFound()
-        {
-            return pIsFound;
-        }
-
-        #endregion
 
         # region "Read Methods"
 
+        /// <summary>
+        /// Returns a "short listing" of BK2 records for compact display
+        /// </summary>
+        /// <param name="ConnectionString">Connection string to use</param>
+        /// <returns>A DataTable "short listing" of BK2 records for compact display</returns>
+        public DataTable GetBK2ShortList(string ConnectionString)
+        {
+            return this.GetTable("sp_BK2ShortList", ConnectionString, "BK2ShortList");
+        }
+
+        /// <summary>
+        /// Returns a datatable of all Subskills. Records with values in the intersect table will
+        /// have Checked=true.
+        /// </summary>
+        /// <param name="BK2ID">BK2ID to search</param>
+        /// <param name="ConnectionString">Database connection string</param>
+        /// <returns>DataTable of all subskills, with matching records "checked".</returns>
+        public DataTable GetSubskillInBK2(int BK2ID, string ConnectionString)
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = new SqlParameter("@BK2ID", SqlDbType.Int);
+            parameters[0].Value = BK2ID;
+            return this.GetTable("sp_Listsubskillinbklevel2", ConnectionString, "SubskillInBK2", parameters);
+        }
+
         //List of Body Of Knowledge BKLevel1
-        public DataTable ListBKLevel1(int programid,string ConnectionString)
+        public DataTable ListBKLevel1(int programid, string ConnectionString)
         {
             // Set up parameters in parameter array 
             SqlParameter[] arParms = new SqlParameter[1];
             arParms[0] = new SqlParameter("@programid", SqlDbType.Int);
             arParms[0].Value = programid;
-           
+
             pTransactionSuccessful = true;
 
             DataTable dtBKLevel1 = new DataTable("BKLevel1");
@@ -83,7 +70,7 @@ namespace DataAccessTier
             return dtBKLevel1;
         }
 
-       //List Body Of Knowledge BKLevel2 based on BKLevel1ID
+        //List Body Of Knowledge BKLevel2 based on BKLevel1ID
         public DataTable getBKLevel2byBKLevel1(int BKLevel1ID, string ConnectionString)
         {
             // Set up parameters in parameter array 
@@ -118,7 +105,7 @@ namespace DataAccessTier
             return dtBKLevel2;
         }
 
-      
+
         //Get BKLevel1Info for the selected BKLevel1 Value
 
         public DataTable GetBKLevel1Info(int BKLevel1ID, string ConnectionString)
@@ -149,8 +136,8 @@ namespace DataAccessTier
             }
             return dtBKLevel1Info;
         }
-       
-       //Get BKLevel2Info for the selected BKLevel2 Value
+
+        //Get BKLevel2Info for the selected BKLevel2 Value
 
         public DataTable GetBKLevel2Info(int BKLevel2ID, string ConnectionString)
         {
@@ -181,15 +168,15 @@ namespace DataAccessTier
             return dtBKLevel2Info;
         }
 
-       //Get BKLevel3Info for the selected BKLevel3 value
+        //Get BKLevel3Info for the selected BKLevel3 value
 
 
         #endregion
 
-    # region "Insert Methods"
+        # region "Insert Methods"
 
-       //Insert Body OF knowledge Level1
-        public void insertBKLevel1(string title, int NumberL1, int programid,int curriculumid ,string ConnectionString)
+        //Insert Body OF knowledge Level1
+        public void insertBKLevel1(string title, int NumberL1, int programid, int curriculumid, string ConnectionString)
         {
             // Set up parameters in parameter array 
             SqlParameter[] arParms = new SqlParameter[4];
@@ -221,7 +208,7 @@ namespace DataAccessTier
             }
         }
 
-       //Insert BK Level2
+        //Insert BK Level2
 
         public void insertBKLevel2(int curriculumid, int programid, int BKLevel1ID, int NumberL1, int NumberL2, string title, string ConnectionString)
         {
@@ -257,13 +244,13 @@ namespace DataAccessTier
                 pTransactionSuccessful = false;
             }
         }
-     
-    
+
+
 
         #endregion
 
         # region "Update Methods"
-        public void editBKLevel1Info(int BKLevel1ID, string title, int NumberL1, int programid,int curriculumid, string ConnectionString)
+        public void editBKLevel1Info(int BKLevel1ID, string title, int NumberL1, int programid, int curriculumid, string ConnectionString)
         {
             // Set up parameters in parameter array 
             SqlParameter[] arParms = new SqlParameter[5];
@@ -333,13 +320,30 @@ namespace DataAccessTier
             }
         }
 
-       //Edit BKLevel3 Info
+        //Edit BKLevel3 Info
 
-        
+
 
         # endregion
- # region "Upsert Methods"
-      
-# endregion
-   }
+
+        # region "Upsert Methods"
+
+        /// <summary>
+        /// Will insert or delete (toggle) intersect records between BK2 and SubSkill.
+        /// </summary>
+        /// <param name="BK2ID">BK2ID to search</param>
+        /// <param name="SubSkillID">SubSkillID to search</param>
+        /// <param name="ConnectionString">DB connection string</param>
+        public void ToggleSubskillInBK2(int BK2ID, int SubSkillID, string ConnectionString)
+        {
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = new SqlParameter("@BK2ID", SqlDbType.Int);
+            parameters[0].Value = BK2ID;
+            parameters[1] = new SqlParameter("@SubskillID", SqlDbType.Int);
+            parameters[1].Value = SubSkillID;
+            this.ExecuteWithoutResult(parameters, "sp_ToggleSubskillInBK2", ConnectionString);
+        }
+
+        # endregion
+    }
 }
