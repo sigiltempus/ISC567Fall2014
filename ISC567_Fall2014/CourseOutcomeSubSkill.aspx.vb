@@ -26,14 +26,23 @@ Public Class ProgramOutcomeSubSkill
 
     ''Populates ProgramOutcome to label
     Private Sub PopulateProgramOutCome()
-        Dim dtProgram As DataTable = GetCourseOutcomeShortlist()
-        If Not IsNothing(dtProgram) AndAlso dtProgram.Rows.Count > 0 Then
-            With dtProgram
-                lblProgOutcome.Text = lblProgOutcome.Text + " " + .Rows(0)("crsshortoutcome").ToString() + "  Choose SubSkill"
-            End With
-        Else
-            lblStatus.Text = " "
-            lblStatus.ForeColor = Drawing.Color.Red
+        Dim dt As DataTable = GetCourseOutcomeShortlist()
+
+        ' Bail out if we didn't receive any records
+        If IsNothing(dt) Or dt.Rows.Count <= 0 Then
+            ddlOutcome.DataSource = Nothing
+            ddlOutcome.DataBind()
+            Exit Sub
+        End If
+
+        ' Display our dataset and select the value provided in the session
+        Dim dv As DataView = dt.DefaultView
+        ddlOutcome.DataSource = dv
+        ddlOutcome.DataBind()
+
+        Dim SelectedID As String = Session("crsoutcomesid").ToString().Trim()
+        If SelectedID <> "" Then
+            ddlOutcome.SelectedValue = SelectedID
         End If
     End Sub
 
@@ -117,4 +126,9 @@ Public Class ProgramOutcomeSubSkill
     End Function
 #End Region
 
+    Private Sub ddlOutcome_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlOutcome.SelectedIndexChanged
+        Dim SelectedID As String = ddlOutcome.SelectedValue.ToString()
+        Session("crsoutcomesid") = SelectedID
+        PopulateAssignedSubskills()
+    End Sub
 End Class

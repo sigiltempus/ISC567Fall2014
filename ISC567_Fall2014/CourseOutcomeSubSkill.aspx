@@ -21,14 +21,17 @@
                     <ccJSIM:CloseIFrameButton runat="server" IFrameName="ifcrsOutSubskill" ID="btnClose" Text="[x]Close" />
                 </td>
             </tr>
-            <tr valign="top">
-                <td colspan="2" height="40">
-                    <asp:Label ID="lblProgOutcome" runat="server" Height="25px" Text="For Course OutCome :" Font-Bold="true"></asp:Label>
+            <tr valign="middle">
+                <td colspan="2">
+                    <asp:Label ID="lblsubskillinbk" runat="server" Height="25px" Text="For BK2:" Font-Bold="True" />
+                    &nbsp;
+                    <asp:DropDownList ID="ddlOutcome" runat="server" Width="400" DataTextField="OutcomeCombo" 
+                        DataValueField="crsoutcomesid" AutoPostBack="true" />
                 </td>
             </tr>
-            <tr valign="top">
+            <tr valign="top" height="27">
                 <td colspan="2">
-                    <asp:Label ID="lblStatus" runat="server" Text="" ForeColor="Blue"></asp:Label>
+                    <asp:Label ID="lblStatus" runat="server" Text=" " ForeColor="Blue"></asp:Label>
                 </td>
             </tr>
             <tr valign="top">
@@ -36,7 +39,7 @@
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
                             <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="100%" BorderColor="Black"
-                                BorderStyle="Solid" BorderWidth="2px" Height="400px">
+                                BorderStyle="Solid" BorderWidth="2px" Height="358px">
                                 <ccJSIM:CheckboxGridView ID="gvSubSkill" runat="server" CellPadding="4"
                                     ForeColor="#333333" GridLines="None" IncludeSorting="True" CheckedIdentifier="Checked"
                                     StatusPanelId="lblStatus" Width="99%" AutoGenerateColumns="False" DataKeyNames="subskillid" 
