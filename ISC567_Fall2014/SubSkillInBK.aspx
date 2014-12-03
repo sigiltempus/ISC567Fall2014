@@ -74,9 +74,9 @@
                                     CheckedMethodName="wsAssignSubskill" UnCheckedMethodName="wsUnAssignSubskill" Height="189px"  >
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="Checked" HeaderText="Checked" Visible="False" /> 
-                                        <asp:BoundField DataField="subskilltitle" HeaderText="Sub Skill" SortExpression="fullname" />
-                                        <asp:BoundField DataField="subskillcomb" HeaderText="Sub skill comb" SortExpression="fullname" />
+                                        <asp:BoundField DataField="Checked" HeaderText="Checked" Visible="False" SortExpression="Checked" /> 
+                                        <asp:BoundField DataField="subskillcomb" HeaderText="Sub skill comb" SortExpression="" />
+                                        <asp:BoundField DataField="subskilltitle" HeaderText="Sub Skill" SortExpression="" />
                                     </Columns>
                                     <EditRowStyle BackColor="#2461BF" />
                                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

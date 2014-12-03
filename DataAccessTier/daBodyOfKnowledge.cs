@@ -23,6 +23,21 @@ namespace DataAccessTier
             return this.GetTable("sp_BK2ShortList", ConnectionString, "BK2ShortList");
         }
 
+        /// <summary>
+        /// Returns a datatable of all Subskills. Records with values in the intersect table will
+        /// have Checked=true.
+        /// </summary>
+        /// <param name="BK2ID">BK2ID to search</param>
+        /// <param name="ConnectionString">Database connection string</param>
+        /// <returns>DataTable of all subskills, with matching records "checked".</returns>
+        public DataTable GetSubskillInBK2(int BK2ID, string ConnectionString)
+        {
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = new SqlParameter("@BK2ID", SqlDbType.Int);
+            parameters[0].Value = BK2ID;
+            return this.GetTable("sp_Listsubskillinbklevel2", ConnectionString, "SubskillInBK2", parameters);
+        }
+
         //List of Body Of Knowledge BKLevel1
         public DataTable ListBKLevel1(int programid, string ConnectionString)
         {
