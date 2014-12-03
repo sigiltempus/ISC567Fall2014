@@ -14,21 +14,22 @@
             font-weight: bold;
             color: White;
             background-color: #ba1c1c;
-            font-family: Verdana;
             padding: 5px 5px 5px 5px;
-            width: 264px;
+            width: 268px;
+        }
+        .auto-style2 {
+            width: 705px;
         }
         .auto-style3 {
             font-size: 14pt;
             font-weight: bold;
             color: White;
             background-color: #ba1c1c;
-            font-family: Verdana;
             padding: 5px 5px 5px 5px;
             width: 415px;
         }
         .auto-style5 {
-            height: 41px;
+            height: 27px;
         }
     </style>
 </head>
@@ -36,10 +37,10 @@
     <form id="form1" runat="server">
         <asp:scriptmanager ID="Scriptmanager1" runat="server" EnablePageMethods="True"></asp:scriptmanager>
       <div class="ListIFrame">
-         <table align="left" width="700px" border="0px" cellpadding="0px" cellspacing="0px" style="height: 518px">
+         <table class="auto-style2" cellspacing="0">
              <tr>
-                 <td align="left" class="auto-style1">
-                     <ccJSIM:DragIFrame ID="dgFrame" runat="server" Text="List SubSkill In BK2" CssClass="IFrameHeader" Width="400" />
+                 <td align="left" class="IFrameHeader">
+                     <ccJSIM:DragIFrame ID="dgFrame" runat="server" Text="List SubSkill In BK2" CssClass="IFrameHeader" />
 
                  </td>
                  <td align="right" class="IFrameHeader">
@@ -48,17 +49,17 @@
                     </ccJSIM:CloseIFrameButton>
                  </td>
              </tr>
-             <tr valign="middle">
-                <td colspan="2" class="auto-style5">
+             <tr valign="middle" class="auto-style5">
+                <td colspan="2">
                     <asp:Label ID="lblsubskillinbk" runat="server" Height="25px" Text="For BK2:" Font-Bold="True" />
                     &nbsp;
                     <asp:DropDownList ID="ddlBK2" runat="server" Width="400" DataTextField="ProgTitleCombo" 
                         DataValueField="BKLEVEl2ID" AutoPostBack="true" />
                 </td>
             </tr>
-             <tr valign="top">
+             <tr valign="top" class="auto-style5">
                 <td colspan="2">
-                    <asp:Label ID="lblStatus" runat="server" ForeColor="Blue"></asp:Label>
+                    <asp:Label ID="lblStatus" runat="server" ForeColor="Blue"> </asp:Label>
                 </td>
             </tr>
              <tr valign="top">
@@ -66,7 +67,7 @@
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
                             <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="100%" BorderColor="Black"
-                                BorderStyle="Solid" BorderWidth="2px" Height="400px">
+                                BorderStyle="Solid" BorderWidth="2px" Height="330px">
                                 <ccJSIM:CheckboxGridView ID="gvSubSkill" runat="server" CellPadding="4"
                                     ForeColor="#333333" GridLines="None" IncludeSorting="True" CheckedIdentifier="Checked"
                                     StatusPanelId="lblStatus" Width="99%" AutoGenerateColumns="False" DataKeyNames="subskillid" 

@@ -88,7 +88,7 @@
 
                             <ccJSIM:OpenIFrameButton ID="btnSubskillBK" runat="server" Text="Subskill in BK Level2"
                                 FrameSrc="SubSkillInBK.aspx" IFrameName="ifSubskillBK"
-                                HeightPosition="327"  LeftPosition="400" ZIndex="240" TopPosition="210" WidthPosition="720"
+                                HeightPosition="430"  LeftPosition="400" ZIndex="240" TopPosition="210" WidthPosition="710"
                                 CssClass="Button" Width="200px" />
                         
                             </td>

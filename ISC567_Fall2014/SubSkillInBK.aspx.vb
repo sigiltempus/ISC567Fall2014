@@ -3,7 +3,7 @@ Public Class SubSkillInBK
     Inherits JSIM.Bases.BaseClass
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If Session("BKLevel2ID").ToString() = "" Then
+        If IsNothing(Session("BKLevel2ID")) Then
             Response.Redirect("Login.aspx")
         End If
 
