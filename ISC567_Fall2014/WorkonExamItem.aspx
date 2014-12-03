@@ -60,23 +60,19 @@
                             <ccJSIM:OpenIFrameButton ID="Button2" Cssstyle="Button" runat="server" FrameSrc="AddEditExamItem.aspx?mode=add" IFrameName="iframeAddItem" style="z-index: 1; left: 245px; top: 405px; position: absolute; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Text="Add New Item" Width="166px" WidthPosition="900" HeightPosition="450" LeftPosition="530" TopPosition="160" zindex="220" />
                            <ccJSIM:CloseIFrameButton ID="Close" runat="server" Text="Close" Cssclass="Button" IFrameName="ifExamList" PostBackUrl="WorkonExam.aspx"  Width="70px" style="z-index: 1; left: 865px; top: 408px; position: absolute; height: 21px;" />
                             <ccJSIM:RadioButtonGridView ID="gvExamList" runat="server" AutoGenerateColumns="False" 
-                                ChangeRowColor="True" GridSortColumn="isSA" GridSortDirection="DESC" OnRowDataBound = "gvExamList_RowDataBound"
+                                ChangeRowColor="True" GridSortDirection="DESC" 
                                 HighlighedRowColor="" IncludeSorting="True" ShowSelectorButton="True" AllowSorting="True" 
-                                CheckedIdentifier="isSA" UseAjax="False" Height="151px" style="margin-right: 0px" Width="100%" DataKeyNames="Item">
+                                UseAjax="False" Height="151px" style="margin-right: 0px" Width="100%" DataKeyNames="Item">
                                     <Columns>
-                                    <asp:BoundField DataField="Item" SortExpression="Item" HeaderText="Item" >
+                                    <asp:BoundField DataField="Item" SortExpression="Item" HeaderText="Item" Visible="False" >
                                         <HeaderStyle Width="6.5%" />
                                         <ItemStyle Width="6.5%" />
                                         </asp:BoundField>
-                                    <asp:TemplateField HeaderText="#" SortExpression="#">
+                                                                        <asp:TemplateField HeaderText="#" SortExpression="#">
                                         <ItemTemplate>
                                             <%# Container.DataItemIndex + 1 %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-
-                                    <asp:BoundField DataField="QuestionType" HeaderText="QuestionType" Visible="False" >
-                                        <HeaderStyle Width="50%" />
-                                    </asp:BoundField>
 
                                          <asp:BoundField DataField="questionobjective" HeaderText="Question Objective" >
                                         <HeaderStyle Width="80%" />
