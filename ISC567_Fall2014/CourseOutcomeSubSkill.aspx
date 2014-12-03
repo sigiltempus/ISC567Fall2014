@@ -41,10 +41,11 @@
                                     ForeColor="#333333" GridLines="None" IncludeSorting="True" CheckedIdentifier="Checked"
                                     StatusPanelId="lblStatus" Width="99%" AutoGenerateColumns="False" DataKeyNames="subskillid" 
                                     AllowSorting="true" GridSortColumn="Checked" 
-                                    CheckedMethodName="wsToggleSubskill" UnCheckedMethodName="wsToggleSubskill" UseAjax="False" EnableSortingAndPagingCallbacks="True"  >
+                                    CheckedMethodName="wsToggleSubskill" UnCheckedMethodName="wsToggleSubskill" UseAjax="False" 
+                                    EnableSortingAndPagingCallbacks="True"  GridSortDirection="ASC" ShowHeaderCheckbox="True">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="Checked" HeaderText="Checked" Visible="False" /> 
+                                        <asp:BoundField DataField="Checked" HeaderText="Checked" Visible="False" SortExpression="Checked" /> 
                                         <asp:BoundField DataField="subskillcomb" HeaderText="Sub skill comb" SortExpression="fullname" />
                                         <asp:BoundField DataField="subskilltitle" HeaderText="Sub Skill" SortExpression="fullname" />
                                     </Columns>

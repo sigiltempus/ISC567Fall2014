@@ -328,6 +328,22 @@ namespace DataAccessTier
 
         # region "Upsert Methods"
 
+        /// <summary>
+        /// Will insert or delete (toggle) intersect records between BK2 and SubSkill.
+        /// </summary>
+        /// <param name="BK2ID">BK2ID to search</param>
+        /// <param name="SubSkillID">SubSkillID to search</param>
+        /// <param name="ConnectionString">DB connection string</param>
+        public void ToggleSubskillInBK2(int BK2ID, int SubSkillID, string ConnectionString)
+        {
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = new SqlParameter("@BK2ID", SqlDbType.Int);
+            parameters[0].Value = BK2ID;
+            parameters[1] = new SqlParameter("@SubskillID", SqlDbType.Int);
+            parameters[1].Value = SubSkillID;
+            this.ExecuteWithoutResult(parameters, "sp_ToggleSubskillInBK2", ConnectionString);
+        }
+
         # endregion
     }
 }

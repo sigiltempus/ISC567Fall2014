@@ -110,31 +110,10 @@ Public Class ProgramOutcomeSubSkill
     End Function
 #End Region
 
-#Region "Click Event handlers For Page Controls  "
-
-#End Region
-
-#Region "Click Event Handlers For GridView Controls  "
-    Protected Sub gvSubSkill_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvSubSkill.SelectedIndexChanged
-        PopulateAssignedSubskills()
-    End Sub
-
-    Protected Sub gvSubSkill_CheckBoxClick(sender As Object, e As EventArgs) Handles gvSubSkill.CheckBoxClick
-        PopulateAssignedSubskills()
-    End Sub
-
-    Protected Sub gvSubSkill_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gvSubSkill.RowCommand
-        PopulateAssignedSubskills()
-    End Sub
-#End Region
-
 #Region "Local Webservice Methods  "
     <Services.WebMethod()> _
     Public Shared Function wsToggleSubskill(ByVal checked As Boolean, ByVal subSkillId As Integer, ByVal programOutomeID As Integer) As String
-        Dim strMssg As String = ""
-        Dim progOutcomeId As Integer = CInt(programOutomeID)
-        strMssg = ToggleSubskill(progOutcomeId, subSkillId)
-        Return strMssg
+        Return ToggleSubskill(programOutomeID, subSkillId)
     End Function
 #End Region
 

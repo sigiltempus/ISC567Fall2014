@@ -15,8 +15,8 @@ Public Class SubSkillInBK
 #Region "Local Methods  "
     ''Intial Loading Operations
     Private Sub Setform()
-        lblStatus1.Text = ""
-        lblStatus1.ForeColor = Drawing.Color.Blue
+        lblStatus.Text = ""
+        lblStatus.ForeColor = Drawing.Color.Blue
 
         ' Populating DropDownList
         PopulateBK2DropDown()
@@ -57,6 +57,7 @@ Public Class SubSkillInBK
     Private Sub PopulateSubskillGridView()
         Dim BK2ID As Integer = Convert.ToInt32(Session("BKLevel2ID").ToString())
         Dim dt As DataTable = GetSubskillList(BK2ID)
+        gvSubSkill.Parameters = CreateParameters()
 
         ' Bail out if we didn't receive any records
         If IsNothing(dt) Or dt.Rows.Count <= 0 Then
@@ -112,4 +113,50 @@ Public Class SubSkillInBK
         Session("BKLevel2ID") = SelectedID
         PopulateSubskillGridView()
     End Sub
+
+    ''' <summary>
+    ''' Parameter creation for web services.
+    ''' </summary>
+    ''' <returns>Created parameters</returns>
+    Protected Overrides Function CreateParameters() As JSIM.ParameterContainer
+        MyBase.paramContainer = New JSIM.ParameterContainer()
+        Dim BK2ID As String = Session("BKLevel2ID").ToString()
+        paramContainer.AddParameter("BKLevel2ID", BK2ID, False)
+        Return MyBase.CreateParameters()
+    End Function
+
+    ''' <summary>
+    ''' Executes the stored procedure to toggle the intersection record.
+    ''' </summary>
+    ''' <param name="BK2ID">BK2ID to toggle</param>
+    ''' <param name="SubSkillID">SubSkillID to toggle</param>
+    ''' <returns>Message as to whether the function succeeded</returns>
+    ''' <remarks></remarks>
+    Private Shared Function ToggleSubskillInBK(ByVal BK2ID As Integer, ByVal SubSkillID As Integer) As String
+        Dim da As New DataAccessTier.daBodyOfKnowledge
+        Dim cn As String = GetConnectionString("ConnectionString")
+        Dim msg As String = String.Format("BK2 {0} Subskill {1}: ", BK2ID, SubSkillID)
+        da.ToggleSubskillInBK2(BK2ID, SubSkillID, cn)
+        If da.TransactionSuccessful Then
+            msg += "Toggled"
+        Else
+            msg += "Toggle FAILED"
+        End If
+        Return msg
+    End Function
+
+#Region "Local Webservice Methods"
+
+    ''' <summary>
+    ''' Page web service method to handle callbacks for toggling checkboxes.
+    ''' </summary>
+    ''' <param name="checked">Whether the record is checked</param>
+    ''' <param name="subskillid">SubSkillID to edit</param>
+    ''' <param name="BKLevel2ID">BK2ID to edit</param>
+    ''' <returns>Message indicating transaction success or failure.</returns>
+    <Services.WebMethod()> _
+    Public Shared Function wsToggleSubskillBK(ByVal checked As Boolean, ByVal subskillid As Integer, ByVal BKLevel2ID As Integer) As String
+        Return ToggleSubskillInBK(BKLevel2ID, subskillid)
+    End Function
+#End Region
 End Class

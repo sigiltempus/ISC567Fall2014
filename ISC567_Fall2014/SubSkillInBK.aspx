@@ -58,7 +58,7 @@
             </tr>
              <tr valign="top">
                 <td colspan="2">
-                    <asp:Label ID="lblStatus1" runat="server" ForeColor="Blue"></asp:Label>
+                    <asp:Label ID="lblStatus" runat="server" ForeColor="Blue"></asp:Label>
                 </td>
             </tr>
              <tr valign="top">
@@ -66,17 +66,18 @@
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
                             <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="100%" BorderColor="Black"
-                                BorderStyle="Solid" BorderWidth="2px" Height="475px">
+                                BorderStyle="Solid" BorderWidth="2px" Height="400px">
                                 <ccJSIM:CheckboxGridView ID="gvSubSkill" runat="server" CellPadding="4"
                                     ForeColor="#333333" GridLines="None" IncludeSorting="True" CheckedIdentifier="Checked"
                                     StatusPanelId="lblStatus" Width="99%" AutoGenerateColumns="False" DataKeyNames="subskillid" 
-                                    AllowSorting="true" GridSortColumn="Checked"
-                                    CheckedMethodName="wsAssignSubskill" UnCheckedMethodName="wsUnAssignSubskill" Height="189px"  >
+                                    AllowSorting="true" GridSortColumn="Checked" 
+                                    CheckedMethodName="wsToggleSubskillBK" UnCheckedMethodName="wsToggleSubskillBK" UseAjax="False" 
+                                    EnableSortingAndPagingCallbacks="True"  GridSortDirection="ASC" ShowHeaderCheckbox="True">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
                                         <asp:BoundField DataField="Checked" HeaderText="Checked" Visible="False" SortExpression="Checked" /> 
-                                        <asp:BoundField DataField="subskillcomb" HeaderText="Sub skill comb" SortExpression="" />
-                                        <asp:BoundField DataField="subskilltitle" HeaderText="Sub Skill" SortExpression="" />
+                                        <asp:BoundField DataField="subskillcomb" HeaderText="Sub skill comb" SortExpression="fullname" />
+                                        <asp:BoundField DataField="subskilltitle" HeaderText="Sub Skill" SortExpression="fullname" />
                                     </Columns>
                                     <EditRowStyle BackColor="#2461BF" />
                                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -90,7 +91,7 @@
                                     <SortedDescendingHeaderStyle BackColor="#4870BE" />                                    
                                 </ccJSIM:CheckboxGridView>
                             </asp:Panel>
-                        </ContentTemplate>                        
+                        </ContentTemplate>                 
                     </asp:UpdatePanel>
                 </td>
             </tr>
