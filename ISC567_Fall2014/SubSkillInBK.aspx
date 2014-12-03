@@ -39,18 +39,21 @@
          <table align="left" width="700px" border="0px" cellpadding="0px" cellspacing="0px" style="height: 518px">
              <tr>
                  <td align="left" class="auto-style1">
-                     <ccJSIM:DragIFrame ID="dgFrame" runat="server" Text="List Sub Skill In Bk" CssClass="IFrameHeader"> </ccJSIM:DragIFrame>
+                     <ccJSIM:DragIFrame ID="dgFrame" runat="server" Text="List SubSkill In BK2" CssClass="IFrameHeader" Width="400" />
 
                  </td>
                  <td align="right" class="IFrameHeader">
                      <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" Text="[x] Close"
-                        IFrameName="SubSkillInBK">
+                        IFrameName="ifSubskillBK">
                     </ccJSIM:CloseIFrameButton>
                  </td>
              </tr>
-             <tr valign="top">
+             <tr valign="middle">
                 <td colspan="2" class="auto-style5">
-                    <asp:Label ID="lblsubskillinbk" runat="server" Height="25px" Text="For SubSkillInBk :" Font-Bold="true"></asp:Label>
+                    <asp:Label ID="lblsubskillinbk" runat="server" Height="25px" Text="For BK2:" Font-Bold="True" />
+                    &nbsp;
+                    <asp:DropDownList ID="ddlBK2" runat="server" Width="400" DataTextField="ProgTitleCombo" 
+                        DataValueField="BKLEVEl2ID" AutoPostBack="true" />
                 </td>
             </tr>
              <tr valign="top">

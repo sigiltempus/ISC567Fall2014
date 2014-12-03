@@ -102,7 +102,7 @@ Public Class ProgramOutcomeSubSkill
         Dim oRole As New DataAccessTier.daProgram
         oRole.ToggleSubskillInCourseOutcome(ProgramOutomeID, subSkillId, cn)
         If oRole.TransactionSuccessful Then
-            strMssg = "Subskill Toggled"
+            strMssg = String.Format("Program {0} Subskill {1} Toggled", ProgramOutomeID, subSkillId)
         Else
             strMssg = "Error: " & oRole.ErrorMessage
         End If
