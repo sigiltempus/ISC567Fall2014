@@ -68,13 +68,22 @@ Partial Public Class SubSkillInBK
     Protected WithEvents lblsubskillinbk As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblStatus1 control.
+    '''ddlBK2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblStatus1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ddlBK2 As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''lblStatus control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblStatus As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''UpdatePanel1 control.

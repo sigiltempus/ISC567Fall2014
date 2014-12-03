@@ -59,13 +59,22 @@ Partial Public Class ProgramOutcomeSubSkill
     Protected WithEvents btnClose As Global.JSIM.Custom_Controls.CloseIFrameButton
 
     '''<summary>
-    '''lblProgOutcome control.
+    '''lblsubskillinbk control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblProgOutcome As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblsubskillinbk As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ddlOutcome control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlOutcome As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''lblStatus control.
