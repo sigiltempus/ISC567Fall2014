@@ -105,7 +105,8 @@ Public Class AddEditProgram
                 lblMessage.ForeColor = Drawing.Color.Green
                 lblMessage.Text = "Program was successfully " + mode + "ed"
                 'Response.Write("<script>parent.window.location.reload();</script>")
-                Response.End()
+                'Response.End()
+
 
             Else
                 'if there was an error trying to add/edit user
