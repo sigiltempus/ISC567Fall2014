@@ -109,6 +109,7 @@
     <Content Include="ListCourse.aspx" />
     <Content Include="ListCourseOutcome.aspx" />
     <Content Include="ListCurriculum.aspx" />
+    <Content Include="ListCurriculumPeople.aspx" />
     <Content Include="ListProgramBK.aspx" />
     <Content Include="ListProgramBK2.aspx" />
     <Content Include="ListProgramCourse.aspx" />
@@ -316,6 +317,13 @@
     <Compile Include="ListCurriculum.aspx.vb">
       <DependentUpon>ListCurriculum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListCurriculumPeople.aspx.designer.vb">
+      <DependentUpon>ListCurriculumPeople.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListCurriculumPeople.aspx.vb">
+      <DependentUpon>ListCurriculumPeople.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ListProgramBK.aspx.designer.vb">
       <DependentUpon>ListProgramBK.aspx</DependentUpon>
