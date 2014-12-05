@@ -102,4 +102,13 @@ Partial Public Class SubSkill
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnSubSkills As Global.JSIM.Custom_Controls.OpenIFrameButton
+
+    '''<summary>
+    '''btnSKCourseOutcome control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSKCourseOutcome As Global.JSIM.Custom_Controls.OpenIFrameButton
 End Class

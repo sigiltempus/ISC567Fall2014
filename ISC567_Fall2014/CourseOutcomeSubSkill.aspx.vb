@@ -3,6 +3,10 @@ Public Class ProgramOutcomeSubSkill
     Inherits JSIM.Bases.BaseClass
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        If IsNothing(Session("crsoutcomesid")) AndAlso IsNothing(Session("skillsnum")) Then
+            Response.Redirect("Login.aspx")
+        End If
+
         If Not IsPostBack Then
             Dim prgoutcomesid As Integer
             prgoutcomesid = CInt(Session("crsoutcomesid"))
@@ -24,6 +28,13 @@ Public Class ProgramOutcomeSubSkill
         PopulateAssignedSubskills()
     End Sub
 
+    Private Function GetCOID() As Integer
+        ' The hackiest of hacks, the kludgiest of kludges to get the page working from subskill before the demo.        
+        Dim COID As Integer = -1
+        If Not IsNothing(Session("crsoutcomesid")) Then COID = Convert.ToInt32(Session("crsoutcomesid").ToString())
+        Return COID
+    End Function
+
     ''Populates ProgramOutcome to label
     Private Sub PopulateProgramOutCome()
         Dim dt As DataTable = GetCourseOutcomeShortlist()
@@ -40,8 +51,8 @@ Public Class ProgramOutcomeSubSkill
         ddlOutcome.DataSource = dv
         ddlOutcome.DataBind()
 
-        Dim SelectedID As String = Session("crsoutcomesid").ToString().Trim()
-        If SelectedID <> "" Then
+        Dim SelectedID As String = GetCOID().ToString()
+        If SelectedID <> "-1" Then
             ddlOutcome.SelectedValue = SelectedID
         End If
     End Sub
@@ -85,7 +96,7 @@ Public Class ProgramOutcomeSubSkill
     Protected Overrides Function CreateParameters() As JSIM.ParameterContainer
         MyBase.paramContainer = New JSIM.ParameterContainer()
         'Gets prgoutcomesid from dropDownlist
-        Dim prgoutcomesid As Integer = CInt(Session("crsoutcomesid"))
+        Dim prgoutcomesid As Integer = GetCOID()
         paramContainer.AddParameter("crsoutcomesid", CStr(prgoutcomesid), False)
         Return MyBase.CreateParameters()
     End Function

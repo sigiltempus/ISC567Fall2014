@@ -3,7 +3,7 @@ Public Class SubSkillInBK
     Inherits JSIM.Bases.BaseClass
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If IsNothing(Session("BKLevel2ID")) Then
+        If IsNothing(Session("BKLevel2ID")) AndAlso IsNothing(Session("skillsnum")) Then
             Response.Redirect("Login.aspx")
         End If
 
@@ -25,6 +25,13 @@ Public Class SubSkillInBK
         PopulateSubskillGridView()
     End Sub
 
+    Private Function GetBK2ID() As Integer
+        ' The hackiest of hacks, the kludgiest of kludges to get the page working from subskill before the demo.        
+        Dim BK2ID As Integer = -1
+        If Not IsNothing(Session("BKLevel2ID")) Then BK2ID = Convert.ToInt32(Session("BKLevel2ID").ToString())
+        Return BK2ID
+    End Function
+
     ''' <summary>
     ''' Display available BK2 information in the drop down list
     ''' </summary>
@@ -43,8 +50,8 @@ Public Class SubSkillInBK
         ddlBK2.DataSource = dv
         ddlBK2.DataBind()
 
-        Dim SelectedID As String = Session("BKLevel2ID").ToString().Trim()
-        If SelectedID <> "" Then
+        Dim SelectedID As String = GetBK2ID().ToString()
+        If SelectedID <> "-1" Then
             ddlBK2.SelectedValue = SelectedID
         End If
 
@@ -55,7 +62,7 @@ Public Class SubSkillInBK
     ''' BK2ID being checked.
     ''' </summary>
     Private Sub PopulateSubskillGridView()
-        Dim BK2ID As Integer = Convert.ToInt32(Session("BKLevel2ID").ToString())
+        Dim BK2ID As Integer = GetBK2ID()
         Dim dt As DataTable = GetSubskillList(BK2ID)
         gvSubSkill.Parameters = CreateParameters()
 
@@ -120,7 +127,7 @@ Public Class SubSkillInBK
     ''' <returns>Created parameters</returns>
     Protected Overrides Function CreateParameters() As JSIM.ParameterContainer
         MyBase.paramContainer = New JSIM.ParameterContainer()
-        Dim BK2ID As String = Session("BKLevel2ID").ToString()
+        Dim BK2ID As String = GetBK2ID().ToString()
         paramContainer.AddParameter("BKLevel2ID", BK2ID, False)
         Return MyBase.CreateParameters()
     End Function
