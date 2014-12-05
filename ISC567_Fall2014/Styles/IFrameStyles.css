@@ -543,7 +543,7 @@ a.info:hover span
 .contentWrapper
 {
 	min-height: 410px;
-	border: 2px solid #000000;
+	/*border: 2px solid #000000;*/
 	padding: 5px;
 }
 
@@ -558,6 +558,11 @@ a.info:hover span
 	background-repeat: no-repeat;
 	color: #000000; /* Will only work in newer browsers. ROUNDED BORDERS!!!*/
 	border-radius: 0px 0px 10px 10px;
+    
+    /* Ensure footer stays at the bottom of the page */
+    position: fixed;
+    bottom: 4px;
+    width: 100%;
 }
 .footerwrapper a
 {
