@@ -6,9 +6,7 @@ Public Class AddEditSkills
         GetSVTable()
         Dim skillsidSv As Integer
         skillsidSv = GetSVTableValue(Of Integer)("skillsid")
-        'If skillsidSv = 0 Then
-        'skillsidSv = Convert.ToInt32(Session("skillsnum"))
-        'End If
+
 
         If IsNothing(skillsidSv) Then
             Response.Redirect("Login.aspx")
@@ -36,14 +34,12 @@ Public Class AddEditSkills
 
     Private Sub EditSkills()
         dgFrame.Text = "Edit Skills"
-        Dim skillclassid As Integer = Convert.ToInt32(Session("skillclassid"))
-        txtskillsclassnum.Text = skillclassid.ToString()
+        Dim skillid As Integer = Convert.ToInt32(Session("skillsnum"))
         Dim oUser As New DataAccessTier.daProgram
-        Dim dtUserlInfo As DataTable = GetSkillsInfo(skillclassid)
+        Dim dtUserlInfo As DataTable = GetSkillsInfo(skillid)
 
         If Not IsNothing(dtUserlInfo) AndAlso dtUserlInfo.Rows.Count > 0 Then
             With dtUserlInfo
-                txtskillsclassnum.Text = .Rows(0)("skillsid").ToString()
                 txtskillsname.Text = .Rows(0)("skillsname").ToString()
             End With
 
@@ -54,8 +50,9 @@ Public Class AddEditSkills
     Protected Overrides Function CreateParameters() As JSIM.ParameterContainer
         MyBase.paramContainer = New JSIM.ParameterContainer()
         Dim mode As String = Request.QueryString("mode")
+        Dim skillclass As String = Session("skillclassid").ToString()
         paramContainer.AddParameter("mode", mode, False)
-        paramContainer.AddParameter("skillsclassnum", txtskillsclassnum)
+        paramContainer.AddParameter("skillsclassnum", skillclass, False)
         paramContainer.AddParameter("skillsname", txtskillsname)
         Return MyBase.CreateParameters()
     End Function

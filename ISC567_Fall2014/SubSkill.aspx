@@ -79,8 +79,12 @@
                                     LeftPosition="425" ZIndex="300" TopPosition="210" WidthPosition="550" CssClass="Button" />
                             </td>
                             <td align="right">
-                            <ccJSIM:OpenIFrameButton ID="btnSubSkills" runat="server" Text="Go To Sub SkillIn Bk" FrameSrc="SubSkillInBK.aspx?mode=edit"
-                                IFrameName="IfSubSkillInBk" HeightPosition="325" LeftPosition="400" ZIndex="200" TopPosition="250"
+                            <ccJSIM:OpenIFrameButton ID="btnSubSkills" runat="server" Text="SubSkill in BK2" FrameSrc="SubSkillInBK.aspx"
+                                IFrameName="ifSubskillBK" HeightPosition="325" LeftPosition="400" ZIndex="200" TopPosition="250"
+                                WidthPosition="715" CssClass="Button" />
+
+                            <ccJSIM:OpenIFrameButton ID="btnSKCourseOutcome" runat="server" Text="SubSkill in Course Outcome" 
+                                FrameSrc="CourseOutcomeSubSkill.aspx" IFrameName="ifcrsOutSubskill" HeightPosition="325" LeftPosition="400" ZIndex="200" TopPosition="250"
                                 WidthPosition="715" CssClass="Button" />
                         </td>
                         </tr>

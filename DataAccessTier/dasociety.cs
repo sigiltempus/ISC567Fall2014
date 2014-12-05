@@ -127,7 +127,7 @@ namespace DataAccessTier
 
           try
           {
-              SqlHelper.ExecuteNonQuery(connectionString, CommandType.StoredProcedure, "Insertinfo", arParms);
+              SqlHelper.ExecuteNonQuery(connectionString, CommandType.StoredProcedure, "Insertsociety", arParms);
           }
           catch (SqlException InsertError)
           {
