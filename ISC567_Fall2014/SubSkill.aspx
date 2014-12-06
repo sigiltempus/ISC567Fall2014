@@ -32,7 +32,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="left">
-                    <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Height="260px">
+                    <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Height="220px">
                         <%--DataKeyNames="skillsnum"--%>
                         <ccJSIM:RadioButtonGridView ID="ProjectsGridView" runat="server" AutoGenerateColumns="False"
                             IncludeSorting="True" EmptyDataText="No Data Found" GridSortColumn="" DataKeyNames="subskillid"
