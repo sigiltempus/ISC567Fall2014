@@ -39,7 +39,7 @@
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
                             <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="100%" BorderColor="Black"
-                                BorderStyle="Solid" BorderWidth="2px" Height="358px">
+                                BorderStyle="Solid" BorderWidth="2px" Height="236px">
                                 <ccJSIM:CheckboxGridView ID="gvSubSkill" runat="server" CellPadding="4"
                                     ForeColor="#333333" GridLines="None" IncludeSorting="True" CheckedIdentifier="Checked"
                                     StatusPanelId="lblStatus" Width="99%" AutoGenerateColumns="False" DataKeyNames="subskillid" 

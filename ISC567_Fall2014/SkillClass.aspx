@@ -67,9 +67,9 @@
                                     HeightPosition="186" LeftPosition="250" ZIndex="300" TopPosition="215" WidthPosition="555"
                                     CssClass="Button" />
 
-                                <ccJSIM:OpenIFrameButton ID="btnSkills" runat="server" Text="Go To Skill" FrameSrc="Skills.aspx?mode=edit"
-                                    IFrameName="IfSkills" HeightPosition="318" LeftPosition="250" Style="left: 0px"
-                                    ZIndex="200" TopPosition="200" WidthPosition="711" CssClass="Button" />
+                                <ccJSIM:OpenIFrameButton ID="btnSkills" runat="server" Text="Go To Skill" FrameSrc="Skills.aspx"
+                                    IFrameName="IfSkills" HeightPosition="324" LeftPosition="295" Style="left: 0px"
+                                    ZIndex="200" TopPosition="200" WidthPosition="702" CssClass="Button" />
                             </td>
                         </tr>
                     </table>

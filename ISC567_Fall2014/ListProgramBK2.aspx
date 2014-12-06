@@ -36,7 +36,7 @@
         </tr>
         <tr>
             <td colspan="2" >
-                <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Height="260px" Width="750px"
+                <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Height="225px" Width="750px"
                     BorderStyle="Solid" BorderColor="Black" BorderWidth="2px">
                     <ccJSIM:RadioButtonGridView ID="ProjectsGridView" runat="server" AutoGenerateColumns="False"
                         IncludeSorting="True" EmptyDataText="No Data Found" DataKeyNames="BKLevel2ID"

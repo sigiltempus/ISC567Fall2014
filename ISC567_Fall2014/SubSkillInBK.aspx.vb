@@ -51,7 +51,10 @@ Public Class SubSkillInBK
         ddlBK2.DataBind()
 
         Dim SelectedID As String = GetBK2ID().ToString()
-        If SelectedID <> "-1" Then
+        If SelectedID = "-1" AndAlso ddlBK2.Items.Count > 0 Then          
+            ddlBK2.SelectedIndex = 0
+            Session("BKLevel2ID") = ddlBK2.SelectedValue
+        Else
             ddlBK2.SelectedValue = SelectedID
         End If
 
