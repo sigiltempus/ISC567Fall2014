@@ -52,9 +52,13 @@ Public Class ProgramOutcomeSubSkill
         ddlOutcome.DataBind()
 
         Dim SelectedID As String = GetCOID().ToString()
-        If SelectedID <> "-1" Then
+        If SelectedID = "-1" AndAlso ddlOutcome.Items.Count > 0 Then
+            ddlOutcome.SelectedIndex = 0
+            Session("crsoutcomesid") = ddlOutcome.SelectedValue
+        Else
             ddlOutcome.SelectedValue = SelectedID
         End If
+
     End Sub
 
     ''Get ProgramOutcome from Database
