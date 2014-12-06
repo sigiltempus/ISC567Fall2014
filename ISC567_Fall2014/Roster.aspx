@@ -41,10 +41,14 @@
         <div class="ListIFrame" style="width: 804px; height: 400px;">
             <table style="width: 100%; height: 342px;">
                 <tr style="text-align: left">
-                    <td colspan="2" class="auto-style2">
-                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="Exam in which you are involved" CanDragIFrame="True" CssClass="IFrameHeader" Visible="True" Width="98%">
-                        </ccJSIM:DragIFrame>
+                    <td
+                         class="auto-style2" style="width:85%">
+                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="Exam in which you are involved" CanDragIFrame="True" CssClass="IFrameHeader" Width="136%"></ccJSIM:DragIFrame>
                         </td>
+                    <td>
+                        &nbsp;
+                        <ccJSIM:CloseIFrameButton ID="btnClose" runat="server"  IFrameName="ifRoster" Interval="10" Text="[X] Close" />
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -111,7 +115,7 @@
                                                     &nbsp;</td>
                                                 <td class="auto-style1">
                                                     <br />
-                                                    <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" CssClass="Button" IFrameName="ifRoster" Interval="10" Text="Close" />
+                                                    
                                                 </td>
                                             </td>
                                         </tr>
