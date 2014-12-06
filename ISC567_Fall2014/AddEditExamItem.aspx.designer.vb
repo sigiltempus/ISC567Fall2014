@@ -50,13 +50,13 @@ Partial Public Class AddEditExamItem
     Protected WithEvents lblHeader As Global.JSIM.Custom_Controls.DragIFrame
 
     '''<summary>
-    '''lblTitle control.
+    '''btnClose control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblTitle As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents btnClose As Global.JSIM.Custom_Controls.CloseIFrameButton
 
     '''<summary>
     '''lblExam control.
@@ -300,15 +300,6 @@ Partial Public Class AddEditExamItem
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtPBS As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''btnClose control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnClose As Global.JSIM.Custom_Controls.CloseIFrameButton
 
     '''<summary>
     '''btnSaveChanges control.

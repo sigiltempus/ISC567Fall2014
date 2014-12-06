@@ -31,7 +31,10 @@
     <table style="width:100%;">
         <tr>
             <td style="text-align:left" >
-                <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="Exam Taker" CanDragIFrame="True" CssClass="IFrameHeader" Width="98%"></ccJSIM:DragIFrame>
+                <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="Exam Taker" CanDragIFrame="True" CssClass="IFrameHeader" Width="114%"></ccJSIM:DragIFrame>
+            </td>
+            <td>                 
+                <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="[x}Close" IFrameName="ifTakerFunctions" Interval="10" Height="22px"/>
             </td>
             </tr>
             <tr align="center">
@@ -85,8 +88,6 @@
             <td class="auto-style4">
                 <br />
                
-                <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="Close" CssClass="Button" IFrameName="ifTakerFunctions" Interval="10" Height="22px"/>
-              
             </td>
         </tr>
     </table>        

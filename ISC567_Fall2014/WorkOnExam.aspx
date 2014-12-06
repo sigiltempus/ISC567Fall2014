@@ -32,11 +32,17 @@
         <div class="ListIFrame">
             <table style="height: 302px">
                 <tr>
-                    <td colspan="2" class="auto-style2">
-                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="" CssClass="IFrameHeader" Width="99.5%">
+                    <td class="auto-style2">
+                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" CssClass="IFrameHeader" Width="117%" CanDragIFrame="True">
                         <asp:Label ID="lblTitle" runat="server" Text="Choose An Exam" Width="90%" style="text-align: left;"></asp:Label>
                         <%--<ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifExamProviderFunctions" Text="[X] Close" style="text-align: right"> </ccJSIM:CloseIFrameButton>--%>
                         </ccJSIM:DragIFrame>
+                    </td>
+                    <td>
+                        <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" IFrameName="ifWorkOnExam" Interval="10" PostBackUrl="WorkOnStaff.aspx" style="width: 86px;" Text="[X] Close"
+                             />
+						
+                    
                     </td>
                 </tr>
                 <tr>
@@ -120,8 +126,7 @@
 						&nbsp;
                         &nbsp;
                         &nbsp;
-                         <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" IFrameName="ifWorkOnExam" Interval="10" PostBackUrl="WorkOnStaff.aspx" style="width: 86px;" Text="Close" CssClass="Button" />
-						
+                         						
                     </td>
                 </tr>
             </table>

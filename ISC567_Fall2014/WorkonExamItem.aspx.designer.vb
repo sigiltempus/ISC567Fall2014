@@ -59,6 +59,15 @@ Partial Public Class WorkonExamItem
     Protected WithEvents lblTitle As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Close control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Close As Global.JSIM.Custom_Controls.CloseIFrameButton
+
+    '''<summary>
     '''lblExam control.
     '''</summary>
     '''<remarks>
@@ -165,15 +174,6 @@ Partial Public Class WorkonExamItem
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Button2 As Global.JSIM.Custom_Controls.OpenIFrameButton
-
-    '''<summary>
-    '''Close control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Close As Global.JSIM.Custom_Controls.CloseIFrameButton
 
     '''<summary>
     '''gvExamList control.

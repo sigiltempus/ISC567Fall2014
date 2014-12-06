@@ -55,11 +55,15 @@
         <div class="ListIFrame2"">
             <table>
                 <tr>
-                    <td colspan="2" class="auto-style2">
-                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" CanDragIFrame="True" Text="" CssClass="IFrameHeader" Width="100%">
-                            <asp:Label ID="lblTitle" runat="server" Text="Add/Edit Item" Width="85%" style="text-align: center;"></asp:Label>
+                    <td class="auto-style2">
+                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" CanDragIFrame="True" CssClass="IFrameHeader" Width="127%">
+                            
                             <%--<ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifAddEditPerson" Text="[X] Close" style="text-align: right" />--%>
                         </ccJSIM:DragIFrame>
+                    </td>
+                    <td>
+                       <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="[X] Close" IFrameName="iframeAddItem" PostBackUrl="WorkonExamItem.aspx" style="z-index: 1;  font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" />
+                    
                     </td>
                 </tr>
                  <tr>
@@ -156,8 +160,7 @@
                     </td>
                     <td style="align-content:center">
                         &nbsp;
-                        <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="Close" IFrameName="iframeAddItem" PostBackUrl="WorkonExamItem.aspx" style="z-index: 1; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Csssytle="Button"/>
-                    </td>
+                        </td>
                 </tr>
             </table>
         </div>
