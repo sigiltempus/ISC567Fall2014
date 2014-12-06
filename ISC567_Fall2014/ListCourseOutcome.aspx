@@ -30,7 +30,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="left">
-                    <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="710px" Height="380px">
+                    <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="710px" Height="345px">
                         <ccJSIM:RadioButtonGridView ID="gvCourseOutcome" runat="server" AutoGenerateColumns="False"
                             IncludeSorting="True" EmptyDataText="No Data Found" GridSortColumn="" DataKeyNames="crsoutcomesid"
                             ForeColor="#333333" HighlighedRowColor="#FFFFAD" HeaderStyle-CssClass="gridViewHeader"
