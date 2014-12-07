@@ -22,7 +22,7 @@
         }
 
         .auto-style2 {
-            height: 20px;
+            height: 15px;
             width: 690px;
         }
 
@@ -47,23 +47,27 @@
             height: 40px;
         }
 
+        .auto-style10 {
+            height: 15px;
+        }
+
         </style>
 </head>
 <body>
     <form id="form" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <div class="ListIFrame2"">
+        <div class="ListIFrame2">
             <table>
                 <tr>
                     <td class="auto-style2">
-                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" CanDragIFrame="True" CssClass="IFrameHeader" Width="127%">
-                            
+                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" CanDragIFrame="True" CssClass="IFrameHeader" Width="127%" >
                             <%--<ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifAddEditPerson" Text="[X] Close" style="text-align: right" />--%>
                         </ccJSIM:DragIFrame>
                     </td>
+
                     <td>
-                       <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="[X] Close" IFrameName="iframeAddItem" PostBackUrl="WorkonExamItem.aspx" style="z-index: 1;  font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" />
-                    
+                        <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="[X] Close" IFrameName="iframeAddItem" PostBackUrl="WorkonExamItem.aspx" style="z-index: 1;  font-weight: bold; font-size: 9pt; border: 1px solid #ba931c; text-align:right" />
+                      
                     </td>
                 </tr>
                  <tr>

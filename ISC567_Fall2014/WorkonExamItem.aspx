@@ -16,7 +16,7 @@
         }
 
         #form1 {
-            width: 950px;
+            width: 934px;
         }
         .auto-style3 {
             height: 308px;
@@ -30,7 +30,7 @@
             <table style="height: 385px">
                 <tr>
                     <td class="auto-style2">
-                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" CssClass="IFrameHeader" Width="107%" CanDragIFrame="True">
+                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" CssClass="IFrameHeader" Width="107%" CanDragIFrame="True" Height="24px">
                             <asp:Label ID="lblTitle" runat="server" Text="Exam Items" Width="90%" style="text-align: center;"></asp:Label>
                         </ccJSIM:DragIFrame>
                     </td>

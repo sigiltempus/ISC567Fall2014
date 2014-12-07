@@ -106,7 +106,7 @@ Public Class CreateEditExam
             If AppUser.TransactionSuccessful Then
 
                 lblMessage.Visible = True
-                lblMessage.Text = "Exam sucessfully added"
+                lblMessage.Text = "Exam sucessfully Updated"
                 txtName.Text = ""
                 txtPurpose.Text = ""
 

@@ -59,6 +59,15 @@ Partial Public Class WorkonExam
     Protected WithEvents lblTitle As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''CloseIFrameButton1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CloseIFrameButton1 As Global.JSIM.Custom_Controls.CloseIFrameButton
+
+    '''<summary>
     '''lblErrorMessage control.
     '''</summary>
     '''<remarks>
@@ -138,13 +147,4 @@ Partial Public Class WorkonExam
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents OpenIFrameButton4 As Global.JSIM.Custom_Controls.OpenIFrameButton
-
-    '''<summary>
-    '''CloseIFrameButton1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CloseIFrameButton1 As Global.JSIM.Custom_Controls.CloseIFrameButton
 End Class
