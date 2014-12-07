@@ -20,18 +20,23 @@
             height: 2.5px;
             width: 480px;
         }
+        .auto-style4 {
+            width: 70px;
+        }
     </style>
 </head>
 <body>
     <form id="form" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <div class="ListIFrame" style="height: 240px;">
+        <div class="ListIFrame" style="height: 270px;">
             <table>
                 <tr>
-                    <td colspan="2" class="auto-style2">
-                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" CanDragIFrame="True" CssClass="IFrameHeader" Width="100%" ><asp:Label ID="lblTitle" runat="server" Text="Add Exam" Width="85%" style="text-align: left;"> </asp:Label><%--<ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifAddEditExam" Text="[X] Close" 
+                    <td class="auto-style2" style="width:auto">
+                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" CanDragIFrame="True" CssClass="IFrameHeader" Width="155%" ><asp:Label ID="lblTitle" runat="server" Text="Add Exam" Width="85%" style="text-align: left;"> </asp:Label><%--<ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifAddEditExam" Text="[X] Close" 
                              style="text-align: right;" />--%></ccJSIM:DragIFrame>
-                    </td>
+                         </td>
+                    <td class="auto-style4"><ccJSIM:CloseIFrameButton ID="Close" runat="server" Text="[X] Close" IFrameName="ifAddExam" PostBackUrl="WorkonExam.aspx"  Width="70px" style="z-index: 1; height: 21px; text-align:left; margin-left: 0px;" />
+                   </td>
                 </tr>
                 <tr>
                     <td colspan="2" class="auto-style2">
@@ -106,15 +111,18 @@
                             </table>
                         </asp:Panel>
                     </td>
+                   
+                </tr>
+                <tr>
+                    <td colspan="2"class="auto-style2">
+                        <ccJSIM:SaveandCloseIFrameButton ID="btnSave" runat="server" Text="Save"  style="z-index: 1;  height: 21px; width: 93px;" />
+							  
+                    </td>
+                    
                 </tr>
                   </table>
                
-                    
-            <%--<ccJSIM:OpenIFrameButton ID="OpenIFrameButton2" runat="server" FrameSrc="AddEditExamSchedule.aspx"
-                IFrameName="ifScheduleExam" Text="Schedule Exam" HeightPosition="245" LeftPosition="450" TopPosition="200" WidthPosition="500" ZIndex="210" CssClass="Button"  Style="z-index: 1; left: 20px; top: 215px; position: absolute; height: 21px;" />--%>
-                               <ccJSIM:SaveandCloseIFrameButton ID="btnSave" runat="server" Text="Save" Cssclass="Button" style="z-index: 1; left: 200px; top: 215px; position: absolute; height: 21px; width: 93px;" />
-							   <ccJSIM:CloseIFrameButton ID="Close" runat="server" Text="Close" Cssclass="Button" IFrameName="ifAddExam" PostBackUrl="WorkonExam.aspx"  Width="70px" style="z-index: 1; left: 375px; top: 215px; position: absolute; height: 21px;" />
-
+                             
                        
               
           
