@@ -71,7 +71,7 @@ Public Class Roster
     Protected Sub gvroster_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvroster.SelectedIndexChanged
         Dim SelScheduleExamID As Integer
         SelScheduleExamID = Convert.ToInt32(gvroster.SelectedValue)
-        Session.Add("SelScheduleExamID", SelScheduleExamID)
+        Session.Add("examid", SelScheduleExamID)
         btnifTakeExam.Enabled = True
     End Sub
 End Class
