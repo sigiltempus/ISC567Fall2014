@@ -83,9 +83,9 @@
                                 IFrameName="ifSubskillBK" HeightPosition="325" LeftPosition="400" ZIndex="200" TopPosition="250"
                                 WidthPosition="715" CssClass="Button" />
 
-                            <ccJSIM:OpenIFrameButton ID="btnSKCourseOutcome" runat="server" Text="SubSkill in Course Outcome" 
-                                FrameSrc="CourseOutcomeSubSkill.aspx" IFrameName="ifcrsOutSubskill" HeightPosition="325" LeftPosition="400" ZIndex="200" TopPosition="250"
-                                WidthPosition="715" CssClass="Button" />
+                                <ccJSIM:OpenIFrameButton ID="btnSKCourseOutcome" runat="server" Text="Course Outcomes SubSkill"
+                                    FrameSrc="CourseOutcomeSubSkill.aspx" IFrameName="ifcrsOutSubskill" HeightPosition="380"
+                                    LeftPosition="330" ZIndex="225" TopPosition="260" WidthPosition="653" CssClass="Button" />
                         </td>
                         </tr>
                     </table>
