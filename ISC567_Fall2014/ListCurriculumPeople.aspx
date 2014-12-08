@@ -76,10 +76,10 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <ccJSIM:OpenIFrameButton ID="lbtnOpenAddCurriculumPerson" runat="server" FrameSrc="AddEditPerson.aspx?mode=add&caller=lstPerson" HeightPosition="424" WidthPosition="704"
+                        <ccJSIM:OpenIFrameButton ID="lbtnOpenAddCurriculumPerson" runat="server" FrameSrc="AddEditPerson.aspx?mode=add&caller=lstPerson" HeightPosition="450" WidthPosition="704"
                             IFrameName="ifAddEditPerson" Text="Add Curriculum Person" LeftPosition="375" TopPosition="160" ZIndex="185" CssClass="Button" />
                         &nbsp;
-                        <ccJSIM:OpenIFrameButton ID="lbtnOpenEditCurriculumPerson" runat="server" FrameSrc="AddEditPerson.aspx?mode=edit&caller=lstPerson" HeightPosition="424" WidthPosition="704"
+                        <ccJSIM:OpenIFrameButton ID="lbtnOpenEditCurriculumPerson" runat="server" FrameSrc="AddEditPerson.aspx?mode=edit&caller=lstPerson" HeightPosition="450" WidthPosition="704"
                             IFrameName="ifAddEditPerson" Text="Edit Curriculum Person" LeftPosition="375" TopPosition="160"  ZIndex="185" CssClass="Button" />
                         &nbsp;
                         

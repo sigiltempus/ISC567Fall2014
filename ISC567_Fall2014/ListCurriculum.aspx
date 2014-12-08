@@ -84,7 +84,7 @@
                         &nbsp;
                         <asp:Label ID="lblCSpacer" runat="server" Text="  " Width="250px"></asp:Label>
                         &nbsp;
-                         <ccJSIM:OpenIFrameButton ID="lbtOpenCurriculumPeople" runat="server" FrameSrc="ListCurriculumPeople.aspx" HeightPosition="405" WidthPosition="955"
+                         <ccJSIM:OpenIFrameButton ID="lbtOpenCurriculumPeople" runat="server" FrameSrc="ListCurriculumPeople.aspx" HeightPosition="450" WidthPosition="950"
                             IFrameName="ifListCurriculumPeople" Text="Curriculum People" LeftPosition="250" TopPosition="160" ZIndex="185" CssClass="Button" />
                         &nbsp;
 
