@@ -67,10 +67,7 @@
                      FrameSrc="AddEditTaker.aspx?mode=edit" HeightPosition="404" 
                      IFrameName="ifAddEditUser" LeftPosition="20" Text="Edit User" TopPosition="120" 
                      WidthPosition="404" ZIndex="160" > Edit Personal Information </ccJSIM:OpenIFrameLinkButton>&nbsp;&nbsp;&nbsp;
-                    <ccJSIM:OpenIFrameLinkButton ID="btnRoster0" runat="server" CssClass="Button" 
-                     FrameSrc="Exam Registration.aspx" HeightPosition="500" 
-                     IFrameName="ifRoster" LeftPosition="20" Text=" Registration For Exam " TopPosition="120" 
-                     WidthPosition="808" ZIndex="160" ></ccJSIM:OpenIFrameLinkButton>&nbsp;&nbsp;
+&nbsp;&nbsp;
 &nbsp;                    <ccJSIM:OpenIFrameLinkButton ID="btnRoster" runat="server" CssClass="Button" 
                      FrameSrc="Roster.aspx" HeightPosition="400" 
                      IFrameName="ifRoster" LeftPosition="20" Text="" TopPosition="120" 
