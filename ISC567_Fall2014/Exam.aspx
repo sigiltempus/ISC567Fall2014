@@ -101,8 +101,8 @@
            <tr>
                <td></td>
                <td>
-                  <asp:Button  ID="btnFinished" runat="server" CssClass="Button" style="z-index: 1; left: 547px; top: 355px; position: absolute"  Text="Finished" />
-
+                  
+                  <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" IFrameName="ifExam" Interval="10" PostBackUrl="WaitForExamTime.aspx" style="width: 86px;" Text="Finished"/>
                                                     
                </td>
            </tr>

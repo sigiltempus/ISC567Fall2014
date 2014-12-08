@@ -10,7 +10,7 @@ Public Class Exam
     Dim Questionid As Integer = 0
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        Session("examid") = 1
+        
         Session("rosterid") = 3
         If Not IsPostBack Then
             SetForm()
@@ -58,10 +58,10 @@ Public Class Exam
         GetPreviousQuestion()
     End Sub
 
-    Protected Sub btnFinished_Click(sender As Object, e As EventArgs) Handles btnFinished.Click
-        saveAnswers()
-        Response.Redirect("Roster.aspx")
-    End Sub
+   ' Protected Sub btnFinished_Click(sender As Object, e As EventArgs) Handles btnFinished.Click
+    '    saveAnswers()
+    '    Response.Redirect("Roster.aspx")
+    'End Sub
 
 
     Protected Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
