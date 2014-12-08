@@ -22,7 +22,7 @@
         }
 
         .auto-style2 {
-            height: 15px;
+            height: 30px;
             width: 690px;
         }
 
@@ -73,11 +73,11 @@
                  <tr>
                     <td colspan="2" class="auto-style9">
                        
-                            <asp:Label ID="lblExam" runat="server" Text="Exam" Position="absolute" style="z-index: 1; left: 164px; top: 44px; position: absolute"></asp:Label>
-                            <asp:TextBox ID="txtExam" runat="server" ReadOnly="true" Position="absolute" style="z-index: 1; left: 209px; top: 44px; position: absolute; width: 467px;"></asp:TextBox>
-                            <asp:Label ID="lblType" runat="server" Text="Exam Type" Position="absolute" style="z-index: 1; left: 128px; top: 68px; position: absolute"></asp:Label>
+                            <asp:Label ID="lblExam" runat="server" Text="Exam" Position="absolute" style="z-index: 1; left: 164px; top: 40px; position: absolute"></asp:Label>
+                            <asp:TextBox ID="txtExam" runat="server" ReadOnly="true" Position="absolute" style="z-index: 1; left: 209px; top: 40px; position: absolute; width: 467px;"></asp:TextBox>
+                            <asp:Label ID="lblType" runat="server" Text="Exam Type" Position="absolute" style="z-index: 1; left: 128px; top: 64px; position: absolute"></asp:Label>
                             <br />
-                            <asp:TextBox ID="txtType" runat="server" ReadOnly="true" Position="absolute" style="z-index: 1; left: 207px; top: 67px; position: absolute; width: 540px"></asp:TextBox>                                              
+                            <asp:TextBox ID="txtType" runat="server" ReadOnly="true" Position="absolute" style="z-index: 1; left: 207px; top: 64px; position: absolute; width: 540px"></asp:TextBox>                                              
                             <br />
                             <br />
                     </td>
