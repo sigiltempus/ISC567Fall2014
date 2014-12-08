@@ -81,7 +81,7 @@
                                     <td style="width: 73%;">
                                        
                                         <asp:DropDownList ID="ddlHours" runat="server" AutoPostBack="True">
-                                            <asp:ListItem>Hours</asp:ListItem>
+                                            <asp:ListItem Value="0">Hours</asp:ListItem>
                                             <asp:ListItem>1</asp:ListItem>
                                             <asp:ListItem>2</asp:ListItem>
                                             <asp:ListItem>3</asp:ListItem>
@@ -95,7 +95,7 @@
                                         &nbsp;
                                         &nbsp;
                                         <asp:DropDownList ID="ddlminutes" runat="server" AutoPostBack="True" >
-                                            <asp:ListItem>Minutes</asp:ListItem>
+                                            <asp:ListItem Value="0">Minutes</asp:ListItem>
                                             <asp:ListItem>00</asp:ListItem>
                                             <asp:ListItem Value=".25">15</asp:ListItem>
                                             <asp:ListItem Value=".50">30</asp:ListItem>
