@@ -31,7 +31,7 @@
                     <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="Wait Time for Exam" CssClass="IFrameHeader" Width="176%" CanDragIFrame="True" Height="41px"></ccJSIM:DragIFrame>
                 </td>
                 <td style="text-align:right">
-                    <ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifRoster" Text="[X] Close" CssClass="Button" style="z-index: 1; left: -34px; top: -3px; position: relative; width: 117px;" />
+                    <ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifWaitOnExam" Text="[X] Close" CssClass="Button" style="z-index: 1; left: -34px; top: -3px; position: relative; width: 117px;" />
                 </td>
                 
             </tr>

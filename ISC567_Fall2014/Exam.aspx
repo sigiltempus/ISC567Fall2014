@@ -46,10 +46,11 @@
                                      <table style="height: 400px">
                                         <tr>
                                             <td style="vertical-align:top">
-                                                <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="Exam" CssClass="IFrameHeader" Width="100%" >
-                                                    <%--<ccJSIM:CloseIFrameButton ID="CloseIFrameButton1"  runat="server" IFrameName="ifExam" Text="[X] Close" />--%>
-                                                </ccJSIM:DragIFrame>               
+                                                <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="Exam" CssClass="IFrameHeader" Width="112%" CanDragIFrame="True" ></ccJSIM:DragIFrame>  
+                                                         
                                             </td>
+                                            <td> <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" IFrameName="ifExam" Interval="10" PostBackUrl="WaitForExamTime.aspx" style="width: 86px;" Text="Finished"/>
+                  </td>
                                             </tr>
                                            <%-- <td style="text-align:right">                   
                                                <ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifExam" Text="[X] Close" />
@@ -57,7 +58,7 @@
                                         
                                         <tr>
                                             <td class="auto-style3">
-                                                <asp:Label ID="lblErrorMessage" runat="server" Text="" ForeColor="Red" Visible="false" style="z-index: 1; left: 8px; top: 158px; position: absolute"> </asp:Label>
+                                                <asp:Label ID="lblErrorMessage" runat="server" Text="" ForeColor="Red" Visible="false" style="z-index: 1;"> </asp:Label>
                                                 
                                                 
                                                 <asp:RadioButtonList ID="rbAnswerOptions" runat="server" RepeatDirection="Vertical" >
@@ -102,8 +103,7 @@
                <td></td>
                <td>
                   
-                  <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" IFrameName="ifExam" Interval="10" PostBackUrl="WaitForExamTime.aspx" style="width: 86px;" Text="Finished"/>
-                                                    
+                                                   
                </td>
            </tr>
        </table>

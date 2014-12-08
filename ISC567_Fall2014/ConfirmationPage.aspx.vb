@@ -14,7 +14,7 @@ Public Class ConfirmationPage
     End Sub
     Private Sub populatepage()
         Dim personid As Integer = GetSVTableValue(Of Integer)("personid")
-        Dim SEID As Integer = CInt(Session("SelScheduleExamID").ToString())
+        Dim SEID As Integer = CInt(Session("examid").ToString())
         Dim oUser As New DataAccessTier.daUser
         Dim dtpersonInfo As DataTable
         Dim dtExamInfo As DataTable
