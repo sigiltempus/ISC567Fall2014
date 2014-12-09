@@ -69,7 +69,7 @@
                      WidthPosition="404" ZIndex="160" > Edit Personal Information </ccJSIM:OpenIFrameLinkButton>&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;
 &nbsp;                    <ccJSIM:OpenIFrameLinkButton ID="btnRoster" runat="server" CssClass="Button" 
-                     FrameSrc="Roster.aspx" HeightPosition="400" 
+                     FrameSrc="Roster.aspx" HeightPosition="500" 
                      IFrameName="ifRoster" LeftPosition="20" Text="" TopPosition="120" 
                      WidthPosition="808" ZIndex="160" > Exam Roster </ccJSIM:OpenIFrameLinkButton>
                 </td>
