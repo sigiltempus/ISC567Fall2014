@@ -50,6 +50,15 @@ Partial Public Class Roster
     Protected WithEvents lblHeader As Global.JSIM.Custom_Controls.DragIFrame
 
     '''<summary>
+    '''btnClose control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnClose As Global.JSIM.Custom_Controls.CloseIFrameButton
+
+    '''<summary>
     '''UpdatePanel2 control.
     '''</summary>
     '''<remarks>
@@ -102,13 +111,4 @@ Partial Public Class Roster
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnCancelExam As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''btnClose control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnClose As Global.JSIM.Custom_Controls.CloseIFrameButton
 End Class
