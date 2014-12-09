@@ -100,7 +100,7 @@
                     <td colspan="2">
                         <ccJSIM:OpenIFrameButton ID="OpenIFrameButton" runat="server" CssClass="ButtonDisplay" 
                      FrameSrc="WaitForExamTime.aspx" HeightPosition="340" 
-                     IFrameName="ifAddEditExams" LeftPosition="350" Text="Submit" TopPosition="120" 
+                     IFrameName="ifWaitOnExam" LeftPosition="350" Text="Submit" TopPosition="120" 
                      WidthPosition="600" ZIndex="160" >
 
                         </ccJSIM:OpenIFrameButton>
