@@ -120,13 +120,4 @@ Partial Public Class ListCourse
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnGotoCourseOutCome As Global.JSIM.Custom_Controls.OpenIFrameButton
-
-    '''<summary>
-    '''OpenIFrameButton1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents OpenIFrameButton1 As Global.JSIM.Custom_Controls.OpenIFrameButton
 End Class

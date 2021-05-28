@@ -14,24 +14,22 @@
             font-weight: bold;
             color: White;
             background-color: #ba1c1c;
-            font-family: Verdana;
             padding: 5px 5px 5px 5px;
-            width: 264px;
+            width: 268px;
         }
         .auto-style2 {
-            width: 264px;
+            width: 705px;
         }
         .auto-style3 {
             font-size: 14pt;
             font-weight: bold;
             color: White;
             background-color: #ba1c1c;
-            font-family: Verdana;
             padding: 5px 5px 5px 5px;
             width: 415px;
         }
-        .auto-style4 {
-            width: 415px;
+        .auto-style5 {
+            height: 27px;
         }
     </style>
 </head>
@@ -39,41 +37,65 @@
     <form id="form1" runat="server">
         <asp:scriptmanager ID="Scriptmanager1" runat="server" EnablePageMethods="True"></asp:scriptmanager>
       <div class="ListIFrame">
-         <table align="left" width="700px" border="0px" cellpadding="0px" cellspacing="0px">
+         <table class="auto-style2" cellspacing="0">
              <tr>
-                 <td align="left" class="auto-style1">
-                     <ccJSIM:DragIFrame ID="dgFrame" runat="server" Text="List Sub Skill In Bk" CssClass="IFrameHeader"> </ccJSIM:DragIFrame>
+                 <td align="left" class="IFrameHeader">
+                     <ccJSIM:DragIFrame ID="dgFrame" runat="server" Text="List SubSkill In BK2" CssClass="IFrameHeader" />
 
                  </td>
-                 <td align="right" class="auto-style3">
-                     <ccJSIM:CloseIFrameLinkButton ID="CloseIFrameLinkButton1" runat="server" IFrameName="SubSkillInBK" Text="[x] Close"
-                          ForeColor="White" BorderColor="White"> </ccJSIM:CloseIFrameLinkButton>
+                 <td align="right" class="IFrameHeader">
+                     <ccJSIM:CloseIFrameButton ID="CloseIFrameButton1" runat="server" Text="[x] Close"
+                        IFrameName="ifSubskillBK">
+                    </ccJSIM:CloseIFrameButton>
                  </td>
              </tr>
-             <tr>
-                 <td class="auto-style2">
-                     <asp:Label ID="Label1" runat="server" Text="SubSkill" style="text-align: left" Height="25px"></asp:Label>
-                 </td>
-                 <td class="auto-style4">
-                     <asp:Label ID="Label2" runat="server" Text="BK1" style="text-align: middle"></asp:Label>
-                 </td>  
-                </tr>
-             <tr>
-                 <td class="auto-style2">
-                     <asp:DropDownList ID="ddlSubskill" runat="server" Width="200px" Height="25px"></asp:DropDownList>
-
-                 </td>
-                 <td class="auto-style4">
-                     <asp:DropDownList ID="ddlBk1" runat="server" Width="200px" Height="25px"></asp:DropDownList>
-                 </td>
-             </tr>
-             <tr>
-                 <td align="left" class="auto-style2">
-                     <ccJSIM:SaveAndCloseIFrameButton ID="btnSave" runat="server" CssClass="Button" Text="Save" align="left" IFrameName="SubSkillInBK" ParentFrame="IfSubSkill" 
-                         ParentPage="SubSkill.aspx" Width="53px" StatusPanelId="lblStatus" RefreshParentPage="True"/>
-
-                 </td>
-             </tr>
+             <tr valign="middle" class="auto-style5">
+                <td colspan="2">
+                    <asp:Label ID="lblsubskillinbk" runat="server" Height="25px" Text="For BK2:" Font-Bold="True" />
+                    &nbsp;
+                    <asp:DropDownList ID="ddlBK2" runat="server" Width="400" DataTextField="ProgTitleCombo" 
+                        DataValueField="BKLEVEl2ID" AutoPostBack="true" />
+                </td>
+            </tr>
+             <tr valign="top" class="auto-style5">
+                <td colspan="2">
+                    <asp:Label ID="lblStatus" runat="server" ForeColor="Blue"> </asp:Label>
+                </td>
+            </tr>
+             <tr valign="top">
+                <td colspan="2">
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="99%" BorderColor="Black"
+                                BorderStyle="Solid" BorderWidth="2px" Height="330px">
+                                <ccJSIM:CheckboxGridView ID="gvSubSkill" runat="server" CellPadding="4"
+                                    ForeColor="#333333" GridLines="None" IncludeSorting="True" CheckedIdentifier="Checked"
+                                    StatusPanelId="lblStatus" Width="99%" AutoGenerateColumns="False" DataKeyNames="subskillid" 
+                                    AllowSorting="true" GridSortColumn="Checked" 
+                                    CheckedMethodName="wsToggleSubskillBK" UnCheckedMethodName="wsToggleSubskillBK" UseAjax="False" 
+                                    EnableSortingAndPagingCallbacks="True"  GridSortDirection="ASC" ShowHeaderCheckbox="True">
+                                    <AlternatingRowStyle BackColor="White" />
+                                    <Columns>
+                                        <asp:BoundField DataField="Checked" HeaderText="Checked" Visible="False" SortExpression="Checked" /> 
+                                        <asp:BoundField DataField="subskillcomb" HeaderText="Sub skill comb" SortExpression="fullname" />
+                                        <asp:BoundField DataField="subskilltitle" HeaderText="Sub Skill" SortExpression="fullname" />
+                                    </Columns>
+                                    <EditRowStyle BackColor="#2461BF" />
+                                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                                    <RowStyle BackColor="#EFF3FB" />
+                                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                                    <SortedDescendingHeaderStyle BackColor="#4870BE" />                                    
+                                </ccJSIM:CheckboxGridView>
+                            </asp:Panel>
+                        </ContentTemplate>                 
+                    </asp:UpdatePanel>
+                </td>
+            </tr>
          </table>
      </div>
     </form>

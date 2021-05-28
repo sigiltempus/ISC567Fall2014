@@ -89,6 +89,7 @@
     <Content Include="AddEditCourse.aspx" />
     <Content Include="AddEditCourseOutcome.aspx" />
     <Content Include="AddEditCurriculum.aspx" />
+    <Content Include="AddEditExamItem.aspx" />
     <Content Include="AddEditExamSchedule.aspx" />
     <Content Include="AddEditPerson.aspx" />
     <Content Include="AddEditProgram.aspx" />
@@ -103,21 +104,16 @@
     <Content Include="bin\JSIM.dll" />
     <Content Include="blank.htm" />
     <Content Include="ConfirmationPage.aspx" />
+    <Content Include="CreateEditExam.aspx" />
     <Content Include="Exam Registration.aspx" />
     <Content Include="ListCourse.aspx" />
     <Content Include="ListCourseOutcome.aspx" />
     <Content Include="ListCurriculum.aspx" />
+    <Content Include="ListCurriculumPeople.aspx" />
     <Content Include="ListProgramBK.aspx" />
     <Content Include="ListProgramBK2.aspx" />
     <Content Include="ListProgramCourse.aspx" />
     <Content Include="Exam.aspx" />
-    <Content Include="ExamProvider_11.aspx" />
-    <Content Include="ExamProvider_12.aspx" />
-    <Content Include="ExamProvider_13.aspx" />
-    <Content Include="ExamProvider_1A.aspx" />
-    <Content Include="ExamProvider_2ver1.aspx" />
-    <Content Include="ExamProvider_3.aspx" />
-    <Content Include="ExamProvider_77.aspx" />
     <Content Include="ListInstitutionPeople.aspx" />
     <Content Include="ListPerson.aspx" />
     <Content Include="ListProgram.aspx" />
@@ -127,7 +123,7 @@
     <Content Include="Listsponsor.aspx" />
     <Content Include="MainMenu.aspx" />
     <Content Include="ProctorExam.aspx" />
-    <Content Include="ProgramOutcomeSubSkill.aspx" />
+    <Content Include="CourseOutcomeSubSkill.aspx" />
     <Content Include="Roster.aspx" />
     <Content Include="ScheduleExam.aspx" />
     <Content Include="ScheduleExamV2.aspx" />
@@ -143,11 +139,9 @@
     <Content Include="SubSkillInBK.aspx" />
     <Content Include="TakerFunctions.aspx" />
     <Content Include="WaitForExamTime.aspx" />
+    <Content Include="WorkOnExam.aspx" />
+    <Content Include="WorkonExamItem.aspx" />
     <Content Include="WorkOnStaff.aspx" />
-    <Content Include="ExamProvider_6.aspx" />
-    <Content Include="ExamProvider_7.aspx" />
-    <Content Include="ExamProvider_8.aspx" />
-    <Content Include="ExamProvider_9.aspx" />
     <Content Include="ExitApplication.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Styles\IFrameStyles.css" />
@@ -190,6 +184,13 @@
     </Compile>
     <Compile Include="AddEditCurriculum.aspx.vb">
       <DependentUpon>AddEditCurriculum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditExamItem.aspx.designer.vb">
+      <DependentUpon>AddEditExamItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditExamItem.aspx.vb">
+      <DependentUpon>AddEditExamItem.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddEditExamSchedule.aspx.designer.vb">
@@ -282,6 +283,13 @@
       <DependentUpon>ConfirmationPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="CreateEditExam.aspx.designer.vb">
+      <DependentUpon>CreateEditExam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateEditExam.aspx.vb">
+      <DependentUpon>CreateEditExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Exam Registration.aspx.designer.vb">
       <DependentUpon>Exam Registration.aspx</DependentUpon>
     </Compile>
@@ -310,6 +318,13 @@
       <DependentUpon>ListCurriculum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="ListCurriculumPeople.aspx.designer.vb">
+      <DependentUpon>ListCurriculumPeople.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListCurriculumPeople.aspx.vb">
+      <DependentUpon>ListCurriculumPeople.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="ListProgramBK.aspx.designer.vb">
       <DependentUpon>ListProgramBK.aspx</DependentUpon>
     </Compile>
@@ -337,55 +352,6 @@
     <Compile Include="Exam.aspx.vb">
       <DependentUpon>Exam.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_11.aspx.designer.vb">
-      <DependentUpon>ExamProvider_11.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_11.aspx.vb">
-      <DependentUpon>ExamProvider_11.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_12.aspx.designer.vb">
-      <DependentUpon>ExamProvider_12.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_12.aspx.vb">
-      <DependentUpon>ExamProvider_12.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_13.aspx.designer.vb">
-      <DependentUpon>ExamProvider_13.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_13.aspx.vb">
-      <DependentUpon>ExamProvider_13.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_1A.aspx.designer.vb">
-      <DependentUpon>ExamProvider_1A.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_1A.aspx.vb">
-      <DependentUpon>ExamProvider_1A.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_2ver1.aspx.designer.vb">
-      <DependentUpon>ExamProvider_2ver1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_2ver1.aspx.vb">
-      <DependentUpon>ExamProvider_2ver1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_3.aspx.designer.vb">
-      <DependentUpon>ExamProvider_3.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_3.aspx.vb">
-      <DependentUpon>ExamProvider_3.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_77.aspx.designer.vb">
-      <DependentUpon>ExamProvider_77.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_77.aspx.vb">
-      <DependentUpon>ExamProvider_77.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ListInstitutionPeople.aspx.designer.vb">
       <DependentUpon>ListInstitutionPeople.aspx</DependentUpon>
@@ -450,11 +416,11 @@
       <DependentUpon>ProctorExam.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProgramOutcomeSubSkill.aspx.designer.vb">
-      <DependentUpon>ProgramOutcomeSubSkill.aspx</DependentUpon>
+    <Compile Include="CourseOutcomeSubSkill.aspx.designer.vb">
+      <DependentUpon>CourseOutcomeSubSkill.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProgramOutcomeSubSkill.aspx.vb">
-      <DependentUpon>ProgramOutcomeSubSkill.aspx</DependentUpon>
+    <Compile Include="CourseOutcomeSubSkill.aspx.vb">
+      <DependentUpon>CourseOutcomeSubSkill.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Roster.aspx.designer.vb">
@@ -520,40 +486,26 @@
       <DependentUpon>WaitForExamTime.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="WorkOnExam.aspx.designer.vb">
+      <DependentUpon>WorkOnExam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkOnExam.aspx.vb">
+      <DependentUpon>WorkOnExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkonExamItem.aspx.designer.vb">
+      <DependentUpon>WorkonExamItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WorkonExamItem.aspx.vb">
+      <DependentUpon>WorkonExamItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="WorkOnStaff.aspx.designer.vb">
       <DependentUpon>WorkOnStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="WorkOnStaff.aspx.vb">
       <DependentUpon>WorkOnStaff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_6.aspx.designer.vb">
-      <DependentUpon>ExamProvider_6.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_6.aspx.vb">
-      <DependentUpon>ExamProvider_6.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_7.aspx.designer.vb">
-      <DependentUpon>ExamProvider_7.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_7.aspx.vb">
-      <DependentUpon>ExamProvider_7.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_8.aspx.designer.vb">
-      <DependentUpon>ExamProvider_8.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_8.aspx.vb">
-      <DependentUpon>ExamProvider_8.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ExamProvider_9.aspx.designer.vb">
-      <DependentUpon>ExamProvider_9.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ExamProvider_9.aspx.vb">
-      <DependentUpon>ExamProvider_9.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ExitApplication.aspx.designer.vb">
       <DependentUpon>ExitApplication.aspx</DependentUpon>

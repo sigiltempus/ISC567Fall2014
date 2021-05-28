@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class ExamProvider_3
+Partial Public Class ProgramOutcomeSubSkill
 
     '''<summary>
     '''Head1 control.
@@ -41,40 +41,49 @@ Partial Public Class ExamProvider_3
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
 
     '''<summary>
-    '''DragIFrame1 control.
+    '''lblHeader control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents DragIFrame1 As Global.JSIM.Custom_Controls.DragIFrame
+    Protected WithEvents lblHeader As Global.JSIM.Custom_Controls.DragIFrame
 
     '''<summary>
-    '''lblInstitution control.
+    '''btnClose control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblInstitution As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents btnClose As Global.JSIM.Custom_Controls.CloseIFrameButton
 
     '''<summary>
-    '''lblHeading control.
+    '''lblsubskillinbk control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblHeading As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblsubskillinbk As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''LblStatus control.
+    '''ddlOutcome control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LblStatus As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ddlOutcome As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''lblStatus control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblStatus As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''UpdatePanel1 control.
@@ -95,29 +104,11 @@ Partial Public Class ExamProvider_3
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''gvExamPermissions control.
+    '''gvSubSkill control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents gvExamPermissions As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Button1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Button2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents gvSubSkill As Global.JSIM.Custom_Controls.CheckboxGridView
 End Class

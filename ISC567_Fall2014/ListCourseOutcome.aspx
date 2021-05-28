@@ -19,7 +19,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
     </asp:ScriptManager>
     <div class="ListIFrame">
-        <table align="left" cellpadding="0" cellspacing="0" style="width: 740px;">
+        <table align="left" cellpadding="0" cellspacing="0" style="width: 720px;">
             <tr>
                 <td colspan="2" class="auto-style2"">
                     <ccJSIM:DragIFrame ID="lblHeader" runat="server" CssClass="IFrameHeader" Width="99%" CanDragIFrame="True">
@@ -30,7 +30,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="left">
-                    <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="730px" Height="550px">
+                    <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="710px" Height="345px">
                         <ccJSIM:RadioButtonGridView ID="gvCourseOutcome" runat="server" AutoGenerateColumns="False"
                             IncludeSorting="True" EmptyDataText="No Data Found" GridSortColumn="" DataKeyNames="crsoutcomesid"
                             ForeColor="#333333" HighlighedRowColor="#FFFFAD" HeaderStyle-CssClass="gridViewHeader"
@@ -84,11 +84,11 @@
                                     FrameSrc="CrseOutcomePrrOutcome.aspx" IFrameName="ifCrseprgOutcome" HeightPosition="800"
                                     LeftPosition="360" ZIndex="180" TopPosition="120" WidthPosition="600" CssClass="Button" />
                             </td>
-                            <%--  <td align="center">
+                              <td align="center">
                                 <ccJSIM:OpenIFrameButton ID="OpenIFrameButton1" runat="server" Text="Course Outcomes SubSkill"
-                                    FrameSrc="CourseOutcometoSubSkill.aspx" IFrameName="ifcrsOutSubsill" HeightPosition="500"
-                                    LeftPosition="330" ZIndex="180" TopPosition="260" WidthPosition="653" CssClass="Button" />
-                            </td>--%>
+                                    FrameSrc="CourseOutcomeSubSkill.aspx" IFrameName="ifcrsOutSubskill" HeightPosition="380"
+                                    LeftPosition="330" ZIndex="225" TopPosition="260" WidthPosition="653" CssClass="Button" />
+                            </td>
                         </tr>
                     </table>
                 </td>

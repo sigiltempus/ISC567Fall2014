@@ -36,7 +36,7 @@
         </tr>
         <tr>
             <td colspan="2" >
-                <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Height="260px" Width="750px"
+                <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Height="225px" Width="750px"
                     BorderStyle="Solid" BorderColor="Black" BorderWidth="2px">
                     <ccJSIM:RadioButtonGridView ID="ProjectsGridView" runat="server" AutoGenerateColumns="False"
                         IncludeSorting="True" EmptyDataText="No Data Found" DataKeyNames="BKLevel2ID"
@@ -83,8 +83,13 @@
                                 HeightPosition="327"  LeftPosition="400" ZIndex="240" TopPosition="210" WidthPosition="720"
                                 CssClass="Button" Width="100px" />
                         
-                        <asp:Label ID="lblCSpacer" runat="server" Text="  " Width="250px"></asp:Label>
+                        <asp:Label ID="lblCSpacer" runat="server" Text="  " Width="100px"></asp:Label>
                         &nbsp;
+
+                            <ccJSIM:OpenIFrameButton ID="btnSubskillBK" runat="server" Text="Subskill in BK Level2"
+                                FrameSrc="SubSkillInBK.aspx" IFrameName="ifSubskillBK"
+                                HeightPosition="430"  LeftPosition="400" ZIndex="240" TopPosition="210" WidthPosition="710"
+                                CssClass="Button" Width="200px" />
                         
                             </td>
                     </tr>

@@ -131,6 +131,15 @@ Partial Public Class ListCurriculum
     Protected WithEvents lblCSpacer As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''lbtOpenCurriculumPeople control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbtOpenCurriculumPeople As Global.JSIM.Custom_Controls.OpenIFrameButton
+
+    '''<summary>
     '''lbtnOpenProgram control.
     '''</summary>
     '''<remarks>

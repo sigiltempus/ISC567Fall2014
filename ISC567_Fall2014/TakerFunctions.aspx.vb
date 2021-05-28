@@ -9,7 +9,7 @@ Public Class TakerFunctions
         If Not IsPostBack Then
             SetForm()
 
-            lblSVLineName2.Text = "This is your session ID:" + Convert.ToString(Me.Session.SessionID)
+
         End If
         
     End Sub
@@ -19,6 +19,16 @@ Public Class TakerFunctions
 
 #Region "Local Methods"
     Private Sub SetForm()
+        personid = GetSVTableValue(Of Integer)("personid")
+        Dim oUser As New DataAccessTier.daUser
+        'Retrieves the user's Profile
+        Dim dtUserProfile As DataTable = oUser.GetUserProfileByID(personid, con)
+        'Retrieves user's first and last names from the data table
+        Dim firstname As String = dtUserProfile.Rows(0)("firstname").ToString()
+        Dim lastname As String = dtUserProfile.Rows(0)("lastname").ToString()
+        'Inserts first and last names into label on Menu
+        lblSVLineName2.Text = "Welcome " + firstname + " " + lastname + "!"
+
         If (UpdateSVT = True) Then
             UpdateSVTable()
         End If

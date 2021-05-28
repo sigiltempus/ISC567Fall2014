@@ -3,16 +3,17 @@ Public Class AddEditSkills
     Inherits JSIM.Bases.BaseClass
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        GetSVTable()
         Dim skillsidSv As Integer
-        skillsidSv = GetSVTableValue(Of Integer)("skillsnum")
-        If skillsidSv = 0 Then
-            skillsidSv = Convert.ToInt32(Session("skillsnum"))
-        End If
+        skillsidSv = GetSVTableValue(Of Integer)("skillsid")
+
 
         If IsNothing(skillsidSv) Then
             Response.Redirect("Login.aspx")
         End If
-        SetFrom()
+        If Not IsPostBack Then
+            SetFrom()
+        End If
     End Sub
 
 #Region "Local Methods"
@@ -28,21 +29,17 @@ Public Class AddEditSkills
 
     Private Sub AddNew()
         dgFrame.Text = "Add Skills"
-        Dim skillclassid As Integer = Convert.ToInt32(Session("skillclassid"))
-        txtskillsclassnum.Text = skillclassid.ToString()
     End Sub
 
 
     Private Sub EditSkills()
         dgFrame.Text = "Edit Skills"
-        Dim skillsnum As Integer = GetSVTableValue(Of Integer)("skillsnum")
+        Dim skillid As Integer = Convert.ToInt32(Session("skillsnum"))
         Dim oUser As New DataAccessTier.daProgram
-        Dim dtUserlInfo As DataTable = GetSkillsInfo(skillsnum)
+        Dim dtUserlInfo As DataTable = GetSkillsInfo(skillid)
 
         If Not IsNothing(dtUserlInfo) AndAlso dtUserlInfo.Rows.Count > 0 Then
             With dtUserlInfo
-                txtskillsclassnum.Text = .Rows(0)("skillsclassnum").ToString()
-                txtskillsnum.Text = .Rows(0)("skillsnum").ToString()
                 txtskillsname.Text = .Rows(0)("skillsname").ToString()
             End With
 
@@ -53,9 +50,9 @@ Public Class AddEditSkills
     Protected Overrides Function CreateParameters() As JSIM.ParameterContainer
         MyBase.paramContainer = New JSIM.ParameterContainer()
         Dim mode As String = Request.QueryString("mode")
+        Dim skillclass As String = Session("skillclassid").ToString()
         paramContainer.AddParameter("mode", mode, False)
-        paramContainer.AddParameter("skillsclassnum", txtskillsclassnum)
-        paramContainer.AddParameter("skillsnum", txtskillsnum)
+        paramContainer.AddParameter("skillsclassnum", skillclass, False)
         paramContainer.AddParameter("skillsname", txtskillsname)
         Return MyBase.CreateParameters()
     End Function
@@ -75,11 +72,11 @@ Public Class AddEditSkills
     End Function
 
 
-    Private Shared Function insertskills(ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal skillsname As String) As String
+    Private Shared Function insertskills(ByVal skillsclassnum As Integer, ByVal skillsname As String) As String
         Dim strStatus As String = ""
         Dim con As String = GetConnectionString("ConnectionString")
         Dim oUser As New DataAccessTier.daProgram
-        oUser.insertskills(skillsclassnum, skillsnum, skillsname, con)
+        oUser.insertskills(skillsclassnum, skillsname, con)
         If oUser.TransactionSuccessful Then
             strStatus = "Skills added Successfully"
         Else
@@ -89,12 +86,12 @@ Public Class AddEditSkills
         Return strStatus
     End Function
 
-    Private Shared Function editskill(ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal skillsname As String) As String
+    Private Shared Function editskill(ByVal skillsclassnum As Integer, ByVal skillsname As String) As String
         Dim strStatus As String = ""
         Dim con As String = GetConnectionString("ConnectionString")
         Dim oUser As New DataAccessTier.daProgram
         Dim skillsid As Integer = GetSVTableValue(Of Integer)("skillsnum")
-        oUser.editskills(skillsid, skillsclassnum, skillsnum, skillsname, con)
+        oUser.editskills(skillsid, skillsclassnum, skillsname, con)
         If oUser.TransactionSuccessful Then
             strStatus = "Skills edited Successfully"
         Else
@@ -111,12 +108,12 @@ Public Class AddEditSkills
 
 #Region "Local WebService Methods"
     <Services.WebMethod()> _
-    Public Shared Function wsAddEditSkills(ByVal mode As String, ByVal skillsclassnum As Integer, ByVal skillsnum As Integer, ByVal skillsname As String) As String
+    Public Shared Function wsAddEditSkills(ByVal mode As String, ByVal skillsclassnum As Integer, ByVal skillsname As String) As String
         Dim strmsg As String = ""
         If mode = "add" Then
-            strmsg = insertskills(skillsclassnum, skillsnum, skillsname)
+            strmsg = insertskills(skillsclassnum, skillsname)
         ElseIf mode = "edit" Then
-            strmsg = editskill(skillsclassnum, skillsnum, skillsname)
+            strmsg = editskill(skillsclassnum, skillsname)
         Else
             strmsg = "No Mode was Selected"
         End If

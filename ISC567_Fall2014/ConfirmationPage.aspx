@@ -84,7 +84,7 @@
                     </td>
                     <td>
                         <%--<ccJSIM:OpenIFrameButton ID="OpenIFrameButton1"  runat="server"  FrameSrc="WaitForExamTime.aspx"
-                            IFrameName="ifAddEditExams" Text="Submit" 
+                            IFrameName="ifWaitForExam" Text="Submit" 
                             CssClass="Button" ZIndex="180" LeftPosition="200" TopPosition="200" />--%>
                     </td>
 
@@ -100,7 +100,7 @@
                     <td colspan="2">
                         <ccJSIM:OpenIFrameButton ID="OpenIFrameButton" runat="server" CssClass="ButtonDisplay" 
                      FrameSrc="WaitForExamTime.aspx" HeightPosition="340" 
-                     IFrameName="ifAddEditExams" LeftPosition="350" Text="Submit" TopPosition="120" 
+                     IFrameName="ifWaitOnExam" LeftPosition="350" Text="Submit" TopPosition="120" 
                      WidthPosition="600" ZIndex="160" >
 
                         </ccJSIM:OpenIFrameButton>

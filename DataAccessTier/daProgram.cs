@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using Microsoft.ApplicationBlocks.Data;
@@ -13,6 +12,35 @@ namespace DataAccessTier {
     public class daProgram : daDataAccessModule {
 
         #region " Read methods "
+        public DataTable GetCurriculumPeople(string connectionString, int curriculumid)
+        {
+
+            SqlParameter[] arParms = new SqlParameter[1];
+
+            arParms[0] = new SqlParameter("@curriculumid", SqlDbType.Int);
+            arParms[0].Value = curriculumid;
+            pTransactionSuccessful = true;
+
+            DataTable dtCurriculumPeopleList = new DataTable("CurriculumPeople");
+
+            try
+            {
+                DataSet dsCurriculumPeopleList = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "sp_GetCurriculumPeople", arParms);
+                dtCurriculumPeopleList = dsCurriculumPeopleList.Tables[0];
+            }
+            catch (SqlException ReadError)
+            {
+                pErrorMessage = ReadError.Message.ToString();
+                pErrorNumber = ReadError.Number;
+                pErrorClass = ReadError.Class;
+                pErrorState = ReadError.State;
+                pErrorLineNumber = ReadError.LineNumber;
+
+                pTransactionSuccessful = false;
+            }
+
+            return dtCurriculumPeopleList;
+        }
 
         public DataTable GetCurriculumList(string connectionString)
         {
@@ -212,13 +240,13 @@ namespace DataAccessTier {
         public DataTable GetProgramOutcome(int prgoutcomesid, string ConnectionString) {
             // Set up parameters in parameter array 
             SqlParameter[] arParms = new SqlParameter[1];
-            arParms[0] = new SqlParameter("@prgoutcomesid", SqlDbType.Int);
+            arParms[0] = new SqlParameter("@crsoutcomesid", SqlDbType.Int);
             arParms[0].Value = prgoutcomesid;
 
             pTransactionSuccessful = true;
             DataTable dtProgramOutcome = new DataTable("ProgramOutcome");
             try {
-                DataSet dsProgramOutcome = SqlHelper.ExecuteDataset(ConnectionString, CommandType.StoredProcedure, "GetProgramOutComes", arParms);
+                DataSet dsProgramOutcome = SqlHelper.ExecuteDataset(ConnectionString, CommandType.StoredProcedure, "GetCourseOutcomes", arParms);
                 dtProgramOutcome = dsProgramOutcome.Tables[0];
             } catch (SqlException ReadError) {
                 pErrorMessage = ReadError.Message.ToString();
@@ -429,28 +457,23 @@ namespace DataAccessTier {
                 pTransactionSuccessful = false;
             }
         }
-        public void InsertProgrOuctomeSubskill(int programOutomeID, int subSkillId, string ConnectionString) {
+
+        /// <summary>
+        /// Toggles whether an intersect record exists for Outcome and Subskill.
+        /// </summary>
+        /// <param name="programOutomeID">Course/Program Outcome ID</param>
+        /// <param name="subSkillId">Subskill ID</param>
+        /// <param name="ConnectionString">Connection string to use</param>
+        /// <returns>Whether the value is now Checked</returns>
+        public void ToggleSubskillInCourseOutcome(int programOutomeID, int subSkillId, string ConnectionString)
+        {
             // Set up parameters in parameter array 
             SqlParameter[] arParms = new SqlParameter[2];
-
-            arParms[0] = new SqlParameter("@programOutomeID", SqlDbType.Int);
+            arParms[0] = new SqlParameter("@CourseOutcomesID", SqlDbType.Int);
             arParms[0].Value = programOutomeID;
-            arParms[1] = new SqlParameter("@subSkillId", SqlDbType.Int);
+            arParms[1] = new SqlParameter("@SubskillID", SqlDbType.Int);
             arParms[1].Value = subSkillId;
-
-            pTransactionSuccessful = true;
-
-            try {
-                SqlHelper.ExecuteNonQuery(ConnectionString, CommandType.StoredProcedure, "InsertProgrOutcomeSubskill", arParms);
-            } catch (SqlException InsertError) {
-                pErrorMessage = InsertError.Message.ToString();
-                pErrorNumber = InsertError.Number;
-                pErrorClass = InsertError.Class;
-                pErrorState = InsertError.State;
-                pErrorLineNumber = InsertError.LineNumber;
-
-                pTransactionSuccessful = false;
-            }
+            this.ExecuteWithoutResult(arParms, "sp_ToggleSubskillInCourseOutcome", ConnectionString);
         }
 
         /// <summary>
@@ -471,37 +494,35 @@ namespace DataAccessTier {
         }
 
         //For Inserting Skills
-        public void insertskills(int skillsclassnum, int skillsnum, string skillsname, string ConnectionString) {
+        public void insertskills(int skillsclassnum, string skillsname, string ConnectionString)
+        {
             // Set up parameters in parameter array 
-            SqlParameter[] arParms = new SqlParameter[3];
+            SqlParameter[] arParms = new SqlParameter[2];
 
-            arParms[0] = new SqlParameter("@skillsclassnum", SqlDbType.Int);
+            arParms[0] = new SqlParameter("@skillsclassid", SqlDbType.Int);
             arParms[0].Value = skillsclassnum;
-            arParms[1] = new SqlParameter("@skillsnum", SqlDbType.Int);
-            arParms[1].Value = skillsnum;
-            arParms[2] = new SqlParameter("@skillsname", SqlDbType.NVarChar);
-            arParms[2].Value = skillsname;
+            arParms[1] = new SqlParameter("@skillsname", SqlDbType.NVarChar);
+            arParms[1].Value = skillsname;
 
             this.ExecuteWithoutResult(arParms, "insertskills", ConnectionString);
         }
 
         //For Inserting SubSkill
-        public void insertsubskill(int skillsclassnum, int skillsnum, int subskillnum, string subskilltitle, string jobadwords, string subskillcomb, string ConnectionString) {
+        public void insertsubskill(int skillsid,string subskilltitle, string jobadwords, string subskillcomb, string ConnectionString) {
             // Set up parameters in parameter array 
-            SqlParameter[] arParms = new SqlParameter[6];
+            SqlParameter[] arParms = new SqlParameter[4];
 
-            arParms[0] = new SqlParameter("@skillsclassnum", SqlDbType.Int);
-            arParms[0].Value = skillsclassnum;
-            arParms[1] = new SqlParameter("@skillsnum", SqlDbType.Int);
-            arParms[1].Value = skillsnum;
-            arParms[2] = new SqlParameter("@subskillnum", SqlDbType.Int);
-            arParms[2].Value = subskillnum;
-            arParms[3] = new SqlParameter("@subskilltitle", SqlDbType.NVarChar);
-            arParms[3].Value = subskilltitle;
-            arParms[4] = new SqlParameter("@subskillcomb", SqlDbType.NVarChar);
-            arParms[4].Value = subskillcomb;
-            arParms[5] = new SqlParameter("@jobadwords", SqlDbType.NVarChar);
-            arParms[5].Value = jobadwords;
+            
+            arParms[0] = new SqlParameter("@skillsid", SqlDbType.Int);
+            arParms[0].Value = skillsid;
+            //arParms[1] = new SqlParameter("@subskillnum", SqlDbType.Int);
+            //arParms[1].Value = subskillnum;
+            arParms[1] = new SqlParameter("@subskilltitle", SqlDbType.NVarChar);
+            arParms[1].Value = subskilltitle;
+            arParms[2] = new SqlParameter("@subskillcomb", SqlDbType.NVarChar);
+            arParms[2].Value = subskillcomb;
+            arParms[3] = new SqlParameter("@jobadwords", SqlDbType.NVarChar);
+            arParms[3].Value = jobadwords;
             this.ExecuteWithoutResult(arParms, "insertsubskill", ConnectionString);
         }
         #endregion
@@ -605,40 +626,34 @@ namespace DataAccessTier {
         /// <param name="skillsnum">Skill Number</param>
         /// <param name="skillsname">Name of Skill</param>
         /// <param name="ConnectionString">Connection String</param>
-        public void editskills(int skillsid, int skillsclassnum, int skillsnum, string skillsname, string ConnectionString) {
+        public void editskills(int skillsid, int skillsclassnum, string skillsname, string ConnectionString) {
             // Set up parameters in parameter array 
-            SqlParameter[] arParms = new SqlParameter[4];
+            SqlParameter[] arParms = new SqlParameter[3];
             arParms[0] = new SqlParameter("@skillsid", SqlDbType.Int);
             arParms[0].Value = skillsid;
-            arParms[1] = new SqlParameter("@skillsclassnum", SqlDbType.Int);
+            arParms[1] = new SqlParameter("@skillsclassid", SqlDbType.Int);
             arParms[1].Value = skillsclassnum;
-            arParms[2] = new SqlParameter("@skillsnum", SqlDbType.Int);
-            arParms[2].Value = skillsnum;
-            arParms[3] = new SqlParameter("@skillsname", SqlDbType.NVarChar);
-            arParms[3].Value = skillsname;
+            arParms[2] = new SqlParameter("@skillsname", SqlDbType.NVarChar);
+            arParms[2].Value = skillsname;
             this.ExecuteWithoutResult(arParms, "editskills", ConnectionString);
         }
 
         //Update method for SubSkill
-        public void editsubskill(int subskillid, int skillsclassnum, int skillsnum, int subskillnum, string subskilltitle,
+        public void editsubskill(int subskillid, int skillsid, string subskilltitle,
                                     string subskillcomb, string jobadwords, string ConnectionString) {
             // Set up parameters in parameter array 
-            SqlParameter[] arParms = new SqlParameter[7];
+            SqlParameter[] arParms = new SqlParameter[5];
             arParms[0] = new SqlParameter("@subskillid", SqlDbType.Int);
             arParms[0].Value = subskillid;
-            arParms[1] = new SqlParameter("@skillsclassnum", SqlDbType.Int);
-            arParms[1].Value = skillsclassnum;
-            arParms[2] = new SqlParameter("@skillsnum", SqlDbType.Int);
-            arParms[2].Value = skillsnum;
-            arParms[3] = new SqlParameter("@subskillnum", SqlDbType.Int);
-            arParms[3].Value = subskillnum;
-            arParms[4] = new SqlParameter("@subskilltitle", SqlDbType.NVarChar);
-            arParms[4].Value = subskilltitle;
-            arParms[5] = new SqlParameter("@subskillcomb", SqlDbType.NVarChar);
-            arParms[5].Value = subskillcomb;
-            arParms[6] = new SqlParameter("@jobadwords", SqlDbType.NVarChar);
-            arParms[6].Value = jobadwords;
-            this.ExecuteWithoutResult(arParms, "editsubskill", ConnectionString);
+            arParms[1] = new SqlParameter("@skillsid", SqlDbType.Int);
+            arParms[1].Value = skillsid;
+            arParms[2] = new SqlParameter("@subskilltitle", SqlDbType.NVarChar);
+            arParms[2].Value = subskilltitle;
+            arParms[3] = new SqlParameter("@subskillcomb", SqlDbType.NVarChar);
+            arParms[3].Value = subskillcomb;
+            arParms[4] = new SqlParameter("@jobadwords", SqlDbType.NVarChar);
+            arParms[4].Value = jobadwords;
+            this.ExecuteWithoutResult(arParms, "EditSubskill", ConnectionString);
         }
         #endregion
 

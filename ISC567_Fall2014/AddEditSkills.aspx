@@ -25,25 +25,8 @@
                         </ccJSIM:CloseIFrameButton>
                     </td>
                 </tr>
-                <tr>
-
-                    <td align="left" class="style2">
-                        <asp:Label ID="Label4" runat="server" Text="Skill Class Number"></asp:Label>
-                    </td>
-                    <td align="left" class="style2">
-                        <asp:TextBox ID="txtskillsclassnum" runat="server" Width="24px"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
+                <tr valign="middle">
                     <td align="right">
-                        <asp:Label ID="Label2" runat="server" Text="Skill Number"></asp:Label>
-                    </td>
-                    <td align="left" class="style2">
-                        <asp:TextBox ID="txtskillsnum" runat="server" Width="24px"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right" valign="top">
                         <asp:Label ID="Label3" runat="server" Text="Skill Name"></asp:Label>
                     </td>
                     <td align="left" class="style2">

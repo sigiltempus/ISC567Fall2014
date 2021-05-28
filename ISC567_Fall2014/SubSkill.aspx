@@ -17,7 +17,7 @@
     <form id="form1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
     </asp:ScriptManager>
-    <div class="ListIFrame">
+        `<div class="ListIFrame">
         <table align="left" width="700px" border="0px" cellpadding="0px" cellspacing="0px">
             <tr>
                 <td align="left" class="IFrameHeader">
@@ -32,7 +32,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="left">
-                    <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Height="260px">
+                    <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Height="220px">
                         <%--DataKeyNames="skillsnum"--%>
                         <ccJSIM:RadioButtonGridView ID="ProjectsGridView" runat="server" AutoGenerateColumns="False"
                             IncludeSorting="True" EmptyDataText="No Data Found" GridSortColumn="" DataKeyNames="subskillid"
@@ -78,6 +78,15 @@
                                     FrameSrc="AddEditSubSkill.aspx?mode=edit" IFrameName="IfAddEditSubSkill" HeightPosition="340"
                                     LeftPosition="425" ZIndex="300" TopPosition="210" WidthPosition="550" CssClass="Button" />
                             </td>
+                            <td align="right">
+                            <ccJSIM:OpenIFrameButton ID="btnSubSkills" runat="server" Text="SubSkill in BK2" FrameSrc="SubSkillInBK.aspx"
+                                IFrameName="ifSubskillBK" HeightPosition="325" LeftPosition="400" ZIndex="200" TopPosition="250"
+                                WidthPosition="715" CssClass="Button" />
+
+                                <ccJSIM:OpenIFrameButton ID="btnSKCourseOutcome" runat="server" Text="Course Outcomes SubSkill"
+                                    FrameSrc="CourseOutcomeSubSkill.aspx" IFrameName="ifcrsOutSubskill" HeightPosition="380"
+                                    LeftPosition="330" ZIndex="225" TopPosition="260" WidthPosition="653" CssClass="Button" />
+                        </td>
                         </tr>
                     </table>
                 </td>

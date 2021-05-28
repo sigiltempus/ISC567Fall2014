@@ -68,15 +68,6 @@ Partial Public Class WaitForExamTime
     Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblErrorMessage control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblErrorMessage As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''Label9 control.
     '''</summary>
     '''<remarks>
@@ -93,6 +84,15 @@ Partial Public Class WaitForExamTime
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblName As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lblErrorMessage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblErrorMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Label3 control.

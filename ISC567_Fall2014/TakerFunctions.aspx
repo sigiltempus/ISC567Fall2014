@@ -31,7 +31,10 @@
     <table style="width:100%;">
         <tr>
             <td style="text-align:left" >
-                <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="Exam Taker" CanDragIFrame="True" CssClass="IFrameHeader" Width="98%"></ccJSIM:DragIFrame>
+                <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="Exam Taker" CanDragIFrame="True" CssClass="IFrameHeader" Width="114%"></ccJSIM:DragIFrame>
+            </td>
+            <td>                 
+                <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="[x}Close" IFrameName="ifTakerFunctions" Interval="10" Height="22px"/>
             </td>
             </tr>
             <tr align="center">
@@ -64,10 +67,7 @@
                      FrameSrc="AddEditTaker.aspx?mode=edit" HeightPosition="404" 
                      IFrameName="ifAddEditUser" LeftPosition="20" Text="Edit User" TopPosition="120" 
                      WidthPosition="404" ZIndex="160" > Edit Personal Information </ccJSIM:OpenIFrameLinkButton>&nbsp;&nbsp;&nbsp;
-                    <ccJSIM:OpenIFrameLinkButton ID="btnRoster0" runat="server" CssClass="Button" 
-                     FrameSrc="Exam Registration.aspx" HeightPosition="500" 
-                     IFrameName="ifRoster" LeftPosition="20" Text=" Registration For Exam " TopPosition="120" 
-                     WidthPosition="808" ZIndex="160" ></ccJSIM:OpenIFrameLinkButton>&nbsp;&nbsp;
+&nbsp;&nbsp;
 &nbsp;                    <ccJSIM:OpenIFrameLinkButton ID="btnRoster" runat="server" CssClass="Button" 
                      FrameSrc="Roster.aspx" HeightPosition="500" 
                      IFrameName="ifRoster" LeftPosition="20" Text="" TopPosition="120" 
@@ -81,10 +81,10 @@
               
             </tr>
         <tr align="left">
+            <td></td>
             <td class="auto-style4">
                 <br />
-                <ccJSIM:CloseIFrameButton ID="btnClose" runat="server" Text="Close" CssClass="Button" IFrameName="ifTakerFunctions" Interval="10"/>
-              
+               
             </td>
         </tr>
     </table>        

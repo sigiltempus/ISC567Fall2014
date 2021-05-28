@@ -27,9 +27,7 @@ Public Class WaitForExamTime
     End Sub
 
 
-    Protected Sub lbtnClose_Click(sender As Object, e As EventArgs) Handles lbtnClose.Click
-        Response.Redirect("Roster.aspx")
 
-    End Sub
+ 
 End Class
 

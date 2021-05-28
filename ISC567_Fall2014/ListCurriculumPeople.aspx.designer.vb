@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class ExamProvider_7
+Partial Public Class ListCurriculumpeople
 
     '''<summary>
     '''Head1 control.
@@ -59,6 +59,15 @@ Partial Public Class ExamProvider_7
     Protected WithEvents lblTitle As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''lbtnClose control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbtnClose As Global.JSIM.Custom_Controls.CloseIFrameButton
+
+    '''<summary>
     '''lblErrorMessage control.
     '''</summary>
     '''<remarks>
@@ -66,24 +75,6 @@ Partial Public Class ExamProvider_7
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblErrorMessage As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Panel2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Panel2 As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''rblSelect control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents rblSelect As Global.System.Web.UI.WebControls.RadioButtonList
 
     '''<summary>
     '''UpdatePanel1 control.
@@ -104,47 +95,29 @@ Partial Public Class ExamProvider_7
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''RadioButtonGridView2 control.
+    '''gvListCurriculumPeople control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RadioButtonGridView2 As Global.JSIM.Custom_Controls.RadioButtonGridView
+    Protected WithEvents gvListCurriculumPeople As Global.JSIM.Custom_Controls.OpenIFrameGridView
 
     '''<summary>
-    '''OpenIFrameButton1 control.
+    '''lbtnOpenAddCurriculumPerson control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents OpenIFrameButton1 As Global.JSIM.Custom_Controls.OpenIFrameButton
+    Protected WithEvents lbtnOpenAddCurriculumPerson As Global.JSIM.Custom_Controls.OpenIFrameButton
 
     '''<summary>
-    '''OpenIFrameButton2 control.
+    '''lbtnOpenEditCurriculumPerson control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents OpenIFrameButton2 As Global.JSIM.Custom_Controls.OpenIFrameButton
-
-    '''<summary>
-    '''OpenIFrameButton4 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents OpenIFrameButton4 As Global.JSIM.Custom_Controls.OpenIFrameButton
-
-    '''<summary>
-    '''CloseIFrameButton1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CloseIFrameButton1 As Global.JSIM.Custom_Controls.CloseIFrameButton
+    Protected WithEvents lbtnOpenEditCurriculumPerson As Global.JSIM.Custom_Controls.OpenIFrameButton
 End Class

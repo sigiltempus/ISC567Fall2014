@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class ExamProvider_9
+Partial Public Class WorkonExam
 
     '''<summary>
     '''Head1 control.
@@ -23,13 +23,13 @@ Partial Public Class ExamProvider_9
     Protected WithEvents Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
 
     '''<summary>
-    '''form2 control.
+    '''form1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents form2 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
     '''ScriptManager1 control.
@@ -50,130 +50,76 @@ Partial Public Class ExamProvider_9
     Protected WithEvents lblHeader As Global.JSIM.Custom_Controls.DragIFrame
 
     '''<summary>
-    '''lblExamName control.
+    '''lblTitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblExamName As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblTitle As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''txtExamName control.
+    '''CloseIFrameButton1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtExamName As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents CloseIFrameButton1 As Global.JSIM.Custom_Controls.CloseIFrameButton
 
     '''<summary>
-    '''lblExamTypeInfo control.
+    '''lblErrorMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblExamTypeInfo As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblErrorMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblExamType control.
+    '''rblSelect control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblExamType As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents rblSelect As Global.System.Web.UI.WebControls.RadioButtonList
 
     '''<summary>
-    '''ddlExamType control.
+    '''Panel2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddlExamType As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents Panel2 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''lblShortName control.
+    '''RadioButtonGridView2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblShortName As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents RadioButtonGridView2 As Global.JSIM.Custom_Controls.RadioButtonGridView
 
     '''<summary>
-    '''txtShortName control.
+    '''UpdatePanel1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtShortName As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
-    '''lblDescription control.
+    '''Panel1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblDescription As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtDescription control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtDescription As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblDuration control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblDuration As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtDuration control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtDuration As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblMinutes control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblMinutes As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''txtQuestions control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtQuestions As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblQuestions control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblQuestions As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''OpenIFrameButton1 control.
@@ -185,11 +131,20 @@ Partial Public Class ExamProvider_9
     Protected WithEvents OpenIFrameButton1 As Global.JSIM.Custom_Controls.OpenIFrameButton
 
     '''<summary>
-    '''Close control.
+    '''OpenIFrameButton2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Close As Global.JSIM.Custom_Controls.CloseIFrameButton
+    Protected WithEvents OpenIFrameButton2 As Global.JSIM.Custom_Controls.OpenIFrameButton
+
+    '''<summary>
+    '''OpenIFrameButton4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents OpenIFrameButton4 As Global.JSIM.Custom_Controls.OpenIFrameButton
 End Class

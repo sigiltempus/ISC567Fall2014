@@ -58,14 +58,14 @@
                     <li>
                         <a href="#">
                             <ccJSIM:OpenIFrameLinkButton ID="lbtnListPersons" runat="server" FrameSrc="ListPerson.aspx" Text="Administration"
-                                IFrameName="ifPersonList" LeftPosition="15" TopPosition="120" WidthPosition="954" HeightPosition="404"
+                                IFrameName="ifPersonList" LeftPosition="15" TopPosition="120" WidthPosition="954" HeightPosition="450"
                                 ZIndex="100" Visible="false" CssClass="LinkButton">List Person</ccJSIM:OpenIFrameLinkButton>
                         </a>
                     </li>
                     <li>
                         <a href="#">
                             <ccJSIM:OpenIFrameLinkButton ID="lbtnInstitutionFunctions" runat="server" FrameSrc="ListInstitutionPeople.aspx"
-                                IFrameName="ifInstitutionPeopleList" LeftPosition="15" TopPosition="120" WidthPosition="954" HeightPosition="404"
+                                IFrameName="ifInstitutionPeopleList" LeftPosition="15" TopPosition="120" WidthPosition="954" HeightPosition="450"
                                 ZIndex="100" Visible="false" CssClass="LinkButton">University </ccJSIM:OpenIFrameLinkButton>
                         </a>
                     </li>
@@ -80,11 +80,11 @@
                     <li>
                        <ccJSIM:OpenIFrameLinkButton ID="lbtnCurriculumFunctions" runat="server" FrameSrc="ListCurriculum.aspx"
                             IFrameName="ifCurriculumList" LeftPosition="15" TopPosition="120" WidthPosition="954" HeightPosition="404"
-                            ZIndex="180" Visible="false" CssClass="LinkButton">Curriculm</ccJSIM:OpenIFrameLinkButton>
+                            ZIndex="180" Visible="false" CssClass="LinkButton">Curriculum</ccJSIM:OpenIFrameLinkButton>
                     </li>
                     <li>
                         <a href="#">
-                        <ccJSIM:OpenIFrameLinkButton ID="lbtnsociety" runat="server" FrameSrc="Listsociety.aspx" HeightPosition="404"
+                        <ccJSIM:OpenIFrameLinkButton ID="lbtnsociety" runat="server" FrameSrc="Listsociety.aspx" HeightPosition="450"
                             IFrameName="ifsocietylist" LeftPosition="20" TopPosition="120" WidthPosition="955"
                             ZIndex="190" Visible="false" CssClass="LinkButton">Society</ccJSIM:OpenIFrameLinkButton>
                             </a>

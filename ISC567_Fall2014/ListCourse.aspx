@@ -35,7 +35,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="left" class="auto-style1">
-                    <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="720px" Height="396">
+                    <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="720px" Height="365">
                         <ccJSIM:RadioButtonGridView ID="gvCourse" runat="server" AutoGenerateColumns="False"
                             IncludeSorting="True" EmptyDataText="No Data Found" GridSortColumn="" DataKeyNames="courseid"
                             ForeColor="#333333" HighlighedRowColor="#FFFFAD" HeaderStyle-CssClass="gridViewHeader"
@@ -88,13 +88,8 @@
                             
                             <td align="left">
                                 <ccJSIM:OpenIFrameButton ID="btnGotoCourseOutCome" runat="server" Text="Go To Course Outcome"
-                                    FrameSrc="ListCourseOutcome.aspx" IFrameName="ifListCourseOutcome" HeightPosition="630"
-                                    LeftPosition="270" ZIndex="200" TopPosition="50" WidthPosition="740" CssClass="Button" />
-                            </td>
-                            <td align="left">
-                                <ccJSIM:OpenIFrameButton ID="OpenIFrameButton1" runat="server" Text="Course Outcomes SubSkill"
-                                    FrameSrc="CourseOutcometoSubSkill.aspx" IFrameName="ifcrsOutSubsill" HeightPosition="590"
-                                    LeftPosition="330" ZIndex="200" TopPosition="50" WidthPosition="653" CssClass="Button" />
+                                    FrameSrc="ListCourseOutcome.aspx" IFrameName="ifListCourseOutcome" HeightPosition="450"
+                                    LeftPosition="270" ZIndex="200" TopPosition="50" WidthPosition="725" CssClass="Button" />
                             </td>
                         </tr>
                     </table>

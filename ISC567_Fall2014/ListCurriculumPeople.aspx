@@ -1,12 +1,11 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ListPerson.aspx.vb" Inherits="ISC567_Fall2014.ListPerson" %>
-
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ListCurriculumpeople.aspx.vb" Inherits="ISC567_Fall2014.ListCurriculumpeople" %>
 <%@ Register Assembly="JSIM" Namespace="JSIM.Custom_Controls" TagPrefix="ccJSIM" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>List Person</title>
+    <title>List Curriculum People</title>
     <link rel="stylesheet" type="text/css" href="styles/IFrameStyles.css" />
 
     <style type="text/css">
@@ -32,8 +31,8 @@
                 <tr>
                     <td colspan="2" class="auto-style2">
                         <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="" CssClass="IFrameHeader" Width="100%">
-                        <asp:Label ID="lblTitle" runat="server" Text="List Person" Width="90%" style="text-align: left;"></asp:Label>
-                        <ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifPersonList" Text="[X] Close" style="text-align: right" />
+                        <asp:Label ID="lblTitle" runat="server" Text="List Curriculum People" Width="90%" style="text-align: left;"></asp:Label>
+                        <ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifListCurriculumPeople" Text="[X] Close" style="text-align: right" />
                         </ccJSIM:DragIFrame>
                     </td>
                 </tr>
@@ -48,22 +47,15 @@
                                 <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical"
                                     BorderStyle="Solid" BorderColor="Black" BorderWidth="2px"
                                     class="auto-style1">
-                                    <ccJSIM:OpenIFrameGridView ID="gvPersonList" runat="server" AutoGenerateColumns="False" CellPadding="4"
-                                        ChangeRowColor="True" DataKeyNames="personID" ForeColor="#333333" FrameSrc="AddEditUser.aspx" IncludeSorting="True"
+                                    <ccJSIM:OpenIFrameGridView ID="gvListCurriculumPeople" runat="server" AutoGenerateColumns="False" CellPadding="4"
+                                        ChangeRowColor="True" DataKeyNames="personid" ForeColor="#333333" FrameSrc="ListCurriculum.aspx" IncludeSorting="True"
                                         GridLines="None" GridSortColumn="LastName" GridSortDirection="ASC" HighlighedRowColor="Yellow" ShowEditButton="False"
-                                        ShowDeleteButton="False" ShowSelectorButton="True" AllowSorting="True" GridDeleteButtonText="" GridEditButtonText="" Interval="" >
+                                        ShowDeleteButton="False" ShowSelectorButton="True" AllowSorting="True" GridDeleteButtonText="" GridEditButtonText="" Interval="" Width="821px" >
                                         <Columns>
-                                            <asp:BoundField DataField="personID" HeaderText="personID" SortExpression="personID" Visible="False" />
+                                            <asp:BoundField DataField="personid" HeaderText="personID" SortExpression="personid" Visible="False" />
                                             <asp:BoundField DataField="lastname" HeaderText="Last Name" SortExpression="lastname" />
                                             <asp:BoundField DataField="firstname" HeaderText="First Name" SortExpression="firstname" />
-                                            <asp:BoundField DataField="institutionName" HeaderText="University Name" SortExpression="institutionName" />
-                                            <asp:CheckBoxField DataField="isSA" HeaderText="SA" SortExpression="isSA"/>
-                                            <asp:CheckBoxField DataField="isInstitution" HeaderText="Inst" SortExpression="isInstitution" />
-                                            <asp:CheckBoxField DataField="isISA" HeaderText="ISA" SortExpression="isISA" />
-                                            <asp:CheckBoxField DataField="isReports" HeaderText="Rpt" SortExpression="isReports" />
-                                            <asp:CheckBoxField DataField="isTaker" HeaderText="Taker" SortExpression="isTaker" />
-                                            <asp:CheckBoxField DataField="isCurriculum" HeaderText="Curriculum" SortExpression="IsCurriculum" />
-                                            <asp:CheckBoxField DataField="IsEmployee" HeaderText="UEmployee" SortExpression="IsEmployee" />
+                                            
                                         </Columns>
                                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                                         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -84,13 +76,13 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <ccJSIM:OpenIFrameButton ID="lbtnOpenAddPerson" runat="server" FrameSrc="AddEditPerson.aspx?mode=add&caller=lstPerson" HeightPosition="424" WidthPosition="704"
-                            IFrameName="ifAddEditPerson" Text="Add Person" LeftPosition="250" TopPosition="160" ZIndex="110" CssClass="Button" />
+                        <ccJSIM:OpenIFrameButton ID="lbtnOpenAddCurriculumPerson" runat="server" FrameSrc="AddEditPerson.aspx?mode=add&caller=lstPerson" HeightPosition="450" WidthPosition="704"
+                            IFrameName="ifAddEditPerson" Text="Add Curriculum Person" LeftPosition="375" TopPosition="160" ZIndex="185" CssClass="Button" />
                         &nbsp;
-                        <ccJSIM:OpenIFrameButton ID="lbtnOpenEditPerson" runat="server" FrameSrc="AddEditPerson.aspx?mode=edit&caller=lstPerson" HeightPosition="424" WidthPosition="704"
-                            IFrameName="ifAddEditPerson" Text="Edit Person" LeftPosition="250" TopPosition="160"  ZIndex="110" CssClass="Button" />
+                        <ccJSIM:OpenIFrameButton ID="lbtnOpenEditCurriculumPerson" runat="server" FrameSrc="AddEditPerson.aspx?mode=edit&caller=lstPerson" HeightPosition="450" WidthPosition="704"
+                            IFrameName="ifAddEditPerson" Text="Edit Curriculum Person" LeftPosition="375" TopPosition="160"  ZIndex="185" CssClass="Button" />
                         &nbsp;
-                        <asp:Button ID="btnDeletePerson" runat="server" Text="Delete Person" OnClick="btnDeletePerson_Click" CssClass="Button" />
+                        
                     </td>
                 </tr>
             </table>
@@ -98,3 +90,4 @@
     </form>
 </body>
 </html>
+

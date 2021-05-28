@@ -27,26 +27,10 @@
                 </tr>
                 <tr>
                     <td align="right">
-                        <asp:Label ID="Label4" runat="server" Text="Skill Class Number"></asp:Label>
-                    </td>
-                    <td align="left" class="style2">
-                        <asp:TextBox ID="txtskillsclassnum" runat="server" Width="20px"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right">
                         <asp:Label ID="Label1" runat="server" Text="Skill Number"></asp:Label>
                     </td>
                     <td align="left" class="style2">
                         <asp:TextBox ID="txtskillsnum" runat="server" Width="20px"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right">
-                        <asp:Label ID="Label2" runat="server" Text="Sub Skill Number"></asp:Label>
-                    </td>
-                    <td align="left" class="style2">
-                        <asp:TextBox ID="txtsubskillnum" runat="server" Width="20px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

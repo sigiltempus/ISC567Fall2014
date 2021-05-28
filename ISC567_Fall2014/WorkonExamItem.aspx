@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ExamProvider_11.aspx.vb" Inherits="ISC567_Fall2014.ExamProvider_11" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="WorkonExamItem.aspx.vb" Inherits="ISC567_Fall2014.WorkonExamItem" %>
 <%@ Register assembly="JSIM" namespace="JSIM.Custom_Controls" tagprefix="ccJSIM" %>
 
 <!DOCTYPE html>
@@ -16,7 +16,10 @@
         }
 
         #form1 {
-            width: 950px;
+            width: 934px;
+        }
+        .auto-style3 {
+            height: 308px;
         }
     </style>
 </head>
@@ -24,12 +27,16 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="ListIFrame1">
-            <table>
+            <table style="height: 385px">
                 <tr>
-                    <td colspan="2" class="auto-style2">
-                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="" CssClass="IFrameHeader" Width="100%">
+                    <td class="auto-style2">
+                        <ccJSIM:DragIFrame ID="lblHeader" runat="server" CssClass="IFrameHeader" Width="107%" CanDragIFrame="True" Height="24px">
                             <asp:Label ID="lblTitle" runat="server" Text="Exam Items" Width="90%" style="text-align: center;"></asp:Label>
                         </ccJSIM:DragIFrame>
+                    </td>
+                    <td> 
+                        <ccJSIM:CloseIFrameButton ID="Close" runat="server" Text="Close" IFrameName="ifExamList" PostBackUrl="WorkonExam.aspx"  Width="70px" style=" height: 21px;" />
+                            
                     </td>
                 </tr>
                 <tr>
@@ -51,35 +58,30 @@
                         <asp:Label ID="lblErrorMessage" runat="server" Text="" ForeColor="Red" Visible="false"></asp:Label></td>
                 </tr>
                 <tr>
-                    <td colspan="2">
+                    <td colspan="2" class="auto-style3">
                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
-                        <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="99%" Height="300px" CssClass="PanelStyle">
-                            <asp:Button ID="btnDeleteItem" Cssstyle="Button"  OnClick="btnDeleteItem_Click" runat="server" style="z-index:1; left:579px; top: 407px; position: absolute; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Text="Delete Item" Width="159px" />
-                            <ccJSIM:OpenIFrameButton ID="Button3" Cssstyle="Button" runat="server" FrameSrc="ExamProvider_12.aspx?mode=edit" IFrameName="iframeAddItem" style="z-index:1; left:419px; top: 406px; position: absolute; width: 150px; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Text="Show Item" WidthPosition="900" HeightPosition="450" LeftPosition="330" TopPosition="120" zindex="220"/>
-                            <ccJSIM:OpenIFrameButton ID="Button2" Cssstyle="Button" runat="server" FrameSrc="ExamProvider_12.aspx?mode=add" IFrameName="iframeAddItem" style="z-index: 1; left: 245px; top: 405px; position: absolute; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Text="Add New Item" Width="166px" WidthPosition="900" HeightPosition="450" LeftPosition="330" TopPosition="120" zindex="220" />
-                           <ccJSIM:CloseIFrameButton ID="Close" runat="server" Text="Close" Cssclass="Button" IFrameName="ifExamList" PostBackUrl="ExamProvider_7.aspx"  Width="70px" style="z-index: 1; left: 865px; top: 408px; position: absolute; height: 21px;" />
+                        <asp:Panel ID="Panel1" runat="server" ScrollBars="Vertical" Width="99%" Height="224px" CssClass="PanelStyle">
+                            <asp:Button ID="btnDeleteItem" Cssstyle="Button"  OnClick="btnDeleteItem_Click" runat="server" style="z-index:1; left:579px; top: 400px; position: absolute; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Text="Delete Item" Width="159px" />
+                            <ccJSIM:OpenIFrameButton ID="Button3" Cssstyle="Button" runat="server" FrameSrc="AddEditExamItem.aspx?mode=edit" IFrameName="iframeAddItem" style="z-index:1; left:419px; top: 400px; position: absolute; width: 150px; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Text="Show Item" WidthPosition="900" HeightPosition="450" LeftPosition="530" TopPosition="160" zindex="220"/>
+                            <ccJSIM:OpenIFrameButton ID="Button2" Cssstyle="Button" runat="server" FrameSrc="AddEditExamItem.aspx?mode=add" IFrameName="iframeAddItem" style="z-index: 1; left: 245px; top: 400px; position: absolute; background-color: #FFFAC2; font-weight: bold; font-size: 9pt; border: 1px solid #ba931c;" Text="Add New Item" Width="166px" WidthPosition="900" HeightPosition="450" LeftPosition="530" TopPosition="160" zindex="220" />
                             <ccJSIM:RadioButtonGridView ID="gvExamList" runat="server" AutoGenerateColumns="False" 
-                                ChangeRowColor="True" GridSortColumn="isSA" GridSortDirection="DESC" OnRowDataBound = "gvExamList_RowDataBound"
+                                ChangeRowColor="True" GridSortDirection="DESC" 
                                 HighlighedRowColor="" IncludeSorting="True" ShowSelectorButton="True" AllowSorting="True" 
-                                CheckedIdentifier="isSA" UseAjax="False" Height="151px" style="margin-right: 0px" Width="100%" DataKeyNames="Item">
+                                UseAjax="False" Height="151px" style="margin-right: 0px" Width="100%" DataKeyNames="Item">
                                     <Columns>
-                                    <asp:BoundField DataField="Item" SortExpression="Item" HeaderText="Item" >
+                                    <asp:BoundField DataField="Item" SortExpression="Item" HeaderText="Item" Visible="False" >
                                         <HeaderStyle Width="6.5%" />
                                         <ItemStyle Width="6.5%" />
                                         </asp:BoundField>
-                                    <asp:TemplateField HeaderText="#" SortExpression="#">
+                                                                        <asp:TemplateField HeaderText="#" SortExpression="#">
                                         <ItemTemplate>
                                             <%# Container.DataItemIndex + 1 %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
 
-                                    <asp:BoundField DataField="QuestionType" HeaderText="QuestionType" >
-                                        <HeaderStyle Width="50%" />
-                                    </asp:BoundField>
-
                                          <asp:BoundField DataField="questionobjective" HeaderText="Question Objective" >
-                                        <HeaderStyle Width="40%" />
+                                        <HeaderStyle Width="80%" />
                                         </asp:BoundField>
                                 </Columns>
                                     <HeaderStyle Width="2px" />

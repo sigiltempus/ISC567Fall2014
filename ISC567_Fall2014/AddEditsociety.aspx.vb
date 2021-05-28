@@ -19,7 +19,7 @@ Public Class AddEditsociety
         btnCSave.Parameters = CreateParameters()
     End Sub
     Private Sub AddNew()
-        lblHeader.Text = "Add Society"
+        dgFrame.Text = "Add Society"
         txtShortName.Text = ""
         txtLongName.Text = ""
 
@@ -27,7 +27,7 @@ Public Class AddEditsociety
 
 
     Private Sub Editsociety()
-        lblHeader.Text = "Edit Society "
+        dgFrame.Text = "Edit Society "
         Dim societyID As Integer = CInt(Session("selectedsocietyId"))
         'Dim skillclassid As Integer = 1
         'Dim ProjectID As Integer = Convert.ToInt32(Request.QueryString("ProjectID"))

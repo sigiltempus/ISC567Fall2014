@@ -22,8 +22,6 @@ Public Class MainMenu
         isInstitution = GetSVTableValue(Of Boolean)("isInstitution")
         isProvider = GetSVTableValue(Of Boolean)("isProvider")
         isTaker = GetSVTableValue(Of Boolean)("isTaker")
-        isDeveloper = GetSVTableValue(Of Boolean)("isDeveloper")
-        isRoster = GetSVTableValue(Of Boolean)("isRoster")
         isEmployee = CType(Session("isEmployee"), Boolean)
         isCurriculum = CType(Session("isCurriculum"), Boolean)
 

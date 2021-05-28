@@ -11,7 +11,7 @@
 
     <style type="text/css">
         .auto-style1 {
-            height: 325px;
+            height: 280px;
             width: 940px;
         }
 
@@ -54,9 +54,9 @@
                                         ShowDeleteButton="False" ShowSelectorButton="True" AllowSorting="True" GridDeleteButtonText="" GridEditButtonText="" Interval="" >
                                         <Columns>
                                             <asp:BoundField DataField="ProgramId" HeaderText="ProgramId" SortExpression="ProgramId" Visible="False" />
-                                            <asp:BoundField DataField="shortname" HeaderText="Program Name" SortExpression="ProgramName" />
-                                             <asp:BoundField DataField="longname" HeaderText="Program Full Name" SortExpression="ProgramName" />
-                                            <asp:BoundField DataField="value" HeaderText="Program Status" SortExpression="ProgramStatus" />
+                                            <asp:BoundField DataField="shortname" HeaderText="Model Name" SortExpression="ProgramName" />
+                                             <asp:BoundField DataField="longname" HeaderText="Model Full Name" SortExpression="ProgramName" />
+                                            <asp:BoundField DataField="value" HeaderText="Model Status" SortExpression="ProgramStatus" />
                                         </Columns>
                                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                                         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -80,41 +80,35 @@
                         <ccJSIM:OpenIFrameButton ID="lbtnOpenAddProgram" runat="server" FrameSrc="AddEditProgram.aspx?mode=add&caller=lstProgram" HeightPosition="424" WidthPosition="704"
                             IFrameName="ifAddEditProgram" Text="Add Model" LeftPosition="250" TopPosition="160" ZIndex="185" CssClass="Button" />
                         &nbsp;
+                        &nbsp;
                         <ccJSIM:OpenIFrameButton ID="lbtnOpenEditProgram" runat="server" FrameSrc="AddEditProgram.aspx?mode=edit&caller=lstProgram" HeightPosition="424" WidthPosition="704"
                             IFrameName="ifAddEditProgram" Text="Edit Model" LeftPosition="250" TopPosition="160"  ZIndex="185" CssClass="Button" />
                         &nbsp;
-                        <asp:Label ID="lblSpacer" runat="server" Text="  " Width="200px"></asp:Label>
                         &nbsp;
-
-                        <ccJSIM:OpenIFrameButton 
-                            ID="lbtnWorkOnExam" 
-                            runat="server" 
-                            FrameSrc="ExamProvider_7.aspx" 
-                            HeightPosition="400" 
-                            WidthPosition="575"
-                            IFrameName="ifWorkOnExam" 
-                            Text="Work On Exam" 
-                            LeftPosition="250" 
-                            TopPosition="170" 
-                            ZIndex="185" 
-                            CssClass="Button" 
-                            style="z-index: 1; top: 230px;" 
-                            Width="189px" 
-                        />
-
+                         &nbsp;
+                        <ccJSIM:OpenIFrameButton  ID="lbtnWorkOnExam" runat="server"  FrameSrc="WorkonExam.aspx"  HeightPosition="510"  WidthPosition="575" 
+                            IFrameName="ifWorkOnExam"  Text="Work On Exam" LeftPosition="250" TopPosition="170" ZIndex="185" CssClass="Button" style="z-index: 1; top: 230px;" Width="189px" />
+                        &nbsp;
+                        &nbsp;
                          &nbsp;
                         <ccJSIM:OpenIFrameButton ID="lbtnOpenBK" runat="server" FrameSrc="ListProgramBK.aspx" HeightPosition="305" WidthPosition="778"
                             IFrameName="ifListProgramBK" Text="Body Of Knowledge" LeftPosition="290" TopPosition="195" ZIndex="220" CssClass="Button" Width="120px" />
                         &nbsp;
-                        <ccJSIM:OpenIFrameButton ID="lbtnOpenCourse" runat="server" FrameSrc="ListCourse.aspx" HeightPosition="500" WidthPosition="755"
+                        &nbsp;
+                         &nbsp;
+                         <ccJSIM:OpenIFrameButton ID="lbtnOpenCourse" runat="server" FrameSrc="ListCourse.aspx" HeightPosition="500" WidthPosition="755"
                             IFrameName="ifCourseList" Text="Course" LeftPosition="250" TopPosition="160"  ZIndex="185" CssClass="Button" />
                         &nbsp;
-                        <ccJSIM:OpenIFrameButton ID="lbtnOpenProgramOutcome" runat="server" FrameSrc="ListProgramOutcome.aspx" HeightPosition="524" WidthPosition="724"
-                            IFrameName="ifListProgramOutcome" Text="Program Outcome" LeftPosition="250" TopPosition="170" ZIndex="185" CssClass="Button" Width="120px" />
                         &nbsp;
+                         &nbsp;
+                         <ccJSIM:OpenIFrameButton ID="lbtnOpenProgramOutcome" runat="server" FrameSrc="ListProgramOutcome.aspx" HeightPosition="524" WidthPosition="724"
+                            IFrameName="ifListProgramOutcome" Text="Program Outcome" LeftPosition="250" TopPosition="170" ZIndex="185" CssClass="Button" Width="120px" />
+                       &nbsp;
+                        &nbsp;
+                         &nbsp;
                         <ccJSIM:OpenIFrameButton ID="lbtnOpenProgramSkillClass" runat="server" FrameSrc="SkillClass.aspx" HeightPosition="320" WidthPosition="724"
                             IFrameName="ifProgramSkillClass" Text="Skill Class" LeftPosition="250" TopPosition="160"  ZIndex="185" CssClass="Button" />
-                        &nbsp;
+                       
                     </td>
                 </tr>
             </table>

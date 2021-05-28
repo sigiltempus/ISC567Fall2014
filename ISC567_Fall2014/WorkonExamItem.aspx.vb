@@ -3,7 +3,7 @@ Imports GlobalVariables.AppVariable
 Imports DataAccessTier.daUser
 
 
-Public Class ExamProvider_11
+Public Class WorkonExamItem
     Inherits System.Web.UI.Page
     Dim oUser As New DataAccessTier.daUser
     Dim cn As String = GetConnectionString("connectionString")
@@ -67,30 +67,30 @@ Public Class ExamProvider_11
 
     'End Sub
 
-    Protected Sub gvExamList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvExamList.RowDataBound
+    'Protected Sub gvExamList_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvExamList.RowDataBound
 
-        If e.Row.RowType = DataControlRowType.DataRow Then
-            Dim rowView As DataRowView = CType(e.Row.DataItem, DataRowView)
-            Dim questionType As String = rowView("QuestionType").ToString()
-            Dim types As String() = questionType.Split(New Char() {"#"c})
-            Dim count As Integer = 0
-            Dim questions As String = ""
-            Dim builder As New StringBuilder
-            Dim questionCount As String = ""
+    '    If e.Row.RowType = DataControlRowType.DataRow Then
+    '        Dim rowView As DataRowView = CType(e.Row.DataItem, DataRowView)
+    '        Dim questionType As String = ""
 
-            For Each question As String In types
-                questionCount = CStr(count + 1)
-                'questions = questions + "K" + questionCount + ":&nbsp;" + question + "\n"
+    '        Dim count As Integer = 0
+    '        Dim questions As String = ""
+    '        Dim builder As New StringBuilder
+    '        Dim questionCount As String = ""
 
-                builder.Append("K" + questionCount + ":&nbsp;" + question + "<br/><br/>")
+    '        For Each question As String In types
+    '            questionCount = CStr(count + 1)
+    '            'questions = questions + "K" + questionCount + ":&nbsp;" + question + "\n"
 
-                count += 1
-            Next
+    '            builder.Append("K" + questionCount + ":&nbsp;" + question + "<br/><br/>")
 
-            e.Row.Cells(3).Text = builder.ToString
+    '            count += 1
+    '        Next
 
-        End If
-    End Sub
+    '        e.Row.Cells(3).Text = builder.ToString
+
+    '    End If
+    'End Sub
     Protected Sub gvExamList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles gvExamList.SelectedIndexChanged
         'Place selected data from Grid into the session variable
         Dim selectedItemId As String = gvExamList.SelectedValue.ToString()

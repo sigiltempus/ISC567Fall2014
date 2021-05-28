@@ -150,10 +150,11 @@ body
     z-index: 1;
     left: 266px;
     top: 170px;
-    margin-left: 0px;
+    margin-left: 2px;
     font-size: 9pt;
     font-weight: bold;
     border: 1px solid #ba931c;
+    margin-top: 44px;
 }
 
 .ButtonGreyed
@@ -277,7 +278,7 @@ body
 
 .IFrameHeaderClose
 {
-    height: 25px;
+    height: 33px;
     font-size: 14pt;
     font-weight: bold;
     color: White;
@@ -542,7 +543,7 @@ a.info:hover span
 .contentWrapper
 {
 	min-height: 410px;
-	border: 2px solid #000000;
+	/*border: 2px solid #000000;*/
 	padding: 5px;
 }
 
@@ -557,6 +558,11 @@ a.info:hover span
 	background-repeat: no-repeat;
 	color: #000000; /* Will only work in newer browsers. ROUNDED BORDERS!!!*/
 	border-radius: 0px 0px 10px 10px;
+    
+    /* Ensure footer stays at the bottom of the page */
+    position: fixed;
+    bottom: 4px;
+    width: 100%;
 }
 .footerwrapper a
 {

@@ -28,10 +28,10 @@
         <table style="height: 317px">
             <tr>
                 <td class="auto-style3">
-                    <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="Wait Time for Exam" CssClass="IFrameHeader" Width="137%" CanDragIFrame="True"></ccJSIM:DragIFrame>
+                    <ccJSIM:DragIFrame ID="lblHeader" runat="server" Text="Wait Time for Exam" CssClass="IFrameHeader" Width="176%" CanDragIFrame="True" Height="41px"></ccJSIM:DragIFrame>
                 </td>
                 <td style="text-align:right">
-                    <ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifAddEditExams" Text="[X] Close" CssClass="IFrameHeaderClose" style="z-index: 1; left: -34px; top: 1px; position: relative; width: 177px;" />
+                    <ccJSIM:CloseIFrameButton ID="lbtnClose" runat="server" IFrameName="ifWaitOnExam" Text="[X] Close" CssClass="Button" style="z-index: 1; left: -34px; top: -3px; position: relative; width: 117px;" />
                 </td>
                 
             </tr>
@@ -60,10 +60,9 @@
         <asp:Label ID="lblTime" runat="server"  style="z-index: 1; left: 226px; top: 203px; position: absolute; height: 20px; width: 170px" Text="Time"></asp:Label>
         <asp:Label ID="lblTimeRem" runat="server"  style="z-index: 1; left: 226px; top: 230px; position: absolute; width: 170px; height: 20px;" Text="TimeRem"></asp:Label>
         <asp:Label ID="Label8" runat="server" style="z-index: 1; left: 80px; top: 232px; position: absolute; width: 254px" Text="As soon as the time:"></asp:Label>
-        <%--<asp:Button ID="Button1" runat="server" style="z-index: 1; left: 241px; top: 244px; position: absolute; width: 73px" Text="Continue" />--%>
         <ccJSIM:OpenIFrameButton ID="OpenIFrameButton1" runat="server" FrameSrc="Exam.aspx"
-                        IFrameName="ifAddEditExams" Text="Continue" 
-                        HeightPosition="410" LeftPosition="380" TopPosition="100" WidthPosition="690"  CssClass="Button" ZIndex="160" style="position: relative; top: 9px; left: 456px; height: 26px" />  
+                        IFrameName="ifExam" Text="Continue" 
+                        HeightPosition="410" LeftPosition="380" TopPosition="100" WidthPosition="690"  CssClass="Button" ZIndex="160" style="position: relative; top: 9px; left: 456px; height: 26px" /> 
                      </td>
             </tr>
         </table>

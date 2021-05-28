@@ -86,7 +86,7 @@
                         &nbsp;
                         <asp:Label ID="lblCSpacer" runat="server" Text="  " Width="250px"></asp:Label>
                         &nbsp;
-                        <ccJSIM:OpenIFrameButton ID="lbtnOpensociety" runat="server" FrameSrc="Listsponsor.aspx" HeightPosition="404" WidthPosition="955" Visible="true"
+                        <ccJSIM:OpenIFrameButton ID="lbtnOpensociety" runat="server" FrameSrc="Listsponsor.aspx" HeightPosition="430" WidthPosition="955" Visible="true"
                             IFrameName="ifsponsorlist" Text="sponsor" LeftPosition="170" TopPosition="160" ZIndex="190" CssClass="Button" />
                         &nbsp;
                         

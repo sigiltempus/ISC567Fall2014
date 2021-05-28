@@ -26,11 +26,11 @@ Public Class AddEditProgram
     End Sub
 
     Private Sub AddNew()
-        lblTitle.Text = "Add New Program"
+        lblTitle.Text = "Add New Model"
 
     End Sub
     Private Sub EditUser()
-        lblTitle.Text = "Edit Program"
+        lblTitle.Text = "Edit Model"
 
         Dim oProgram As New DataAccessTier.daProgram
         Dim dtProgramInfo As DataTable
@@ -105,7 +105,8 @@ Public Class AddEditProgram
                 lblMessage.ForeColor = Drawing.Color.Green
                 lblMessage.Text = "Program was successfully " + mode + "ed"
                 'Response.Write("<script>parent.window.location.reload();</script>")
-                Response.End()
+                'Response.End()
+
 
             Else
                 'if there was an error trying to add/edit user

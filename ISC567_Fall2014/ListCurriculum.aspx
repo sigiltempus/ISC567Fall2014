@@ -11,7 +11,7 @@
 
     <style type="text/css">
         .auto-style1 {
-            height: 325px;
+            height: 280px;
             width: 940px;
         }
 
@@ -84,6 +84,10 @@
                         &nbsp;
                         <asp:Label ID="lblCSpacer" runat="server" Text="  " Width="250px"></asp:Label>
                         &nbsp;
+                         <ccJSIM:OpenIFrameButton ID="lbtOpenCurriculumPeople" runat="server" FrameSrc="ListCurriculumPeople.aspx" HeightPosition="450" WidthPosition="950"
+                            IFrameName="ifListCurriculumPeople" Text="Curriculum People" LeftPosition="250" TopPosition="160" ZIndex="185" CssClass="Button" />
+                        &nbsp;
+
                         <ccJSIM:OpenIFrameButton ID="lbtnOpenProgram" runat="server" FrameSrc="ListProgram.aspx" HeightPosition="420" WidthPosition="950" Visible="true"
                             IFrameName="ifProgramList" Text="Model" LeftPosition="170" TopPosition="160" ZIndex="185" CssClass="Button" />
                         &nbsp;

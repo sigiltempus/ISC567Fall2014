@@ -51,7 +51,7 @@ Public Class AddEditSponsor
     Protected Overrides Function CreateParameters() As JSIM.ParameterContainer
         MyBase.paramContainer = New JSIM.ParameterContainer()
 
-        Dim societyId As Integer = 1 'Get the SocietyId appropriately
+        Dim societyId As Integer = CInt(Session("selectedsocietyId"))
 
         'Dim shortname As String = CStr(Session("selectedsocietyName"))
         Dim mode As String = Request.QueryString("mode")
